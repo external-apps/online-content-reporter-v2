@@ -2,8 +2,9 @@
   "name": "online-content-reporter",
   "version": "1.0.0",
   "description": "A web app for reporting explicit online images to the IWF (internet watch foundation)",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "start": "node lib/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
