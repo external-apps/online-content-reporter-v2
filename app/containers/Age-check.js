@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import '../scss/style'
+import '../scss/style.scss'
 
 class AgeCheck extends React.Component {
   render () {
