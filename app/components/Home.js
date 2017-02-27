@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const App = () => (
+const Home = () => (
   <div>
-      <h1>Childline</h1>
+      <h1>Childline HOME</h1>
   </div>
 )
 
-export default App
+export default Home

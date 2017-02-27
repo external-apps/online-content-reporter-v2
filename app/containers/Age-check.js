@@ -3,7 +3,7 @@ import React from 'react'
 class AgeCheck extends React.Component {
   render() {
     return (
-      <h1>Age check</h1>
+      <h1>Age check Me</h1>
     )
   }
 }
