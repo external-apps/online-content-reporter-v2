@@ -19,12 +19,13 @@
 //         test: /\.jsx?$/,
 //         exclude: /node_modules/,
 //         loaders: ['babel?presets[]=react,presets[]=latest']
-//       }
+//       },
 //     ]
 //   }
 // }
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 
 module.exports = {
   entry: './app/index.js',
@@ -33,10 +34,15 @@ module.exports = {
     path: './dist'
   },
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.jsx?$/, // if we have any file that end with .js, use babel to transpile them
         loader: 'babel-loader'
+      },
+      {
+        test: /\.s?css$/,
+        exclude: path.resolve(__dirname, 'node_modules'),
+        loader: 'style-loader!css-loader!sass-loader'
       }
     ]
   },
