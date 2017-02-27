@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 const Home = () => (
   <div>
-      <h1>Childline HOME</h1>
+    <h1>Childline HOME</h1>
   </div>
 )
 
