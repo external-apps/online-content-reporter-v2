@@ -2,54 +2,62 @@ import React from 'react'
 import '../scss/style.scss'
 
 const ContentForm = () => (
-  <div>
   <div className="content">
-   <div className="title-div background-dark-blue">
-     <h1 className='title'>REPORT CONTENT WEB ADDRESS</h1>
-   </div>
-   <div className="progress">
-      <div className="determinate" style="width: 66%"></div>
-   </div>
-   <div className="message">
-     <h4 className="rosie">WEBSITE DETAILS</h4>
-     <p>
-       If you have any information you think may help us such as a description of where the content you are reporting is located on a large website or username and password needed to gain access, please include it in the description box.
+    <div className="content-title">
+      <h1 className='title'>DESCRIBE THE ONLINE CONTENT</h1>
+    </div>
 
-       If you have multiple webpages (URLs) to report, please include these in the description box.
-     </p>
-   </div>
-   <div className="form-container">
-     <h4 className="rosie">WEB ADDRESS</h4>
-     <form action="#">
-       <div className="input-field col s6">
-         <i className="material-icons prefix">mode_edit</i>
-         <textarea id="url" className="materialize-textarea"></textarea>
-         <label for="url">URL</label>
-       </div>
-       <div className="input-field-2 input-field col s6 ">
-         <i className="material-icons prefix">mode_edit</i>
-         <textarea id="description" className="materialize-textarea"></textarea>
-         <label for="description">Description</label>
-       </div>
-       <a className="waves-effect waves-light btn report-submit" id="submit-url" >Submit Report</a>
-     </form>
-   </div>
+    <div className="progress">
+       <div className="determinate" style="width: 66%"></div>
+    </div>
 
-   <div className="mod-overlay closed" id="mod-overlay"></div>
-   <div className="mod closed" id="mod">
-     <button className="mod__close-button" id="close-button">X</button>
-     <div className="mod__content">
-       <h1>Thank you. The online content has been reported for removal</h1>
-       <p>
-         If you would like IWF to update you by email, please enter your email address below.
-       </p>
-       <input placeholder="email address"></input>
-       <a className="waves-effect waves-light btn" href='/index.html'>Submit</a>
-     </div>
-   </div>
+    <div className='content-describe form-container'>
+      <p>
+        The content must fit a certain criteria for us to legally remove it. Please select the boxes below that apply.
+      </p>
+    </div>
 
- </div>
+    <div className="form-container">
+      <form action="#">
+        <p>
+          <input type="checkbox" className="filled-in" id="filled-in-box-1"  />
+          <label for="filled-in-box-1">Someone posing in a sexual way</label>
+        </p>
+        <p>
+          <input type="checkbox" className="filled-in" id="filled-in-box-2" />
+          <label for="filled-in-box-2">Someone touching themselves in a sexual way</label>
+        </p>
+        <p>
+          <input type="checkbox" className="filled-in" id="filled-in-box-3" />
+          <label for="filled-in-box-3">Any sexual activity involving a child, adult or both</label>
+        </p>
+        <p>
+          <input type="checkbox" className="filled-in" id="filled-in-box-4"  />
+          <label for="filled-in-box-4">Someone hurting someone else</label>
+        </p>
+        <p>
+          <input type="checkbox" className="filled-in" id="filled-in-box-5" />
+          <label for="filled-in-box-5">Sexual activity that includes animals.</label>
+        </p>
+        <a className="confirm waves-effect waves-light btn" href='/url-form.html'>Confirm</a>
+      </form>
+    </div>
 
+    <div className="other-options">
+      <div className="info">
+        <i className="large material-icons">info_outline</i>
+      </div>
+
+      <div className="info-message">
+        <p className="other-report">
+          If the picture or video doesnt include any of the activities above,
+           we may not be able to remove it. Talk to a
+            <span><a href="https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/"> Childline counsellor</a></span>
+             for more advice.
+          </p>
+        </div>
+      <div className="spacer" style="clear: both;"></div>
+    </div>
   </div>
 )
 
