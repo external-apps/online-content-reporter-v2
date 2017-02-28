@@ -9,7 +9,7 @@
     "build": "npm run clean && webpack",
     "startmon": "nodemon ./lib/index.js",
     "watch": "webpack --watch",
-    "test-backend": "mocha --recursive",
+    "test-backend": "mocha --recursive ./test/app.spec.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
