@@ -9,7 +9,7 @@ const ContentForm = () => (
     </div>
 
     <div className="progress">
-       <div className="determinate" style="width: 66%"></div>
+       <div className="determinate"></div>
     </div>
 
     <div className='content-describe form-container'>
@@ -57,7 +57,6 @@ const ContentForm = () => (
              for more advice.
           </p>
         </div>
-      <div className="spacer" style="clear: both;"></div>
     </div>
     <Link to='/form2'>
       <p>FORM2</p>

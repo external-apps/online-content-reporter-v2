@@ -42,7 +42,7 @@ const Home = () => (
       <p>Prove Age Here</p>
     </Link>
     <Link to='/over-age'>
-      <p>Prove Age Here</p>
+      <p>be overAge</p>
     </Link>
   </div>
 )
