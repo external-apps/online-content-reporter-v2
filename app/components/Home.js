@@ -4,7 +4,9 @@ import '../scss/style.scss'
 
 const Home = () => (
   <div className='home'>
-    <h1 class='title'>Childline HOME</h1>
+    <p>HAHO</p>
+    <h1 className='title'>Childline HOME</h1>
+    <img src="hmm" alt="alternative"/>
     <Link to='/age-check'>
       <p>Prove Age Here</p>
     </Link>

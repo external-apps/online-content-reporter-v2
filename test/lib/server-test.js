@@ -1,6 +1,12 @@
 /* eslint-env mocha */
-const server = require('../../lib/server.js')()
+const server = require('../../lib/app')
 const expect = require('chai').expect
+
+const port = process.env.PORT || 4000
+
+server.listen(port, () => {
+  console.log(`Server is runnign on port: ${port}`)
+})
 
 describe('Server', () => {
   it('returns correct html for path "/"', (done) => {
