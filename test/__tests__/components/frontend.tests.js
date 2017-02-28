@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow, mount, render } from 'enzyme';
-import sinon from 'sinon'
 import Home from '../../../app/components/Home'
 
 /* Whatever version we use have the following syntax....none of the tutorials i found has it
@@ -17,7 +16,8 @@ import Home from '../../../app/components/Home'
         toBeLessThanOrEqual: [Function: throwingMatcher],
         toBeNaN: [Function: throwingMatcher],
         toBeNull: [Function: throwingMatcher],
-        toBeTruthy: [Function: throwingMatcher],
+        toBeTruthy: [Function: throwingMatcher
+
         toBeUndefined: [Function: throwingMatcher],
         toContain: [Function: throwingMatcher],
         toContainEqual: [Function: throwingMatcher],
@@ -71,7 +71,7 @@ import Home from '../../../app/components/Home'
 */
 
 
-console.log(Home);
+//console.log(Home);
 
 describe('<Home />', () => {
   /*it('renders three <Foo /> components', () => {
@@ -83,7 +83,7 @@ describe('<Home />', () => {
     const wrapper = shallow(<Home />)
   //  console.log(wrapper.debug())
   //  console.log(wrapper.contains(<p>HAHO</p>))
-  //  console.log(expect(wrapper.contains(<p>HAHO</p>)))
+    console.log(expect(wrapper.contains(<p>HAHO</p>)))
     expect(wrapper.contains(<p>HAHO</p>)).toBeTruthy();
   });
 
@@ -92,31 +92,4 @@ describe('<Home />', () => {
     expect(wrapper.find('.title')).toHaveLength(1)
   });
 
-  it('renders an home', () => {
-    const wrapper = shallow(<Home />)
-    console.log(wrapper.find('alt'))
-    expect(wrapper.find('alt')).toHaveProperty('className')
-  });
-
-  /*it('renders children when passed in', () => {
-    const wrapper = shallow(
-      <MyComponent>
-        <div className="unique" />
-      </MyComponent>
-    );
-    expect(wrapper.contains(<div className="unique" />)).to.equal(true);
-  });
-  it('renders an `.title`', () => {
-    const wrapper = shallow(<Home />);
-    expect(wrapper.find('.title')).to.have.length(1);
-  });
-
-  it('simulates click events', () => {
-    const onButtonClick = sinon.spy();
-    const wrapper = shallow(
-      <Foo onButtonClick={onButtonClick} />
-    );
-    wrapper.find('button').simulate('click');
-    expect(onButtonClick).to.have.property('callCount', 1);
-  });*/
 });
