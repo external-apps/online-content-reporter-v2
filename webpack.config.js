@@ -3,14 +3,14 @@ const path = require('path')
 
 module.exports = {
   entry: './app/index.js',
-  output: { // where thebundles are created
+  output: {
     filename: 'bundle.js',
     path: './dist'
   },
   module: {
     loaders: [
       {
-        test: /\.jsx?$/, // if we have any file that end with .js, use babel to transpile them
+        test: /\.jsx?$/,
         loader: 'babel-loader'
       },
       {
@@ -21,15 +21,7 @@ module.exports = {
       {
         test: /\.(eot|svg|ttf|otf|woff|woff2)$/,
         loader: 'file-loader?name=/fonts/[name].[ext]'
-      },
-      {
-            test: /\.css$/,
-            loaders: [
-                'style',
-                'css?importLoaders=1',
-                'font?format[]=truetype&format[]=woff&format[]=embedded-opentype'
-            ]
-        }
+      }
     ]
   },
   plugins: [
