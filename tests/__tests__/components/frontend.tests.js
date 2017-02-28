@@ -17,7 +17,8 @@ import Home from '../../../app/components/Home'
         toBeLessThanOrEqual: [Function: throwingMatcher],
         toBeNaN: [Function: throwingMatcher],
         toBeNull: [Function: throwingMatcher],
-        toBeTruthy: [Function: throwingMatcher],
+        toBeTruthy: [Function: throwingMatcher
+
         toBeUndefined: [Function: throwingMatcher],
         toContain: [Function: throwingMatcher],
         toContainEqual: [Function: throwingMatcher],
@@ -71,7 +72,7 @@ import Home from '../../../app/components/Home'
 */
 
 
-console.log(Home);
+//console.log(Home);
 
 describe('<Home />', () => {
   /*it('renders three <Foo /> components', () => {
@@ -83,7 +84,7 @@ describe('<Home />', () => {
     const wrapper = shallow(<Home />)
   //  console.log(wrapper.debug())
   //  console.log(wrapper.contains(<p>HAHO</p>))
-  //  console.log(expect(wrapper.contains(<p>HAHO</p>)))
+    console.log(expect(wrapper.contains(<p>HAHO</p>)))
     expect(wrapper.contains(<p>HAHO</p>)).toBeTruthy();
   });
 
@@ -92,11 +93,11 @@ describe('<Home />', () => {
     expect(wrapper.find('.title')).toHaveLength(1)
   });
 
-  it('renders an home', () => {
+/*  it('renders an home', () => {
     const wrapper = shallow(<Home />)
     console.log(wrapper.find('alt'))
     expect(wrapper.find('alt')).toHaveProperty('className')
-  });
+  });*/
 
   /*it('renders children when passed in', () => {
     const wrapper = shallow(
