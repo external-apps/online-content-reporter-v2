@@ -5,8 +5,8 @@ import '../scss/style.scss'
 const Home = () => (
   <div className='home'>
     <p>HAHO</p>
-    <h1 className='title'>Childline HOME</h1>
-    <img src="hmm" alt="alternative"/>
+    <h1 className='title'>CHILDLINE HOME</h1>
+    <img src='imgs/childline-logo.jpg' alt='alternative' />
     <Link to='/age-check'>
       <p>Prove Age Here</p>
     </Link>
