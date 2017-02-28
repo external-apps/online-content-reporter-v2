@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import '../scss/style.scss'
 
 const ContentForm = () => (
@@ -58,6 +59,9 @@ const ContentForm = () => (
         </div>
       <div className="spacer" style="clear: both;"></div>
     </div>
+    <Link to='/form2'>
+      <p>FORM2</p>
+    </Link>
   </div>
 )
 

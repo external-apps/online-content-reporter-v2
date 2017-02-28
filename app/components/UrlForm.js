@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import '../scss/style.scss'
 
 const UrlForm = () => (
@@ -34,7 +35,7 @@ const UrlForm = () => (
        <a className="waves-effect waves-light btn report-submit" id="submit-url" >Submit Report</a>
      </form>
    </div>
-
+   //modal
    <div className="mod-overlay closed" id="mod-overlay"></div>
    <div className="mod closed" id="mod">
      <button className="mod__close-button" id="close-button">X</button>
