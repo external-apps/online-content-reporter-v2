@@ -13,7 +13,7 @@ ReactDOM.render(
     <Route path='/age-check' component={AgeCheck} />
     <Route path='/form' component={ContentForm} />
     <Route path='/form2' component={UrlForm} />
-    <Route path='/overage' component={OverAge} />
+    <Route path='/over-age' component={OverAge} />
   </Router>,
   document.getElementById('root')
 )

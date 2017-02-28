@@ -44,8 +44,8 @@ const OverAge = () => (
           <div className="spacer" style="clear: both;"></div>
         </div>
     </div>
-    <Link to='/overage'>
-      <p>Prove Age Here</p>
+    <Link to='/'>
+      <p>Go Home</p>
     </Link>
   </div>
   </div>
