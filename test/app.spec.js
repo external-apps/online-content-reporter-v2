@@ -42,11 +42,11 @@ console.log(end2end);
 	});
 });*/
 
-describe('End-to-end', () => {
+/*describe('End-to-end', () => {
 	it('should serve html on the \'/\' route', () => {
 		return request(end2end)
 			.get('/')
 			.expect(200)
 			.expect('Content-Type', /html/)
 	})
-});
+});*/
