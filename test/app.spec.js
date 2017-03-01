@@ -10,7 +10,7 @@ var spy = sinon.spy();
 spy('Hello', 'World');
 
 //Now we can get information about the call
-console.log(spy.firstCall.args)
+// console.log(spy.firstCall.args)
 
 
 var user = {
@@ -26,13 +26,13 @@ var setNameSpy = sinon.spy(user, 'setName');
 user.setName('Darth Vader');
 
 //Which we can see by looking at the spy object
-console.log(setNameSpy.callCount); //output: 1
+// console.log(setNameSpy.callCount); //output: 1
 
 //Important final step - remove the spy
 setNameSpy.restore();
 
 const end2end = require('../lib/app');
-console.log(end2end);
+// console.log(end2end);
 /*describe('app.js', () => {
 	afterEach(() => cvControllerStub.reset());
 	it('should call the cv controller on the \'/\' route', () => {

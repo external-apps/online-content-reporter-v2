@@ -1,0 +1,144 @@
+@font-face { font-family: childline; src: url('../../public/fonts/ChildlineWeb/ChildlineWeb-Regular.otf'); }
+@font-face { font-family: childline-bold; src: url('../../public/fonts/ChildlineWeb/ChildlineWeb-Bold.otf'); }
+@font-face { font-family: Rosie; src: url('../../public/fonts/Rosie/rosie-regular-webfont.woff2'); }
+
+body {
+  font-family: 'childline';
+}
+
+.background-blue {
+  background-color: #CCECF5;
+}
+
+/*Age check page */
+.age {
+  height: 100vh;
+}
+
+.age-title {
+  margin: 0;
+  background-color: rgba(0, 161, 208, 1);
+  padding: 2.5rem 1rem 2.5rem 1rem;
+  text-align: center;
+  height: 28vh;
+}
+
+.yoti-intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.yoti-intro h3 {
+  height: 10rem;
+  width: 80%;
+  margin: 0;
+  height: 4rem;
+}
+
+.yoti-intro img {
+  width: 15%;
+  height: 2rem;
+}
+
+.yoti-btn {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+
+  text-align: center;
+  z-index: -1;
+  margin-bottom: 1rem;
+}
+
+.yoti-btn a {
+  display: block;
+  background-color: #632c7a;
+  width: 20rem;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right:2rem;
+  text-transform: none;
+}
+
+.yoti-btn a:hover {
+  background-color: #2F153A;
+}
+
+.age-info {
+  background-color: #F28C00;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  margin: 1rem;
+}
+
+.age-info a {
+  font-size: 1.2rem;
+  padding: 1rem;
+  padding-left: 0;
+  color: rgba(35, 79, 98, 1);
+}
+
+.why-eighteen {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #0c3d52;
+  padding: 1rem;
+}
+
+.why-eighteen a {
+  padding: 0;
+}
+
+i.age-page {
+  margin: 0.6rem;
+}
+
+.yoti-info {
+  margin: 1rem;
+  background-color: rgba(35, 79, 98, 1);
+  box-sizing: border-box;
+  padding: 1rem;
+  color: #fff;
+}
+
+.yoti-info h3 {
+  font-family: 'Rosie', 'childline-bold';
+  font-size: 1.6rem;
+  margin: 0;
+  width: 90%;
+  float:left;
+}
+
+.yoti-description {
+  padding-top: 1.2rem;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+
+.scan-me {
+  font-size: 1.5rem;
+  text-align: center;
+  display: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Rosie';
+}
+
+.popup-yoti {
+  width: 4rem;
+  margin-left: 1rem;
+}
+
+.identity-1 {
+  width: 10%;
+  text-align: right;
+  color: white;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

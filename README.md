@@ -5,7 +5,7 @@ A web app for reporting explicit online images to the [IWF](https://www.iwf.org.
 ## Our app
 
 Running on Heroku twice for testing purposes so that more people can test both the under18 and over18 route.
-- Version 2: where the age limit is 25: [childline-report-image](https://childline-report-image.herokuapp.com/)
+- Version 2: where the age limit is 25: [childline-report](https://childline-report.herokuapp.com/)
 - Version 1: where the age limit is 35: [childline-yoti](https://childline-yoti.herokuapp.com/)
 
 **Under development**
