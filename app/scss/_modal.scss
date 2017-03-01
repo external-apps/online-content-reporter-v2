@@ -1,6 +1,6 @@
 @import "variables";
-@font-face { font-family: childline; src: url('../fonts/childline/Childline/ChildlineWeb/ChildlineWeb-Regular.otf'); }
-@font-face { font-family: childline-bold; src: url('../fonts/childline/Childline/ChildlineWeb/ChildlineWeb-Bold.otf'); }
+//@font-face { font-family: childline; src: url('../fonts/childline/Childline/ChildlineWeb/ChildlineWeb-Regular.otf'); }
+//@font-face { font-family: childline-bold; src: url('../fonts/childline/Childline/ChildlineWeb/ChildlineWeb-Bold.otf'); }
 
 .mod {
   display: block;
@@ -14,7 +14,7 @@
   transform: translate(-50%, -50%);
   background-color: #CCECF5;
   color: #0C3D52;
-  font-family: 'childline-regular'
+  font-family: 'childline-regular';
   box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
 }
 
