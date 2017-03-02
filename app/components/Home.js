@@ -25,11 +25,11 @@ const Home = () => (
 
 
     <div className='landing-logo'>
-      <img className='landing-logo__img' src="images/iwf-logo.png" alt="IWF logo"/>
+      <img className='landing-logo__img' src="imgs/iwf-logo.png" alt="IWF logo"/>
     </div>
 
     <div className='landing-logo'>
-      <img className='landing-logo__img' src="images/childline-logo.jpg" alt="childline logo"/>
+      <img className='landing-logo__img' src="imgs/childline-logo.jpg" alt="childline logo"/>
     </div>
 
     <div className='landing-btn'>
