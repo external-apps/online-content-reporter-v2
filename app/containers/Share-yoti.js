@@ -108,7 +108,7 @@ class ShareYoti extends React.Component {
 
       // t.config.service = 'https://code.yoti.com/app/'
       t.init()
-    })();
+    }();
 
   render () {
     return (
