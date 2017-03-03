@@ -15,10 +15,21 @@
 
 .age-info-blue{
   @include ageinfo($aqua);
+  p{
+    @extend .age-info-text;
+    color: $dark-cobalt;
+  }
 }
 
 .age-info-orange{
   @include ageinfo($orange);
+  i{
+    padding: 0.6rem;
+  }
+  a{
+    @extend .age-info-text;
+    color: $cobalt;
+  }
 }
 
 .yoti-info {
