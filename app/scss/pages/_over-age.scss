@@ -5,6 +5,34 @@
     @include content-title($turquoise);
 }
 
+.what-now {
+    background-color: #D8F1EA;
+    margin: 1rem;
+    padding: 1rem;
+    h3 {
+    font-family: 'childline-bold';
+    font-size: 1.6rem;
+    margin: 0;
+    width: 90%;
+    float: left;
+    color: $plum;
+    }
+    .identity {
+    width: 10%;
+    text-align: right;
+    color: $plum;
+    padding-left: 0.2rem;
+    padding-top: 0.2rem;
+    }
+    p {
+    padding-top: 0.5rem;
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: $plum;
+    }
+}
+
 .other-ops {
     position: relative;
     margin: 0 auto;
@@ -14,7 +42,16 @@
     justify-content: center;
     flex-direction: column;
 }
-
+.contact {
+    float: left;
+    text-align: left !important;
+    display: block;
+    color: $plum;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    transition: all 0.5s ease;
+    font-family: 'childline-bold';
+}
 .option{
     border: 0.2rem solid #3EBB98;
     width: 94%;
@@ -25,7 +62,7 @@
     i {
     width: 10%;
     text-align: right;
-    color: #63297A;
+    color: $plum;
     padding-left: 0.2rem;
     padding-top: 0.2rem;
     }
@@ -33,7 +70,7 @@
     float: left;
     text-align: left !important;
     display: block;
-    color: #63297A;
+    color: $plum;
     padding: 0.5rem;
     margin-left: 1rem;
     transition: all 0.5s ease;
