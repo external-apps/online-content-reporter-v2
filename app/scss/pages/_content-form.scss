@@ -1,5 +1,6 @@
 @import "./helpers/variables";
 @import "./helpers/extends";
+@import "./helpers/mixins";
 /*.message {
     margin: 1rem;
     padding: 0.75rem;
@@ -15,7 +16,7 @@
 }*/
 
 .content-title {
-    background-color: $plum;
+    @include content-title($plum);
     padding: 4rem 1rem 2.5rem 1rem;
 }
 

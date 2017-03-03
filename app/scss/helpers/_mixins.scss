@@ -23,3 +23,8 @@
     padding: 1rem;
     background-color: $background-color;
 }
+
+@mixin content-title ($background-color) {
+  background-color: $background-color;
+  padding: 4rem 1rem 2.5rem 1rem;
+}

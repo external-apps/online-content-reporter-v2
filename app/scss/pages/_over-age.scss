@@ -1,0 +1,42 @@
+@import "./helpers/variables";
+@import "./helpers/extends";
+
+.content-title-overage {
+    @include content-title($turquoise);
+}
+
+.other-ops {
+    position: relative;
+    margin: 0 auto;
+    background-color: white;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.option{
+    border: 0.2rem solid #3EBB98;
+    width: 94%;
+    padding: 0.45rem;
+    margin: 0.5rem auto;
+    display: flex;
+    flex-direction: row;
+    i {
+    width: 10%;
+    text-align: right;
+    color: #63297A;
+    padding-left: 0.2rem;
+    padding-top: 0.2rem;
+    }
+    a {
+    float: left;
+    text-align: left !important;
+    display: block;
+    color: #63297A;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    transition: all 0.5s ease;
+    font-family: 'childline-bold';
+  }
+}
