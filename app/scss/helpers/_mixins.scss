@@ -7,3 +7,12 @@
     background-color: #26a69a;
     transition: width .3s linear;
 }
+
+
+@mixin ageinfo ($background-color) {
+    background-color: $background-color;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin: 1rem;
+}
