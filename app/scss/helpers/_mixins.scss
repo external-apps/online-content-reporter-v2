@@ -16,3 +16,10 @@
     color: white;
     margin: 1rem;
 }
+
+@mixin form-container ($background-color){
+    max-width: 94%;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: $background-color;
+}

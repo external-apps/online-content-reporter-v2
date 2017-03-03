@@ -1,6 +1,6 @@
 @import "./helpers/variables";
 @import "./helpers/mixins";
-
+@import "./helpers/extends";
 .age-title {
     margin: 0;
     background-color:$light-blue;
@@ -29,6 +29,17 @@
   a{
     @extend .age-info-text;
     color: $cobalt;
+  }
+}
+
+.scan-me{
+  @extend .section-title;
+  text-align: center;
+  display: none;
+  padding: 0;
+  img{
+    width: 4rem;
+    margin-left: 1rem;
   }
 }
 
