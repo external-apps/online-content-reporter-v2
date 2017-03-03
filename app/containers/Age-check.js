@@ -9,7 +9,9 @@ class AgeCheck extends React.Component {
         <div className='age-title'>
           <h1 className='title'>ARE YOU UNDER 18?</h1>
         </div>
-
+        <div className='progress'>
+         <div className='determinate'></div>
+      </div>
         <div className='age-responsive'>
           <div className='age-info background-blue'>
             <p className='why-eighteen'>
@@ -39,7 +41,7 @@ class AgeCheck extends React.Component {
               Yoti empowers you to take back control over your identity. If you don't have a Yoti digital identity, please create one <a className='link' href='yoti'>here</a> and use it to verify you are under 17.
             </p>
           </div>
-          <p className='scan-me'>
+          <p className='section-title'>
             SCAN ME WITH YOTI
             <img src='./imgs/yoti-logo.svg' className='popup-yoti' alt='yoti logo' />
           </p>

@@ -1,1 +1,9 @@
-
+@mixin progress ($width:0%) {
+    width:$width;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #26a69a;
+    transition: width .3s linear;
+}

@@ -3,7 +3,8 @@
   font-family: 'Rosie', 'childline-bold';
   font-size: 3rem;
   margin: 0;
-  color: #fff;
+  //color: #fff;
+  color:blue;
   text-align: center;
   padding-bottom: 1rem;
 }
@@ -11,10 +12,41 @@
 .section-title {
   font-family: 'Rosie','childline-bold';
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .text{
   font-size:1.2rem;
   margin:0;
+}
+
+.progress {
+    position: relative;
+    height: 4px;
+    display: block;
+    width: 100%;
+    background-color: #acece6;
+    border-radius: 2px;
+    margin: .5rem 0 1rem 0;
+    overflow: hidden; 
+}
+
+.btn {
+  //  display: block;
+    width: 20rem;
+    margin: 0 auto;
+    background-color: #632c7a;
+    text-transform: none;
+    margin-bottom: 2rem;
+}
+
+body {
+    font-size: 1.2rem;
+    max-width: 440px;
+    margin: 0 auto;
+    font-family: 'childline';
+}
+
+div{
+  display: block;
 }
