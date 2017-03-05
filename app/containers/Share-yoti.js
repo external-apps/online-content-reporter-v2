@@ -17,7 +17,8 @@ class ShareYoti extends React.Component {
     this.state = {
       isMobile: false,
       href: t.config.service + t.appId,
-      target: '_blank'
+      target: '_blank',
+      qrCode
     }
     this.handleClick = this.startVerification.bind(this)
     // this.getQr = this.startVerification.bind(this)
@@ -39,14 +40,17 @@ class ShareYoti extends React.Component {
     xhr.addEventListener('load', function (e) {
       var responseObj = JSON.parse(e.target.responseText)
       //HERE we want to dispatch an action
-      displayQr(responseObj)
+      renderQr(responseObj)
       listenForToken(responseObj.proto, responseObj.url)
     })
     xhr.open('GET', '/qr')
     xhr.send()
   }
 
-  displayQr (responseObj) {
+  renderQr (responseObj) {
+    return (
+
+    )
     qrBtn.style.display = 'none'
     scanMe.style.display = 'block'
     qrCode.innerHTML = responseObj.svg
