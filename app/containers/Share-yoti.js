@@ -1,5 +1,6 @@
 import React from 'react'
 import '../scss/style.scss'
+// import axios from 'axios'
 
 var t = {
   config: {
@@ -13,26 +14,17 @@ var t = {
 class ShareYoti extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {isMobile: false, href: t.config.service + t.appId};
+    this.state = {
+      isMobile: false,
+      href: t.config.service + t.appId,
+      target: '_blank'
+    }
     this.handleClick = this.startVerification.bind(this)
-    this.init = this.init.bind(this)
+    // this.getQr = this.startVerification.bind(this)
   }
 
-  componentDidMount() {
-    init()
-  }
-
-  init() {
-    // for (var s in i) t.config.hasOwnProperty(s) && (t.config[s] = i[s])
-    var v = t.config.service + t.appId
-    var b
-    //HERE WE CHECK IF WE ARE ON A MOBILE OR NOT!
-    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? (this.setState({ isMobile: true}), b = '_self', mobileSetup()) : (v = 'javascript:void(0)', startVerification = getQR)
-    // qrBtn.setAttribute('target', b)
-    // qrBtn.setAttribute('href', t.config.service + t.appId)
-    // qrBtn.setAttribute('data-application-id', t.appId)
-    // qrBtn.setAttribute('data-scenario-id', t.scenId)
-    // qrBtn.addEventListener('click', startVerification)
+  componentDidMount () {
+    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? (this.setState({ isMobile: true, target: '_self'}), mobileSetup()) : (this.setState({href:'#'}))
   }
 
   shareYoti () {
@@ -46,6 +38,7 @@ class ShareYoti extends React.Component {
     var xhr = new XMLHttpRequest()
     xhr.addEventListener('load', function (e) {
       var responseObj = JSON.parse(e.target.responseText)
+      //HERE we want to dispatch an action
       displayQr(responseObj)
       listenForToken(responseObj.proto, responseObj.url)
     })
@@ -88,35 +81,35 @@ class ShareYoti extends React.Component {
     }, r)
   }
 
-  startVerification (t) {
+  startVerification () {
     /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) && navigateToYoti()
   }
 
   mobileSetup () {
-    var url = 'https://www.yoti.com/qr/' + t.scenId,
-     xhr = new XMLHttpRequest
-     xhr.onreadystatechange = function () {
+    var url = 'https://www.yoti.com/qr/' + t.scenId
+    var xhr = new XMLHttpRequest
+    xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         var responseObj = JSON.parse(xhr.responseText)
         // here we assign the url to the link!
         this.setState({href: responseObj.qrcodeUrl + '?callback=' + responseObj.callbackUrl + '&id=' + responseObj.application.id + '&mobile=' + true  })
       }
-     }
-     xhr.open('GET', url, true)
-     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
-     xhr.setRequestHeader('content-type', 'application/json')
-     xhr.send(null)
+    }
+    xhr.open('GET', url, true)
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+    xhr.setRequestHeader('content-type', 'application/json')
+    xhr.send(null)
   }
-
 
   // t.config.service = 'https://code.yoti.com/app/'
   // t.init()
 
   render () {
+    const clickHandler = this.state.isMobile ? (this.startVerification) : (this.getQr)
     return (
       <span href={this.state.href} className='yoti-btn' target={this.state.isMobile} id='yotiBtn'>
         <a
-          onClick={this.startVerification}
+          onClick={clickHandler}
           className='btn yoti-connect learn-more btn-primary'
           data-target='embed'
           data-yoti-type='inline'
