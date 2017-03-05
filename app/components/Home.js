@@ -32,17 +32,12 @@ const Home = () => (
       <img className='landing-logo__img' src="imgs/childline-logo.jpg" alt="childline logo"/>
     </div>
 
-    <div className='landing-btn'>
-      <a className="waves-effect waves-light btn" href='/age-check.html'>
-        Report Content
-        <i className="small material-icons whi">launch</i>
-      </a>
-    </div>
-    <Link to='/age-check'>
+    <Link className='landing-btn' to='/age-check'>
       <p>Prove Age Here</p>
     </Link>
+
     <Link to='/over-age'>
-      <p>be overAge</p>
+      <p>Go to over age here</p>
     </Link>
   </div>
 )
