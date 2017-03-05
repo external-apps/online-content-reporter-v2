@@ -5,7 +5,7 @@ import '../scss/style.scss'
 const ContentForm = () => (
   <div className="content">
     <div className="content-title">
-      <h1 className='title'>DESCRIBE THE ONLINE CONTENT</h1>
+      <h1 className='page-title'>DESCRIBE THE ONLINE CONTENT</h1>
     </div>
 
     <div className="progress">

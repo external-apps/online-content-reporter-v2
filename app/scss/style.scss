@@ -1,2 +1,7 @@
-@import 'home';
-@import 'age-check.scss';
+@import './pages/home';
+@import './pages/age-check';
+@import './pages/content-form';
+@import './pages/url-form';
+@import './pages/over-age';
+@import './pages/main';
+@import './components/modal';

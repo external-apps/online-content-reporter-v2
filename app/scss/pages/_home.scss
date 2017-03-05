@@ -1,0 +1,26 @@
+@import "./helpers/variables";
+
+.landing-header {
+    background-color: $light-blue;
+    padding: 4rem 1rem 1rem 1rem;
+}
+
+
+.landing-info {
+  margin: 1rem;
+  background-color: $cobalt;
+  color: white;
+}
+
+.landing-logo{
+  float: left;
+  min-width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 1rem;
+  img{
+    height:6rem;
+    width:auto;
+    margin-bottom: 1rem;
+  }
+}
