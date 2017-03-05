@@ -9,17 +9,17 @@ describe.only('<Home />', () => {
     const wrapper = shallow(<MyComponent />);
     expect(wrapper.find(Foo)).to.have.length(3);
   });*/
-  //
-  // it('renders an home', () => {
-  //   const wrapper = shallow(<Home />)
-  // //  console.log(wrapper.debug())
-  // //  console.log(wrapper.contains(<p>HAHO</p>))
-  //   console.log(expect(wrapper.contains(<p>HAHO</p>)))
-  //   expect(wrapper.contains(<p>HAHO</p>)).toBeTruthy();
-  // });
 
+   /*it('renders an home', () => {
+     const wrapper = shallow(<Home />)
+//    console.log(wrapper.debug())
+  //  console.log(wrapper.contains(<p>HAHO</p>))
+     console.log(expect(wrapper.contains(<p>HAHO</p>)))
+     expect(wrapper.contains(<p>HAHO</p>)).toBeTruthy();
+   });*/
+//notice: now it requests the assertionfunctions to be Chai style functions..is that what we want?
   it('renders an home', () => {
     const wrapper = shallow(<Home />)
-    expect(wrapper.find('.title')).to.have.length(1)
+    expect(wrapper.find('.landing-header')).to.have.length(1)
   })
 })

@@ -4,8 +4,8 @@ import '../scss/style.scss'
 
 const OverAge = () => (
   <div className="overage">
-  <div className="title title-old-main">
-    <h2 className='old-title'>SORRY, YOU ARE TOO OLD FOR THIS SERVICE</h2>
+  <div className="content-title-overage">
+    <h2 className='page-title'>SORRY, YOU ARE TOO OLD FOR THIS SERVICE</h2>
     <p className='old-title-p'>
       You must be 17 or younger.
     </p>
@@ -21,20 +21,20 @@ const OverAge = () => (
       </div>
 
         <div className='other-ops'>
-          <div className='option1'>
+          <div className='option'>
             <i className="identity small material-icons">contacts</i>
             <a className='contact' href='https://www.ceop.police.uk/CEOP-Reporting/'>
               Contact CEOP
             </a>
           </div>
 
-        <div className="option2">
+        <div className="option">
             <i className="identity small material-icons">contacts</i>
               <a className='contact' href='http://www.themix.org.uk/'>
               Contact The Mix
            </a>
         </div>
-        <div className="option3">
+        <div className="option">
           <i className="identity small material-icons">contacts</i>
           <a className='contact' href='http://www.samaritans.org/'>
             Contact Samaritans
