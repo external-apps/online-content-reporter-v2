@@ -5,33 +5,34 @@ var t = {
   config: {
     service: 'https://www.yoti.com/connect/',
     qr: 'https://www.yoti.com/qr/',
-    appId: '3392788e-e529-4309-8ed7-54d7ac554055',
-    scenId: '5be10ae7-af29-40b0-8d33-a0fb90cb0e88'
-  }
-}
-
-t.init = function(i) {
-  for (var s in i) t.config.hasOwnProperty(s) && (t.config[s] = i[s])
-  var v = t.config.service + t.appId
-  var b
-  //HERE WE CHECK IF WE ARE ON A MOBILE OR NOT!
-  /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? (b = '_self', mobileSetup()) : (v = 'javascript:void(0)', startVerification = getQR)
-  qrBtn.setAttribute('target', b)
-  qrBtn.setAttribute('href', t.config.service + t.appId)
-  // qrBtn.setAttribute('data-application-id', t.appId)
-  // qrBtn.setAttribute('data-scenario-id', t.scenId)
-  qrBtn.addEventListener('click', startVerification)
+  },
+  appId: '3392788e-e529-4309-8ed7-54d7ac554055',
+  scenId: '5be10ae7-af29-40b0-8d33-a0fb90cb0e88'
 }
 
 class ShareYoti extends React.Component {
   constructor (props) {
     super(props)
-    // this.state = {isToggleOn: true};
+    this.state = {isMobile: false, href: t.config.service + t.appId};
     this.handleClick = this.startVerification.bind(this)
+    this.init = this.init.bind(this)
   }
 
   componentDidMount() {
-    t.init()
+    init()
+  }
+
+  init() {
+    // for (var s in i) t.config.hasOwnProperty(s) && (t.config[s] = i[s])
+    var v = t.config.service + t.appId
+    var b
+    //HERE WE CHECK IF WE ARE ON A MOBILE OR NOT!
+    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? (this.setState({ isMobile: true}), b = '_self', mobileSetup()) : (v = 'javascript:void(0)', startVerification = getQR)
+    // qrBtn.setAttribute('target', b)
+    // qrBtn.setAttribute('href', t.config.service + t.appId)
+    // qrBtn.setAttribute('data-application-id', t.appId)
+    // qrBtn.setAttribute('data-scenario-id', t.scenId)
+    // qrBtn.addEventListener('click', startVerification)
   }
 
   shareYoti () {
@@ -39,8 +40,6 @@ class ShareYoti extends React.Component {
     var qrBtn = document.getElementById('yotiBtn')
     var qrCode = document.querySelector('.qr-code-output')
     var scanMe = document.querySelector('.scan-me')
-    var t.appId = '3392788e-e529-4309-8ed7-54d7ac554055'
-    var t.scenId = '5be10ae7-af29-40b0-8d33-a0fb90cb0e88'
   }
 
   getQr () {
@@ -100,7 +99,7 @@ class ShareYoti extends React.Component {
       if (xhr.readyState === 4 && xhr.status === 200) {
         var responseObj = JSON.parse(xhr.responseText)
         // here we assign the url to the link!
-        qrBtn.href = responseObj.qrcodeUrl + '?callback=' + responseObj.callbackUrl + '&id=' + responseObj.application.id + '&mobile=' + true
+        this.setState({href: responseObj.qrcodeUrl + '?callback=' + responseObj.callbackUrl + '&id=' + responseObj.application.id + '&mobile=' + true  })
       }
      }
      xhr.open('GET', url, true)
@@ -115,7 +114,7 @@ class ShareYoti extends React.Component {
 
   render () {
     return (
-      <span className='yoti-btn' id='yotiBtn'>
+      <span href={this.state.href} className='yoti-btn' target={this.state.isMobile} id='yotiBtn'>
         <a
           onClick={this.startVerification}
           className='btn yoti-connect learn-more btn-primary'
