@@ -12,13 +12,16 @@ const style = {
 
 const Home = () => (
   <div className='home'>
-  <div className='landing-header'>
+    <div className='landing-header'>
+      <div className='landing-header__info'>
+      <p>chidline</p>
+      <p className='landing-title__phone'>
+        <a className='link' href="tel:+448001111">Call 0800 1111</a>
+        <i className="tiny material-icons whi">phonelink_ring</i>
+      </p>
+      </div>
       <div>
-        <p>chidline</p>
-        <span className='landing-title__phone'>
-          <a className='link' href="tel:+448001111">Call 0800 1111</a>
-          <i className="tiny material-icons whi">phonelink_ring</i>
-        </span>
+
         <h1 className='page-title'>REPORT ONLINE CONTENT</h1>
       </div>
       <h3>Anonymously and confidentially</h3>
