@@ -1,8 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router'
 import '../scss/style.scss'
+import ShareYoti from './Share-yoti'
 
 class AgeCheck extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {isUnder18: false}
+  }
+
   render () {
     return (
       <div>
@@ -47,17 +53,7 @@ class AgeCheck extends React.Component {
           </p>
         </div>
 
-        <span className='yoti-btn' id='yotiBtn'>
-          <a
-            className='btn yoti-connect learn-more btn-primary'
-            data-target='embed'
-            data-yoti-scenario-id
-            data-yoti-application-id
-            data-yoti-type='inline'
-            data-size='medium'>
-            Share your age using Yoti
-          </a>
-        </span>
+        <ShareYoti />
 
         <Link to='/form'>
           <p>Take me to form</p>
