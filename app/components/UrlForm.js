@@ -1,6 +1,16 @@
 import React from 'react'
+import TextField from 'material-ui/TextField'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import * as mui from 'material-ui';
 import { Link } from 'react-router'
 import '../scss/style.scss'
+
+const AppbarStyles = () => getMuiTheme({
+  palette: {
+    primary1Color: '#f4511e'
+  }
+})
 
 const UrlForm = () => (
   <div>
@@ -8,6 +18,16 @@ const UrlForm = () => (
    <div className="title-div">
      <h1 className='page-title'>REPORT CONTENT WEB ADDRESS</h1>
    </div>
+    <MuiThemeProvider muiTheme={AppbarStyles()}>
+   <TextField
+      hintText="Hint Text"
+      floatingLabelText="Floating Label Text"
+    /><br />
+    <TextField
+      hintText="Hint Text"
+      floatingLabelText="Floating Label Text"
+    /><br />
+    </MuiThemeProvider>
    <div className="progress">
       <div className="determinate" ></div>
    </div>
@@ -25,17 +45,16 @@ const UrlForm = () => (
        <div className="input-field col s6">
          <i className="material-icons prefix">mode_edit</i>
          <textarea id="url" className="materialize-textarea"></textarea>
-         <label for="url">URL</label>
+         <label htmlFor="url">URL</label>
        </div>
        <div className="input-field-2 input-field col s6 ">
          <i className="material-icons prefix">mode_edit</i>
          <textarea id="description" className="materialize-textarea"></textarea>
-         <label for="description">Description</label>
+         <label htmlFor="description">Description</label>
        </div>
        <a className="btn" id="submit-url" >Submit Report</a>
      </form>
    </div>
-   //modal
    <div className="mod-overlay closed" id="mod-overlay"></div>
    <div className="mod closed" id="mod">
      <button className="mod__close-button" id="close-button">X</button>
