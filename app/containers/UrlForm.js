@@ -1,9 +1,14 @@
+
 import React from 'react'
 import TextField from 'material-ui/TextField'
 import { Link } from 'react-router'
 import '../scss/style.scss'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import RaisedButton from 'material-ui/RaisedButton'
+import {List, ListItem} from 'material-ui/List'
+import Subheader from 'material-ui/Subheader'
+import Checkbox from 'material-ui/Checkbox'
+import Toggle from 'material-ui/Toggle'
 var Modal = require('react-modal')
 injectTapEventPlugin()
 
@@ -31,10 +36,10 @@ const customStyles = {
       borderRadius               : '0.25rem',
       outline                    : 'none',
       padding                    : '1rem',
-      width                  : '420px',
-      height: '60%',
-      width:'375px',
-      zIndex:'100'
+      width                      : '420px',
+      height                     : '60%',
+      width                      :'375px',
+      zIndex                     :'100'
     }
 };
 
@@ -43,11 +48,9 @@ class UrlForm extends React.Component {
   constructor(props) {
     super(props);
     this.state ={
-      modalIsOpen : false
+      modalIsOpen : false,
+      firstForm: true
     }
-/*    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);*/
   }
 
 
@@ -55,21 +58,66 @@ openModal() {
   this.setState({modalIsOpen: true});
 }
 
-afterOpenModal() {
- // references are now sync'd and can be accessed.
- this.refs.subtitle.style.color = '#f00';
-}
-
 closeModal() {
   this.setState({modalIsOpen: false});
 }
-
+nextForm() {
+  this.setState({firstForm: false});
+}
 render () {
   console.log(this.state);
  return (
    <div>
+       {this.state.firstForm &&
+         <div className="content">
+           <div className="content-title">
+             <h1 className='page-title'>DESCRIBE THE ONLINE CONTENT</h1>
+           </div>
 
-       <div className="content">
+           <div className="progress">
+              <div className="determinate2"></div>
+           </div>
+
+           <div className='content-describe form-container'>
+             <p>
+               The content must fit a certain criteria for us to legally remove it. Please select the boxes below that apply.
+             </p>
+           </div>
+
+           <div className="form-container">
+             <form action="#">
+             <List>
+               <Subheader>Describe image content</Subheader>
+               <ListItem primaryText="Someone posing in a sexual way" leftCheckbox={<Checkbox />} />
+               <ListItem primaryText="Someone touching themselves in a sexual way" leftCheckbox={<Checkbox />} />
+               <ListItem primaryText="Any sexual activity involving a child, adult or both" leftCheckbox={<Checkbox />} />
+               <ListItem primaryText="Someone hurting someone else" leftCheckbox={<Checkbox />} />
+               <ListItem primaryText="Sexual activity that includes animals." leftCheckbox={<Checkbox />} />
+             </List>
+               <a className="confirm waves-effect waves-light btn" href='/url-form.html'>Confirm</a>
+               <RaisedButton label="Verify age"  href='/url-form.html'/>
+
+             </form>
+           </div>
+
+           <div className="other-options">
+               <p><i className="large material-icons">info_outline</i>
+                 If the picture or video doesnt include any of the activities above,
+                  we may not be able to remove it. Talk to a
+                   <span><a href="https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/"> Childline counsellor</a></span>
+                    for more advice.
+                 </p>
+           </div>
+           <Link to='/form2'>
+             <p>FORM2</p>
+           </Link>
+           <button onClick={()=>this.nextForm()}>Go To Next Form</button>
+         </div>
+       }
+
+
+       {!this.state.firstForm &&
+      <div className="content">
         <div className="title-div">
           <h1 className='page-title'>REPORT CONTENT WEB ADDRESS</h1>
         </div>
@@ -104,15 +152,15 @@ render () {
             <RaisedButton label="Verify age" labelColor= {"#632c7a"} id='submit-url' />
           </form>
         </div>
-      </div>
+        <button onClick={()=>this.openModal()}>Open Modal</button>
 
-     <button onClick={()=>this.openModal()}>Open Modal</button>
+
+
      <Modal
        isOpen={this.state.modalIsOpen}
-       onAfterOpen={()=>this.afterOpenModal()}
        onRequestClose={()=>this.closeModal()}
        style={customStyles}
-       contentLabel="Example Modal"
+       contentLabel="Reassuring message"
      >
 
 
@@ -131,6 +179,8 @@ render () {
 
        <button onClick={()=>this.closeModal()}>close</button>
      </Modal>
+    </div>
+   }
    </div>
  );
 }
