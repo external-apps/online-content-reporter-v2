@@ -5,7 +5,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AgeCheck from './containers/Age-check'
 import Home from './components/Home'
-import ContentForm from './components/ContentForm'
 import UrlForm from './containers/UrlForm'
 import OverAge from './components/OverAge'
 import { Provider } from 'react-redux'
@@ -25,8 +24,7 @@ ReactDOM.render(
       <Router history={browserHistory}>
         <Route path='/' component={Home} />
         <Route path='/age-check' component={AgeCheck} />
-        <Route path='/form' component={ContentForm} />
-        <Route path='/form2' component={UrlForm} />
+        <Route path='/form' component={UrlForm} />
         <Route path='/over-age' component={OverAge} />
       </Router>
     </Provider>

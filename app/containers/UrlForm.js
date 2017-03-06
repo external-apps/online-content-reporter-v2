@@ -91,7 +91,7 @@ render () {
              <List>
                <Subheader>Describe image content</Subheader>
                <ListItem primaryText="Someone posing in a sexual way"  onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Someone posing in a sexual way"]});}}leftCheckbox={<Checkbox />} />
-               <ListItem primaryText="Someone touching themselves in a sexual way" onChange={()=>{console.log(typeof this.state.imageCriteria,this.state.imageCriteria);this.setState({imageCriteria:[...this.state.imageCriteria,"Someone touching themselves in a sexual way"]});}}  leftCheckbox={<Checkbox />} />
+               <ListItem primaryText="Someone touching themselves in a sexual way" onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Someone touching themselves in a sexual way"]});}}  leftCheckbox={<Checkbox />} />
                <ListItem primaryText="Any sexual activity involving a child, adult or both" onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Any sexual activity involving a child, adult or both"]});}} leftCheckbox={<Checkbox />} />
                <ListItem primaryText="Someone hurting someone else" onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Someone hurting someone else"]});}} leftCheckbox={<Checkbox />} />
                <ListItem primaryText="Sexual activity that includes animals."  onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Sexual activity that includes animals."]});;}}leftCheckbox={<Checkbox />} />
@@ -110,9 +110,9 @@ render () {
                     for more advice.
                  </p>
            </div>
-           <Link to='/form2'>
+        /*   <Link to='/form2'>
              <p>FORM2</p>
-           </Link>
+           </Link>*/
            <button onClick={()=>this.nextForm()}>Go To Next Form</button>
          </div>
        }
@@ -164,9 +164,6 @@ render () {
        style={customStyles}
        contentLabel="Reassuring message"
      >
-
-
-
 
 
          <div className="">
