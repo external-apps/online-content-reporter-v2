@@ -7,22 +7,10 @@ export const addQr = (qrSvg) => {
   }
 }
 
-export const targetSelf = () => {
+export const setUpForMobile = (href) => {
   return {
-    type: types.TARGET_SELF,
+    type: types.SET_UP_FOR_MOBILE,
+    href,
     target: '_self'
-  }
-}
-
-export const setHref = (href) => {
-  return {
-    type: types.SET_HREF,
-    href
-  }
-}
-
-export const toggleMobile = () => {
-  return {
-    type: types.TOGGLE_MOBILE
   }
 }
