@@ -1,8 +1,6 @@
 import {
   ADD_QR_CODE,
-  TARGET_SELF,
-  SET_HREF,
-  TOGGLE_MOBILE
+  SET_UP_FOR_MOBILE
 } from '../../constants/action-types'
 
 const initialState = {
@@ -18,20 +16,12 @@ const qr = (state = initialState, action) => {
         ...state,
         qrSvg: action.qrSvg
       }
-    case TARGET_SELF:
+    case SET_UP_FOR_MOBILE:
       return {
         ...state,
+        isMobile: !state.isMobile,
+        href: action.href,
         target: action.target
-      }
-    case SET_HREF:
-      return {
-        ...state,
-        href: action.href
-      }
-    case TOGGLE_MOBILE:
-      return {
-        ...state,
-        isMobile: !state.isMobile
       }
     default:
       return state
