@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router'
 import '../scss/style.scss'
-import {List, ListItem} from 'material-ui/List';
-import Subheader from 'material-ui/Subheader';
-import Checkbox from 'material-ui/Checkbox';
-import Toggle from 'material-ui/Toggle';
+import {List, ListItem} from 'material-ui/List'
+import Subheader from 'material-ui/Subheader'
+import Checkbox from 'material-ui/Checkbox'
+import Toggle from 'material-ui/Toggle'
+import RaisedButton from 'material-ui/RaisedButton'
+
+
 const ContentForm = () => (
   <div className="content">
     <div className="content-title">
@@ -32,6 +35,8 @@ const ContentForm = () => (
         <ListItem primaryText="Sexual activity that includes animals." leftCheckbox={<Checkbox />} />
       </List>
         <a className="confirm waves-effect waves-light btn" href='/url-form.html'>Confirm</a>
+        <RaisedButton label="Verify age"  href='/url-form.html'/>
+
       </form>
     </div>
 
