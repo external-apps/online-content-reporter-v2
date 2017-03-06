@@ -12,7 +12,7 @@ const UrlForm = () => (
      <h1 className='page-title'>REPORT CONTENT WEB ADDRESS</h1>
    </div>
    <div className="progress">
-      <div className="determinate" ></div>
+      <div className="determinate3" ></div>
    </div>
    <div className="message">
      <h4 className="section-title">WEBSITE DETAILS</h4>

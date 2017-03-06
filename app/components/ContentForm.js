@@ -12,7 +12,7 @@ const ContentForm = () => (
     </div>
 
     <div className="progress">
-       <div className="determinate"></div>
+       <div className="determinate2"></div>
     </div>
 
     <div className='content-describe form-container'>
