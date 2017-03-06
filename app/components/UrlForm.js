@@ -2,7 +2,9 @@ import React from 'react'
 import TextField from 'material-ui/TextField'
 import { Link } from 'react-router'
 import '../scss/style.scss'
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import injectTapEventPlugin from 'react-tap-event-plugin'
+import RaisedButton from 'material-ui/RaisedButton'
+
 injectTapEventPlugin()
 
 const UrlForm = () => (
@@ -39,7 +41,7 @@ const UrlForm = () => (
       rows={10}
     /><br />
        </div>
-       <a className="btn" id="submit-url" >Submit Report</a>
+       <RaisedButton label="Verify age" labelColor= {"#632c7a"} id='submit-url' />
      </form>
    </div>
    <div className="mod-overlay closed" id="mod-overlay"></div>
