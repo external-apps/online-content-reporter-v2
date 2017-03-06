@@ -30,6 +30,10 @@ class ShareYoti extends React.Component {
     this.mobileSetup = this.mobileSetup.bind(this)
   }
 
+  startVerification () {
+    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) && navigateToYoti()
+  }
+
   listenForToken (proto, url) {
     var host = 'wss://api.yoti.com/api/v1/connect-sessions/' + proto
     var socket = new WebSocket(host)
@@ -57,15 +61,16 @@ class ShareYoti extends React.Component {
   }
 
   mobileSetup () {
+    console.log('on mobile')
     var url = 'https://www.yoti.com/qr/' + t.scenId
     var xhr = new XMLHttpRequest
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4 && xhr.status === 200) {
         var responseObj = JSON.parse(xhr.responseText)
-
-        this.props.setHref(`${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=true`)
-
-        this.props.targetSelf()
+        console.log('CALLBACK URL: ', responseObj.callbackUrl)
+        const callbackUrl = responseObj.callbackUrl
+        const href = `${responseObj.qrCodeUrl}?callback=http://localhost:3000/thankyou&id=${responseObj.application.id}&mobile=${true}`
+        this.props.setUpForMobile(href)
       }
     }
     xhr.open('GET', url, true)
@@ -75,15 +80,10 @@ class ShareYoti extends React.Component {
   }
 
   componentDidMount () {
-    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? (this.props.toggleMobile(), this.mobileSetup()) : console.log('desktop')
-  }
-
-  startVerification () {
-    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) && navigateToYoti()
+    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? this.mobileSetup() : (console.log('on desktop'), console.log('Component mounted, here are my props:', this.props))
   }
 
   getQr () {
-    console.log(this.props, "PROPS IM LOOKING FOR");
     var xhr = new XMLHttpRequest()
     xhr.addEventListener('load', (e) => {
       var responseObj = JSON.parse(e.target.responseText)
@@ -131,5 +131,5 @@ const mapStateToProps = (state) => {
 const actionCreators = {
   ...qrActions
 }
-console.log(actionCreators, "ACTION CREATORS!")
+console.log(`These are my actionCreators: ${actionCreators}`)
 export default connect(mapStateToProps, actionCreators)(ShareYoti)
