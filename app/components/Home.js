@@ -1,6 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router'
 import '../scss/style.scss'
+import RaisedButton from 'material-ui/RaisedButton'
+
+const style = {
+  margin: 12,
+  labelColor: "#632c7a",
+  backgroundColor:"#632c7a"
+};
+
 
 const Home = () => (
   <div className='home'>
@@ -30,6 +38,7 @@ const Home = () => (
     <div className='landing-logo'>
       <img className='landing-logo__img' src="imgs/childline-logo.jpg" alt="childline logo"/>
     </div>
+    <RaisedButton label="Verify age" labelColor= {"#632c7a"} />
 
     <Link className='landing-btn' to='/age-check'>
       <p>Prove Age Here</p>
