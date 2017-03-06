@@ -1,14 +1,7 @@
 import React from 'react'
 import TextField from 'material-ui/TextField'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { Link } from 'react-router'
 import '../scss/style.scss'
-
-const AppbarStyles = () => getMuiTheme({
-  palette: {
-    primary1Color: '#f4511e'
-  }
-})
 
 const UrlForm = () => (
   <div>
@@ -16,6 +9,10 @@ const UrlForm = () => (
    <div className="title-div">
      <h1 className='page-title'>REPORT CONTENT WEB ADDRESS</h1>
    </div>
+   <TextField
+      hintText="Hint Text"
+      floatingLabelText="Floating Label Text"
+    /><br />
    <div className="progress">
       <div className="determinate" ></div>
    </div>

@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Route, Router, browserHistory } from 'react-router'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AgeCheck from './containers/Age-check'
 import Home from './components/Home'
 import ContentForm from './components/ContentForm'
@@ -16,17 +18,19 @@ const reducers = combineReducers({
 
 const store = createStore(reducers)
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path='/' component={Home} />
-      <Route path='/age-check' component={AgeCheck} />
-      <Route path='/form' component={ContentForm} />
-      <Route path='/form2' component={UrlForm} />
-      <Route path='/over-age' component={OverAge} />
 
-    </Router>
-  </Provider>,
+ReactDOM.render(
+  <MuiThemeProvider muiTheme={getMuiTheme({userAgent: navigator.userAgent})}>
+    <Provider store={store}>
+      <Router history={browserHistory}>
+        <Route path='/' component={Home} />
+        <Route path='/age-check' component={AgeCheck} />
+        <Route path='/form' component={ContentForm} />
+        <Route path='/form2' component={UrlForm} />
+        <Route path='/over-age' component={OverAge} />
+      </Router>
+    </Provider>
+  </MuiThemeProvider>,
   document.getElementById('root')
 )
 
