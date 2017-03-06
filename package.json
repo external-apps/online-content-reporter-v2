@@ -25,6 +25,7 @@
   "homepage": "https://github.com/childline-yoti/online-content-reporter#readme",
   "dependencies": {
     "axios": "^0.15.3",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-register": "^6.23.0",
     "classnames": "^2.2.5",
     "express": "^4.14.1",
