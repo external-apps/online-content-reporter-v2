@@ -22,23 +22,23 @@ const ContentForm = () => (
       <form action="#">
         <p>
           <input type="checkbox" className="filled-in" id="filled-in-box-1"  />
-          <label for="filled-in-box-1">Someone posing in a sexual way</label>
+          <label htmlFor="filled-in-box-1">Someone posing in a sexual way</label>
         </p>
         <p>
           <input type="checkbox" className="filled-in" id="filled-in-box-2" />
-          <label for="filled-in-box-2">Someone touching themselves in a sexual way</label>
+          <label htmlFor="filled-in-box-2">Someone touching themselves in a sexual way</label>
         </p>
         <p>
           <input type="checkbox" className="filled-in" id="filled-in-box-3" />
-          <label for="filled-in-box-3">Any sexual activity involving a child, adult or both</label>
+          <label htmlFor="filled-in-box-3">Any sexual activity involving a child, adult or both</label>
         </p>
         <p>
           <input type="checkbox" className="filled-in" id="filled-in-box-4"  />
-          <label for="filled-in-box-4">Someone hurting someone else</label>
+          <label htmlFor="filled-in-box-4">Someone hurting someone else</label>
         </p>
         <p>
           <input type="checkbox" className="filled-in" id="filled-in-box-5" />
-          <label for="filled-in-box-5">Sexual activity that includes animals.</label>
+          <label htmlFor="filled-in-box-5">Sexual activity that includes animals.</label>
         </p>
         <a className="confirm waves-effect waves-light btn" href='/url-form.html'>Confirm</a>
       </form>
