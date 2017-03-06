@@ -63,8 +63,8 @@ class ShareYoti extends React.Component {
       if (xhr.readyState === 4 && xhr.status === 200) {
         var responseObj = JSON.parse(xhr.responseText)
 
-        this.props.setHref(`${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=${true}`)
-        this.props.toggleMobile()
+        this.props.setHref(`${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=true`)
+
         this.props.targetSelf()
       }
     }
@@ -75,7 +75,7 @@ class ShareYoti extends React.Component {
   }
 
   componentDidMount () {
-    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? this.mobileSetup() : console.log('desktop')
+    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? (this.props.toggleMobile(), this.mobileSetup()) : console.log('desktop')
   }
 
   startVerification () {
