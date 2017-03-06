@@ -9,10 +9,11 @@
       color: white;
       text-align: center;
     }
+
 }
 
 .landing-header__info{
-  position: fixed;
+  position: absolute;
   width:60%; //fix this later
   top: 0;
   display: flex;
@@ -24,21 +25,22 @@
     color:white;
   }
 }
-a {
-    text-decoration: none;
-    color: #039be5;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-    &:hover{
-      color:orange;
-    }
-}
+
 
 .landing-info {
   margin: 1rem;
   background-color: $cobalt;
   color: white;
   padding:1rem;
+  a {
+      text-decoration: none;
+      color: #039be5;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      &:hover{
+        color:orange;
+      }
+  }
 }
 
 .landing-logo{
