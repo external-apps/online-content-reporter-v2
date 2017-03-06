@@ -36,18 +36,12 @@ const ContentForm = () => (
     </div>
 
     <div className="other-options">
-      <div className="info">
-        <i className="large material-icons">info_outline</i>
-      </div>
-
-      <div className="info-message">
-        <p className="other-report">
+        <p><i className="large material-icons">info_outline</i>
           If the picture or video doesnt include any of the activities above,
            we may not be able to remove it. Talk to a
             <span><a href="https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/"> Childline counsellor</a></span>
              for more advice.
           </p>
-        </div>
     </div>
     <Link to='/form2'>
       <p>FORM2</p>
