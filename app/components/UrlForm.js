@@ -2,6 +2,8 @@ import React from 'react'
 import TextField from 'material-ui/TextField'
 import { Link } from 'react-router'
 import '../scss/style.scss'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin()
 
 const UrlForm = () => (
   <div>
@@ -9,10 +11,6 @@ const UrlForm = () => (
    <div className="title-div">
      <h1 className='page-title'>REPORT CONTENT WEB ADDRESS</h1>
    </div>
-   <TextField
-      hintText="Hint Text"
-      floatingLabelText="Floating Label Text"
-    /><br />
    <div className="progress">
       <div className="determinate" ></div>
    </div>
@@ -28,14 +26,18 @@ const UrlForm = () => (
      <h4 className="section-title">WEB ADDRESS</h4>
      <form action="#">
        <div className="input-field col s6">
-         <i className="material-icons prefix">mode_edit</i>
-         <textarea id="url" className="materialize-textarea"></textarea>
-         <label htmlFor="url">URL</label>
+       <TextField
+          hintText="http://"
+          floatingLabelText="url"
+        /><br />
        </div>
        <div className="input-field-2 input-field col s6 ">
-         <i className="material-icons prefix">mode_edit</i>
-         <textarea id="description" className="materialize-textarea"></textarea>
-         <label htmlFor="description">Description</label>
+       <TextField
+      hintText="Message Field"
+      floatingLabelText="Description"
+      multiLine={true}
+      rows={10}
+    /><br />
        </div>
        <a className="btn" id="submit-url" >Submit Report</a>
      </form>
