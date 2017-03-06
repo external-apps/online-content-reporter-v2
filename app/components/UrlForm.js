@@ -1,8 +1,6 @@
 import React from 'react'
 import TextField from 'material-ui/TextField'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import * as mui from 'material-ui';
 import { Link } from 'react-router'
 import '../scss/style.scss'
 
@@ -18,16 +16,6 @@ const UrlForm = () => (
    <div className="title-div">
      <h1 className='page-title'>REPORT CONTENT WEB ADDRESS</h1>
    </div>
-    <MuiThemeProvider muiTheme={AppbarStyles()}>
-   <TextField
-      hintText="Hint Text"
-      floatingLabelText="Floating Label Text"
-    /><br />
-    <TextField
-      hintText="Hint Text"
-      floatingLabelText="Floating Label Text"
-    /><br />
-    </MuiThemeProvider>
    <div className="progress">
       <div className="determinate" ></div>
    </div>

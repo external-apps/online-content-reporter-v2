@@ -1,24 +1,28 @@
-!function() {
-    "use strict";
+!(function () {
+    'use strict'
     var qrBtn = document.getElementById('yotiBtn'),
       qrCode = document.querySelector('.qr-code-output'),
       scanMe = document.querySelector('.scan-me'),
       appId = '3392788e-e529-4309-8ed7-54d7ac554055',
-      scenId = '5be10ae7-af29-40b0-8d33-a0fb90cb0e88';
+      scenId = '5be10ae7-af29-40b0-8d33-a0fb90cb0e88'
 
     var getQR = function () {
-      var o = new XMLHttpRequest();
-      o.addEventListener('load', function (e) {
-        var responseObj = JSON.parse(e.target.responseText);
-        qrBtn.style.display = 'none';
-        scanMe.style.display = 'block';
-        qrCode.innerHTML = responseObj.svg;
-        qrCode.style.textAlign = 'center';
-        listenForToken(responseObj.proto, responseObj.url);
-      });
-      o.open('GET', '/qr');
-      o.send();
-    };
+      var xhr = new XMLHttpRequest()
+      xhr.addEventListener('load', function (e) {
+        var responseObj = JSON.parse(e.target.responseText)
+        displayQr(responseObj)
+        listenForToken(responseObj.proto, responseObj.url)
+      })
+      xhr.open('GET', '/qr')
+      xhr.send()
+    }
+
+    var displayQr = function (responseObj) {
+      qrBtn.style.display = 'none'
+      scanMe.style.display = 'block'
+      qrCode.innerHTML = responseObj.svg
+      qrCode.style.textAlign = 'center'
+    }
 
     var listenForToken= function(proto, url) {
       var host = 'wss://api.yoti.com/api/v1/connect-sessions/' + proto;
@@ -95,4 +99,4 @@
     }
     t.config.service = 'https://code.yoti.com/app/'
     t.init()
-  }();
+  })()
