@@ -39,26 +39,33 @@ const customStyles = {
 };
 
 
-const UrlForm = React.createClass( {
+class UrlForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state ={
+      modalIsOpen : false
+    }
+/*    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);*/
+  }
 
-  getInitialState: function() {
- return { modalIsOpen: false };
-},
 
-openModal: function() {
- this.setState({modalIsOpen: true});
-},
+openModal() {
+  this.setState({modalIsOpen: true});
+}
 
-afterOpenModal: function() {
+afterOpenModal() {
  // references are now sync'd and can be accessed.
  this.refs.subtitle.style.color = '#f00';
-},
+}
 
-closeModal: function() {
- this.setState({modalIsOpen: false});
-},
+closeModal() {
+  this.setState({modalIsOpen: false});
+}
 
-render: function() {
+render () {
+  console.log(this.state);
  return (
    <div>
 
@@ -99,12 +106,11 @@ render: function() {
         </div>
       </div>
 
-
-     <button onClick={this.openModal}>Open Modal</button>
+     <button onClick={()=>this.openModal()}>Open Modal</button>
      <Modal
        isOpen={this.state.modalIsOpen}
-       onAfterOpen={this.afterOpenModal}
-       onRequestClose={this.closeModal}
+       onAfterOpen={()=>this.afterOpenModal()}
+       onRequestClose={()=>this.closeModal()}
        style={customStyles}
        contentLabel="Example Modal"
      >
@@ -123,12 +129,12 @@ render: function() {
          </div>
 
 
-       <button onClick={this.closeModal}>close</button>
+       <button onClick={()=>this.closeModal()}>close</button>
      </Modal>
    </div>
  );
 }
 
-})
+}
 
 export default UrlForm
