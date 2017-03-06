@@ -1,0 +1,6 @@
+module.exports = {
+  ADD_QR_CODE: 'ADD_QR_CODE',
+  TARGET_SELF: 'TARGET_SELF',
+  SET_HREF: 'SET_HREF',
+  TOGGLE_MOBILE: 'TOGGLE_MOBILE'
+}
