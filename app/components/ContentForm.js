@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
 import '../scss/style.scss'
-
+import {List, ListItem} from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
+import Checkbox from 'material-ui/Checkbox';
+import Toggle from 'material-ui/Toggle';
 const ContentForm = () => (
   <div className="content">
     <div className="content-title">
@@ -20,26 +23,14 @@ const ContentForm = () => (
 
     <div className="form-container">
       <form action="#">
-        <p>
-          <input type="checkbox" className="filled-in" id="filled-in-box-1"  />
-          <label htmlFor="filled-in-box-1">Someone posing in a sexual way</label>
-        </p>
-        <p>
-          <input type="checkbox" className="filled-in" id="filled-in-box-2" />
-          <label htmlFor="filled-in-box-2">Someone touching themselves in a sexual way</label>
-        </p>
-        <p>
-          <input type="checkbox" className="filled-in" id="filled-in-box-3" />
-          <label htmlFor="filled-in-box-3">Any sexual activity involving a child, adult or both</label>
-        </p>
-        <p>
-          <input type="checkbox" className="filled-in" id="filled-in-box-4"  />
-          <label htmlFor="filled-in-box-4">Someone hurting someone else</label>
-        </p>
-        <p>
-          <input type="checkbox" className="filled-in" id="filled-in-box-5" />
-          <label htmlFor="filled-in-box-5">Sexual activity that includes animals.</label>
-        </p>
+      <List>
+        <Subheader>Describe image content</Subheader>
+        <ListItem primaryText="Someone posing in a sexual way" leftCheckbox={<Checkbox />} />
+        <ListItem primaryText="Someone touching themselves in a sexual way" leftCheckbox={<Checkbox />} />
+        <ListItem primaryText="Any sexual activity involving a child, adult or both" leftCheckbox={<Checkbox />} />
+        <ListItem primaryText="Someone hurting someone else" leftCheckbox={<Checkbox />} />
+        <ListItem primaryText="Sexual activity that includes animals." leftCheckbox={<Checkbox />} />
+      </List>
         <a className="confirm waves-effect waves-light btn" href='/url-form.html'>Confirm</a>
       </form>
     </div>
