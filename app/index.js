@@ -24,7 +24,6 @@ ReactDOM.render(
       <Route path='/form' component={ContentForm} />
       <Route path='/form2' component={UrlForm} />
       <Route path='/over-age' component={OverAge} />
-
     </Router>
   </Provider>,
   document.getElementById('root')
