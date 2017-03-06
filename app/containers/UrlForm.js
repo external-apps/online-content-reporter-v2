@@ -49,7 +49,8 @@ class UrlForm extends React.Component {
     super(props);
     this.state ={
       modalIsOpen : false,
-      firstForm: true
+      firstForm: true,
+      imageCriteria: []
     }
   }
 
@@ -64,8 +65,9 @@ closeModal() {
 nextForm() {
   this.setState({firstForm: false});
 }
+
 render () {
-  console.log(this.state);
+  console.log('i am here'+this.state.imageCriteria);
  return (
    <div>
        {this.state.firstForm &&
@@ -88,11 +90,11 @@ render () {
              <form action="#">
              <List>
                <Subheader>Describe image content</Subheader>
-               <ListItem primaryText="Someone posing in a sexual way" leftCheckbox={<Checkbox />} />
-               <ListItem primaryText="Someone touching themselves in a sexual way" leftCheckbox={<Checkbox />} />
-               <ListItem primaryText="Any sexual activity involving a child, adult or both" leftCheckbox={<Checkbox />} />
-               <ListItem primaryText="Someone hurting someone else" leftCheckbox={<Checkbox />} />
-               <ListItem primaryText="Sexual activity that includes animals." leftCheckbox={<Checkbox />} />
+               <ListItem primaryText="Someone posing in a sexual way"  onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Someone posing in a sexual way"]});}}leftCheckbox={<Checkbox />} />
+               <ListItem primaryText="Someone touching themselves in a sexual way" onChange={()=>{console.log(typeof this.state.imageCriteria,this.state.imageCriteria);this.setState({imageCriteria:[...this.state.imageCriteria,"Someone touching themselves in a sexual way"]});}}  leftCheckbox={<Checkbox />} />
+               <ListItem primaryText="Any sexual activity involving a child, adult or both" onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Any sexual activity involving a child, adult or both"]});}} leftCheckbox={<Checkbox />} />
+               <ListItem primaryText="Someone hurting someone else" onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Someone hurting someone else"]});}} leftCheckbox={<Checkbox />} />
+               <ListItem primaryText="Sexual activity that includes animals."  onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Sexual activity that includes animals."]});;}}leftCheckbox={<Checkbox />} />
              </List>
                <a className="confirm waves-effect waves-light btn" href='/url-form.html'>Confirm</a>
                <RaisedButton label="Verify age"  href='/url-form.html'/>
@@ -187,4 +189,7 @@ render () {
 
 }
 
+UrlForm.propTypes = {
+  imageCriteria: React.PropTypes.array
+};
 export default UrlForm
