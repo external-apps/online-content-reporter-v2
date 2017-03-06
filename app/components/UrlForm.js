@@ -19,18 +19,22 @@ const customStyles = {
     },
     content : {
       position                   : 'absolute',
-      top                        : '5rem',
-      left                       : '10rem',
-      right                      : '10rem',
-      bottom                     : '5rem',
+      top                        : '50%',
+      left                       :'50%',
+      bottom                     :'50%',
+      right                      : '50%',
+      transform                  :'translate(-50%, -50%)',
       border                     : '1px solid #ccc',
       background                 : '#fff',
       overflow                   : 'hidden',
       WebkitOverflowScrolling    : 'touch',
       borderRadius               : '0.25rem',
       outline                    : 'none',
-      padding                    : '1rem'
-
+      padding                    : '1rem',
+      width                  : '420px',
+      height: '60%',
+      width:'375px',
+      zIndex:'100'
     }
 };
 
@@ -109,7 +113,7 @@ render: function() {
 
 
 
-         <div className="mod__content">
+         <div className="">
            <h1>Thank you. The online content has been reported for removal</h1>
            <p>
              If you would like IWF to update you by email, please enter your email address below.
