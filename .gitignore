@@ -4,4 +4,4 @@ npm-debug.log
 
 keys
 
-dist
+dist/*
