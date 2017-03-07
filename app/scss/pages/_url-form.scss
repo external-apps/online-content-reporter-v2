@@ -15,10 +15,6 @@
     background-color: $cobalt;
 }
 
-.determinate3{
-  @include progress(100%);
-}
-
 .form-container {
     @include form-container($superlight-blue);
 }

@@ -1,8 +1,6 @@
 import React from 'react'
 import '../scss/style.scss'
-import * as qrActions from '../actions/qr'
-import { connect } from 'react-redux'
-import QrCode from '../components/QrCode'
+import RaisedButton from 'material-ui/RaisedButton'
 import { browserHistory } from 'react-router'
 
 var t = {
@@ -14,7 +12,7 @@ var t = {
   scenId: '5be10ae7-af29-40b0-8d33-a0fb90cb0e88'
 }
 
-class ShareYoti extends React.Component {
+class YotiShareButton extends React.Component {
   constructor (props) {
     super(props)
 
@@ -105,21 +103,18 @@ class ShareYoti extends React.Component {
       //   >
       //   Share your age using Yoti
       // </a>
+    if(!this.props.qr.haveQr) {
+      return (
+        <RaisedButton onClick={clickHandler} target={this.props.qr.target} label='Share your age using Yoti' labelColor={'#632c7a'} />
+      )
+    }
     return (
-      <span onClick={clickHandler} className='yoti-btn btn yoti-connect' target={this.props.qr.target} id='yotiBtn'>
-        <QrCode {...this.props} />
-        Share your age using Yoti
-      </span>
+      <p className='scan-me'>
+        SCAN ME WITH YOTI
+        <img src='./imgs/yoti-logo.svg' className='popup-yoti' alt='yoti logo' />
+      </p>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  return { qr: state.qr }
-}
-
-const actionCreators = {
-  ...qrActions
-}
-
-export default connect(mapStateToProps, actionCreators)(ShareYoti)
+export default YotiShareButton

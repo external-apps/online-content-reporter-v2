@@ -9,7 +9,10 @@ import {List, ListItem} from 'material-ui/List'
 import Subheader from 'material-ui/Subheader'
 import Checkbox from 'material-ui/Checkbox'
 import Toggle from 'material-ui/Toggle'
-var Modal = require('react-modal')
+import Modal from 'react-modal'
+import PageTitle from '../components/PageTitle'
+import ProgressBar from '../components/ProgressBar'
+
 injectTapEventPlugin()
 
 const customStyles = {
@@ -28,7 +31,7 @@ const customStyles = {
       left                       :'50%',
       bottom                     :'50%',
       right                      : '50%',
-      transform                  :'translate(-50%, -50%)',
+      transform                  :'translate (-50%, -50%)',
       border                     : '1px solid #ccc',
       background                 : '#fff',
       overflow                   : 'hidden',
@@ -72,13 +75,10 @@ render () {
    <div>
        {this.state.firstForm &&
          <div className="content">
-           <div className="content-title">
-             <h1 className='page-title'>DESCRIBE THE ONLINE CONTENT</h1>
-           </div>
 
-           <div className="progress">
-              <div className="determinate2"></div>
-           </div>
+           <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='bg-plum' />
+
+             <ProgressBar percentage='66' />
 
            <div className='content-describe form-container'>
              <p>
@@ -96,8 +96,7 @@ render () {
                <ListItem primaryText="Someone hurting someone else" onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Someone hurting someone else"]});}} leftCheckbox={<Checkbox />} />
                <ListItem primaryText="Sexual activity that includes animals."  onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Sexual activity that includes animals."]});;}}leftCheckbox={<Checkbox />} />
              </List>
-               <a className="confirm waves-effect waves-light btn" href='/url-form.html'>Confirm</a>
-               <RaisedButton label="Verify age"  href='/url-form.html'/>
+              <RaisedButton label="Confirm"  href='/url-form.html' />
 
              </form>
            </div>

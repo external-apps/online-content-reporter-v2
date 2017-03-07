@@ -1,40 +1,33 @@
-//should we do extends??
-.page-title{
-  font-family: 'Rosie', 'childline-bold';
-  font-size: 3rem;
-  margin: 0;
-  color: #fff;
-  text-align: center;
-  padding-bottom: 1rem;
+//Not sure where this part below should go.. but it relates to our Reusable components
+.bg-light-blue {
+  background-color: $light-blue;
+}
+
+.bg-dark-cobalt {
+  background-color: $dark-cobalt;
+}
+
+.bg-plum {
+  background-color: $plum;
 }
 
 .section-title {
   font-family: 'Rosie','childline-bold';
   margin: 0;
   font-size: 1.5rem;
-  
 }
+
 button{
   background-color:$plum;
 }
-.text{
+
+.text {
   font-size:1.2rem;
   margin:0;
 }
 
-.progress {
-    position: relative;
-    height: 4px;
-    display: block;
-    width: 100%;
-    background-color: #acece6;
-    border-radius: 2px;
-    margin: .5rem 0 1rem 0;
-    overflow: hidden;
-}
-
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .age-info-text{
   margin: 0;
@@ -51,12 +44,7 @@ a {
     margin-bottom: 2rem;
 }
 
-body {
-    font-size: 1.2rem;
-    max-width: 440px;
-    margin: 0 auto;
-    font-family: 'childline';
-}
+
 
 div{
   display: block;
