@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import * as qrActions from '../actions/qr'
+import * as yotiActions from '../actions/yoti'
 
 import YotiShareButton from '../components/YotiShareButton'
 import YotiDescription from '../components/YotiDescription'
@@ -18,11 +18,11 @@ class Yoti extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { qr: state.qr }
+  return { yoti: state.yoti }
 }
 
 const actionCreators = {
-  ...qrActions
+  ...yotiActions
 }
 
 export default connect(mapStateToProps, actionCreators)(Yoti)
