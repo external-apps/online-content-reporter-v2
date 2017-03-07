@@ -2,6 +2,6 @@
 
 npm-debug.log
 
-keys
+keys/server*
 
 dist/*
