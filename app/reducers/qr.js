@@ -5,7 +5,6 @@ import {
 
 const initialState = {
   isMobile: false,
-  href: `#`,
   target: '_blank'
 }
 
