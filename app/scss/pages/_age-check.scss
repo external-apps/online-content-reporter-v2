@@ -9,10 +9,6 @@
     height: 28vh;
 }
 
-.determinate1{
-  @include progress(33%);
-}
-
 .age-info-blue{
   @include ageinfo($aqua);
   p{

@@ -1,15 +1,10 @@
 @import "./helpers/variables";
 @import "./helpers/extends";
+@import "./helpers/mixins";
 
-//Not sure where this part below should go.. but it relates to our Reusable components
-.bg-light-blue {
-  background-color: $light-blue;
-}
-
-.bg-dark-cobalt {
-  background-color: $dark-cobalt;
-}
-
-.bg-plum {
-  background-color: $plum;
+body {
+  font-size: 1.2rem;
+  max-width: 440px;
+  margin: 0 auto;
+  font-family: 'childline';
 }
