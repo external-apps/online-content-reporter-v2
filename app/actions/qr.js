@@ -3,7 +3,8 @@ import * as types from '../../constants/action-types.js'
 export const addQr = (qrSvg) => {
   return {
     type: types.ADD_QR_CODE,
-    qrSvg
+    qrSvg,
+    haveQr: true
   }
 }
 
