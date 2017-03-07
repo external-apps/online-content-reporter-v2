@@ -1,2 +1,15 @@
 @import "./helpers/variables";
 @import "./helpers/extends";
+
+//Not sure where this part below should go.. but it relates to our Reusable components
+.bg-light-blue {
+  background-color: $light-blue;
+}
+
+.bg-dark-cobalt {
+  background-color: $dark-cobalt;
+}
+
+.bg-plum {
+  background-color: $plum;
+}
