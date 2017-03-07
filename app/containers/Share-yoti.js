@@ -28,10 +28,11 @@ class ShareYoti extends React.Component {
     this.listenForToken = this.listenForToken.bind(this)
     this.yotiRedirect = this.yotiRedirect.bind(this)
     this.mobileSetup = this.mobileSetup.bind(this)
+    this.navigateToYoti = this.mobileSetup.bind(this)
   }
 
   startVerification () {
-    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) && navigateToYoti()
+    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) && this.navigateToYoti()
   }
 
   listenForToken (proto, url) {
@@ -69,7 +70,7 @@ class ShareYoti extends React.Component {
         var responseObj = JSON.parse(xhr.responseText)
         console.log('CALLBACK URL: ', responseObj.callbackUrl)
         const callbackUrl = responseObj.callbackUrl
-        const href = `${responseObj.qrCodeUrl}?callback=http://localhost:3000/thankyou&id=${responseObj.application.id}&mobile=${true}`
+        const href = `${responseObj.qrCodeUrl}?callback=${callbackUrl}&id=${responseObj.application.id}&mobile=true`
         this.props.setUpForMobile(href)
       }
     }
@@ -107,10 +108,11 @@ class ShareYoti extends React.Component {
   render () {
     const clickHandler = this.props.qr.isMobile ? (this.startVerification) : (this.getQr)
     // const buttonDisplayHander = this.props.qr.qrSVG ? {display: 'none'} : {display: 'block'}
-
+    // <span onClick={clickHandler} className='yoti-btn' target={this.props.qr.target} id='yotiBtn'>
+    //   <QrCode {...this.props} />
+    // </span>
     return (
-      <span onClick={clickHandler} className='yoti-btn' target={this.props.qr.target} id='yotiBtn'>
-        <QrCode {...this.props} />
+      
         <a
 
           href={this.props.qr.href}
@@ -119,7 +121,7 @@ class ShareYoti extends React.Component {
           >
           Share your age using Yoti
         </a>
-      </span>
+
     )
   }
 }
