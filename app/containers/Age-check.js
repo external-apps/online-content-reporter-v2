@@ -4,11 +4,12 @@ import { connect } from 'react-redux'
 import '../scss/style.scss'
 import ShareYoti from './Share-yoti'
 import QrCode from '../components/QrCode'
+import PageTitle from '../components/PageTitle'
 
 class AgeCheck extends React.Component {
 
-  renderYotiDescription() {
-    if(this.props.qr.qrSvg) {
+  renderYotiDescription () {
+    if(!this.props.qr.haveQr) {
       return (
         <div className='yoti-info '>
           <div className='yoti-intro'>
@@ -24,10 +25,6 @@ class AgeCheck extends React.Component {
     return (
       <div className='yoti-info '>
         <QrCode {...this.props} />
-        <p className='scan-me'>
-          SCAN ME WITH YOTI
-          <img src='./imgs/yoti-logo.svg' className='popup-yoti' alt='yoti logo' />
-        </p>
       </div>
     )
   }
@@ -35,12 +32,11 @@ class AgeCheck extends React.Component {
   render () {
     return (
       <div>
-        <div className='age-title'>
-          <h1 className='page-title'>ARE YOU UNDER 18?</h1>
-        </div>
+        <PageTitle text='ARE YOU UNDER 18?' backgroundColor='bg-light-blue' />
+
         <div className='progress'>
-         <div className='determinate1'></div>
-      </div>
+           <div className='determinate1'></div>
+        </div>
         <div className='age-responsive'>
           <div className='age-info-blue'>
             <p className='why-eighteen'>
@@ -60,8 +56,7 @@ class AgeCheck extends React.Component {
           </div>
         </div>
 
-
-          {this.renderYotiDescription()}
+        {this.renderYotiDescription()}
 
         <ShareYoti />
 
