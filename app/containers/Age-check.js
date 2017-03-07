@@ -1,9 +1,37 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { connect } from 'react-redux'
 import '../scss/style.scss'
 import ShareYoti from './Share-yoti'
+import QrCode from '../components/QrCode'
 
 class AgeCheck extends React.Component {
+
+  renderYotiDescription() {
+    if(this.props.qr.qrSvg) {
+      return (
+        <div className='yoti-info '>
+          <div className='yoti-intro'>
+            <h3>YOTI - CONFIDENTIALLY VERIFY YOUR AGE</h3>
+            <img src='./imgs/yoti-logo.svg' alt='yoti logo' />
+          </div>
+          <p className='yoti-description'>
+            Yoti empowers you to take back control over your identity. If you don't have a Yoti digital identity, please create one <a className='link' href='www.yoti.com/'>here</a> and use it to verify you are under 17.
+          </p>
+        </div>
+      )
+    }
+    return (
+      <div className='yoti-info '>
+        <QrCode {...this.props} />
+        <p className='scan-me'>
+          SCAN ME WITH YOTI
+          <img src='./imgs/yoti-logo.svg' className='popup-yoti' alt='yoti logo' />
+        </p>
+      </div>
+    )
+  }
+
   render () {
     return (
       <div>
@@ -32,21 +60,8 @@ class AgeCheck extends React.Component {
           </div>
         </div>
 
-        <div className='yoti-info '>
-          <div className='qr-code-output' id='yoti-info__content'>
-            <div className='yoti-intro'>
-              <h3>YOTI - CONFIDENTIALLY VERIFY YOUR AGE</h3>
-              <img src='./imgs/yoti-logo.svg' alt='yoti logo' />
-            </div>
-            <p className='yoti-description'>
-              Yoti empowers you to take back control over your identity. If you don't have a Yoti digital identity, please create one <a className='link' href='www.yoti.com/'>here</a> and use it to verify you are under 17.
-            </p>
-          </div>
-          <p className='scan-me'>
-            SCAN ME WITH YOTI
-            <img src='./imgs/yoti-logo.svg' className='popup-yoti' alt='yoti logo' />
-          </p>
-        </div>
+
+          {this.renderYotiDescription()}
 
         <ShareYoti />
 
@@ -58,4 +73,8 @@ class AgeCheck extends React.Component {
   }
 }
 
-export default AgeCheck
+const mapStateToProps = (state) => {
+  return { qr: state.qr }
+}
+
+export default connect(mapStateToProps)(AgeCheck)
