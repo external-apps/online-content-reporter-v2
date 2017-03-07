@@ -7,9 +7,6 @@
     padding: 4rem 1rem 2.5rem 1rem;
 }
 
-.determinate2{
-  @include progress(66%);
-}
 
 .form-container {
     @include form-container($turquoise);

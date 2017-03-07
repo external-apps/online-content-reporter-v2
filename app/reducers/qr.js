@@ -5,7 +5,8 @@ import {
 
 const initialState = {
   isMobile: false,
-  target: '_blank'
+  target: '_blank',
+  haveQr: false
 }
 
 const qr = (state = initialState, action) => {
@@ -13,11 +14,12 @@ const qr = (state = initialState, action) => {
     case ADD_QR_CODE:
       return {
         ...state,
-        qrSvg: action.qrSvg
+        qrSvg: action.qrSvg,
+        haveQr: action.haveQr
       }
     case SET_UP_FOR_MOBILE:
       return {
-        isMobile: true,
+        isMobile: !state.isMobile,
         href: action.href,
         target: action.target
       }

@@ -2,8 +2,7 @@ import React from 'react'
 import '../scss/style.scss'
 
 const QrCode = (props) => (
-  <div className='qr-code-output' dangerouslySetInnerHTML={{__html: props.qr.qrSvg}}>
-  </div>
+  <span dangerouslySetInnerHTML={{__html: props.qr.qrSvg}} />
 )
 
 export default QrCode
