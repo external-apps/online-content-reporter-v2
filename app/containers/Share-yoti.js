@@ -3,7 +3,6 @@ import '../scss/style.scss'
 import * as qrActions from '../actions/qr'
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
-import QrCode from '../components/QrCode'
 import RaisedButton from 'material-ui/RaisedButton'
 
 var t = {
@@ -108,7 +107,7 @@ class ShareYoti extends React.Component {
       // </a>
     return (
       <div>
-        <QrCode {...this.props} />
+
         <RaisedButton onClick={clickHandler} target={this.props.qr.target} label='Share your age using Yoti' labelColor={'#632c7a'} />
       </div>
     )
