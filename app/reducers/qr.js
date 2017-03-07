@@ -6,7 +6,7 @@ import {
 const initialState = {
   isMobile: false,
   href: `#`,
-  target: undefined
+  target: '_blank'
 }
 
 const qr = (state = initialState, action) => {
@@ -18,8 +18,7 @@ const qr = (state = initialState, action) => {
       }
     case SET_UP_FOR_MOBILE:
       return {
-        ...state,
-        isMobile: !state.isMobile,
+        isMobile: true,
         href: action.href,
         target: action.target
       }
