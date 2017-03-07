@@ -14,3 +14,7 @@ export const setUpForMobile = (href) => {
     target: '_self'
   }
 }
+
+export const getQr = () => {
+  console.log('here we will do the yoti desktop flow?')
+}
