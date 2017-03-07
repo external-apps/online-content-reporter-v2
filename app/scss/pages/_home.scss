@@ -3,6 +3,27 @@
 .landing-header {
     background-color: $light-blue;
     padding: 4rem 1rem 1rem 1rem;
+    h3 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      color: white;
+      text-align: center;
+    }
+
+}
+
+.landing-header__info{
+  position: absolute;
+  width:60%; //fix this later
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  p{
+    color:white;
+  }
+  a{
+    color:white;
+  }
 }
 
 
@@ -10,6 +31,16 @@
   margin: 1rem;
   background-color: $cobalt;
   color: white;
+  padding:1rem;
+  a {
+      text-decoration: none;
+      color: #039be5;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      &:hover{
+        color:orange;
+      }
+  }
 }
 
 .landing-logo{

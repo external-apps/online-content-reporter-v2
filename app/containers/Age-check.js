@@ -13,10 +13,10 @@ class AgeCheck extends React.Component {
     return (
       <div>
         <div className='age-title'>
-          <h1 className='title'>ARE YOU UNDER 18?</h1>
+          <h1 className='page-title'>ARE YOU UNDER 18?</h1>
         </div>
         <div className='progress'>
-         <div className='determinate'></div>
+         <div className='determinate1'></div>
       </div>
         <div className='age-responsive'>
           <div className='age-info-blue'>
