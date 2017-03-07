@@ -9,7 +9,9 @@ import {List, ListItem} from 'material-ui/List'
 import Subheader from 'material-ui/Subheader'
 import Checkbox from 'material-ui/Checkbox'
 import Toggle from 'material-ui/Toggle'
-var Modal = require('react-modal')
+import Modal from 'react-modal'
+import PageTitle from '../components/PageTitle'
+
 injectTapEventPlugin()
 
 const customStyles = {
@@ -28,7 +30,7 @@ const customStyles = {
       left                       :'50%',
       bottom                     :'50%',
       right                      : '50%',
-      transform                  :'translate(-50%, -50%)',
+      transform                  :'translate (-50%, -50%)',
       border                     : '1px solid #ccc',
       background                 : '#fff',
       overflow                   : 'hidden',
@@ -72,9 +74,8 @@ render () {
    <div>
        {this.state.firstForm &&
          <div className="content">
-           <div className="content-title">
-             <h1 className='page-title'>DESCRIBE THE ONLINE CONTENT</h1>
-           </div>
+
+           <PageTitle text='DESCRIBE THE ONLINE CONTENT' backgroundColor='bg-plum' />
 
            <div className="progress">
               <div className="determinate2"></div>
