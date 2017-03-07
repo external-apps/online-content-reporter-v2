@@ -18,8 +18,9 @@ export const nextForm = () => {
   }
 }
 
-export const addCriteria = () => {
+export const addCriteria = (criteria) => {
   return {
-    type: types.ADD_CRITERIA
+    type: types.ADD_CRITERIA,
+    criteria
   }
 }
