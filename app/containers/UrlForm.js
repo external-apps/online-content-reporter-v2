@@ -11,6 +11,7 @@ import Checkbox from 'material-ui/Checkbox'
 import Toggle from 'material-ui/Toggle'
 import Modal from 'react-modal'
 import PageTitle from '../components/PageTitle'
+import ProgressBar from '../components/ProgressBar'
 
 injectTapEventPlugin()
 
@@ -75,11 +76,9 @@ render () {
        {this.state.firstForm &&
          <div className="content">
 
-           <PageTitle text='DESCRIBE THE ONLINE CONTENT' backgroundColor='bg-plum' />
+           <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='bg-plum' />
 
-           <div className="progress">
-              <div className="determinate2"></div>
-           </div>
+             <ProgressBar percentage='66' />
 
            <div className='content-describe form-container'>
              <p>
@@ -97,8 +96,7 @@ render () {
                <ListItem primaryText="Someone hurting someone else" onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Someone hurting someone else"]});}} leftCheckbox={<Checkbox />} />
                <ListItem primaryText="Sexual activity that includes animals."  onChange={()=>{this.setState({imageCriteria:[...this.state.imageCriteria,"Sexual activity that includes animals."]});;}}leftCheckbox={<Checkbox />} />
              </List>
-               <a className="confirm waves-effect waves-light btn" href='/url-form.html'>Confirm</a>
-               <RaisedButton label="Verify age"  href='/url-form.html'/>
+              <RaisedButton label="Confirm"  href='/url-form.html' />
 
              </form>
            </div>
