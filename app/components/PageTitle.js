@@ -3,7 +3,10 @@ import '../scss/style.scss'
 
 const PageTitle = (props) => (
   <div className={`title-container ${props.backgroundColor}`}>
-    <h1 className='title-text'>{props.text}</h1>
+    <h1 className='title-heading'>{props.heading}</h1>
+    <p className='title-subheading'>
+      {props.subheading}
+    </p>
   </div>
 )
 
