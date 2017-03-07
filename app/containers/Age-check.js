@@ -4,11 +4,6 @@ import '../scss/style.scss'
 import ShareYoti from './Share-yoti'
 
 class AgeCheck extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {isUnder18: false}
-  }
-
   render () {
     return (
       <div>
