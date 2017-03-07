@@ -2,8 +2,9 @@ import React from 'react'
 import '../scss/style.scss'
 import * as qrActions from '../actions/qr'
 import { connect } from 'react-redux'
-import QrCode from '../components/QrCode'
 import { browserHistory } from 'react-router'
+import QrCode from '../components/QrCode'
+import RaisedButton from 'material-ui/RaisedButton'
 
 var t = {
   config: {
@@ -106,10 +107,10 @@ class ShareYoti extends React.Component {
       //   Share your age using Yoti
       // </a>
     return (
-      <span onClick={clickHandler} className='yoti-btn btn yoti-connect' target={this.props.qr.target} id='yotiBtn'>
+      <div>
         <QrCode {...this.props} />
-        Share your age using Yoti
-      </span>
+        <RaisedButton onClick={clickHandler} target={this.props.qr.target} label='Share your age using Yoti' labelColor={'#632c7a'} />
+      </div>
     )
   }
 }
