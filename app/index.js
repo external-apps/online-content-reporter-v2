@@ -12,11 +12,10 @@ import { createStore, combineReducers } from 'redux'
 import qr from './reducers/qr'
 
 const reducers = combineReducers({
-  qr: qr
+  qr
 })
 
 const store = createStore(reducers)
-
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={getMuiTheme({userAgent: navigator.userAgent})}>

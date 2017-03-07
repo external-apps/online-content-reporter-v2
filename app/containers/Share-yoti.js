@@ -1,6 +1,6 @@
 import React from 'react'
 import '../scss/style.scss'
-import { addQrAction } from '../actions/qr'
+import * as qrActions from '../actions/qr'
 import { connect } from 'react-redux'
 import QrCode from '../components/QrCode'
 import { browserHistory } from 'react-router'
@@ -17,17 +17,12 @@ var t = {
 class ShareYoti extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      isMobile: false,
-      href: t.config.service + t.appId,
-      target: '_blank',
-      qr: false
-    }
 
-    this.startVerification = this.startVerification.bind(this)
     this.getQr = this.getQr.bind(this)
     this.listenForToken = this.listenForToken.bind(this)
     this.yotiRedirect = this.yotiRedirect.bind(this)
+    this.mobileSetup = this.mobileSetup.bind(this)
+    this.navigateToYoti = this.navigateToYoti.bind(this)
   }
 
   listenForToken (proto, url) {
@@ -59,10 +54,12 @@ class ShareYoti extends React.Component {
   mobileSetup () {
     var url = 'https://www.yoti.com/qr/' + t.scenId
     var xhr = new XMLHttpRequest
-    xhr.onreadystatechange = function () {
+    xhr.onreadystatechange = () => {
       if (xhr.readyState === 4 && xhr.status === 200) {
         var responseObj = JSON.parse(xhr.responseText)
-        this.setState({href: responseObj.qrCodeUrl + '?callback=' + responseObj.callbackUrl + '&id=' + responseObj.application.id + '&mobile=' + true})
+        const href = `${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=true`
+        // normally href is passed in here.
+        this.props.setUpForMobile(t.config.service + t.appId)
       }
     }
     xhr.open('GET', url, true)
@@ -72,18 +69,14 @@ class ShareYoti extends React.Component {
   }
 
   componentDidMount () {
-    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? (this.setState({isMobile: true, target: '_self'}), this.mobileSetup()) : console.log('Running on desktop')
-  }
-
-  startVerification () {
-    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) && navigateToYoti()
+    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? this.mobileSetup() : (console.log('on desktop'))
   }
 
   getQr () {
     var xhr = new XMLHttpRequest()
     xhr.addEventListener('load', (e) => {
       var responseObj = JSON.parse(e.target.responseText)
-      this.props.addQrAction(responseObj.svg)
+      this.props.addQr(responseObj.svg)
       this.listenForToken(responseObj.proto, responseObj.url)
     })
     xhr.open('GET', '/qr')
@@ -101,19 +94,21 @@ class ShareYoti extends React.Component {
   }
 
   render () {
-    const clickHandler = this.state.isMobile ? (this.startVerification) : (this.getQr)
-    const buttonDisplayHander = this.props.qr.qrCode ? {display: 'none'} : {display: 'block'}
+    const clickHandler = this.props.qr.isMobile ? (window.location = this.props.qr.href) : (this.getQr)
 
+    // this is for when mobilesetup works! Keep this comment
+    // const clickHandler = this.props.qr.isMobile ? (this.navigateToYoti) : (this.getQr)
+      // <a
+      //   href={this.props.qr.href}
+      //   className='btn yoti-connect'
+      //   target={this.props.qr.target}
+      //   >
+      //   Share your age using Yoti
+      // </a>
     return (
-      <span onClick={clickHandler} style={buttonDisplayHander} className='yoti-btn' target={this.state.isMobile} id='yotiBtn'>
+      <span onClick={clickHandler} className='yoti-btn btn yoti-connect' target={this.props.qr.target} id='yotiBtn'>
         <QrCode {...this.props} />
-        <a
-          href={this.state.href}
-          className='btn yoti-connect learn-more btn-primary'
-          target='self'
-          >
-          Share your age using Yoti
-        </a>
+        Share your age using Yoti
       </span>
     )
   }
@@ -123,4 +118,8 @@ const mapStateToProps = (state) => {
   return { qr: state.qr }
 }
 
-export default connect(mapStateToProps, {addQrAction})(ShareYoti)
+const actionCreators = {
+  ...qrActions
+}
+
+export default connect(mapStateToProps, actionCreators)(ShareYoti)
