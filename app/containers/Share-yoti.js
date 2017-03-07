@@ -105,11 +105,16 @@ class ShareYoti extends React.Component {
       //   >
       //   Share your age using Yoti
       // </a>
-    return (
-      <div>
-
+    if(!this.props.qr.haveQr) {
+      return (
         <RaisedButton onClick={clickHandler} target={this.props.qr.target} label='Share your age using Yoti' labelColor={'#632c7a'} />
-      </div>
+      )
+    }
+    return (
+      <p className='scan-me'>
+        SCAN ME WITH YOTI
+        <img src='./imgs/yoti-logo.svg' className='popup-yoti' alt='yoti logo' />
+      </p>
     )
   }
 }
