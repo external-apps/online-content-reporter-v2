@@ -5,14 +5,16 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AgeCheck from './components/AgeCheckPage'
 import Home from './components/Home'
-import UrlForm from './containers/UrlForm'
+import Forms from './containers/Froms'
 import OverAge from './components/OverAge'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers } from 'redux'
-import qr from './reducers/qr'
+import yoti from './reducers/yoti'
+import forms from './reducers/forms'
 
 const reducers = combineReducers({
-  qr
+  yoti,
+  forms
 })
 
 const store = createStore(reducers)
@@ -23,12 +25,13 @@ ReactDOM.render(
       <Router history={browserHistory}>
         <Route path='/' component={Home} />
         <Route path='/age-check' component={AgeCheck} />
-        <Route path='/form' component={UrlForm} />
+        <Route path='/form' component={forms} />
         <Route path='/over-age' component={OverAge} />
+        <Route path='*' component={Home} />
       </Router>
     </Provider>
   </MuiThemeProvider>,
   document.getElementById('root')
 )
 
-      // <Route path='*' component={() => <div>404</div>} />
+      //  <Route path='*' component={() => <div>404</div>} />
