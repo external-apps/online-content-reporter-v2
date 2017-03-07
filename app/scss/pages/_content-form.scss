@@ -1,29 +1,22 @@
 @import "./helpers/variables";
 @import "./helpers/extends";
 @import "./helpers/mixins";
-/*.message {
-    margin: 1rem;
-    padding: 0.75rem;
-    color: $cobalt;
-    background-color: $orange;
-}
-
-.title-div {
-    padding: 2.5rem 1rem 2.5rem 1rem;
-    margin-bottom: 1rem;
-    height: 35vh;
-    background-color: $cobalt;
-}*/
 
 .content-title {
     @include content-title($plum);
     padding: 4rem 1rem 2.5rem 1rem;
 }
 
-.determinate{
+.determinate2{
   @include progress(66%);
 }
 
 .form-container {
     @include form-container($turquoise);
+}
+
+.other-options{
+  background-color: $orange;
+  color: $dark-cobalt;
+  padding:1rem;
 }

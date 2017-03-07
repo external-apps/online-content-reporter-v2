@@ -1,16 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router'
 import '../scss/style.scss'
+import RaisedButton from 'material-ui/RaisedButton'
+
+const style = {
+  margin: 12,
+  labelColor: "#632c7a",
+  backgroundColor:"#632c7a"
+};
+
 
 const Home = () => (
   <div className='home'>
-  <div className='landing-header'>
+    <div className='landing-header'>
+      <div className='landing-header__info'>
+      <p>chidline</p>
+      <p className='landing-title__phone'>
+        <a className='link' href="tel:+448001111">Call 0800 1111</a>
+        <i className="tiny material-icons whi">phonelink_ring</i>
+      </p>
+      </div>
       <div>
-        <p>chidline</p>
-        <span className='landing-title__phone'>
-          <a className='link' href="tel:+448001111">Call 0800 1111</a>
-          <i className="tiny material-icons whi">phonelink_ring</i>
-        </span>
+
         <h1 className='page-title'>REPORT ONLINE CONTENT</h1>
       </div>
       <h3>Anonymously and confidentially</h3>
@@ -30,6 +41,7 @@ const Home = () => (
     <div className='landing-logo'>
       <img className='landing-logo__img' src="imgs/childline-logo.jpg" alt="childline logo"/>
     </div>
+    <RaisedButton label="Verify age" labelColor= {"#632c7a"} />
 
     <Link className='landing-btn' to='/age-check'>
       <p>Prove Age Here</p>
