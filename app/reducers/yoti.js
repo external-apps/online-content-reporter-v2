@@ -9,7 +9,7 @@ const initialState = {
   haveQr: false
 }
 
-const qr = (state = initialState, action) => {
+const yoti = (state = initialState, action) => {
   switch (action.type) {
     case ADD_QR_CODE:
       return {
@@ -28,4 +28,4 @@ const qr = (state = initialState, action) => {
   }
 }
 
-export default qr
+export default yoti
