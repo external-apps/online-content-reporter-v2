@@ -51,7 +51,7 @@ class YotiShareButton extends React.Component {
 
   mobileSetup () {
     var url = 'https://www.yoti.com/qr/' + t.scenId
-    var xhr = new XMLHttpRequest
+    var xhr = new XMLHttpRequest()
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4 && xhr.status === 200) {
         var responseObj = JSON.parse(xhr.responseText)
@@ -92,20 +92,20 @@ class YotiShareButton extends React.Component {
   }
 
   render () {
-    const clickHandler = this.props.qr.isMobile ? (window.location = this.props.qr.href) : (this.getQr)
+    const clickHandler = this.props.yoti.isMobile ? (window.location = this.props.yoti.href) : (this.getQr)
 
     // this is for when mobilesetup works! Keep this comment
-    // const clickHandler = this.props.qr.isMobile ? (this.navigateToYoti) : (this.getQr)
+    // const clickHandler = this.props.yoti.isMobile ? (this.navigateToYoti) : (this.getQr)
       // <a
-      //   href={this.props.qr.href}
+      //   href={this.props.yoti.href}
       //   className='btn yoti-connect'
-      //   target={this.props.qr.target}
+      //   target={this.props.yoti.target}
       //   >
       //   Share your age using Yoti
       // </a>
-    if(!this.props.qr.haveQr) {
+    if(!this.props.yoti.haveQr) {
       return (
-        <RaisedButton onClick={clickHandler} target={this.props.qr.target} label='Share your age using Yoti' labelColor={'#632c7a'} />
+        <RaisedButton onClick={clickHandler} target={this.props.yoti.target} label='Share your age using Yoti' labelColor={'#632c7a'} />
       )
     }
     return (
