@@ -18,7 +18,7 @@ server.listen(port, () => {
     .catch(done)
   })
 
-  it('returns some image correctly', (done) => {
+/*  it('returns some image correctly', (done) => {
     server.inject({method: 'GET', url: '/imgs/childline-logo'})
     .then((res) => {
       expect(res.payload).to.contain('PNG')
