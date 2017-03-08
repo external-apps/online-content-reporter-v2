@@ -13,10 +13,6 @@ describe('<Home />', () => {
     const wrapper = shallow(<Home />)
     expect(wrapper.find('.home-header')).to.have.length(1)
   })
-  /*it('renders one <PageTitle/> component', () => {
-   const wrapper = shallow(<Home />)
-   expect(wrapper.find(<PageTitle/>)).to.have.length(1)
- })*/
    it('renders one <RaisedButton/> element', () => {
     const wrapper = shallow(<Home />)
     expect(wrapper.find(RaisedButton)).to.have.length(1)
