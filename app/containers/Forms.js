@@ -160,7 +160,7 @@ class UrlForm extends React.Component {
        >
 
         <div className='mod'>
-            <RaisedButton label='X' onClick={() => this.props.closeModal()} />
+            <RaisedButton className='close_btn' label='X' onClick={() => this.props.closeModal()} />
              <h1>Thank you. The online content has been reported for removal</h1>
              <p>
                If you would like IWF to update you by email, please enter your email address below.
