@@ -25,12 +25,20 @@ describe('<Home />', () => {
 
 
 describe('FeatureFirstContainer actions', () => {
-it('should dispatch an action to openModal()', () => {
-  const expectedAction = {
-    type: OPEN_MODAL,
-  };
-  expect(
-    formActions.openModal()
-  ).to.deep.equal(expectedAction);
-});
+  it('should dispatch an action to open modal', () => {
+    const expectedAction = {
+      type: OPEN_MODAL,
+    }
+    expect(
+      formActions.openModal()
+    ).to.deep.equal(expectedAction);
+  })
+  it('should dispatch an action to close modal', () => {
+    const expectedAction = {
+      type: CLOSE_MODAL,
+    }
+    expect(
+      formActions.closeModal()
+    ).to.deep.equal(expectedAction);
+  })
 })
