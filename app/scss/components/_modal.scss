@@ -1,20 +1,15 @@
 @import "../helpers/variables";
 
 .mod {
-  /*display: block;
-  max-width: 380px;
-  width: 80%;
-  height:  80%;
-  position: fixed;
-  z-index: 100;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);*/
   color: $dark-cobalt;
   font-family: 'childline-regular';
   h1 {
    font-size: 2rem;
    font-family: 'childline-bold';
+   margin-top: 2rem;
+ }
+ p{
+   font-family: 'childline';
  }
 }
 
@@ -23,9 +18,7 @@
     z-index: 1;
     top: 0;
     right: 0;
-    border: 0;
     background: rgba(35, 79, 98, 1);
     color: white;
-    padding: 0.5rem 1rem;
     font-size: 1.2rem;
 }
