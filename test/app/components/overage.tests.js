@@ -11,6 +11,8 @@ describe('<OverAge />', () => {
   it('renders an PageTitle', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('PageTitle')).to.have.length(1)
+    const pageTitleProps = wrapper.find('PageTitle').props();
+    expect(pageTitleProps.heading).to.equal("SORRY, YOU'RE TOO OLD FOR THIS SERVICE")
   })
   it('renders a', () => {
     const wrapper = shallow(<OverAge />)
