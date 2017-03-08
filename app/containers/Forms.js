@@ -21,7 +21,8 @@ const customStyles = {
     left              : 0,
     right             : 0,
     bottom            : 0,
-    backgroundColor   : 'rgba(255, 255, 255, 0.75)'
+    zIndex: 50,
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
   },
   content : {
     position                   : 'absolute',
@@ -31,7 +32,8 @@ const customStyles = {
     right                      : '50%',*/
     transform                  : 'translate(-50%,-50%) !important',
     border                     : '1px solid #ccc',
-    background                 : '#fff',
+    background                 : '#CCECF5',
+    fontFamily                 : 'childline',
     overflow                   : 'hidden',
     WebkitOverflowScrolling    : 'touch',
     borderRadius               : '0.25rem',
@@ -157,7 +159,8 @@ class UrlForm extends React.Component {
          contentLabel='Reassuring message'
        >
 
-        <div>
+        <div className='mod'>
+            <button onClick={() => this.props.closeModal()}className='close_btn'>X</button>
              <h1>Thank you. The online content has been reported for removal</h1>
              <p>
                If you would like IWF to update you by email, please enter your email address below.
@@ -165,7 +168,7 @@ class UrlForm extends React.Component {
              <input placeholder='email address'></input>
              <a className='waves-effect waves-light btn' href='/index.html'>Submit</a>
            </div>
-         <button onClick={() => this.props.closeModal()}>close</button>
+
        </Modal>
         </div>
      }
