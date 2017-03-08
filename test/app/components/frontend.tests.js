@@ -51,23 +51,23 @@ describe('FeatureFirstContainer actions', () => {
       formActions.nextForm()
     ).to.deep.equal(expectedAction);
   })
-/*  it('should dispatch an action to close modal', () => {
+  it('should dispatch an action to close modal', () => { //
     const expectedAction = {
       type: ADD_CRITERIA,
     }
     expect(
       formActions.addCriteria()
-    ).to.deep.equal(expectedAction);
-  }) expect criteria*/
+    ).to.have.property('type','ADD_CRITERIA')
+  })
 })
 
-describe('FeatureFirstContainer actions', () => {
+describe('FeatureFirstContainer actions', () => {//
   it('should dispatch an action to openModal()', () => {
     const expectedAction = {
       type: SET_UP_FOR_MOBILE,
     }
     expect(
       yotiActions.setUpForMobile()
-    ).to.have.property('type','SET_UP_FOR_MOBILE');
+    ).to.have.property('type','SET_UP_FOR_MOBILE')
   })
 })
