@@ -3,12 +3,6 @@ import { Link } from 'react-router'
 import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
 
-const style = {
-  margin: 12,
-  labelColor: '#632c7a',
-  backgroundColor: '#632c7a'
-}
-
 const Home = () => (
   <div>
     <div className='home-header'>
@@ -30,16 +24,13 @@ const Home = () => (
       </p>
     </div>
 
-    <div className='landing-logo'>
-      <img className='landing-logo__img' src='imgs/iwf-logo.png' alt='IWF logo' />
+    <div className='home-logos'>
+      <img src='imgs/iwf-logo.png' alt='IWF logo' />
+      <img src='imgs/childline-logo.jpg' alt='childline logo' />
     </div>
 
-    <div className='landing-logo'>
-      <img className='landing-logo__img' src='imgs/childline-logo.jpg' alt='childline logo' />
-    </div>
-
-    <Link className='landing-btn' to='/age-check'>
-      <RaisedButton label='Verify age' labelColor={style.labelColor} />
+    <Link className='action-button' to='/age-check'>
+      <RaisedButton label='Verify age' labelColor={'#632c7a'} />
     </Link>
 
     <Link to='/over-age'>
