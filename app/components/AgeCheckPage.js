@@ -9,29 +9,25 @@ const AgeCheckPage = () => (
   <div>
     <PageTitle heading='ARE YOU UNDER 18?' backgroundColor='title-container-light-blue' />
     <ProgressBar percentage='33' />
-
-    <div className='age-responsive'>
-      <div className='age-info-blue'>
-        <p className='why-eighteen'>
-           To remove explicit online content we will only ask for your age. Not even your name! You must be under 18 years old.
-          <a className='link text-blue' href='https://www.iwf.org.uk/what-we-do' target='_blank'>
-             Find out why here
-             <i className='tiny material-icons'>info_outline</i>
-          </a>
-        </p>
-      </div>
-
-      <div className='age-info-orange'>
-        <i className='age-page small material-icons'>info_outline</i>
-        <a className='link text-white' href='https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/sexting/' target='_blank'>
-          What can I do if I am over 17?
+    <div className='age-info-1'>
+      <p>
+        To remove explicit online content we will only ask for your age. Not even your name! You must be under 18 years old.
+        <a href='https://www.iwf.org.uk/what-we-do' target='_blank'> Find out why here
+          <i className='tiny material-icons'>info_outline</i>
         </a>
-      </div>
+      </p>
+    </div>
+
+    <div className='age-info-2'>
+      <i className='small material-icons'>info_outline</i>
+      <a href='https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/sexting/' target='_blank'>
+        What can I do if I am over 17?
+      </a>
     </div>
 
     <Yoti />
 
-    <Link to='/form'>
+    <Link className='action-button' to='/form'>
       <p>Take me to form</p>
     </Link>
   </div>
