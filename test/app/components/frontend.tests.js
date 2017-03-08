@@ -20,6 +20,6 @@ describe.only('<Home />', () => {
 //notice: now it requests the assertionfunctions to be Chai style functions..is that what we want?
   it('renders an home', () => {
     const wrapper = shallow(<Home />)
-    expect(wrapper.find('.landing-header')).to.have.length(1)
+    expect(wrapper.find('.home-header')).to.have.length(1)
   })
 })
