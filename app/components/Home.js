@@ -41,7 +41,7 @@ const Home = () => (
     </div>
 
     <Link className='landing-btn' to='/age-check'>
-      <RaisedButton label='Verify age' labelColor={style.labelColor} />
+      <RaisedButton label='Verify age' primary={true} />
     </Link>
 
     <Link to='/over-age'>
