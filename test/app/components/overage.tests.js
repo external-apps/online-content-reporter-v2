@@ -12,4 +12,17 @@ describe('<OverAge />', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('PageTitle')).to.have.length(1)
   })
+  it('renders a', () => {
+    const wrapper = shallow(<OverAge />)
+    expect(wrapper.find('.what-now')).to.have.length(1)
+  })
+  it('renders a', () => {
+    const wrapper = shallow(<OverAge />)
+    expect(wrapper.find('h3')).to.have.length(1)
+  })
+  it('renders a', () => {
+    const wrapper = shallow(<OverAge />)
+    expect(wrapper.find('.other-ops')).to.have.length(1)
+  })
+  // TODO test nested elements too
 })
