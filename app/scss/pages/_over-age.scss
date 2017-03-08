@@ -2,7 +2,7 @@
 @import "./helpers/extends";
 
 .content-title-overage {
-    @include content-title($turquoise);
+    @include title-container($turquoise);
 }
 
 .what-now {

@@ -1,44 +1,52 @@
 @import "./helpers/variables";
+@import "./helpers/extends";
+@import "./helpers/mixins";
 
-.landing-header {
-    background-color: $light-blue;
-    padding: 4rem 1rem 1rem 1rem;
-    h3 {
-      font-size: 1.2rem;
-      font-weight: normal;
-      color: white;
-      text-align: center;
+.home-header {
+  @include title-container($light-blue);
+  padding-bottom: 2rem;
+  padding-top: 0rem;
+  h3 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 1rem;
+  }
+}
+
+.home-header-info {
+  width:100%;
+  margin: 0 auto;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+    p {
+      color:white;
+    }
+    a {
+      color:white;
     }
 }
 
-.landing-header__info{
-  position: absolute;
-  width:60%; //fix this later
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  p{
-    color:white;
-  }
-  a{
-    color:white;
+.home-header-phone {
+  a {
+    margin-right: 0.5rem;
   }
 }
 
+.home-title {
+  @extend .page-title;
+  margin-bottom: 1rem;
+}
 
-.landing-info {
-  margin: 1rem;
-  background-color: $cobalt;
-  color: white;
-  padding:1rem;
+.home-info {
+  @include content-container($cobalt, white);
   a {
-      text-decoration: none;
-      color: #039be5;
-      text-decoration: none;
-      -webkit-tap-highlight-color: transparent;
-      &:hover{
-        color:orange;
-      }
+    color: #039be5;
+    -webkit-tap-highlight-color: transparent;
+    &:hover{
+      color:orange;
+    }
   }
 }
 
