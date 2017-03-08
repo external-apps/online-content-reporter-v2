@@ -7,11 +7,23 @@ import { Link } from 'react-router'
 import Form from '../../../app/containers/Forms'
 import RaisedButton from 'material-ui/RaisedButton'
 import PageTitle from '../../../app/components/PageTitle'
+import ProgressBar from '../../../app/components/ProgressBar'
 
 describe('<AgeCheck />', () => {
   it('renders ', () => {
     const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('PageTitle')).to.have.length(1)
   })
-
+  it('renders ', () => {
+    const wrapper = shallow(<AgeCheck />)
+    expect(wrapper.find('ProgressBar')).to.have.length(1)
+  })
+  it('renders ', () => {
+    const wrapper = shallow(<AgeCheck />)
+    expect(wrapper.find('.age-info-1')).to.have.length(1)
+  })
+  it('renders ', () => {
+    const wrapper = shallow(<AgeCheck />)
+    expect(wrapper.find('.age-info-2')).to.have.length(1)
+  })
 })
