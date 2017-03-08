@@ -4,7 +4,6 @@ import { shallow, mount, render } from 'enzyme'
 import AgeCheck from '../../../app/components/AgeCheckPage'
 import sinon from 'sinon'
 import { Link } from 'react-router'
-import Form from '../../../app/containers/Forms'
 import RaisedButton from 'material-ui/RaisedButton'
 import PageTitle from '../../../app/components/PageTitle'
 import ProgressBar from '../../../app/components/ProgressBar'
@@ -21,7 +20,7 @@ describe('<AgeCheck />', () => {
     const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('ProgressBar')).to.have.length(1)
     const barProps = wrapper.find('ProgressBar').props()
-      expect(barProps.percentage).to.equal('33')
+    expect(barProps.percentage).to.equal('33')
   })
   it('renders ', () => {
     const wrapper = shallow(<AgeCheck />)
