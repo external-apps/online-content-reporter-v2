@@ -8,7 +8,6 @@ import Form from '../../../app/containers/Forms'
 import RaisedButton from 'material-ui/RaisedButton'
 import PageTitle from '../../../app/components/PageTitle'
 
-
 describe('<Home />', () => {
   it('renders an home', () => {
     const wrapper = shallow(<Home />)
