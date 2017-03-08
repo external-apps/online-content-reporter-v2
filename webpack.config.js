@@ -22,8 +22,8 @@ module.exports = {
         loader: 'style-loader!css-loader!sass-loader'
       },
       {
-        test: /\.(eot|svg|ttf|otf|woff|woff2)$/,
-        loader: 'file-loader?name=/fonts/[name].[ext]'
+          test: /\.(eot|svg|ttf|otf|woff|woff2)$/,
+          loader: 'file-loader?name=public/fonts/[name].[ext]'
       }
     ]
   },
