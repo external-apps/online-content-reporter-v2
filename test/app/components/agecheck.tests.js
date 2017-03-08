@@ -1,10 +1,17 @@
-/*describe('onClik tests', () => {
-  it('simulates click events', () => {
-     const onClick = sinon.spy();
-     const wrapper = mount(
-       <Foo onClick={onButtonClick} />
-     )
-     wrapper.find('button').simulate('click');
-     expect(onClick).to.have.property('callCount', 1);
-   })
-})*/
+import { expect } from 'chai'
+import React from 'react'
+import { shallow, mount, render } from 'enzyme'
+import AgeCheck from '../../../app/components/AgeCheckPage'
+import sinon from 'sinon'
+import { Link } from 'react-router'
+import Form from '../../../app/containers/Forms'
+import RaisedButton from 'material-ui/RaisedButton'
+import PageTitle from '../../../app/components/PageTitle'
+
+describe('<AgeCheck />', () => {
+  it('renders ', () => {
+    const wrapper = shallow(<AgeCheck />)
+    expect(wrapper.find('PageTitle')).to.have.length(1)
+  })
+
+})
