@@ -105,7 +105,7 @@ class YotiShareButton extends React.Component {
       // </a>
     if(!this.props.yoti.haveQr) {
       return (
-        <RaisedButton onClick={clickHandler} target={this.props.yoti.target} label='Share your age using Yoti' labelColor={'#632c7a'} />
+        <RaisedButton primary={true} onClick={clickHandler} target={this.props.yoti.target} label='Share your age using Yoti' labelColor={'#632c7a'} />
       )
     }
     return (
