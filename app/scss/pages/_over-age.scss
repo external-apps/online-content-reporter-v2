@@ -2,9 +2,6 @@
 @import "./helpers/extends";
 
 
-.title-container-turquoise {
-  @include title-container($turquoise)
-}
 
 .page-title-subheading{
   color:#fff;
