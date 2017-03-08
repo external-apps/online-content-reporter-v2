@@ -27,10 +27,9 @@ const customStyles = {
   },
   content : {
     position                   : 'absolute',
-    top                        : '20%',
+    top                        : '50%',
     left                       : '50%',
-    bottom                     : '50%',
-    right                      : '50%',
+    transform                  : 'translate (-50%, -50%)',
     border                     : '1px solid #ccc',
     background                 : '#CCECF5',
     fontFamily                 : 'childline',
@@ -42,7 +41,7 @@ const customStyles = {
     maxWidth                  :  '80%',
     height                     : '60%',
     width                      : '375px',
-    transform                  : 'translate (-50%, -50%)',
+    transform                  : 'translate(-50%,-50%)',
     zIndex                     : '100'
   }
 };
