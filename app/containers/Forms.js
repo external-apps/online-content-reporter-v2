@@ -29,7 +29,7 @@ const customStyles = {
     left                       : '50%',
     bottom                     : '50%',
     right                      : '50%',
-    transform                  : 'translate (-50%, -50%)',
+    transform                  : 'translate(-50%,-50%) !important',
     border                     : '1px solid #ccc',
     background                 : '#fff',
     overflow                   : 'hidden',
@@ -40,6 +40,7 @@ const customStyles = {
     width                      : '420px',
     height                     : '60%',
     width                      : '375px',
+    transform                  : 'translate (-50%, -50%)',
     zIndex                     : '100'
   }
 };
@@ -145,10 +146,9 @@ class UrlForm extends React.Component {
              rows={10}
            /><br />
               </div>
-              <RaisedButton label='Verify age' labelColor= {'#632c7a'} id='submit-url' />
+              <RaisedButton label='Submit' onClick={() => this.props.openModal()} id='submit-url' />
             </form>
           </div>
-          <button onClick={() => {console.log(this.props.forms);this.props.openModal()}}>Open Modal</button>
 
        <Modal
          isOpen={this.props.forms.modalIsOpen}
