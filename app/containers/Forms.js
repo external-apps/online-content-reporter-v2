@@ -148,10 +148,10 @@ class UrlForm extends React.Component {
               <RaisedButton label='Verify age' labelColor= {'#632c7a'} id='submit-url' />
             </form>
           </div>
-          <button onClick={() => this.props.openModal()}>Open Modal</button>
+          <button onClick={() => {console.log(this.props.forms);this.props.openModal()}}>Open Modal</button>
 
        <Modal
-         isOpen={this.props.modalIsOpen}
+         isOpen={this.props.forms.modalIsOpen}
          onRequestClose={() => this.props.closeModal()}
          style={customStyles}
          contentLabel='Reassuring message'
