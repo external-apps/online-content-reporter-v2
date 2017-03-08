@@ -7,7 +7,6 @@ import { List, ListItem } from 'material-ui/List'
 import { connect } from 'react-redux'
 import Subheader from 'material-ui/Subheader'
 import Checkbox from 'material-ui/Checkbox'
-// import Toggle from 'material-ui/Toggle'
 import Modal from 'react-modal'
 import PageTitle from '../components/PageTitle'
 import ProgressBar from '../components/ProgressBar'
@@ -30,7 +29,7 @@ const customStyles = {
     left                       : '50%',
     bottom                     : '50%',
     right                      : '50%',
-    transform                  : 'translate (-50%, -50%)',
+    transform                  : 'translate(-50%,-50%) !important',
     border                     : '1px solid #ccc',
     background                 : '#fff',
     overflow                   : 'hidden',
@@ -41,6 +40,7 @@ const customStyles = {
     width                      : '420px',
     height                     : '60%',
     width                      : '375px',
+    transform                  : 'translate (-50%, -50%)',
     zIndex                     : '100'
   }
 };
@@ -146,13 +146,12 @@ class UrlForm extends React.Component {
              rows={10}
            /><br />
               </div>
-              <RaisedButton label='Verify age' labelColor= {'#632c7a'} id='submit-url' />
+              <RaisedButton label='Submit' onClick={() => this.props.openModal()} id='submit-url' />
             </form>
           </div>
-          <button onClick={() => this.props.openModal()}>Open Modal</button>
 
        <Modal
-         isOpen={this.props.modalIsOpen}
+         isOpen={this.props.forms.modalIsOpen}
          onRequestClose={() => this.props.closeModal()}
          style={customStyles}
          contentLabel='Reassuring message'
@@ -174,10 +173,6 @@ class UrlForm extends React.Component {
     )
   }
 }
-//
-// UrlForm.propTypes = {
-//   imageCriteria: React.PropTypes.array
-// }
 
 const mapStateToProps = (state) => {
   return { forms: state.forms }
