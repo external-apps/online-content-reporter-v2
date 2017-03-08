@@ -25,7 +25,7 @@ describe('<Home />', () => {
 
 
 describe('FeatureFirstContainer actions', () => {
-  it('should dispatch an action to open modal', () => {
+  it('should dispatch an action to openModal()', () => {
     const expectedAction = {
       type: OPEN_MODAL,
     }
@@ -33,7 +33,7 @@ describe('FeatureFirstContainer actions', () => {
       formActions.openModal()
     ).to.deep.equal(expectedAction);
   })
-  it('should dispatch an action to close modal', () => {
+  it('should dispatch an action to closeModal()', () => {
     const expectedAction = {
       type: CLOSE_MODAL,
     }
@@ -41,4 +41,20 @@ describe('FeatureFirstContainer actions', () => {
       formActions.closeModal()
     ).to.deep.equal(expectedAction);
   })
+  it('should dispatch an action to nextForm()', () => {
+    const expectedAction = {
+      type: NEXT_FORM,
+    }
+    expect(
+      formActions.nextForm()
+    ).to.deep.equal(expectedAction);
+  })
+/*  it('should dispatch an action to close modal', () => {
+    const expectedAction = {
+      type: ADD_CRITERIA,
+    }
+    expect(
+      formActions.addCriteria()
+    ).to.deep.equal(expectedAction);
+  }) expect criteria*/
 })
