@@ -29,7 +29,7 @@ const Home = () => (
       <img src='imgs/childline-logo.jpg' alt='childline logo' />
     </div>
 
-    <Link className='landing-btn' to='/age-check'>
+    <Link className='action-button' to='/age-check'>
       <RaisedButton label='Verify age' primary={true} />
     </Link>
 
