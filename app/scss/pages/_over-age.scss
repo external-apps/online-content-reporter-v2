@@ -1,9 +1,10 @@
 @import "./helpers/variables";
 @import "./helpers/extends";
 
-.content-title-overage {
+.title-container {
     @include title-container($turquoise);
 }
+
 
 .what-now {
     background-color: #D8F1EA;
