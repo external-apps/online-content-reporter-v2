@@ -13,10 +13,15 @@ describe('<AgeCheck />', () => {
   it('renders ', () => {
     const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('PageTitle')).to.have.length(1)
+    const titleProps = wrapper.find('PageTitle').props()
+    expect(titleProps.heading).to.equal('ARE YOU UNDER 18?')
+    expect(titleProps.backgroundColor).to.equal('title-container-light-blue')
   })
   it('renders ', () => {
     const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('ProgressBar')).to.have.length(1)
+    const barProps = wrapper.find('ProgressBar').props()
+      expect(barProps.percentage).to.equal('33')
   })
   it('renders ', () => {
     const wrapper = shallow(<AgeCheck />)
