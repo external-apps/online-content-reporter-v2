@@ -27,8 +27,8 @@ const customStyles = {
     position                   : 'absolute',
     top                        : '50%',
     left                       : '50%',
-    bottom                     : '50%',
-    right                      : '50%',
+  /*  bottom                     : '50%',
+    right                      : '50%',*/
     transform                  : 'translate(-50%,-50%) !important',
     border                     : '1px solid #ccc',
     background                 : '#fff',
