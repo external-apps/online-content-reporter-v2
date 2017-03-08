@@ -2,11 +2,11 @@
   background-color: $background-color;
   padding: 4rem 1rem 2.5rem 1rem;
   text-align: center;
-  height: 28vh;
+  min-height: 28vh;
   margin: 0;
 }
 
-@mixin content-subcontainer ($background-color, $color) {
+@mixin content-container ($background-color, $color) {
   margin: 1rem;
   background-color: $background-color;
   color: $color;
@@ -14,18 +14,18 @@
 }
 
 @mixin progress ($width:0%) {
-    width:$width;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #26a69a;
-    transition: width .3s linear;
+  width:$width;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #26a69a;
+  transition: width .3s linear;
 }
 
-// @mixin form-container ($background-color) {
-//     max-width: 94%;
-//     margin: 1rem auto;
-//     padding: 1rem;
-//     background-color: $background-color;
-// }
+@mixin form-container ($background-color) {
+  max-width: 94%;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: $background-color;
+}
