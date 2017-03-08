@@ -5,7 +5,7 @@ import '../scss/style.scss'
 const YotiDescription = (props) => {
   if (!props.yoti.haveQr) {
     return (
-      <div className='yoti-info '>
+      <div className='yoti-info'>
         <div className='yoti-intro'>
           <h3>YOTI - CONFIDENTIALLY VERIFY YOUR AGE</h3>
           <img src='./imgs/yoti-logo.svg' alt='yoti logo' />
