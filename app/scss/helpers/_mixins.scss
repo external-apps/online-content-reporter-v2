@@ -1,3 +1,18 @@
+@mixin title-container ($background-color) {
+  background-color: $background-color;
+  padding: 4rem 1rem 2.5rem 1rem;
+  text-align: center;
+  height: 28vh;
+  margin: 0;
+}
+
+@mixin content-subcontainer ($background-color, $color) {
+  margin: 1rem;
+  background-color: $background-color;
+  color: $color;
+  padding: 1rem;
+}
+
 @mixin progress ($width:0%) {
     width:$width;
     position: absolute;
@@ -8,22 +23,9 @@
     transition: width .3s linear;
 }
 
-@mixin ageinfo ($background-color) {
-    background-color: $background-color;
-    display: flex;
-    flex-direction: row;
-    color: white;
-    margin: 1rem;
-}
-
-@mixin form-container ($background-color){
-    max-width: 94%;
-    margin: 1rem auto;
-    padding: 1rem;
-    background-color: $background-color;
-}
-
-@mixin content-title ($background-color) {
-  background-color: $background-color;
-  padding: 4rem 1rem 2.5rem 1rem;
-}
+// @mixin form-container ($background-color) {
+//     max-width: 94%;
+//     margin: 1rem auto;
+//     padding: 1rem;
+//     background-color: $background-color;
+// }
