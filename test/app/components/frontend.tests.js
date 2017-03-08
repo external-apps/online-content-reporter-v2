@@ -5,6 +5,8 @@ import Home from '../../../app/components/Home'
 import sinon from 'sinon'
 import Form from '../../../app/containers/Forms'
 import * as formActions from '../../../app/actions/forms'
+import * as yotiActions from '../../../app/actions/yoti'
+
 import {
   ADD_QR_CODE,
   SET_UP_FOR_MOBILE,
@@ -57,4 +59,15 @@ describe('FeatureFirstContainer actions', () => {
       formActions.addCriteria()
     ).to.deep.equal(expectedAction);
   }) expect criteria*/
+})
+
+describe('FeatureFirstContainer actions', () => {
+  it('should dispatch an action to openModal()', () => {
+    const expectedAction = {
+      type: SET_UP_FOR_MOBILE,
+    }
+    expect(
+      yotiActions.setUpForMobile()
+    ).to.have.property('type','SET_UP_FOR_MOBILE');
+  })
 })
