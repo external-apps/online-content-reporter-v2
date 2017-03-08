@@ -8,4 +8,12 @@ describe('<PageTitle />', () => {
     const wrapper = shallow(<PageTitle />)
     expect(wrapper.find('.title-container')).to.have.length(1)
   })
+  it('renders a PageTitle compoent', () => {
+    const wrapper = shallow(<PageTitle />)
+    expect(wrapper.find('.page-title-heading')).to.have.length(1)
+  })
+  it('renders a PageTitle compoent', () => {
+    const wrapper = shallow(<PageTitle />)
+    expect(wrapper.find('.page-title-subheading')).to.have.length(1)
+  })
 })
