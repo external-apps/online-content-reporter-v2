@@ -2,20 +2,38 @@
 @import "./helpers/mixins";
 @import "./helpers/extends";
 
-.age-title {
-  margin: 0;
-  @include title-container($light-blue);
-}
-
-.age-info-blue {
+.age-info-1 {
   @include content-container($aqua, $dark-cobalt);
+  a {
+    color:inherit;
+  }
 }
 
-.age-info-orange {
-    @include content-container($orange, $cobalt);
+.age-info-2 {
+  @include content-container($orange, $cobalt);
   i {
     padding: 0.6rem;
     color: #ffffff;
+  }
+  a {
+    color:inherit;
+  }
+}
+.yoti-info {
+  @include content-container($cobalt, white);
+
+}
+
+.yoti-intro{
+  display: flex;
+  flex-direction: row;
+   img {
+    width: 15%;
+    height: 2rem;
+  }
+  h3 {
+    width: 85%;
+    margin: 0;
   }
 }
 
@@ -26,25 +44,5 @@
   img{
     width: 4rem;
     margin-left: 1rem;
-  }
-}
-
-.yoti-info {
-    margin: 1rem;
-    background-color: $cobalt;
-    box-sizing: border-box;
-    padding: 1rem;
-    color: white;
-    h3{
-      margin: 0;
-      width: 90%;
-      float: left;
-    }
-}
-
-.yoti-intro{
-   img {
-    width: 15%;
-    height: 2rem;
   }
 }
