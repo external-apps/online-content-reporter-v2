@@ -1,8 +1,9 @@
 @import "./helpers/variables";
 @import "./helpers/extends";
 
-.title-container {
-    @include title-container($turquoise);
+
+.title-container-turquoise {
+  @include title-container($turquoise)
 }
 
 .page-title-subheading{
