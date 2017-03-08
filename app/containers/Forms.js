@@ -170,7 +170,7 @@ class UrlForm extends React.Component {
                 floatingLabelText='Email address'
               /><br />
              <Link className='modal-link' to='/'>
-               <RaisedButton label='Home' />
+               <RaisedButton label='Home' onClick={() => this.props.closeModal()} />
              </Link>
            </div>
 
