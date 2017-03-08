@@ -94,7 +94,7 @@ class UrlForm extends React.Component {
                   leftCheckbox={<Checkbox />}
                 />
               </List>
-              <RaisedButton label='Confirm' onClick={() => this.props.nextForm()} />
+              <RaisedButton label='Confirm' primary={true} onClick={() => this.props.nextForm()} />
             </form>
           </div>
 
@@ -147,7 +147,7 @@ class UrlForm extends React.Component {
              rows={10}
            /><br />
               </div>
-              <RaisedButton label='Submit' onClick={() => this.props.openModal()} id='submit-url' />
+              <RaisedButton label='Submit' primary={true} onClick={() => this.props.openModal()} id='submit-url' />
             </form>
           </div>
 
@@ -159,7 +159,7 @@ class UrlForm extends React.Component {
        >
 
         <div className='mod'>
-            <RaisedButton className='close_btn' label='X' onClick={() => this.props.closeModal()} />
+            <RaisedButton className='close_btn' primary={true} label='X' onClick={() => this.props.closeModal()} />
              <h1>Thank you. The online content has been reported for removal</h1>
              <p>
                If you would like IWF to update you by email, please enter your email address below.
@@ -169,7 +169,7 @@ class UrlForm extends React.Component {
                 floatingLabelText='Email address'
               /><br />
              <Link className='modal-link' to='/'>
-               <RaisedButton label='Home' onClick={() => this.props.closeModal()} />
+               <RaisedButton  primary={true} label='Home' onClick={() => this.props.closeModal()} />
              </Link>
            </div>
 
