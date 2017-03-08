@@ -7,7 +7,7 @@ import Yoti from '../containers/Yoti'
 
 const AgeCheckPage = () => (
   <div>
-    <PageTitle heading='ARE YOU UNDER 18?' backgroundColor='bg-light-blue' />
+    <PageTitle heading='ARE YOU UNDER 18?' backgroundColor='title-container-light-blue' />
     <ProgressBar percentage='33' />
 
     <div className='age-responsive'>
