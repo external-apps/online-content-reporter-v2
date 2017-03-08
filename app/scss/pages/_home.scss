@@ -50,15 +50,14 @@
   }
 }
 
-.landing-logo{
-  float: left;
-  min-width: 50%;
-  box-sizing: border-box;
-  text-align: center;
-  margin-bottom: 1rem;
-  img{
+.home-logos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;;
+  margin-bottom: 1.5rem;
+  img {
     height:6rem;
-    width:auto;
-    margin-bottom: 1rem;
+    min-width: 6rem;
   }
 }
