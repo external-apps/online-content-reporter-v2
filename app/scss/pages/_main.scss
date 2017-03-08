@@ -3,8 +3,30 @@
 @import "./helpers/mixins";
 
 body {
-  font-size: 1.2rem;
-  /*max-width: 440px;*/
   margin: 0 auto;
   font-family: 'childline';
+}
+
+a {
+  text-decoration: none;
+}
+
+div {
+  display: block;
+}
+
+.title-container-light-blue {
+  @include title-container($light-blue)
+}
+
+.title-container-dark-cobalt {
+  @include title-container($dark-cobalt)
+}
+
+.title-container-plum {
+  @include title-container($plum)
+}
+
+.link:hover {
+  text-decoration: underline;
 }
