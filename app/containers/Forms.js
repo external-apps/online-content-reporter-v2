@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import TextField from 'material-ui/TextField'
 import '../scss/style.scss'
 import injectTapEventPlugin from 'react-tap-event-plugin'
@@ -26,11 +27,10 @@ const customStyles = {
   },
   content : {
     position                   : 'absolute',
-    top                        : '50%',
+    top                        : '20%',
     left                       : '50%',
-  /*  bottom                     : '50%',
-    right                      : '50%',*/
-    transform                  : 'translate(-50%,-50%) !important',
+    bottom                     : '50%',
+    right                      : '50%',
     border                     : '1px solid #ccc',
     background                 : '#CCECF5',
     fontFamily                 : 'childline',
@@ -39,7 +39,7 @@ const customStyles = {
     borderRadius               : '0.25rem',
     outline                    : 'none',
     padding                    : '1rem',
-    width                      : '420px',
+    maxWidth                  :  '80%',
     height                     : '60%',
     width                      : '375px',
     transform                  : 'translate (-50%, -50%)',
@@ -160,13 +160,18 @@ class UrlForm extends React.Component {
        >
 
         <div className='mod'>
-            <button onClick={() => this.props.closeModal()}className='close_btn'>X</button>
+            <RaisedButton label='X' onClick={() => this.props.closeModal()} />
              <h1>Thank you. The online content has been reported for removal</h1>
              <p>
                If you would like IWF to update you by email, please enter your email address below.
              </p>
-             <input placeholder='email address'></input>
-             <a className='waves-effect waves-light btn' href='/index.html'>Submit</a>
+             <TextField
+                hintText='jane.doe@gmail.com'
+                floatingLabelText='Email address'
+              /><br />
+             <Link className='modal-link' to='/'>
+               <RaisedButton label='Home' />
+             </Link>
            </div>
 
        </Modal>
