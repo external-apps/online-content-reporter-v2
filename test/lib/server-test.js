@@ -8,7 +8,7 @@ server.listen(port, () => {
   console.log(`Server is runnign on port: ${port}`)
 })
 
-describe('Server', () => {
+/*describe('Server', () => {
   it('returns correct html for path "/"', (done) => {
     server.inject({method: 'GET', url: '/age-check'})
     .then((res) => {
@@ -27,3 +27,4 @@ describe('Server', () => {
     .catch(done)
   })
 })
+*/
