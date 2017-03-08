@@ -7,7 +7,6 @@ import { List, ListItem } from 'material-ui/List'
 import { connect } from 'react-redux'
 import Subheader from 'material-ui/Subheader'
 import Checkbox from 'material-ui/Checkbox'
-// import Toggle from 'material-ui/Toggle'
 import Modal from 'react-modal'
 import PageTitle from '../components/PageTitle'
 import ProgressBar from '../components/ProgressBar'
@@ -174,10 +173,6 @@ class UrlForm extends React.Component {
     )
   }
 }
-//
-// UrlForm.propTypes = {
-//   imageCriteria: React.PropTypes.array
-// }
 
 const mapStateToProps = (state) => {
   return { forms: state.forms }
