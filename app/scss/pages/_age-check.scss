@@ -37,6 +37,11 @@
   }
 }
 
+.yoti-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .scan-me {
   @extend .section-title;
   text-align: center;
