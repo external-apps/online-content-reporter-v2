@@ -23,7 +23,14 @@ describe('<Home />', () => {
 })
 
 
-describe('<Form />', () => {
 
-
+describe('FeatureFirstContainer actions', () => {
+it('should dispatch an action to openModal()', () => {
+  const expectedAction = {
+    type: OPEN_MODAL,
+  };
+  expect(
+    formActions.openModal()
+  ).to.deep.equal(expectedAction);
+});
 })
