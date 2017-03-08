@@ -1,34 +1,25 @@
 @import "./helpers/variables";
 @import "./helpers/mixins";
 @import "./helpers/extends";
+
 .age-title {
-    margin: 0;
-    background-color:$light-blue;
-    padding: 2.5rem 1rem 2.5rem 1rem;
-    text-align: center;
-    height: 28vh;
+  margin: 0;
+  @include title-container($light-blue);
 }
 
-.age-info-blue{
-  @include ageinfo($aqua);
-  p{
-    @extend .age-info-text;
-    color: $dark-cobalt;
-  }
+.age-info-blue {
+  @include content-container($aqua, $dark-cobalt);
 }
 
-.age-info-orange{
-  @include ageinfo($orange);
-  i{
+.age-info-orange {
+    @include content-container($orange, $cobalt);
+  i {
     padding: 0.6rem;
-  }
-  a{
-    @extend .age-info-text;
-    color: $cobalt;
+    color: #ffffff;
   }
 }
 
-.scan-me{
+.scan-me {
   @extend .section-title;
   text-align: center;
   padding: 0;

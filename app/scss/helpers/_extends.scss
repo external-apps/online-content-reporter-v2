@@ -1,61 +1,27 @@
 //Not sure where this part below should go.. but it relates to our Reusable components
-.bg-light-blue {
-  background-color: $light-blue;
-}
-
-.bg-dark-cobalt {
-  background-color: $dark-cobalt;
-}
-
-.bg-plum {
-  background-color: $plum;
-}
 
 .page-title {
   font-family: 'Rosie','childline-bold';
   margin: 0;
   font-size: 2.5rem;
   color: white;
+  text-align: center;
 }
 
 .section-title {
   font-family: 'Rosie','childline-bold';
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color:white;
 }
 
-
-
-button{
-  background-color:$plum;
-}
-
-.text {
-  font-size:1.2rem;
-  margin:0;
-}
-
-a {
-  text-decoration: none;
-}
-.age-info-text{
+.age-info-text {
   margin: 0;
   font-size: 1.2rem;
   padding: 1rem;
 }
 
-.btn {
-  //  display: block;
-    width: 20rem;
-    margin: 0 auto;
-    background-color: #632c7a;
-    text-transform: none;
-    margin-bottom: 2rem;
-}
-
-
-
-div{
-  display: block;
+.action-button {
+  display: flex;
+  justify-content: center;
 }
