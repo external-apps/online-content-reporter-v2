@@ -1,6 +1,4 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-
-import ColorManipulator from 'material-ui/utils/colorManipulator'
 import Spacing from 'material-ui/styles/spacing'
 import zIndex from 'material-ui/styles/zIndex'
 
@@ -15,7 +13,7 @@ const muiTheme = getMuiTheme({
     accent1Color: '#632c7a',
     accent2Color: '#632c7a',
     accent3Color: '#632c7a',
-    textColor: '#fff',
+    textColor: '#0c3d52', /*general text color e.g.: in list items*/
     alternateTextColor: '#fff', /*button text color*/
     canvasColor: '#632c7a',
     borderColor: '#632c7a',
