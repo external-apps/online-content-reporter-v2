@@ -9,6 +9,9 @@ body {
 
 a {
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 p {
@@ -29,8 +32,4 @@ div {
 
 .title-container-plum {
   @include title-container($plum)
-}
-
-.link:hover {
-  text-decoration: underline;
 }
