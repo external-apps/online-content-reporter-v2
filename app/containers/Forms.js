@@ -50,7 +50,6 @@ const customStyles = {
 class UrlForm extends React.Component {
 
   render () {
-    console.log('this.props', this.props)
     return (
      <div>
         {this.props.forms.firstForm &&
