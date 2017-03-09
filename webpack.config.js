@@ -6,6 +6,11 @@ module.exports = {
     filename: 'bundle.js',
     path: './dist'
   },
+  resolve: {
+        alias: {
+            "react/lib/DOMProperty": "react-dom/lib/DOMProperty"
+        }
+    },
   module: {
     loaders: [
       {

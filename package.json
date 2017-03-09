@@ -33,6 +33,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-register": "^6.23.0",
     "classnames": "^2.2.5",
+    "env2": "^2.1.1",
     "express": "^4.14.1",
     "file-loader": "^0.10.1",
     "material-ui": "^0.17.0",

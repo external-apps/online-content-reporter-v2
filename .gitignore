@@ -8,3 +8,5 @@ dist/*
 
 /test/lib/fixtures/token.json
 /test/lib/fixtures/token1.json
+
+config.env

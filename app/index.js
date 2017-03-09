@@ -31,6 +31,7 @@ ReactDOM.render(
         <Route path='/age-check' component={AgeCheck} />
         <Route path='/form' component={Forms} />
         <Route path='/over-age' component={OverAge} />
+        <Route path='/form-email' component={FormEmail} />
         <Route path='*' component={Home} />
       </Router>
     </Provider>
