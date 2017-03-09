@@ -9,7 +9,7 @@ const css = `
   font-size: 20px !important;
 }`.trim()
 
-const email = renderEmail(
+const email = ()=>(
   <Email title='Childline - Online Content Report' headCSS={css}>
     <Item>
       <Span fontSize={15}>Online Content Report</Span>
