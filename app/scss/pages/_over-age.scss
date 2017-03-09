@@ -2,10 +2,6 @@
 @import "./helpers/extends";
 @import "./helpers/mixins";
 
-.content-title-overage {
-  @include title-container($turquoise);
-}
-
 .what-now {
   @include content-container($light-turquoise, $purple);
   h3 {

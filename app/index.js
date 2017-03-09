@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers } from 'redux'
 import yoti from './reducers/yoti'
 import forms from './reducers/forms'
-import muiTheme from './theme'
+import muiTheme from './assets/theme'
 
 
 const reducers = combineReducers({
