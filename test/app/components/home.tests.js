@@ -21,5 +21,15 @@ describe('<Home />', () => {
    const wrapper = shallow(<Home />)
    expect(wrapper.find(Link)).to.have.length(2) // update the test when we remove the other link
  })
- 
+
+})
+describe('<Home /> children node tests', () => {
+  it('renders an home', () => {
+    const wrapper = shallow(<Home />)
+    expect(wrapper.find('.home-header-info')).to.have.length(1)
+  })
+  it('renders an home', () => {
+    const wrapper = shallow(<Home />)
+    expect(wrapper.find('.home-header-phone')).to.have.length(1)
+  })
 })
