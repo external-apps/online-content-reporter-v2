@@ -21,4 +21,5 @@ describe('<Home />', () => {
    const wrapper = shallow(<Home />)
    expect(wrapper.find(Link)).to.have.length(2) // update the test when we remove the other link
  })
+ 
 })
