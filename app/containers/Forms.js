@@ -48,6 +48,19 @@ const customStyles = {
 
 
 class UrlForm extends React.Component {
+  constructor (props) {
+    super(props)
+    this.handleUrlChange.bind(this)
+    this.handleDescriptionChange.bind(this)
+  }
+
+  handleUrlChange (url) {
+    this.props.saveUrl(url)
+  }
+
+  handleDescriptionChange (des) {
+    this.props.saveDescription(des)
+  }
 
   render () {
     return (
@@ -129,22 +142,34 @@ class UrlForm extends React.Component {
           </div>
           <div className='form-container'>
             <h4 className='section-title'>WEB ADDRESS</h4>
-            <form action='#'>
+            <form>
               <div className='input-field col s6'>
               <TextField
                  hintText='http://'
                  floatingLabelText='url'
+                ref='url'
                /><br />
               </div>
               <div className='input-field-2 input-field col s6 '>
-              <TextField
-             hintText='Message Field'
-             floatingLabelText='Description'
-             multiLine={true}
-             rows={10}
-           /><br />
-              </div>
-              <RaisedButton label='Submit' primary={true} onClick={() => this.props.openModal()} id='submit-url' />
+                <TextField
+                   hintText='Message Field'
+                   floatingLabelText='Description'
+                   multiLine={true}
+                   rows={10}
+                   ref='description'
+
+                /><br />
+                </div>
+              <RaisedButton
+                label='Submit'
+                primary={true}
+                onClick={() => {
+                  this.props.openModal()
+                  this.handleUrlChange(this.refs.url.getValue())
+                  this.handleDescriptionChange(this.refs.description.getValue())
+                  // after saving to state.. we could display in modal to allow them to check the details are correct!
+                }}
+                id='submit-url' />
             </form>
           </div>
 
@@ -166,7 +191,7 @@ class UrlForm extends React.Component {
                 floatingLabelText='Email address'
               /><br />
              <Link className='modal-link' to='/'>
-               <RaisedButton  primary={true} label='Home' onClick={() => this.props.closeModal()} />
+               <RaisedButton primary={true} label='Home' onClick={() => this.props.closeModal()} />
              </Link>
            </div>
 
@@ -176,6 +201,7 @@ class UrlForm extends React.Component {
      </div>
     )
   }
+
 }
 
 const mapStateToProps = (state) => {
