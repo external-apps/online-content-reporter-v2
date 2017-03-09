@@ -38,6 +38,14 @@ describe('<OverAge /> deeper', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('.other-ops').childAt(0).childAt(1).text()).to.equal('Contact CEOP')
   })
+  it('renders a 3 options', () => {
+    const wrapper = shallow(<OverAge />)
+    expect(wrapper.find('.other-ops').childAt(1).childAt(1).text()).to.equal('Contact The Mix')
+  })
+  it('renders a 3 options', () => {
+    const wrapper = shallow(<OverAge />)
+    expect(wrapper.find('.other-ops').childAt(2).childAt(1).text()).to.equal('Contact Samaritans')
+  })
   it('renders a 3 contacts', () => {
     const wrapper = render(<OverAge />)
     expect(wrapper.find('.contact')).to.have.length(3)
