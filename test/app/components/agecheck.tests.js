@@ -28,6 +28,14 @@ describe('<AgeCheck />', () => {
   })
   it('renders ', () => {
     const wrapper = shallow(<AgeCheck />)
+    expect(wrapper.find('.age-info-1').childAt(0).type()).to.equal('p')
+  })
+  it('renders ', () => {
+    const wrapper = shallow(<AgeCheck />)
+    expect(wrapper.find('.age-info-1').childAt(0).find('a')).to.have.length(1)
+  })
+  it('renders ', () => {
+    const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('.age-info-2')).to.have.length(1)
   })
   it('renders ', () => {
@@ -35,7 +43,7 @@ describe('<AgeCheck />', () => {
     expect(wrapper.find('a')).to.have.length(2)
   })
   it('renders ', () => {
-    const wrapper = shallow(<AgeCheck />) 
+    const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('i')).to.have.length(2)
   })
 })
