@@ -1,17 +1,15 @@
 import ReactHTMLEmail from 'react-html-email'
 // set up React to support a few HTML attributes useful for legacy clients
 ReactHTMLEmail.injectReactEmailAttributes()
-
 import React from 'react'
-import { Box, Email, Image, Item, Span, A } from '../src/index'
+import { Box, Email, Image, Item, Span, A,renderEmail } from 'react-html-email'
 
 const css = `
 @media only screen and (max-device-width: 480px) {
   font-size: 20px !important;
 }`.trim()
 
-
-const email = (
+const email = ()=>(
   <Email title='Childline - Online Content Report' headCSS={css}>
     <Item>
       <Span fontSize={15}>Online Content Report</Span>
