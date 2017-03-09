@@ -14,7 +14,7 @@ describe('<AgeCheck />', () => {
     expect(wrapper.find('PageTitle')).to.have.length(1)
     const titleProps = wrapper.find('PageTitle').props()
     expect(titleProps.heading).to.equal('ARE YOU UNDER 18?')
-    expect(titleProps.backgroundColor).to.equal('title-container-light-blue')
+    expect(titleProps.backgroundColor).to.equal('blue')
   })
   it('renders ', () => {
     const wrapper = shallow(<AgeCheck />)

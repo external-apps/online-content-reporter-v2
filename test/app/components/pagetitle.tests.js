@@ -6,7 +6,7 @@ import PageTitle from '../../../app/components/PageTitle'
 describe('<PageTitle />', () => {
   it('renders a PageTitle compoent', () => {
     const wrapper = shallow(<PageTitle />)
-    expect(wrapper.find('.title-container')).to.have.length(1)
+    expect(wrapper.find('div')).to.have.length(1)
   })
   it('renders a PageTitle compoent', () => {
     const wrapper = shallow(<PageTitle />)
