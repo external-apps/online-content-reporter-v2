@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const request = require('supertest');
 const sinon = require('sinon');
-const end2end = require('../lib/app.js')
+const end2end = require('../../lib/app.js')
 
 
 
