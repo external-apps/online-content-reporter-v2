@@ -54,13 +54,12 @@ class UrlForm extends React.Component {
     this.handleDescriptionChange.bind(this)
   }
 
-  handleUrlChange (e) {
-    console.log("THIS IS E", e);
-    this.props.saveUrl(e.target.value)
+  handleUrlChange (url) {
+    this.props.saveUrl(url)
   }
 
-  handleDescriptionChange (e) {
-    this.props.saveDescription(e.target.value)
+  handleDescriptionChange (des) {
+    this.props.saveDescription(des)
   }
 
   render () {
@@ -149,8 +148,7 @@ class UrlForm extends React.Component {
               <TextField
                  hintText='http://'
                  floatingLabelText='url'
-                ref="url"
-                 value={this.props.forms.url} onChange={this.handleUrlChange}
+                ref='url'
                /><br />
               </div>
               <div className='input-field-2 input-field col s6 '>
@@ -159,7 +157,8 @@ class UrlForm extends React.Component {
                    floatingLabelText='Description'
                    multiLine={true}
                    rows={10}
-                   value={this.props.forms.description} onChange={this.handleDescriptionChange}
+                   ref='description'
+
                 /><br />
                 </div>
               <RaisedButton
@@ -167,7 +166,9 @@ class UrlForm extends React.Component {
                 primary={true}
                 onClick={() => {
                   this.props.openModal()
-                  // another function to save data
+                  this.handleUrlChange(this.refs.url.getValue())
+                  this.handleDescriptionChange(this.refs.description.getValue())
+                  // after saving to state.. we could display in modal to allow them to check the details are correct!
                 }}
                 id='submit-url' />
             </form>
