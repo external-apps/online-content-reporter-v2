@@ -12,15 +12,22 @@ describe('<PageTitle />', () => {
     expect(wrapper.find('div')).to.have.length(1)
     expect(wrapper.children().length).to.equal(2)
   })
-  it('renders a PageTitle compoent', () => {
+  it('<PageTitle /> should render an element with className page-title-heading', () => {
     const wrapper = shallow(<PageTitle />)
     expect(wrapper.find('.page-title-heading')).to.have.length(1)
   })
-  it('renders a PageTitle compoent', () => {
+  it('<PageTitle /> should render an element with className page-title-subheading', () => {
     const wrapper = shallow(<PageTitle />)
     expect(wrapper.find('.page-title-subheading')).to.have.length(1)
+  })
+  it('<PageTitle /> should render a <p> tag', () => {
+    const wrapper = shallow(<PageTitle />)
     expect(wrapper.find('p')).to.have.length(1)
+  })
+  it('<PageTitle /> should accept props', () => {
+    const wrapper = shallow(<PageTitle />)
     wrapper.setProps({...props})
     expect(wrapper.find('p').text()).to.equal('I am a subtitle')
   })
+
 })
