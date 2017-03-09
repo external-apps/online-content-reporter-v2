@@ -1,0 +1,16 @@
+.yoti-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scan-me {
+  @extend .section-title;
+  text-align: center;
+  padding: 0;
+  color: $dark-cobalt;
+  img{
+    width: 4rem;
+    margin-left: 1rem;
+  }
+}

@@ -3,7 +3,7 @@
 @import "./helpers/mixins";
 
 .home-header {
-  @include title-container($light-blue);
+  @include title-container($blue);
   padding-bottom: 2rem;
   padding-top: 0rem;
   h3 {
