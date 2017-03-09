@@ -8,21 +8,21 @@ import { Link } from 'react-router'
 
 
 describe('<OverAge />', () => {
-  it('renders an PageTitle', () => {
+  it('<OverAge /> should render a <PageTitle/> element', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('PageTitle')).to.have.length(1)
     const pageTitleProps = wrapper.find('PageTitle').props();
     expect(pageTitleProps.heading).to.equal("SORRY, YOU'RE TOO OLD FOR THIS SERVICE")
   })
-  it('renders a', () => {
+  it('<OverAge /> should render an element with className what-now', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('.what-now')).to.have.length(1)
   })
-  it('renders a', () => {
+  it('<OverAge /> should render an <h3>', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('h3')).to.have.length(1)
   })
-  it('renders a', () => {
+  it('<OverAge /> should render an element with className other-ops', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('.other-ops')).to.have.length(1)
   })
