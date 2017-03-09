@@ -31,6 +31,7 @@ class YotiShareButton extends React.Component {
     }
     socket.onmessage = (msg) => {
       var data = JSON.parse(msg.data)
+      console.log('token',msg.data)
       switch (data.status) {
         case 'COMPLETED' : {
           this.yotiRedirect(data.token)
