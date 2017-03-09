@@ -33,3 +33,6 @@ div {
 .title-container-plum {
   @include title-container($plum)
 }
+.title-container-turquoise {
+  @include title-container($turquoise)
+}
