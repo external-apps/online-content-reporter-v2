@@ -2,13 +2,17 @@ import {
   OPEN_MODAL,
   CLOSE_MODAL,
   NEXT_FORM,
-  ADD_CRITERIA
+  ADD_CRITERIA,
+  SAVE_URL,
+  SAVE_DESCRIPTION
 } from '../../constants/action-types'
 
 const initialState = {
   modalIsOpen: false,
   firstForm: true,
-  imageCriteria: []
+  imageCriteria: [],
+  url: '',
+  description: ''
 }
 
 const forms = (state = initialState, action) => {
@@ -32,6 +36,16 @@ const forms = (state = initialState, action) => {
       return {
         ...state,
         imageCriteria: state.imageCriteria.concat(action.criteria)
+      }
+    case SAVE_URL:
+      return {
+        ...state,
+        url: action.url
+      }
+    case SAVE_DESCRIPTION:
+      return {
+        ...state,
+        description: action.description
       }
     default:
       return state
