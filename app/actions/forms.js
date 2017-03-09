@@ -24,3 +24,17 @@ export const addCriteria = (criteria) => {
     criteria
   }
 }
+
+export const saveUrl = (url) => {
+  return {
+    type: types.SAVE_URL,
+    url
+  }
+}
+
+export const saveDescription = (description) => {
+  return {
+    type: types.SAVE_DESCRIPTION,
+    description
+  }
+}
