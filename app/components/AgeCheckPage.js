@@ -30,6 +30,9 @@ const AgeCheckPage = () => (
     <Link className='action-button' to='/form'>
       <p>Take me to form</p>
     </Link>
+    <Link className='action-button' to='/form-email'>
+      <p>Take me to formEmail</p>
+    </Link>
   </div>
 )
 
