@@ -43,6 +43,7 @@ class YotiShareButton extends React.Component {
     var xhr = new XMLHttpRequest()
     xhr.addEventListener('load', (e) => {
       var responseObj = JSON.parse(e.target.responseText)
+      console.log('HAHÓ',responseObj);
       responseObj.isUnder18 ? browserHistory.push('/form') : browserHistory.push('/over-age')
     })
     xhr.open('GET', `/thankyou?token=${token}`)
