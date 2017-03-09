@@ -8,17 +8,27 @@ import RaisedButton from 'material-ui/RaisedButton'
 import PageTitle from '../../../app/components/PageTitle'
 import ProgressBar from '../../../app/components/ProgressBar'
 
-describe('<AgeCheck />', () => {
-  it('renders ', () => {
+describe('renders <AgeCheck />', () => {
+  it('<AgeCheck /> should have a <PageTitle /> component', () => {
     const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('PageTitle')).to.have.length(1)
+  })
+  it('<AgeCheck /> should have a <PageTitle /> component with a heading prop', () => {
+    const wrapper = shallow(<AgeCheck />)
     const titleProps = wrapper.find('PageTitle').props()
     expect(titleProps.heading).to.equal('ARE YOU UNDER 18?')
+  })
+  it('<AgeCheck /> should have a <PageTitle /> component with backgroundColor prop', () => {
+    const wrapper = shallow(<AgeCheck />)
+    const titleProps = wrapper.find('PageTitle').props()
     expect(titleProps.backgroundColor).to.equal('blue')
   })
-  it('renders ', () => {
+  it('<AgeCheck /> should have a <ProgressBar /> component', () => {
     const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('ProgressBar')).to.have.length(1)
+  })
+  it('<AgeCheck /> should have a <ProgressBar /> component with a percentage prop', () => {
+    const wrapper = shallow(<AgeCheck />)
     const barProps = wrapper.find('ProgressBar').props()
     expect(barProps.percentage).to.equal('33')
   })
