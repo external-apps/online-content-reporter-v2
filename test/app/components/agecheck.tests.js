@@ -30,4 +30,12 @@ describe('<AgeCheck />', () => {
     const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('.age-info-2')).to.have.length(1)
   })
+  it('renders ', () => {
+    const wrapper = shallow(<AgeCheck />) /*i guess they should be Links justto be consisten!!*/
+    expect(wrapper.find('a')).to.have.length(2)
+  })
+  it('renders ', () => {
+    const wrapper = shallow(<AgeCheck />) 
+    expect(wrapper.find('i')).to.have.length(2)
+  })
 })
