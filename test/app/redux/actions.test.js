@@ -10,6 +10,8 @@ import {
   OPEN_MODAL,
   CLOSE_MODAL,
   NEXT_FORM,
+  SAVE_URL,
+  SAVE_DESCRIPTION,
   ADD_CRITERIA
 } from '../../../constants/action-types'
 
@@ -38,13 +40,21 @@ describe('Test actions', () => {
       formActions.nextForm()
     ).to.deep.equal(expectedAction);
   })
-  it('should dispatch an action to close modal', () => { //
+  it('should dispatch an action to save url', () => { //
     const expectedAction = {
-      type: ADD_CRITERIA,
+      type: SAVE_URL,
     }
     expect(
-      formActions.addCriteria()
-    ).to.have.property('type','ADD_CRITERIA')
+      formActions.saveUrl()
+    ).to.have.property('type','SAVE_URL')
+  })
+  it('should dispatch an action to save description', () => { //
+    const expectedAction = {
+      type: SAVE_DESCRIPTION,
+    }
+    expect(
+      formActions.saveDescription()
+    ).to.have.property('type','SAVE_DESCRIPTION')
   })
 })
 
