@@ -97,7 +97,7 @@ class UrlForm extends React.Component {
                 />
                 <ListItem
                   primaryText='Someone hurting someone else'
-                  onChange={() => { this.props.addCriteria('Someone hurting someone else') }}
+                  onChange={() => { this.props.addCriteria('Someone hurting someone else');console.log(this.props.forms.imageCriteria); }}
                   leftCheckbox={<Checkbox />}
                 />
                 <ListItem

@@ -35,7 +35,10 @@ const forms = (state = initialState, action) => {
     case ADD_CRITERIA:
       return {
         ...state,
-        imageCriteria: state.imageCriteria.concat(action.criteria)
+        imageCriteria: state.imageCriteria.indexOf(action.criteria) !== -1
+          ? (()=>{state.imageCriteria.splice(state.imageCriteria.indexOf(action.criteria), 1);
+                return state.imageCriteria})()
+            : state.imageCriteria.concat(action.criteria)
       }
     case SAVE_URL:
       return {
