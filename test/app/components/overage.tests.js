@@ -30,6 +30,10 @@ describe('<OverAge />', () => {
 })
 
 describe('<OverAge /> deeper', () => {
+  it('renders a', () => {
+    const wrapper = shallow(<OverAge />)
+    expect(wrapper.find('.what-now').childAt(0).text()).to.equal('What can I do now?')
+  })
   it('renders a 3 options', () => {
     const wrapper = render(<OverAge />)
     expect(wrapper.find('.option')).to.have.length(3)
