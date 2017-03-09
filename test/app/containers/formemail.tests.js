@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+/*import { expect } from 'chai'
 import React from 'react'
 import { shallow, mount, render } from 'enzyme'
 import FormEmail from '../../../app/containers/FormEmail'
@@ -31,3 +31,4 @@ describe('renders <FormEmail />', () => {
     expect(wrapper.find('Image')).to.have.length(1)
   })
 })
+*/
