@@ -7,7 +7,7 @@ import { Link } from 'react-router'
 import ReactHTMLEmail from 'react-html-email'
 // set up React to support a few HTML attributes useful for legacy clients
 ReactHTMLEmail.injectReactEmailAttributes()
-import { Box, Email, Image, Item, Span, A,renderEmail } from 'react-html-email'
+import { Box, Email, Image, Item, Span, A,renderEmail } from 'react-html-email/lib/components'
 
 describe('renders <FormEmail />', () => {
   it('<FormEmail /> should have an <Email /> component', () => {
