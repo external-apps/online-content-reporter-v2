@@ -18,5 +18,16 @@ describe('renders <FormEmail />', () => {
     const wrapper = shallow(<FormEmail />)
     expect(wrapper.find('Item')).to.have.length(3)
   })
-
+  it('<FormEmail /> should have a <Span /> components', () => {
+    const wrapper = shallow(<FormEmail />)
+    expect(wrapper.find('Span')).to.have.length(2)
+  })
+  it('<FormEmail /> should have a <Box /> components', () => {
+    const wrapper = shallow(<FormEmail />)
+    expect(wrapper.find('Box')).to.have.length(1)
+  })
+  it('<FormEmail /> should have a <Image /> components', () => {
+    const wrapper = shallow(<FormEmail />)
+    expect(wrapper.find('Image')).to.have.length(1)
+  })
 })
