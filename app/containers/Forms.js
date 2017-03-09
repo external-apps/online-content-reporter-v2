@@ -55,7 +55,7 @@ class UrlForm extends React.Component {
      <div>
         {this.props.forms.firstForm &&
         <div>
-          <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='title-container-plum' />
+          <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='purple' />
           <ProgressBar percentage='66' />
 
           <div className='content-describe form-container'>
@@ -116,9 +116,7 @@ class UrlForm extends React.Component {
 
       {!this.props.forms.firstForm &&
         <div className='content'>
-          <div className='title-div'>
-            <h1 className='page-title'>REPORT CONTENT WEB ADDRESS</h1>
-          </div>
+          <PageTitle heading='REPORT CONTENT WEB ADDRESS' backgroundColor='purple' />
           <div className='progress'>
              <div className='determinate3' ></div>
           </div>

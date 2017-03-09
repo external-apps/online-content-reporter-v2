@@ -1,0 +1,23 @@
+
+.yoti-info {
+  @include content-container($cobalt, white);
+}
+
+.yoti-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.yoti-info-heading {
+  display: flex;
+  flex-direction: row;
+   img {
+    width: 15%;
+    height: 2rem;
+  }
+  h3 {
+    width: 85%;
+    margin: 0;
+  }
+}

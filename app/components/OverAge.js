@@ -5,7 +5,7 @@ import PageTitle from '../components/PageTitle'
 
 const OverAge = () => (
   <div>
-    <PageTitle heading="SORRY, YOU'RE TOO OLD FOR THIS SERVICE" backgroundColor='title-container-turquoise' />
+    <PageTitle heading="SORRY, YOU'RE TOO OLD FOR THIS SERVICE" backgroundColor='turquoise' />
     <div className='what-now'>
       <h3>What can I do now?</h3>
       <i className='identity small material-icons'>perm_identity</i>
