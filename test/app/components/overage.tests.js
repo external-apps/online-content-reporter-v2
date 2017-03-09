@@ -30,9 +30,16 @@ describe('<OverAge />', () => {
 })
 
 describe('<OverAge /> deeper', () => {
-  it('renders an PageTitle', () => {
+  it('renders a 3 options', () => {
+    const wrapper = render(<OverAge />)
+    expect(wrapper.find('.option')).to.have.length(3)
+  })
+  it('renders a 3 contacts', () => {
     const wrapper = render(<OverAge />)
     expect(wrapper.find('.contact')).to.have.length(3)
   })
-
+  it('renders a 3 i tags', () => {
+    const wrapper = render(<OverAge />)
+    expect(wrapper.find('i')).to.have.length(4)
+  })
 })
