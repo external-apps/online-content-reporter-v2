@@ -8,8 +8,8 @@ import Form from '../../../app/containers/Forms'
 import RaisedButton from 'material-ui/RaisedButton'
 import PageTitle from '../../../app/components/PageTitle'
 
-describe('<Home /> should render an element with className home-header', () => {
-  it('renders an home', () => {
+describe('<Home /> ', () => {
+  it('<Home /> should render an element with className home-header', () => {
     const wrapper = shallow(<Home />)
     expect(wrapper.find('.home-header')).to.have.length(1)
   })
