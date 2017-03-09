@@ -30,31 +30,31 @@ describe('<OverAge />', () => {
 })
 
 describe('<OverAge /> deeper', () => {
-  it('renders a', () => {
+  it('<OverAge /> should render an element with className what-now that should have a child with text "What can I do now?"', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('.what-now').childAt(0).text()).to.equal('What can I do now?')
   })
-  it('renders a 3 options', () => {
+  it('<OverAge /> should render 3 elements with className option', () => {
     const wrapper = render(<OverAge />)
     expect(wrapper.find('.option')).to.have.length(3)
   })
-  it('renders a 3 options', () => {
+  it('the 1st element with className option should have a grandchild with text "Contact CEOP"', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('.other-ops').childAt(0).childAt(1).text()).to.equal('Contact CEOP')
   })
-  it('renders a 3 options', () => {
+  it('the 2nd element with className option should have a grandchild with text "Contact The Mix"', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('.other-ops').childAt(1).childAt(1).text()).to.equal('Contact The Mix')
   })
-  it('renders a 3 options', () => {
+  it('the 3rd element with className option should have a grandchild with text "Contact Samartitans"', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('.other-ops').childAt(2).childAt(1).text()).to.equal('Contact Samaritans')
   })
-  it('renders a 3 contacts', () => {
+  it('<OverAge /> should render 3 elements with className contact', () => {
     const wrapper = render(<OverAge />)
     expect(wrapper.find('.contact')).to.have.length(3)
   })
-  it('renders a 3 i tags', () => {
+  it('<OverAge /> should render 3 <i> tags', () => {
     const wrapper = render(<OverAge />)
     expect(wrapper.find('i')).to.have.length(4)
   })
