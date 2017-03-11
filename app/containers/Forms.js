@@ -12,7 +12,6 @@ import Modal from 'react-modal'
 import PageTitle from '../components/PageTitle'
 import ProgressBar from '../components/ProgressBar'
 import * as formActions from '../actions/forms'
-import * as qs from 'querystring'
 
 injectTapEventPlugin()
 
