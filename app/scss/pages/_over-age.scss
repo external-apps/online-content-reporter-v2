@@ -29,6 +29,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 .contact {
   float: left;
@@ -47,6 +48,8 @@
   margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
+  min-width: 300px; /*ugly and leads to optional errors*/
+  max-width: 400px;
   i {
     width: 10%;
     text-align: right;
