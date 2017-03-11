@@ -56,14 +56,20 @@ class UrlForm extends React.Component {
     this.handleSubmit.bind(this)
   }
 
-  handleUrlChange (url) {
-    this.props.saveUrl(url)
-  //  return cb(null,this.props.saveUrl(url))
+  handleUrlChange (self,url,cb) {
+  //  this.props.saveUrl(url)
+  console.log('urlchange',url,self)
+   setTimeout(function() {
+    return cb(null,self.props.saveUrl(url))
+  },1000)
   }
 
-  handleDescriptionChange (des) {
-    this.props.saveDescription(des)
-    //return cb(null,this.props.saveDescription(des))
+  handleDescriptionChange (self,des,cb) {
+    console.log('descChange',self)
+  //  this.props.saveDescription(des)
+  setTimeout(function() {
+    return cb(null,self.props.saveDescription(des))
+  },1000)
   }
 
 
@@ -72,34 +78,36 @@ class UrlForm extends React.Component {
    var nextArg = args.shift()
    console.log('in waterfall',next);
   console.log(nextArg,"nextARGGGG")
+  let self = this
+    console.log(self.props.forms,"FORM")
    var tail = tasks.slice(1)
    if (typeof next !== 'undefined') {
      if(nextArg){
-       next(nextArg,function(error, result) {
+       next(self,nextArg,function(error, result) {
          if (error) {
            cb(error)
            return ;
          }
-         waterfall(args, tail, cb)
+         self.waterfall(args, tail, cb)
        })
-    }else{
-      next(function(error, result) {
-        if (error) {
-          cb(error)
-          return ;
-        }
-        cb(null, 'sucesss')
-      })
-    }
+     }else{
+       next(self,function(error, result) {
+         if (error) {
+           cb(error)
+           return ;
+         }
+         cb(null, 'sucesss')
+       })
+     }
      return ;
    }
    cb(null, 'sucesss')
   }
 
-handleSubmit (e) {
+handleSubmit (self,cb) {
   console.log('I have been called!!!')
-  e.preventDefault()
-   var self = this
+//  console.log(e)
+//6  e.preventDefault()
    var payload = {
      "imageCriteria": self.props.forms.imageCriteria,
      "url": self.props.forms.url,
@@ -122,6 +130,7 @@ handleSubmit (e) {
      }).then(function(body) {
        console.log(body)
      })
+    cb(null,'success')
  }
 
   render () {
@@ -225,11 +234,15 @@ handleSubmit (e) {
                 label='Submit'
                 primary={true}
                 onClick={(e) => {
-                      this.props.openModal(),
+                    /*  this.props.openModal(),
                       this.handleUrlChange(this.refs.url.getValue()),
                       this.handleDescriptionChange(this.refs.description.getValue()),
-                      this.handleSubmit(e)
-                      /*this.waterfall([this.refs.url.getValue(),this.refs.description.getValue()], [
+                      this.handleSubmit(e)*/
+                      let  url= this.refs.url.getValue()
+                      let desc =this.refs.description.getValue()
+                      let ev =e
+                      console.log(url,desc,e)
+                      this.waterfall([url,desc], [
                           this.handleUrlChange,
                           this.handleDescriptionChange,
                           this.handleSubmit
@@ -239,7 +252,7 @@ handleSubmit (e) {
                             throw new Error('Sending email failed with error: ' + error)
                           }
                           console.log('Sending email success!..')
-                        })*/
+                        })
                   // after saving to state.. we could display in modal to allow them to check the details are correct!
                 }}
                 id='submit-url' />
