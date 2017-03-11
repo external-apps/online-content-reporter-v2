@@ -223,6 +223,7 @@ handleSubmit (self,cb) {
                 label='Submit'
                 primary={true}
                 onClick={(e) => {
+                      this.props.openModal()
                       let  url= this.refs.url.getValue()
                       let desc =this.refs.description.getValue()
                       let ev =e
