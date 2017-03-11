@@ -12,6 +12,7 @@ import Modal from 'react-modal'
 import PageTitle from '../components/PageTitle'
 import ProgressBar from '../components/ProgressBar'
 import * as formActions from '../actions/forms'
+import * as qs from 'querystring'
 
 injectTapEventPlugin()
 
@@ -44,8 +45,7 @@ const customStyles = {
     transform                  : 'translate(-50%,-50%)',
     zIndex                     : '100'
   }
-};
-
+}
 
 class UrlForm extends React.Component {
   constructor (props) {
@@ -61,6 +61,32 @@ class UrlForm extends React.Component {
   handleDescriptionChange (des) {
     this.props.saveDescription(des)
   }
+
+handleSubmit (e) {
+  console.log('I have been called!!!')
+  e.preventDefault()
+   var self = this
+   var payload = {
+     "imageCriteria": self.props.forms.imageCriteria,
+     "url": self.props.forms.url,
+     "description": self.props.forms.description
+   }
+   console.log(payload)
+  fetch("/email", {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+     .then(function(response) {
+       console.log(response)
+       return response.json()
+     }).then(function(body) {
+       console.log(body)
+     })
+ }
 
   render () {
     return (
@@ -157,16 +183,16 @@ class UrlForm extends React.Component {
                    multiLine={true}
                    rows={10}
                    ref='description'
-
                 /><br />
                 </div>
               <RaisedButton
                 label='Submit'
                 primary={true}
-                onClick={() => {
+                onClick={(e) => {
                   this.props.openModal()
                   this.handleUrlChange(this.refs.url.getValue())
                   this.handleDescriptionChange(this.refs.description.getValue())
+                  this.handleSubmit(e)
                   // after saving to state.. we could display in modal to allow them to check the details are correct!
                 }}
                 id='submit-url' />
