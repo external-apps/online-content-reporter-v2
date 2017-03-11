@@ -52,14 +52,48 @@ class UrlForm extends React.Component {
     super(props)
     this.handleUrlChange.bind(this)
     this.handleDescriptionChange.bind(this)
+    this.waterfall.bind(this)
+    this.handleSubmit.bind(this)
   }
 
   handleUrlChange (url) {
     this.props.saveUrl(url)
+  //  return cb(null,this.props.saveUrl(url))
   }
 
   handleDescriptionChange (des) {
     this.props.saveDescription(des)
+    //return cb(null,this.props.saveDescription(des))
+  }
+
+
+  waterfall (args,tasks, cb) {
+   var next = tasks[0]
+   var nextArg = args.shift()
+   console.log('in waterfall',next);
+  console.log(nextArg,"nextARGGGG")
+   var tail = tasks.slice(1)
+   if (typeof next !== 'undefined') {
+     if(nextArg){
+       next(nextArg,function(error, result) {
+         if (error) {
+           cb(error)
+           return ;
+         }
+         waterfall(args, tail, cb)
+       })
+    }else{
+      next(function(error, result) {
+        if (error) {
+          cb(error)
+          return ;
+        }
+        cb(null, 'sucesss')
+      })
+    }
+     return ;
+   }
+   cb(null, 'sucesss')
   }
 
 handleSubmit (e) {
@@ -72,6 +106,8 @@ handleSubmit (e) {
      "description": self.props.forms.description
    }
    console.log(payload)
+
+
   fetch("/email", {
       method: 'POST',
       headers: {
@@ -189,10 +225,21 @@ handleSubmit (e) {
                 label='Submit'
                 primary={true}
                 onClick={(e) => {
-                  this.props.openModal()
-                  this.handleUrlChange(this.refs.url.getValue())
-                  this.handleDescriptionChange(this.refs.description.getValue())
-                  this.handleSubmit(e)
+                      this.props.openModal(),
+                      this.handleUrlChange(this.refs.url.getValue()),
+                      this.handleDescriptionChange(this.refs.description.getValue()),
+                      this.handleSubmit(e)
+                      /*this.waterfall([this.refs.url.getValue(),this.refs.description.getValue()], [
+                          this.handleUrlChange,
+                          this.handleDescriptionChange,
+                          this.handleSubmit
+                        ],function (error, result) {
+                          console.log('Sending email..');
+                          if (error) {
+                            throw new Error('Sending email failed with error: ' + error)
+                          }
+                          console.log('Sending email success!..')
+                        })*/
                   // after saving to state.. we could display in modal to allow them to check the details are correct!
                 }}
                 id='submit-url' />
