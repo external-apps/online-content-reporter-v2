@@ -11,7 +11,6 @@ import { createStore, combineReducers } from 'redux'
 import yoti from './reducers/yoti'
 import forms from './reducers/forms'
 import muiTheme from './assets/theme'
-import FormEmail from './containers/FormEmail'
 
 
 const reducers = combineReducers({
@@ -31,7 +30,6 @@ ReactDOM.render(
         <Route path='/age-check' component={AgeCheck} />
         <Route path='/form' component={Forms} />
         <Route path='/over-age' component={OverAge} />
-        <Route path='/form-email' component={FormEmail} />
         <Route path='*' component={Home} />
       </Router>
     </Provider>
