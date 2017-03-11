@@ -57,29 +57,22 @@ class UrlForm extends React.Component {
   }
 
   handleUrlChange (self,url,cb) {
-  //  this.props.saveUrl(url)
-  console.log('urlchange',url,self)
    setTimeout(function() {
     return cb(null,self.props.saveUrl(url))
-  },1000)
+    },1000)
   }
 
   handleDescriptionChange (self,des,cb) {
-    console.log('descChange',self)
-  //  this.props.saveDescription(des)
-  setTimeout(function() {
-    return cb(null,self.props.saveDescription(des))
-  },1000)
+    setTimeout(function() {
+      return cb(null,self.props.saveDescription(des))
+    },1000)
   }
 
 
   waterfall (args,tasks, cb) {
    var next = tasks[0]
    var nextArg = args.shift()
-   console.log('in waterfall',next);
-  console.log(nextArg,"nextARGGGG")
-  let self = this
-    console.log(self.props.forms,"FORM")
+   let self = this
    var tail = tasks.slice(1)
    if (typeof next !== 'undefined') {
      if(nextArg){
@@ -101,20 +94,16 @@ class UrlForm extends React.Component {
      }
      return ;
    }
-   cb(null, 'sucesss')
+  // cb(null, 'sucesss')
   }
 
 handleSubmit (self,cb) {
-  console.log('I have been called!!!')
-//  console.log(e)
-//6  e.preventDefault()
    var payload = {
      "imageCriteria": self.props.forms.imageCriteria,
      "url": self.props.forms.url,
      "description": self.props.forms.description
    }
    console.log(payload)
-
 
   fetch("/email", {
       method: 'POST',
@@ -234,10 +223,6 @@ handleSubmit (self,cb) {
                 label='Submit'
                 primary={true}
                 onClick={(e) => {
-                    /*  this.props.openModal(),
-                      this.handleUrlChange(this.refs.url.getValue()),
-                      this.handleDescriptionChange(this.refs.description.getValue()),
-                      this.handleSubmit(e)*/
                       let  url= this.refs.url.getValue()
                       let desc =this.refs.description.getValue()
                       let ev =e
