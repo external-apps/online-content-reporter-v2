@@ -31,6 +31,7 @@ class YotiShareButton extends React.Component {
     }
     socket.onmessage = (msg) => {
       var data = JSON.parse(msg.data)
+      console.log('token',msg.data)
       switch (data.status) {
         case 'COMPLETED' : {
           this.yotiRedirect(data.token)
@@ -43,6 +44,7 @@ class YotiShareButton extends React.Component {
     var xhr = new XMLHttpRequest()
     xhr.addEventListener('load', (e) => {
       var responseObj = JSON.parse(e.target.responseText)
+      console.log('HAHÓ',responseObj);
       responseObj.isUnder18 ? browserHistory.push('/form') : browserHistory.push('/over-age')
     })
     xhr.open('GET', `/thankyou?token=${token}`)
@@ -74,6 +76,7 @@ class YotiShareButton extends React.Component {
     var xhr = new XMLHttpRequest()
     xhr.addEventListener('load', (e) => {
       var responseObj = JSON.parse(e.target.responseText)
+      console.log(responseObj)
       this.props.addQr(responseObj.svg)
       this.listenForToken(responseObj.proto, responseObj.url)
     })

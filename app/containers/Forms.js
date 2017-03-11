@@ -44,23 +44,82 @@ const customStyles = {
     transform                  : 'translate(-50%,-50%)',
     zIndex                     : '100'
   }
-};
-
+}
 
 class UrlForm extends React.Component {
   constructor (props) {
     super(props)
     this.handleUrlChange.bind(this)
     this.handleDescriptionChange.bind(this)
+    this.waterfall.bind(this)
+    this.handleSubmit.bind(this)
   }
 
-  handleUrlChange (url) {
-    this.props.saveUrl(url)
+  handleUrlChange (self,url,cb) {
+   setTimeout(function() {
+    return cb(null,self.props.saveUrl(url))
+    },1000)
   }
 
-  handleDescriptionChange (des) {
-    this.props.saveDescription(des)
+  handleDescriptionChange (self,des,cb) {
+    setTimeout(function() {
+      return cb(null,self.props.saveDescription(des))
+    },1000)
   }
+
+
+  waterfall (args,tasks, cb) {
+   var next = tasks[0]
+   var nextArg = args.shift()
+   let self = this
+   var tail = tasks.slice(1)
+   if (typeof next !== 'undefined') {
+     if(nextArg){
+       next(self,nextArg,function(error, result) {
+         if (error) {
+           cb(error)
+           return ;
+         }
+         self.waterfall(args, tail, cb)
+       })
+     }else{
+       next(self,function(error, result) {
+         if (error) {
+           cb(error)
+           return ;
+         }
+         cb(null, 'sucesss')
+       })
+     }
+     return ;
+   }
+  // cb(null, 'sucesss')
+  }
+
+handleSubmit (self,cb) {
+   var payload = {
+     "imageCriteria": self.props.forms.imageCriteria,
+     "url": self.props.forms.url,
+     "description": self.props.forms.description
+   }
+   console.log(payload)
+
+  fetch("/email", {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+     .then(function(response) {
+       console.log(response)
+       return response.json()
+     }).then(function(body) {
+       console.log(body)
+     })
+    cb(null,'success')
+ }
 
   render () {
     return (
@@ -97,7 +156,7 @@ class UrlForm extends React.Component {
                 />
                 <ListItem
                   primaryText='Someone hurting someone else'
-                  onChange={() => { this.props.addCriteria('Someone hurting someone else') }}
+                  onChange={() => { this.props.addCriteria('Someone hurting someone else');console.log(this.props.forms.imageCriteria); }}
                   leftCheckbox={<Checkbox />}
                 />
                 <ListItem
@@ -157,16 +216,28 @@ class UrlForm extends React.Component {
                    multiLine={true}
                    rows={10}
                    ref='description'
-
                 /><br />
                 </div>
               <RaisedButton
                 label='Submit'
                 primary={true}
-                onClick={() => {
-                  this.props.openModal()
-                  this.handleUrlChange(this.refs.url.getValue())
-                  this.handleDescriptionChange(this.refs.description.getValue())
+                onClick={(e) => {
+                      this.props.openModal()
+                      let  url= this.refs.url.getValue()
+                      let desc =this.refs.description.getValue()
+                      let ev =e
+                      console.log(url,desc,e)
+                      this.waterfall([url,desc], [
+                          this.handleUrlChange,
+                          this.handleDescriptionChange,
+                          this.handleSubmit
+                        ],function (error, result) {
+                          console.log('Sending email..');
+                          if (error) {
+                            throw new Error('Sending email failed with error: ' + error)
+                          }
+                          console.log('Sending email success!..')
+                        })
                   // after saving to state.. we could display in modal to allow them to check the details are correct!
                 }}
                 id='submit-url' />
