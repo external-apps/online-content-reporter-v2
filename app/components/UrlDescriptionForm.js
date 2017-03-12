@@ -36,23 +36,23 @@ class UrlDescriptionForm extends React.Component {
           <h4 className='section-title'>WEB ADDRESS</h4>
           <form>
             <div className='input-field col s6'>
-            <TextField
-               hintText='http://'
-               floatingLabelText='url'
-               value={this.props.url}
-               onChange={e => this.props.saveUrl(e.target.value)}
-             /><br />
+              <TextField
+                hintText='http://'
+                floatingLabelText='url'
+                value={this.props.url}
+                onChange={e => this.props.saveUrl(e.target.value)}
+              /><br />
             </div>
             <div className='input-field-2 input-field col s6 '>
               <TextField
-                 hintText='Message Field'
-                 floatingLabelText='Description'
-                 multiLine={true}
-                 rows={10}
-                 value={this.props.description}
-                 onChange={e => this.props.saveDescription(e.target.value)}
+                hintText='Message Field'
+                floatingLabelText='Description'
+                multiLine={true}
+                rows={10}
+                value={this.props.description}
+                onChange={e => this.props.saveDescription(e.target.value)}
               /><br />
-              </div>
+            </div>
             <RaisedButton
               label='Submit'
               primary={true}
