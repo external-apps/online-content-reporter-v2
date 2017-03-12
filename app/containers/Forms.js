@@ -1,49 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router'
 import TextField from 'material-ui/TextField'
 import '../scss/style.scss'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import RaisedButton from 'material-ui/RaisedButton'
 import { connect } from 'react-redux'
-import Modal from 'react-modal'
+import ConfirmationModal from '../components/ConfirmationModal'
 import PageTitle from '../components/PageTitle'
 import ImageCriteriaForm from '../components/ImgCriteriaForm'
-import ProgressBar from '../components/ProgressBar'
 import * as formActions from '../actions/forms'
 import axios from 'axios'
 
 injectTapEventPlugin()
-
-const customStyles = {
-  overlay: {
-    position         : 'fixed',
-    top               : 0,
-    left              : 0,
-    right             : 0,
-    bottom            : 0,
-    zIndex: 50,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-  },
-  content : {
-    position                   : 'absolute',
-    top                        : '50%',
-    left                       : '50%',
-    transform                  : 'translate (-50%, -50%)',
-    border                     : '1px solid #ccc',
-    background                 : '#CCECF5',
-    fontFamily                 : 'childline',
-    overflow                   : 'hidden',
-    WebkitOverflowScrolling    : 'touch',
-    borderRadius               : '0.25rem',
-    outline                    : 'none',
-    padding                    : '1rem',
-    maxWidth                   :  '80%',
-    height                     : '60%',
-    width                      : '375px',
-    transform                  : 'translate(-50%,-50%)',
-    zIndex                     : '100'
-  }
-}
 
 class UrlForm extends React.Component {
   constructor (props) {
@@ -58,8 +25,6 @@ class UrlForm extends React.Component {
   }
 
   render () {
-    const { firstForm } = this.props
-
     return (
      <div>
         {this.props.firstForm &&
@@ -116,29 +81,7 @@ class UrlForm extends React.Component {
                 id='submit-url' />
             </form>
           </div>
-
-       <Modal
-         isOpen={this.props.modalIsOpen}
-         onRequestClose={() => this.props.closeModal()}
-         style={customStyles}
-         contentLabel='Reassuring message'
-       >
-        <div className='mod'>
-            <RaisedButton className='close_btn' primary={true} label='X' onClick={() => this.props.closeModal()} />
-             <h1>Thank you. The online content has been reported for removal</h1>
-             <p>
-               If you would like IWF to update you by email, please enter your email address below.
-             </p>
-             <TextField
-                hintText='jane.doe@gmail.com'
-                floatingLabelText='Email address'
-              /><br />
-             <Link className='modal-link' to='/'>
-               <RaisedButton primary={true} label='Home' onClick={() => this.props.closeModal()} />
-             </Link>
-           </div>
-
-       </Modal>
+          <ConfirmationModal {...this.props} />
       </div>
      }
      </div>
