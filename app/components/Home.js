@@ -30,7 +30,7 @@ const Home = () => (
     </div>
 
     <Link className='action-button' to='/age-check'>
-      <RaisedButton label='Verify age' primary={true} />
+      <RaisedButton label='Report Content' primary={true} />
     </Link>
 
     <Link to='/over-age'>

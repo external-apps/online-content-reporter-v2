@@ -22,18 +22,17 @@ class UrlDescriptionForm extends React.Component {
   render () {
     return (
       <div>
-        <PageTitle heading='REPORT CONTENT WEB ADDRESS' backgroundColor='purple' />
+        <PageTitle heading='REPORT CONTENT WEB ADDRESS' backgroundColor='dark-cobalt' />
         <ProgressBar percentage='66' />
-        <div className='message'>
-          <h4 className='section-title'>WEBSITE DETAILS</h4>
+        <div className='url-form-description'>
+          <h3 className='section-title'>WEBSITE DETAILS</h3>
           <p>
             If you have any information you think may help us such as a description of where the content you are reporting is located on a large website or username and password needed to gain access, please include it in the description box.
-
             If you have multiple webpages (URLs) to report, please include these in the description box.
           </p>
         </div>
         <div className='form-container'>
-          <h4 className='section-title'>WEB ADDRESS</h4>
+          <h3 className='section-title'>WEB ADDRESS</h3>
           <form>
             <div className='input-field col s6'>
               <TextField
@@ -48,7 +47,7 @@ class UrlDescriptionForm extends React.Component {
                 hintText='Message Field'
                 floatingLabelText='Description'
                 multiLine={true}
-                rows={10}
+                rows={4}
                 value={this.props.description}
                 onChange={e => this.props.saveDescription(e.target.value)}
               /><br />
@@ -59,11 +58,10 @@ class UrlDescriptionForm extends React.Component {
               onClick={(e) => {
                 this.props.openModal()
                 this.handleSubmit().then(() => {
-                  console.log('Success')
+                  console.log('Success submitting form')
                 }).catch((error) => {
                   console.log(error)
                 })
-                // after saving to state.. we could display in modal to allow them to check the details are correct!
               }}
               id='submit-url' />
           </form>
