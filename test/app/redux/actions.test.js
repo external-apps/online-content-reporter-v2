@@ -12,7 +12,7 @@ import {
   NEXT_FORM,
   SAVE_URL,
   SAVE_DESCRIPTION,
-  ADD_CRITERIA
+  TOGGLE_CRITERIA
 } from '../../../constants/action-types'
 
 describe('Test actions', () => {

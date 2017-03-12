@@ -19,8 +19,8 @@ class YotiShareButton extends React.Component {
     this.getQr = this.getQr.bind(this)
     this.listenForToken = this.listenForToken.bind(this)
     this.yotiRedirect = this.yotiRedirect.bind(this)
-    this.mobileSetup = this.mobileSetup.bind(this)
-    this.navigateToYoti = this.navigateToYoti.bind(this)
+    // this.mobileSetup = this.mobileSetup.bind(this)
+    // this.navigateToYoti = this.navigateToYoti.bind(this)
   }
 
   listenForToken (proto, url) {
@@ -50,27 +50,31 @@ class YotiShareButton extends React.Component {
     xhr.open('GET', `/thankyou?token=${token}`)
     xhr.send()
   }
+  //
+  // mobileSetup () {
+  //   var url = 'https://www.yoti.com/qr/' + t.scenId
+  //   var xhr = new XMLHttpRequest()
+  //   xhr.onreadystatechange = () => {
+  //     if (xhr.readyState === 4 && xhr.status === 200) {
+  //       var responseObj = JSON.parse(xhr.responseText)
+  //       const href = `${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=true`
+  //       // normally href is passed in here.
+  //       this.props.setUpForMobile(t.config.service + t.appId)
+  //     }
+  //   }
+  //   xhr.open('GET', url, true)
+  //   xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+  //   xhr.setRequestHeader('content-type', 'application/json')
+  //   xhr.send(null)
+  // }
 
-  mobileSetup () {
-    var url = 'https://www.yoti.com/qr/' + t.scenId
-    var xhr = new XMLHttpRequest()
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        var responseObj = JSON.parse(xhr.responseText)
-        const href = `${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=true`
-        // normally href is passed in here.
-        this.props.setUpForMobile(t.config.service + t.appId)
-      }
-    }
-    xhr.open('GET', url, true)
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
-    xhr.setRequestHeader('content-type', 'application/json')
-    xhr.send(null)
-  }
-
-  componentDidMount () {
-    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? this.mobileSetup() : (console.log('on desktop'))
-  }
+  // componentDidMount () {
+  //   var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
+  //   var isMobile = isMobileRE.test(navigator.userAgent) &&
+  //     /Mobile/i.test(navigator.userAgent)
+  //   if (isMobile) this.mobileSetup()
+  //   else console.log('on desktop')
+  // }
 
   getQr () {
     var xhr = new XMLHttpRequest()
@@ -84,15 +88,15 @@ class YotiShareButton extends React.Component {
     xhr.send()
   }
 
-  navigateToYoti () {
-    t.serviceRedirectTimeout && clearTimeout(t.serviceRedirectTimeout)
-    var current = Date.now()
-    var hangTime = 5e3
-    t.serviceRedirectTimeout = setTimeout(() => {
-      var timeAfter = Date.now()
-      hangTime + 1e3 > timeAfter - (current + hangTime) && (window.location = t.config.service + t.appId)
-    }, hangTime)
-  }
+  // navigateToYoti () {
+  //   t.serviceRedirectTimeout && clearTimeout(t.serviceRedirectTimeout)
+  //   var current = Date.now()
+  //   var hangTime = 5e3
+  //   t.serviceRedirectTimeout = setTimeout(() => {
+  //     var timeAfter = Date.now()
+  //     hangTime + 1e3 > timeAfter - (current + hangTime) && (window.location = t.config.service + t.appId)
+  //   }, hangTime)
+  // }
 
   render () {
     const clickHandler = this.props.yoti.isMobile ? (window.location = this.props.yoti.href) : (this.getQr)
