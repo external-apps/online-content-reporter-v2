@@ -69,7 +69,11 @@ class YotiShareButton extends React.Component {
   }
 
   componentDidMount () {
-    /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent) ? this.mobileSetup() : (console.log('on desktop'))
+    var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
+    var isMobile = isMobileRE.test(navigator.userAgent) &&
+      /Mobile/i.test(navigator.userAgent)
+    if (isMobile) this.mobileSetup()
+    else console.log('on desktop')
   }
 
   getQr () {
