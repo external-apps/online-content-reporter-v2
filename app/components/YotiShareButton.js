@@ -84,7 +84,7 @@ class YotiShareButton extends React.Component {
       this.props.addQr(responseObj.svg)
       this.listenForToken(responseObj.proto, responseObj.url)
     })
-    xhr.open('GET', '/qr')
+    xhr.open('GET', '/get-qr')
     xhr.send()
   }
 
