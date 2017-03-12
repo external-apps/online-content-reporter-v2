@@ -39,7 +39,7 @@ const customStyles = {
     borderRadius               : '0.25rem',
     outline                    : 'none',
     padding                    : '1rem',
-    maxWidth                  :  '80%',
+    maxWidth                   :  '80%',
     height                     : '60%',
     width                      : '375px',
     transform                  : 'translate(-50%,-50%)',
@@ -53,19 +53,18 @@ class UrlForm extends React.Component {
     this.handleSubmit.bind(this)
   }
 
-  handleSubmit (url, desc) {
-    var payload = {
-      "imageCriteria": this.props.forms.imageCriteria,
-      url,
-      desc
-    }
+  handleSubmit () {
+    const { imageCriteria, url, description } = this.props
+    var payload = { imageCriteria, url, description }
     return axios.post('/email', payload)
   }
 
   render () {
+    const { firstForm } = this.props
+
     return (
      <div>
-        {this.props.forms.firstForm &&
+        {this.props.firstForm &&
         <div>
           <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='purple' />
           <ProgressBar percentage='66' />
@@ -87,22 +86,30 @@ class UrlForm extends React.Component {
                 />
                 <ListItem
                   primaryText='Someone touching themselves in a sexual way'
-                  onChange={() => { this.props.toggleCriteria('Someone touching themselves in a sexual way') }}
+                  onChange={() => {
+                    this.props.toggleCriteria('Someone touching themselves in a sexual way')
+                  }}
                   leftCheckbox={<Checkbox />}
                 />
                 <ListItem
                   primaryText='Any sexual activity involving a child, adult or both'
-                  onChange={() => { this.props.toggleCriteria('Any sexual activity involving a child, adult or both') }}
+                  onChange={() => {
+                    this.props.toggleCriteria('Any sexual activity involving a child, adult or both')
+                  }}
                   leftCheckbox={<Checkbox />}
                 />
                 <ListItem
                   primaryText='Someone hurting someone else'
-                  onChange={() => { this.props.toggleCriteria('Someone hurting someone else');console.log(this.props.forms.imageCriteria); }}
+                  onChange={() => {
+                    this.props.toggleCriteria('Someone hurting someone else')
+                  }}
                   leftCheckbox={<Checkbox />}
                 />
                 <ListItem
                   primaryText='Sexual activity that includes animals'
-                  onChange={() => { this.props.toggleCriteria('Sexual activity that includes animals') }}
+                  onChange={() => {
+                    this.props.toggleCriteria('Sexual activity that includes animals')
+                  }}
                   leftCheckbox={<Checkbox />}
                 />
               </List>
@@ -126,7 +133,7 @@ class UrlForm extends React.Component {
         </div>
       }
 
-      {!this.props.forms.firstForm &&
+      {!this.props.firstForm &&
         <div className='content'>
           <PageTitle heading='REPORT CONTENT WEB ADDRESS' backgroundColor='purple' />
           <div className='progress'>
@@ -147,7 +154,8 @@ class UrlForm extends React.Component {
               <TextField
                  hintText='http://'
                  floatingLabelText='url'
-                 ref='url'
+                 value={this.props.url}
+                 onChange={e => this.props.saveUrl(e.target.value)}
                /><br />
               </div>
               <div className='input-field-2 input-field col s6 '>
@@ -156,7 +164,8 @@ class UrlForm extends React.Component {
                    floatingLabelText='Description'
                    multiLine={true}
                    rows={10}
-                   ref='description'
+                   value={this.props.description}
+                   onChange={e => this.props.saveDescription(e.target.value)}
                 /><br />
                 </div>
               <RaisedButton
@@ -164,10 +173,7 @@ class UrlForm extends React.Component {
                 primary={true}
                 onClick={(e) => {
                   this.props.openModal()
-                  let  url= this.refs.url.getValue()
-                  let desc =this.refs.description.getValue()
-
-                  this.handleSubmit(url, desc).then(() => {
+                  this.handleSubmit().then(() => {
                     console.log('Success');
                   }).catch((error) => {
                     console.log(error);
@@ -179,7 +185,7 @@ class UrlForm extends React.Component {
           </div>
 
        <Modal
-         isOpen={this.props.forms.modalIsOpen}
+         isOpen={this.props.modalIsOpen}
          onRequestClose={() => this.props.closeModal()}
          style={customStyles}
          contentLabel='Reassuring message'
@@ -209,9 +215,7 @@ class UrlForm extends React.Component {
 
 }
 
-const mapStateToProps = (state) => {
-  return { forms: state.forms }
-}
+const mapStateToProps = state => state.forms
 
 const actionCreators = {
   ...formActions
