@@ -12,6 +12,7 @@ import Modal from 'react-modal'
 import PageTitle from '../components/PageTitle'
 import ProgressBar from '../components/ProgressBar'
 import * as formActions from '../actions/forms'
+import axios from 'axios'
 
 injectTapEventPlugin()
 
@@ -49,77 +50,17 @@ const customStyles = {
 class UrlForm extends React.Component {
   constructor (props) {
     super(props)
-    this.handleUrlChange.bind(this)
-    this.handleDescriptionChange.bind(this)
-    this.waterfall.bind(this)
     this.handleSubmit.bind(this)
   }
 
-  handleUrlChange (self,url,cb) {
-   setTimeout(function() {
-    return cb(null,self.props.saveUrl(url))
-    },1000)
+  handleSubmit (url, desc) {
+    var payload = {
+      "imageCriteria": this.props.forms.imageCriteria,
+      url,
+      desc
+    }
+    return axios.post('/email', payload)
   }
-
-  handleDescriptionChange (self,des,cb) {
-    setTimeout(function() {
-      return cb(null,self.props.saveDescription(des))
-    },1000)
-  }
-
-
-  waterfall (args,tasks, cb) {
-   var next = tasks[0]
-   var nextArg = args.shift()
-   let self = this
-   var tail = tasks.slice(1)
-   if (typeof next !== 'undefined') {
-     if(nextArg){
-       next(self,nextArg,function(error, result) {
-         if (error) {
-           cb(error)
-           return ;
-         }
-         self.waterfall(args, tail, cb)
-       })
-     }else{
-       next(self,function(error, result) {
-         if (error) {
-           cb(error)
-           return ;
-         }
-         cb(null, 'sucesss')
-       })
-     }
-     return ;
-   }
-  // cb(null, 'sucesss')
-  }
-
-handleSubmit (self,cb) {
-   var payload = {
-     "imageCriteria": self.props.forms.imageCriteria,
-     "url": self.props.forms.url,
-     "description": self.props.forms.description
-   }
-   console.log(payload)
-
-  fetch("/email", {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    })
-     .then(function(response) {
-       console.log(response)
-       return response.json()
-     }).then(function(body) {
-       console.log(body)
-     })
-    cb(null,'success')
- }
 
   render () {
     return (
@@ -141,27 +82,27 @@ handleSubmit (self,cb) {
                 <Subheader>Describe image content</Subheader>
                 <ListItem
                   primaryText='Someone posing in a sexual way'
-                  onChange={() => { this.props.addCriteria('Someone posing in a sexual way') }}
+                  onChange={() => { this.props.toggleCriteria('Someone posing in a sexual way') }}
                   leftCheckbox={<Checkbox />}
                 />
                 <ListItem
                   primaryText='Someone touching themselves in a sexual way'
-                  onChange={() => { this.props.addCriteria('Someone touching themselves in a sexual way') }}
+                  onChange={() => { this.props.toggleCriteria('Someone touching themselves in a sexual way') }}
                   leftCheckbox={<Checkbox />}
                 />
                 <ListItem
                   primaryText='Any sexual activity involving a child, adult or both'
-                  onChange={() => { this.props.addCriteria('Any sexual activity involving a child, adult or both') }}
+                  onChange={() => { this.props.toggleCriteria('Any sexual activity involving a child, adult or both') }}
                   leftCheckbox={<Checkbox />}
                 />
                 <ListItem
                   primaryText='Someone hurting someone else'
-                  onChange={() => { this.props.addCriteria('Someone hurting someone else');console.log(this.props.forms.imageCriteria); }}
+                  onChange={() => { this.props.toggleCriteria('Someone hurting someone else');console.log(this.props.forms.imageCriteria); }}
                   leftCheckbox={<Checkbox />}
                 />
                 <ListItem
                   primaryText='Sexual activity that includes animals'
-                  onChange={() => { this.props.addCriteria('Sexual activity that includes animals') }}
+                  onChange={() => { this.props.toggleCriteria('Sexual activity that includes animals') }}
                   leftCheckbox={<Checkbox />}
                 />
               </List>
@@ -206,7 +147,7 @@ handleSubmit (self,cb) {
               <TextField
                  hintText='http://'
                  floatingLabelText='url'
-                ref='url'
+                 ref='url'
                /><br />
               </div>
               <div className='input-field-2 input-field col s6 '>
@@ -222,22 +163,15 @@ handleSubmit (self,cb) {
                 label='Submit'
                 primary={true}
                 onClick={(e) => {
-                      this.props.openModal()
-                      let  url= this.refs.url.getValue()
-                      let desc =this.refs.description.getValue()
-                      let ev =e
-                      console.log(url,desc,e)
-                      this.waterfall([url,desc], [
-                          this.handleUrlChange,
-                          this.handleDescriptionChange,
-                          this.handleSubmit
-                        ],function (error, result) {
-                          console.log('Sending email..');
-                          if (error) {
-                            throw new Error('Sending email failed with error: ' + error)
-                          }
-                          console.log('Sending email success!..')
-                        })
+                  this.props.openModal()
+                  let  url= this.refs.url.getValue()
+                  let desc =this.refs.description.getValue()
+
+                  this.handleSubmit(url, desc).then(() => {
+                    console.log('Success');
+                  }).catch((error) => {
+                    console.log(error);
+                  })
                   // after saving to state.. we could display in modal to allow them to check the details are correct!
                 }}
                 id='submit-url' />
