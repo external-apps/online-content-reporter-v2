@@ -2,7 +2,7 @@ import {
   OPEN_MODAL,
   CLOSE_MODAL,
   NEXT_FORM,
-  ADD_CRITERIA,
+  TOGGLE_CRITERIA,
   SAVE_URL,
   SAVE_DESCRIPTION
 } from '../../constants/action-types'
@@ -32,7 +32,7 @@ const forms = (state = initialState, action) => {
         ...state,
         firstForm: false
       }
-    case ADD_CRITERIA:
+    case TOGGLE_CRITERIA:
       return {
         ...state,
         imageCriteria: state.imageCriteria.indexOf(action.criteria) !== -1
