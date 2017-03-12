@@ -4,21 +4,21 @@
   color: $dark-cobalt;
   font-family: 'childline-regular';
   h1 {
-   font-size: 2rem;
-   font-family: 'childline-bold';
-   margin-top: 2rem;
- }
- p{
+    font-size: 2rem;
+    font-family: 'childline-bold';
+    margin-top: 2rem;
+  }
+ p {
    font-family: 'childline';
- }
+  }
 }
 
 .close_btn{
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background: rgba(35, 79, 98, 1);
-    color: white;
-    font-size: 1.2rem;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background: rgba(35, 79, 98, 1);
+  color: white;
+  font-size: 1.2rem;
 }

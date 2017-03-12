@@ -18,9 +18,9 @@ export const nextForm = () => {
   }
 }
 
-export const addCriteria = (criteria) => {
+export const toggleCriteria = (criteria) => {
   return {
-    type: types.ADD_CRITERIA,
+    type: types.TOGGLE_CRITERIA,
     criteria
   }
 }

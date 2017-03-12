@@ -12,13 +12,10 @@ import yoti from './reducers/yoti'
 import forms from './reducers/forms'
 import muiTheme from './assets/theme'
 
-
 const reducers = combineReducers({
   yoti,
   forms
 })
-
-
 
 const store = createStore(reducers)
 
@@ -36,5 +33,3 @@ ReactDOM.render(
   </MuiThemeProvider>,
   document.getElementById('root')
 )
-
-      //  <Route path='*' component={() => <div>404</div>} />
