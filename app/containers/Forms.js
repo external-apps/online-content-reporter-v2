@@ -6,7 +6,6 @@ import UrlDescriptionForm from '../components/UrlDescriptionForm'
 import ImageCriteriaForm from '../components/ImgCriteriaForm'
 import * as formActions from '../actions/forms'
 
-
 injectTapEventPlugin()
 
 class UrlForm extends React.Component {
