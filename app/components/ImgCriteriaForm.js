@@ -8,7 +8,6 @@ import ProgressBar from '../components/ProgressBar'
 import '../scss/style.scss'
 
 const ImgCriteriaForm = (props) => {
-  if (props.firstForm) {
     return (
       <div>
         <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='purple' />
@@ -79,7 +78,6 @@ const ImgCriteriaForm = (props) => {
 
       </div>
     )
-  }
 }
 
 export default ImgCriteriaForm
