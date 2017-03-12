@@ -4,7 +4,7 @@ npm-debug.log
 
 keys/server*
 
-dist/*
+dist
 
 /test/lib/fixtures/token.json
 /test/lib/fixtures/token1.json
