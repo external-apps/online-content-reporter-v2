@@ -11,11 +11,16 @@
 
 .age-info-2 {
   @include content-container($orange, $cobalt);
-  i {
-    padding: 0.6rem;
-    color: #ffffff;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   a {
-    color:inherit;
+    margin: auto 0;
+    color: inherit;
+    font-size: 1.4rem;
+  }
+  i {
+    font-size: 4rem;
+    padding-right: 1rem;
   }
 }

@@ -1,0 +1,29 @@
+@import "./helpers/variables";
+@import "./helpers/extends";
+@import "./helpers/mixins";
+
+.content-describe {
+  @include content-container($turquoise, $dark-cobalt);
+  font-family: $bold-text;
+}
+
+.form-container {
+  @include content-container($light-blue, $dark-cobalt);
+}
+
+.other-options {
+  @include content-container($dark-cobalt, #ffffff);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  span {
+    margin: auto 0;
+  }
+  a {
+    color: $turquoise;
+  }
+  i {
+    font-size: 4rem;
+    padding-right: 1rem;
+  }
+}
