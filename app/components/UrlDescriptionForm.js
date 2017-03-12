@@ -59,9 +59,9 @@ class UrlDescriptionForm extends React.Component {
               onClick={(e) => {
                 this.props.openModal()
                 this.handleSubmit().then(() => {
-                  console.log('Success');
+                  console.log('Success')
                 }).catch((error) => {
-                  console.log(error);
+                  console.log(error)
                 })
                 // after saving to state.. we could display in modal to allow them to check the details are correct!
               }}
@@ -69,7 +69,7 @@ class UrlDescriptionForm extends React.Component {
           </form>
         </div>
         <ConfirmationModal {...this.props} />
-    </div>
+      </div>
     )
   }
 }
