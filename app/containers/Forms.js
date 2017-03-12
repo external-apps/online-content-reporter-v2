@@ -4,12 +4,10 @@ import TextField from 'material-ui/TextField'
 import '../scss/style.scss'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import RaisedButton from 'material-ui/RaisedButton'
-import { List, ListItem } from 'material-ui/List'
 import { connect } from 'react-redux'
-import Subheader from 'material-ui/Subheader'
-import Checkbox from 'material-ui/Checkbox'
 import Modal from 'react-modal'
 import PageTitle from '../components/PageTitle'
+import ImageCriteriaForm from '../components/ImgCriteriaForm'
 import ProgressBar from '../components/ProgressBar'
 import * as formActions from '../actions/forms'
 import axios from 'axios'
@@ -65,73 +63,8 @@ class UrlForm extends React.Component {
     return (
      <div>
         {this.props.firstForm &&
-        <div>
-          <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='purple' />
-          <ProgressBar percentage='66' />
-
-          <div className='content-describe form-container'>
-            <p>
-              The content must fit a certain criteria for us to legally remove it. Please select the boxes below that apply.
-            </p>
-          </div>
-
-          <div className='form-container'>
-            <form action='#'>
-              <List>
-                <Subheader>Describe image content</Subheader>
-                <ListItem
-                  primaryText='Someone posing in a sexual way'
-                  onChange={() => { this.props.toggleCriteria('Someone posing in a sexual way') }}
-                  leftCheckbox={<Checkbox />}
-                />
-                <ListItem
-                  primaryText='Someone touching themselves in a sexual way'
-                  onChange={() => {
-                    this.props.toggleCriteria('Someone touching themselves in a sexual way')
-                  }}
-                  leftCheckbox={<Checkbox />}
-                />
-                <ListItem
-                  primaryText='Any sexual activity involving a child, adult or both'
-                  onChange={() => {
-                    this.props.toggleCriteria('Any sexual activity involving a child, adult or both')
-                  }}
-                  leftCheckbox={<Checkbox />}
-                />
-                <ListItem
-                  primaryText='Someone hurting someone else'
-                  onChange={() => {
-                    this.props.toggleCriteria('Someone hurting someone else')
-                  }}
-                  leftCheckbox={<Checkbox />}
-                />
-                <ListItem
-                  primaryText='Sexual activity that includes animals'
-                  onChange={() => {
-                    this.props.toggleCriteria('Sexual activity that includes animals')
-                  }}
-                  leftCheckbox={<Checkbox />}
-                />
-              </List>
-              <RaisedButton label='Confirm' primary={true} onClick={() => this.props.nextForm()} />
-            </form>
-          </div>
-
-          <div className='other-options'>
-            <p>
-              <i className='large material-icons'>info_outline</i>
-              If the picture or video doesnt include any of the activities above,
-              we may not be able to remove it. Talk to a
-              <span>
-                <a href='https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/'>
-                  Childline counsellor
-                </a>
-              </span>
-              for more advice.
-            </p>
-          </div>
-        </div>
-      }
+          <ImageCriteriaForm {...this.props} />
+        }
 
       {!this.props.firstForm &&
         <div className='content'>
@@ -190,7 +123,6 @@ class UrlForm extends React.Component {
          style={customStyles}
          contentLabel='Reassuring message'
        >
-
         <div className='mod'>
             <RaisedButton className='close_btn' primary={true} label='X' onClick={() => this.props.closeModal()} />
              <h1>Thank you. The online content has been reported for removal</h1>
@@ -207,7 +139,7 @@ class UrlForm extends React.Component {
            </div>
 
        </Modal>
-        </div>
+      </div>
      }
      </div>
     )
