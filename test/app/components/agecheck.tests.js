@@ -54,6 +54,6 @@ describe('renders <AgeCheck />', () => {
   })
   it('<AgeCheck /> should render 2 <i> tags', () => {
     const wrapper = shallow(<AgeCheck />)
-    expect(wrapper.find('i')).to.have.length(2)
+    expect(wrapper.find('i')).to.have.length(1)
   })
 })
