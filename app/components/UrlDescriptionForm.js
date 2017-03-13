@@ -56,7 +56,7 @@ class UrlDescriptionForm extends React.Component {
               label='Submit'
               primary={true}
               onClick={(e) => {
-                this.props.openModal()
+                this.props.changeModal()
                 this.handleSubmit().then(() => {
                   console.log('Success submitting form')
                 }).catch((error) => {

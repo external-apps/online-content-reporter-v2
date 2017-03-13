@@ -39,12 +39,12 @@ const ConfirmationModal = (props) => {
   return (
     <Modal
       isOpen={props.modalIsOpen}
-      onRequestClose={() => props.closeModal()}
+      onRequestClose={() => props.changeModal()}
       style={modalOverlay}
       contentLabel='Reassuring message'
     >
       <div className='mod'>
-        <RaisedButton className='close_btn' primary={true} label='X' onClick={() => props.closeModal()} />
+        <RaisedButton className='close_btn' primary={true} label='X' onClick={() => props.changeModal()} />
         <h1>Thank you. The online content has been reported for removal</h1>
         <p>
           If you would like IWF to update you by email, please enter your email address below.
@@ -55,7 +55,7 @@ const ConfirmationModal = (props) => {
         />
         <br />
         <Link className='modal-link' to='/'>
-          <RaisedButton primary={true} label='Home' onClick={() => props.closeModal()} />
+          <RaisedButton primary={true} label='Home' onClick={() => props.changeModal()} />
         </Link>
       </div>
     </Modal>

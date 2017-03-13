@@ -1,17 +1,10 @@
 import * as types from '../../constants/action-types.js'
 
-export const openModal = () => {
+export const changeModal = () => {
   return {
-    type: types.OPEN_MODAL
+    type: types.CHANGE_MODAL
   }
 }
-
-export const closeModal = () => {
-  return {
-    type: types.CLOSE_MODAL
-  }
-}
-
 export const nextForm = () => {
   return {
     type: types.NEXT_FORM
