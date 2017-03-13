@@ -8,7 +8,9 @@ body {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
+  font-family: $bold-text;
   &:hover {
     text-decoration: underline;
   }
