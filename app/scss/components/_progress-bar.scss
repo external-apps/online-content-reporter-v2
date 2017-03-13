@@ -6,7 +6,9 @@
     display: block;
     width: 100%;
     h2{
-        @include content-container(white, $red);
+      @include content-container(white, $red);
       margin:0;
+      padding-top: 0.5rem;
+      padding-bottom: 0;
     }
 }

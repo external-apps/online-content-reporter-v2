@@ -16,13 +16,6 @@ const ImgCriteriaForm = (props) => {
         <Header />
         <ProgressBar form='1' />
         <SectionTitle heading='WHY ARE YOUR REPORTING?' subheading='The content must fit a certain criteria for us to legally remove it.' span='Please select from boxes below that tell us what you are concerned about the content.'/>
-        <div className='content-describe'>
-          <h2>WHY ARE YOUR REPORTING?</h2>
-          <p>
-            The content must fit a certain criteria for us to legally remove it.
-            <span className="bold"> Please select from boxes below that tell us what you are concerned about the content.</span>
-          </p>
-        </div>
         <div className='form-container'>
           <form action='#'>
             <List>
