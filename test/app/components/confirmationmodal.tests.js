@@ -54,6 +54,22 @@ describe('<ConfirmationModal />', () => {
   })
   it('RaisedButton', () => {
     const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('RaisedButton').get(0).props.primary).to.equal(true)
+  })
+  it('RaisedButton', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('RaisedButton').get(0).props.className).to.equal('close_btn')
+  })
+  it('RaisedButton', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('RaisedButton').get(0).props.label).to.equal('X')
+  })
+  it('RaisedButton', () => {
+    const wrapper = shallow(<ConfirmationModal />)
     expect(wrapper.find('RaisedButton').get(1).props.primary).to.equal(true)
+  })
+  it('RaisedButton', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('RaisedButton').get(1).props.label).to.equal('Home')
   })
 })
