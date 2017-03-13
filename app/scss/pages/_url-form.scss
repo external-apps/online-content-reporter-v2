@@ -15,3 +15,16 @@
     color: inherit;
   }
 }
+
+.input-field{
+  width:100%;
+  div{
+    width:100% !important;
+  }
+}
+.buttons{
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -37,7 +37,7 @@ class UrlDescriptionForm extends React.Component {
           <form>
             <div className='input-field col s6'>
               <TextField
-                hintText='Please enter the website in concern here. If you have multiple webpages (URLs) to report. Please let us know in the description.'
+                hintText='http://...'
                 floatingLabelText='url'
                 value={this.props.url}
                 onChange={e => this.props.saveUrl(e.target.value)}
@@ -53,6 +53,8 @@ class UrlDescriptionForm extends React.Component {
                 onChange={e => this.props.saveDescription(e.target.value)}
               /><br />
             </div>
+            <div className="buttons">
+            <RaisedButton label='Previous' primary={true} onClick={() => this.props.changeForm()} />
             <RaisedButton
               label='Submit'
               primary={true}
@@ -65,10 +67,10 @@ class UrlDescriptionForm extends React.Component {
                 })
               }}
               id='submit-url' />
+          </div>
           </form>
         </div>
         <ConfirmationModal {...this.props} />
-        <RaisedButton label='Previous' primary={true} onClick={() => this.props.changeForm()} />
         <Footer />
       </div>
     )
