@@ -2,11 +2,7 @@ import { expect } from 'chai'
 import React from 'react'
 import { shallow } from 'enzyme'
 import UrlDescriptionForm from '../../../app/components/UrlDescriptionForm'
-import PageTitle from '../../../app/components/PageTitle'
-import RaisedButton from 'material-ui/RaisedButton'
-import TextField from 'material-ui/TextField'
-import ProgressBar from '../../../app/components/ProgressBar'
-import ConfirmationModal from '../../../app/components/ConfirmationModal'
+
 const props = {
     modalIsOpen: false,
     firstForm: true,
@@ -57,7 +53,7 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
   })
   it('ProgreessBar component should have a percentage prop', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('ProgressBar').props().percentage).to.equal('66')
+    expect(wrapper.find('ProgressBar').props().percentage).to.equal('100')
   })
   it(' <TextField> has a hintText property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
