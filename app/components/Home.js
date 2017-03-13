@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
 import Footer from './footer'
-import ActionAndroid from 'material-ui/svg-icons/action/android'
+import ActionAndroid from 'material-ui/svg-icons/action/launch'
 
 const Home = () => (
   <div className='home-body'>
