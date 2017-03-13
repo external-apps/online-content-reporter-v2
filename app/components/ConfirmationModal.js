@@ -21,7 +21,6 @@ const modalOverlay = {
     maxWidth: '80%',
     height: '60%',
     width: '375px',
-    transform: 'translate(-50%,-50%)',
     zIndex: '100'
   },
   overlay: {
