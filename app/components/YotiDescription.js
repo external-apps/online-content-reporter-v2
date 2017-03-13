@@ -7,7 +7,7 @@ const YotiDescription = (props) => {
     return (
       <div className='yoti-info'>
         <div className='yoti-info-heading'>
-          <h3>YOTI - CONFIDENTIALLY VERIFY YOUR AGE</h3>
+          <h3 className='section-title'>YOTI - CONFIDENTIALLY VERIFY YOUR AGE</h3>
           <img src='./imgs/yoti-logo.svg' alt='yoti logo' />
         </div>
         <p className='yoti-info-description'>

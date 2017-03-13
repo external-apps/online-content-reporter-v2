@@ -1,8 +1,9 @@
+@import "./helpers/extends";
+
 @mixin title-container ($background-color) {
   background-color: $background-color;
   padding: 4rem 1rem 2.5rem 1rem;
   text-align: center;
-  min-height: 28vh;
   margin: 0;
 }
 
@@ -11,7 +12,15 @@
   background-color: $background-color;
   color: $color;
   padding: 1rem;
+  @extend .width-limit ;
 }
+
+// @media (min-width: 1000px) {
+//   @mixin content-container {
+//     max-width: 800px;
+//     margin: 0 auto;
+//   }
+// }
 
 @mixin progress ($width:0%) {
   width:$width;
@@ -21,11 +30,4 @@
   bottom: 0;
   background-color: #26a69a;
   transition: width .3s linear;
-}
-
-@mixin form-container ($background-color) {
-  max-width: 94%;
-  margin: 1rem auto;
-  padding: 1rem;
-  background-color: $background-color;
 }
