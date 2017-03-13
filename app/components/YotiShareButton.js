@@ -112,7 +112,14 @@ class YotiShareButton extends React.Component {
     if(!this.props.yoti.haveQr) {
       return (
         <div className='yoti-btn'>
-          <RaisedButton primary={true} onClick={clickHandler} target={this.props.yoti.target} label='Share your age using Yoti' labelColor={'#632c7a'} />
+          <RaisedButton
+            labelStyle={{fontSize: '1.4rem', textTransform:'none', fontFamily: 'childline'}}
+            style={{padding:'0.8rem'}}
+            primary={true}
+            onClick={clickHandler}
+            target={this.props.yoti.target}
+            label='Share your age using Yoti'
+          />
         </div>
       )
     }
