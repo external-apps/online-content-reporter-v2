@@ -72,4 +72,12 @@ describe('<ConfirmationModal />', () => {
     const wrapper = shallow(<ConfirmationModal />)
     expect(wrapper.find('RaisedButton').get(1).props.label).to.equal('Home')
   })
+  it('TextField', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('TextField').props().hintText).to.equal('jane.doe@gmail.com')
+  })
+  it('TextField', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('TextField').props().floatingLabelText).to.equal('Email address')
+  })
 })
