@@ -4,6 +4,7 @@ import PageTitle from './PageTitle'
 import TextField from 'material-ui/TextField'
 import ProgressBar from './ProgressBar'
 import ConfirmationModal from './ConfirmationModal'
+import Footer from './Footer'
 import '../scss/style.scss'
 import axios from 'axios'
 
@@ -23,7 +24,7 @@ class UrlDescriptionForm extends React.Component {
     return (
       <div>
         <PageTitle heading='REPORT CONTENT WEB ADDRESS' backgroundColor='dark-cobalt' />
-        <ProgressBar percentage='100' />
+        <ProgressBar form='2' />
         <div className='url-form-description'>
           <h3 className='section-title'>WEBSITE DETAILS</h3>
           <p>
@@ -36,7 +37,7 @@ class UrlDescriptionForm extends React.Component {
           <form>
             <div className='input-field col s6'>
               <TextField
-                hintText='Please enter the website in concern here. If you have multiple webpages (URLs) to report. Please let us know in the description.'
+                hintText='http://...'
                 floatingLabelText='url'
                 value={this.props.url}
                 onChange={e => this.props.saveUrl(e.target.value)}
@@ -52,6 +53,8 @@ class UrlDescriptionForm extends React.Component {
                 onChange={e => this.props.saveDescription(e.target.value)}
               /><br />
             </div>
+            <div className="buttons">
+            <RaisedButton label='Previous' primary={true} onClick={() => this.props.changeForm()} />
             <RaisedButton
               label='Submit'
               primary={true}
@@ -64,10 +67,11 @@ class UrlDescriptionForm extends React.Component {
                 })
               }}
               id='submit-url' />
+          </div>
           </form>
         </div>
         <ConfirmationModal {...this.props} />
-        <RaisedButton label='Previous' primary={true} onClick={() => this.props.changeForm()} />
+        <Footer />
       </div>
     )
   }

@@ -2,13 +2,11 @@ import React from 'react'
 import { Link } from 'react-router'
 import '../scss/style.scss'
 import PageTitle from '../components/PageTitle'
-import ProgressBar from '../components/ProgressBar'
 import Yoti from '../containers/Yoti'
 
 const AgeCheckPage = () => (
   <div className='agecheck-body'>
     <PageTitle heading='ARE YOU UNDER 18?' backgroundColor='blue' />
-    <ProgressBar percentage='33' />
     <div className='age-info'>
       <div className='age-info-subcontainer margin-right'>
         <h2>How it works</h2>

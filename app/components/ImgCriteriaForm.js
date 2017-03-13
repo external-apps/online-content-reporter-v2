@@ -4,13 +4,14 @@ import Checkbox from 'material-ui/Checkbox'
 import RaisedButton from 'material-ui/RaisedButton'
 import PageTitle from '../components/PageTitle'
 import ProgressBar from '../components/ProgressBar'
+import Footer from './Footer'
 import '../scss/style.scss'
 
 const ImgCriteriaForm = (props) => {
     return (
       <div>
         <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='purple' />
-        <ProgressBar percentage='66' />
+        <ProgressBar form='1' />
 
         <div className='content-describe'>
           <p>
@@ -74,7 +75,7 @@ const ImgCriteriaForm = (props) => {
             for more advice.
           </span>
         </div>
-
+        <Footer/>
       </div>
     )
 }
