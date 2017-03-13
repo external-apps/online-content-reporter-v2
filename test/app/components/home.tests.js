@@ -24,14 +24,6 @@ describe('<Home /> ', () => {
 
 })
 describe('<Home /> children node tests', () => {
-  it('renders an home', () => {
-    const wrapper = shallow(<Home />)
-    expect(wrapper.find('.home-header-info')).to.have.length(1)
-  })
-  it('<Home /> should render an element with className home-header-phone', () => {
-    const wrapper = shallow(<Home />)
-    expect(wrapper.find('.home-header-phone')).to.have.length(1)
-  })
   it('<Home /> should render an element with className home-title', () => {
     const wrapper = shallow(<Home />)
     expect(wrapper.find('.home-title')).to.have.length(1)
