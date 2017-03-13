@@ -55,9 +55,16 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   img {
     height:6rem;
     min-width: 6rem;
+  }
+}
+
+@media (min-width: 840px) {
+  .home-logos {
+    max-width: 800px;
+    margin: 1rem auto;
   }
 }
