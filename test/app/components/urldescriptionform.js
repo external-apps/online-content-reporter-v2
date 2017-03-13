@@ -83,4 +83,12 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('TextField').get(1).props.multiLine).to.equal(true)
   })
+  it(' <RaisedButton> should have a label property', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('RaisedButton').get(0).props.label).to.equal('Submit')
+  })
+  it(' <RaisedButton> should have an id property', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('RaisedButton').get(0).props.id).to.equal('submit-url')
+  })
 })
