@@ -2,11 +2,6 @@ import { expect } from 'chai'
 import React from 'react'
 import { shallow } from 'enzyme'
 import ImageCriteriaForm from '../../../app/components/ImgCriteriaForm'
-import PageTitle from '../../../app/components/PageTitle'
-import RaisedButton from 'material-ui/RaisedButton'
-import TextField from 'material-ui/TextField'
-import ProgressBar from '../../../app/components/ProgressBar'
-import { List, ListItem } from 'material-ui/List'
 
 const props = {
     modalIsOpen: false,
