@@ -84,8 +84,8 @@ describe('<ImageCriteriaForm /> teest props of several elements', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
     expect(wrapper.find('RaisedButton').props().primary).to.equal(true)
   })
-  it(' <RaisedButton> should have a label property', () => {
+  it('a tag should point to the childline website', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
-    expect(wrapper.find('RaisedButton').props().label).to.equal('Confirm')
+    expect(wrapper.find('a').props().href).to.equal('https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/')
   })
 })
