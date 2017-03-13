@@ -10,7 +10,7 @@ const ImgCriteriaForm = (props) => {
     return (
       <div>
         <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='purple' />
-        <ProgressBar percentage='66' />
+        <ProgressBar form='1' />
 
         <div className='content-describe'>
           <p>
