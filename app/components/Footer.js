@@ -9,7 +9,7 @@ const Footer = () => (
     <div className='footer-logos'>
       <img src='imgs/iwf-logo.png' alt='IWF logo' />
       <div className='childline-stamp'>
-        <h1>childline</h1>
+        <h2>childline</h2>
         <h5>ONLINE, ON THE PHONE, ANYTIME</h5>
         <p>childline.org.uk | 0800 1111</p>
       </div>
