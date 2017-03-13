@@ -36,7 +36,7 @@ class UrlDescriptionForm extends React.Component {
           <form>
             <div className='input-field col s6'>
               <TextField
-                hintText='http://'
+                hintText='Please enter the website in concern here. If you have multiple webpages (URLs) to report. Please let us know in the description.'
                 floatingLabelText='url'
                 value={this.props.url}
                 onChange={e => this.props.saveUrl(e.target.value)}
