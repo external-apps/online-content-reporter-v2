@@ -55,4 +55,8 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('PageTitle').props().backgroundColor).to.equal('dark-cobalt')
   })
+  it('ProgreessBar component should have a percentage prop', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('ProgressBar').props().percentage).to.equal('66')
+  })
 })
