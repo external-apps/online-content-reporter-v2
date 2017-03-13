@@ -24,7 +24,7 @@ describe('<ConfirmationModal /> props', () => {
   })
 })
 
-describe('<ConfirmationModal /> renders a ...', () => {
+describe('<ConfirmationModal />', () => {
   it('div with className mod', () => {
     const wrapper = shallow(<ConfirmationModal />)
     expect(wrapper.find('.mod')).to.have.length(1)
@@ -36,5 +36,24 @@ describe('<ConfirmationModal /> renders a ...', () => {
   it('RaisedButton', () => {
     const wrapper = shallow(<ConfirmationModal />)
     expect(wrapper.find('RaisedButton')).to.have.length(2)
+  })
+  it('TextField', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('TextField')).to.have.length(1)
+  })
+})
+
+describe('<ConfirmationModal />', () => {
+  it('Link', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('Link').props().className).to.equal('modal-link')
+  })
+  it('Link', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('Link').props().to).to.equal('/')
+  })
+  it('RaisedButton', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('RaisedButton').get(1).props.primary).to.equal(true)
   })
 })
