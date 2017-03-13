@@ -40,4 +40,8 @@ describe('<UrlDescriptionForm />', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('RaisedButton')).to.have.length(2)
   })
+  it('renders a compoent wth className <TextField>', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('TextField')).to.have.length(2)
+  })
 })
