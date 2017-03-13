@@ -80,4 +80,12 @@ describe('<ImageCriteriaForm /> teest props of several elements', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
     expect(wrapper.find('ListItem').get(4).props.primaryText).to.equal('Sexual activity that includes animals')
   })
+  it(' <RaisedButton> should have a primary property', () => {
+    const wrapper = shallow(<ImageCriteriaForm />)
+    expect(wrapper.find('RaisedButton').props().primary).to.equal(true)
+  })
+  it(' <RaisedButton> should have a label property', () => {
+    const wrapper = shallow(<ImageCriteriaForm />)
+    expect(wrapper.find('RaisedButton').props().label).to.equal('Confirm')
+  })
 })
