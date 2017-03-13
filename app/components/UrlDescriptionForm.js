@@ -4,6 +4,7 @@ import PageTitle from './PageTitle'
 import TextField from 'material-ui/TextField'
 import ProgressBar from './ProgressBar'
 import ConfirmationModal from './ConfirmationModal'
+import Header from './Header'
 import Footer from './Footer'
 import '../scss/style.scss'
 import axios from 'axios'
@@ -23,6 +24,7 @@ class UrlDescriptionForm extends React.Component {
   render () {
     return (
       <div>
+        <Header/>
         <PageTitle heading='REPORT CONTENT WEB ADDRESS' backgroundColor='dark-cobalt' />
         <ProgressBar form='2' />
         <div className='url-form-description'>

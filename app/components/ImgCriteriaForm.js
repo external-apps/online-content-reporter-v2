@@ -5,11 +5,13 @@ import RaisedButton from 'material-ui/RaisedButton'
 import PageTitle from '../components/PageTitle'
 import ProgressBar from '../components/ProgressBar'
 import Footer from './Footer'
+import Header from './Header'
 import '../scss/style.scss'
 
 const ImgCriteriaForm = (props) => {
     return (
       <div>
+        <Header />
         <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='purple' />
         <ProgressBar form='1' />
 
