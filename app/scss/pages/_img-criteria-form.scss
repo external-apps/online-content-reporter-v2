@@ -3,8 +3,19 @@
 @import "./helpers/mixins";
 
 .content-describe {
-  @include content-container($turquoise, $dark-cobalt);
-  font-family: $bold-text;
+  @include content-container(white, #000);
+  font-family: childline;
+  margin-top: 0;
+  padding-top: 0;
+  h2{
+    font-family: Rosie;
+    color: $blue;
+    font-size: 2rem;
+    margin:0;
+  }
+  .bold{
+    font-weight: bolder;
+  }
 }
 
 .form-container {
