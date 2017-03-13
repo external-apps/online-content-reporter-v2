@@ -11,7 +11,7 @@ const props = {
     description: ''
 }
 
-describe('<ConfirmationModal />', () => {
+describe('<ConfirmationModal /> props', () => {
   it('initialize isOpen as false', () => {
     const wrapper = shallow(<ConfirmationModal />)
     wrapper.setProps({...props})
@@ -21,5 +21,20 @@ describe('<ConfirmationModal />', () => {
     const wrapper = shallow(<ConfirmationModal />)
     wrapper.setProps({...props})
     expect(wrapper.props().contentLabel).to.equal('Reassuring message')
+  })
+})
+
+describe('<ConfirmationModal /> renders a ...', () => {
+  it('div with className mod', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('.mod')).to.have.length(1)
+  })
+  it('Link', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('Link')).to.have.length(1)
+  })
+  it('RaisedButton', () => {
+    const wrapper = shallow(<ConfirmationModal />)
+    expect(wrapper.find('RaisedButton')).to.have.length(2)
   })
 })
