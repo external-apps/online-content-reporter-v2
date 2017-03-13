@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router'
 import '../scss/style.scss'
 import PageTitle from '../components/PageTitle'
-import ProgressBar from '../components/ProgressBar'
 import Yoti from '../containers/Yoti'
 
 const AgeCheckPage = () => (
