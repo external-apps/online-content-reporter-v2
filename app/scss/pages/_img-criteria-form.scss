@@ -12,7 +12,7 @@
 }
 
 .other-options {
-  @include content-container($dark-cobalt, #ffffff);
+  @include content-container($yellow, #000);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
