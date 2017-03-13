@@ -20,7 +20,7 @@ import {
 describe('Test actions', () => {
   it('should dispatch an action to openModal()', () => {
     const expectedAction = {
-      type: CHANGE_MODAL,
+      type: CHANGE_MODAL
     }
     expect(
       formActions.changeModal()
@@ -52,7 +52,7 @@ describe('Test actions', () => {
   })*/
   it('should dispatch an action to nextForm()', () => {
     const expectedAction = {
-      type: CHANGE_FORM,
+      type: CHANGE_FORM
     }
     expect(
       formActions.changeForm()
@@ -60,7 +60,7 @@ describe('Test actions', () => {
   })
   it('should dispatch an action to save url', () => { //
     const expectedAction = {
-      type: SAVE_URL,
+      type: SAVE_URL
     }
     expect(
       formActions.saveUrl()
@@ -68,7 +68,7 @@ describe('Test actions', () => {
   })
   it('should dispatch an action to save description', () => { //
     const expectedAction = {
-      type: SAVE_DESCRIPTION,
+      type: SAVE_DESCRIPTION
     }
     expect(
       formActions.saveDescription()
@@ -79,7 +79,7 @@ describe('Test actions', () => {
 describe('FeatureFirstContainer actions', () => {//
   it('should dispatch an action to openModal()', () => {
     const expectedAction = {
-      type: SET_UP_FOR_MOBILE,
+      type: SET_UP_FOR_MOBILE
     }
     expect(
       yotiActions.setUpForMobile()
