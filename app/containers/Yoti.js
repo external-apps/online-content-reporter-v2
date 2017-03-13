@@ -9,7 +9,7 @@ import '../scss/style.scss'
 class Yoti extends React.Component {
   render () {
     return (
-      <div>
+      <div className='yoti-info'>
         <YotiDescription {...this.props} />
         <YotiShareButton {...this.props} />
       </div>
