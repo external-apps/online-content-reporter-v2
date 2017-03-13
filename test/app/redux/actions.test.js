@@ -7,9 +7,11 @@ import * as yotiActions from '../../../app/actions/yoti'
 import {
   ADD_QR_CODE,
   SET_UP_FOR_MOBILE,
-  OPEN_MODAL,
-  CLOSE_MODAL,
-  NEXT_FORM,
+/*  OPEN_MODAL,
+  CLOSE_MODAL,*/
+  CHANGE_MODAL,
+//  NEXT_FORM,
+  CHANGE_FORM,
   SAVE_URL,
   SAVE_DESCRIPTION,
   TOGGLE_CRITERIA
@@ -17,6 +19,14 @@ import {
 
 describe('Test actions', () => {
   it('should dispatch an action to openModal()', () => {
+    const expectedAction = {
+      type: CHANGE_MODAL
+    }
+    expect(
+      formActions.changeModal()
+    ).to.deep.equal(expectedAction);
+  })
+  /*it('should dispatch an action to openModal()', () => {
     const expectedAction = {
       type: OPEN_MODAL,
     }
@@ -39,10 +49,18 @@ describe('Test actions', () => {
     expect(
       formActions.nextForm()
     ).to.deep.equal(expectedAction);
+  })*/
+  it('should dispatch an action to nextForm()', () => {
+    const expectedAction = {
+      type: CHANGE_FORM
+    }
+    expect(
+      formActions.changeForm()
+    ).to.deep.equal(expectedAction);
   })
   it('should dispatch an action to save url', () => { //
     const expectedAction = {
-      type: SAVE_URL,
+      type: SAVE_URL
     }
     expect(
       formActions.saveUrl()
@@ -50,7 +68,7 @@ describe('Test actions', () => {
   })
   it('should dispatch an action to save description', () => { //
     const expectedAction = {
-      type: SAVE_DESCRIPTION,
+      type: SAVE_DESCRIPTION
     }
     expect(
       formActions.saveDescription()
@@ -61,7 +79,7 @@ describe('Test actions', () => {
 describe('FeatureFirstContainer actions', () => {//
   it('should dispatch an action to openModal()', () => {
     const expectedAction = {
-      type: SET_UP_FOR_MOBILE,
+      type: SET_UP_FOR_MOBILE
     }
     expect(
       yotiActions.setUpForMobile()
