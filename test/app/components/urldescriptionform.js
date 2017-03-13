@@ -53,11 +53,11 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
   })
   it('ProgreessBar component should have a percentage prop', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('ProgressBar').props().percentage).to.equal('100')
+    expect(wrapper.find('ProgressBar').props().form).to.equal('2')
   })
   it(' <TextField> has a hintText property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('TextField').first().props().hintText).to.equal('http://')
+    expect(wrapper.find('TextField').first().props().hintText).to.equal('http://...')
   })
   it(' <TextField> has a floatingLabelText property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
@@ -81,11 +81,11 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
   })
   it(' <RaisedButton> 1  should have a label property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('RaisedButton').get(0).props.label).to.equal('Submit')
+    expect(wrapper.find('RaisedButton').get(1).props.label).to.equal('Submit')
   })
   it(' <RaisedButton> 1 should have an id property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('RaisedButton').get(0).props.id).to.equal('submit-url')
+    expect(wrapper.find('RaisedButton').get(1).props.id).to.equal('submit-url')
   })
   it(' <RaisedButton> 1  should have a primary property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
@@ -93,7 +93,7 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
   })
   it(' <RaisedButton> 2  should have a label property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('RaisedButton').get(1).props.label).to.equal('Previous')
+    expect(wrapper.find('RaisedButton').get(0).props.label).to.equal('Previous')
   })
   it(' <RaisedButton> 2  should have a primary property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)

@@ -1,24 +1,13 @@
 @import "./helpers/mixins";
+@import "./helpers/variables";
 
 .progress-bar {
     position: relative;
-    height: 4px;
     display: block;
     width: 100%;
-    background-color: #acece6;
-    border-radius: 2px;
-    margin: .5rem 0 1rem 0;
-    overflow: hidden;
-}
-
-.determinate33{
-  @include progress(33%);
-}
-
-.determinate66{
-  @include progress(66%);
-}
-
-.determinate100{
-  @include progress(100%);
+    padding: 1rem 1rem 0 1rem;
+    h2{
+      color: $red;
+      margin:0;
+    }
 }
