@@ -6,8 +6,10 @@ const muiTheme = getMuiTheme({
   palette: {
     spacing: Spacing,
     zIndex: zIndex,
-    fontFamily: 'Roboto, sans-serif',
-    primary1Color: '#632c7a',   /* backgroundColor */
+    fontSize: '1.8rem',
+    textTransform: 'normal',
+    fontFamily: 'childline-bold, sans-serif',
+    primary1Color: '#0c3d52',   /* backgroundColor */
     primary2Color: '#632c7a',
     primary3Color: '#632c7a',
     accent1Color: '#632c7a',
