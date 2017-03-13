@@ -34,23 +34,23 @@ describe('renders <AgeCheck />', () => {
   })
   it('<AgeCheck /> should render an element with .age-info-1 class', () => {
     const wrapper = shallow(<AgeCheck />)
-    expect(wrapper.find('.age-info-1')).to.have.length(1)
+    expect(wrapper.find('.age-info')).to.have.length(1)
   })
   it('.age-info-1 class should have a <p> children', () => {
     const wrapper = shallow(<AgeCheck />)
-    expect(wrapper.find('.age-info-1').childAt(0).type()).to.equal('p')
+    expect(wrapper.find('.age-info').childAt(0).type()).to.equal('div')
   })
   it('.age-info-1 class should have a <p> children, which has an <a> children', () => {
     const wrapper = shallow(<AgeCheck />)
-    expect(wrapper.find('.age-info-1').childAt(0).find('a')).to.have.length(1)
+    expect(wrapper.find('.age-info').childAt(0).find('a')).to.have.length(1)
   })
-  it('<AgeCheck /> should render an element with .age-info-2 class', () => {
+  it('<AgeCheck /> should render an element with .age-info class', () => {
     const wrapper = shallow(<AgeCheck />)
-    expect(wrapper.find('.age-info-2')).to.have.length(1)
+    expect(wrapper.find('.age-overage')).to.have.length(1)
   })
   it('<AgeCheck /> should render 2 <a> tags', () => {
     const wrapper = shallow(<AgeCheck />) /*i guess they should be Links justto be consisten!!*/
-    expect(wrapper.find('a')).to.have.length(2)
+    expect(wrapper.find('a')).to.have.length(3)
   })
   it('<AgeCheck /> should render 2 <i> tags', () => {
     const wrapper = shallow(<AgeCheck />)
