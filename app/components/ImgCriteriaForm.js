@@ -8,16 +8,18 @@ import Footer from './Footer'
 import Header from './Header'
 import '../scss/style.scss'
 
+// <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='purple' />
 const ImgCriteriaForm = (props) => {
     return (
       <div>
         <Header />
-        <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='purple' />
         <ProgressBar form='1' />
 
         <div className='content-describe'>
+          <h2>WHY ARE YOUR REPORTING?</h2>
           <p>
-            The content must fit a certain criteria for us to legally remove it. Please select the boxes below that apply.
+            The content must fit a certain criteria for us to legally remove it.
+            <span className="bold"> Please select from boxes below that tell us what you are concerned about the content.</span>
           </p>
         </div>
         <div className='form-container'>
