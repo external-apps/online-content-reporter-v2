@@ -22,6 +22,10 @@ div {
   display: block;
 }
 
+.margin-right {
+  margin-right: 1rem;
+}
+
 .title-container-blue {
   @include title-container($blue)
 }

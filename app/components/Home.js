@@ -4,7 +4,7 @@ import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
 
 const Home = () => (
-  <div>
+  <div className='home-body'>
     <div className='home-header'>
       <div className='home-header-info'>
         <p>childline</p>
