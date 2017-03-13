@@ -4,7 +4,7 @@ import '../scss/style.scss'
 const Footer = () => (
   <div className='footer'>
     <div className='footer-info'>
-      <p>This service is operated by <a href='https://www.iwf.org.uk/what-we-do' target='_blank'>Internet Watch Foundation</a> (IWF) brought to you by <a href='https://www.childline.org.uk'>Childline</a>. We use the YOYI App to verify your identiy securely.</p>
+      <p>This service is operated by <a href='https://www.iwf.org.uk/what-we-do' target='_blank'>Internet Watch Foundation</a> (IWF) brought to you by <a href='https://www.childline.org.uk'>Childline</a>. We use the <a href='https://www.yoti.com/'>YOTI</a> App to verify your identiy securely.</p>
     </div>
     <div className='footer-logos'>
       <img src='imgs/iwf-logo.png' alt='IWF logo' />

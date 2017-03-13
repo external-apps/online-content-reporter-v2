@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import '../scss/style.scss'
 import PageTitle from '../components/PageTitle'
 import Yoti from '../containers/Yoti'
+import Footer from './Footer'
 
 const AgeCheckPage = () => (
   <div className='agecheck-body'>
@@ -31,7 +32,7 @@ const AgeCheckPage = () => (
     </div>
 
     <Yoti />
-
+    <Footer />
     <Link className='action-button' to='/form'>
       <p>Take me to form</p>
     </Link>

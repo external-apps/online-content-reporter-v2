@@ -3,7 +3,7 @@
 @import "./helpers/extends";
 
 .agecheck-body {
-  background-color: $light-orange;
+  // background-color: $light-orange;
 }
 
 .age-info {
@@ -21,7 +21,7 @@
 }
 
 .age-info-subcontainer {
-  background-color: white;
+  background-color: $light-blue;
   color: $dark-cobalt;
   padding: 1rem;
   h2 {
