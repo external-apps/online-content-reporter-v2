@@ -1,7 +1,7 @@
 @import "./helpers/mixins";
 
 .yoti-info {
-  @include content-container($cobalt, white);
+  @include content-container($cobalt, #ffffff);
 }
 
 @media (min-width: 840px) {
@@ -11,23 +11,40 @@
   }
 }
 
-.yoti-center {
+.yoti-description-container {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
 }
 
-.yoti-info-heading {
+.yoti-description-title {
+  font-family: 'Rosie','childline-bold';
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+.yoti-description {
   display: flex;
   flex-direction: row;
+  align-items: center;
    img {
     width: 15%;
     height: 2rem;
   }
-  h3 {
+  p {
     width: 85%;
     margin: 0;
-    padding-right: 1rem;
-    color: white;
+    padding-left: 1.5rem;
   }
+}
+
+.yoti-instructions {
+  font-family: $bold-text;
+}
+
+.yoti-qr {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }

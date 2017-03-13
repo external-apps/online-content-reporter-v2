@@ -17,26 +17,6 @@
   }
 }
 
-.home-header-info {
-  width:100%;
-  margin: 0 auto;
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-    p {
-      color:white;
-    }
-    a {
-      color:white;
-    }
-}
-
-.home-header-phone {
-  a {
-    margin-right: 0.5rem;
-  }
-}
-
 .home-title {
   @extend .page-title;
   margin-bottom: 1rem;
@@ -44,11 +24,9 @@
 
 .home-info {
   @include content-container($lightest-turquoise, $dark-cobalt);
-  a {
-    color: #039be5;
-    -webkit-tap-highlight-color: transparent;
-    &:hover{
-      color:orange;
-    }
-  }
+}
+
+.home-main-button {
+  display: flex;
+  justify-content: flex-start;
 }
