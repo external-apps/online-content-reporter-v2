@@ -1,6 +1,5 @@
 import {
-  OPEN_MODAL,
-  CLOSE_MODAL,
+  CHANGE_MODAL,
   NEXT_FORM,
   TOGGLE_CRITERIA,
   SAVE_URL,
@@ -17,15 +16,10 @@ const initialState = {
 
 const forms = (state = initialState, action) => {
   switch (action.type) {
-    case OPEN_MODAL:
+    case CHANGE_MODAL:
       return {
         ...state,
-        modalIsOpen: true
-      }
-    case CLOSE_MODAL:
-      return {
-        ...state,
-        modalIsOpen: false
+        modalIsOpen: !state.modalIsOpen
       }
     case NEXT_FORM:
       return {
@@ -36,9 +30,9 @@ const forms = (state = initialState, action) => {
       return {
         ...state,
         imageCriteria: state.imageCriteria.indexOf(action.criteria) !== -1
-          ? (()=> {
-            state.imageCriteria.splice(state.imageCriteria.indexOf(action.criteria), 1);
-            return state.imageCriteria;
+          ? (() => {
+            state.imageCriteria.splice(state.imageCriteria.indexOf(action.criteria), 1)
+            return state.imageCriteria
           })()
             : state.imageCriteria.concat(action.criteria)
       }
