@@ -12,9 +12,8 @@ const AgeCheckPage = () => (
     <div className='age-info-1'>
       <p>
         To remove explicit online content we will only ask for your age. Not even your name! You must be under 18 years old.
-        <a href='https://www.iwf.org.uk/what-we-do' target='_blank'> Find out why here
-          <i className='tiny material-icons'>info_outline</i>
-        </a>
+        <a href='https://www.iwf.org.uk/what-we-do' target='_blank'>Find out why here.</a>
+        The location of the online content will be sent to IWF, who will do everything they can to remove it.
       </p>
     </div>
 
