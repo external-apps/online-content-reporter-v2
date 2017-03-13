@@ -19,7 +19,7 @@ describe('<Home /> ', () => {
   })
   it('<Home /> should render a <Link /> element', () => {
    const wrapper = shallow(<Home />)
-   expect(wrapper.find(Link)).to.have.length(2) // update the test when we remove the other link
+   expect(wrapper.find(Link)).to.have.length(1) // update the test when we remove the other link
  })
 
 })
@@ -44,12 +44,12 @@ describe('<Home /> children node tests', () => {
     const wrapper = shallow(<Home />)
     expect(wrapper.find('.section-title')).to.have.length(1)
   })
-  it('<Home /> should render an element with className home-logos', () => {
+/*  it('<Home /> should render an element with className home-logos', () => {
     const wrapper = shallow(<Home />)
     expect(wrapper.find('.home-logos')).to.have.length(1)
   })
-  it('<Home /> should render 2 img elements', () => {
+ it('<Home /> should render 2 img elements', () => {
     const wrapper = shallow(<Home />)
     expect(wrapper.find('img')).to.have.length(2)
-  })
+  })*/
 })
