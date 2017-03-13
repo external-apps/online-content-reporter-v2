@@ -75,4 +75,12 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('TextField').get(1).props.floatingLabelText).to.equal('Description')
   })
+  it(' <TextField> has a rows property', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('TextField').get(1).props.rows).to.equal(4)
+  })
+  it(' <TextField> has a multiLine property', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('TextField').get(1).props.multiLine).to.equal(true)
+  })
 })
