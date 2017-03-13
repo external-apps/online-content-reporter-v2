@@ -3,6 +3,10 @@
 
 .section-title-container{
   @include content-container(white, #000);
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
   .section-title-heading{
     color:$blue;
     font-family: Rosie;
