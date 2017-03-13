@@ -2,6 +2,10 @@
 @import "./helpers/extends";
 @import "./helpers/mixins";
 
+.home-body {
+  background-color: $light-turquoise;
+}
+
 .home-header {
   @include title-container($blue);
   padding-bottom: 2rem;
@@ -40,7 +44,7 @@
 }
 
 .home-info {
-  @include content-container($cobalt, white);
+  @include content-container($lightest-turquoise, $dark-cobalt);
   a {
     color: #039be5;
     -webkit-tap-highlight-color: transparent;

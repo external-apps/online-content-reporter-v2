@@ -8,19 +8,13 @@
 }
 
 @mixin content-container ($background-color, $color) {
+  box-sizing: border-box;
   margin: 1rem;
   background-color: $background-color;
   color: $color;
   padding: 1rem;
   @extend .width-limit ;
 }
-
-// @media (min-width: 1000px) {
-//   @mixin content-container {
-//     max-width: 800px;
-//     margin: 0 auto;
-//   }
-// }
 
 @mixin progress ($width:0%) {
   width:$width;
