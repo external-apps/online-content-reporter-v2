@@ -4,6 +4,7 @@ import Checkbox from 'material-ui/Checkbox'
 import RaisedButton from 'material-ui/RaisedButton'
 import PageTitle from '../components/PageTitle'
 import ProgressBar from '../components/ProgressBar'
+import Footer from './Footer'
 import '../scss/style.scss'
 
 const ImgCriteriaForm = (props) => {
@@ -74,7 +75,7 @@ const ImgCriteriaForm = (props) => {
             for more advice.
           </span>
         </div>
-
+        <Footer/>
       </div>
     )
 }
