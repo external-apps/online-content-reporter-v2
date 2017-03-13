@@ -3,6 +3,7 @@ import { List, ListItem } from 'material-ui/List'
 import Checkbox from 'material-ui/Checkbox'
 import RaisedButton from 'material-ui/RaisedButton'
 import PageTitle from '../components/PageTitle'
+import SectionTitle from '../components/SectionTitle'
 import ProgressBar from '../components/ProgressBar'
 import Footer from './Footer'
 import Header from './Header'
@@ -14,7 +15,7 @@ const ImgCriteriaForm = (props) => {
       <div>
         <Header />
         <ProgressBar form='1' />
-
+        <SectionTitle heading='WHY ARE YOUR REPORTING?' subheading='The content must fit a certain criteria for us to legally remove it.' span='Please select from boxes below that tell us what you are concerned about the content.'/>
         <div className='content-describe'>
           <h2>WHY ARE YOUR REPORTING?</h2>
           <p>
@@ -66,7 +67,7 @@ const ImgCriteriaForm = (props) => {
                 leftCheckbox={<Checkbox />}
               />
             </List>
-            <RaisedButton label='Confirm' primary={true} onClick={() => props.changeForm()} />
+            <RaisedButton label='Next' primary={true} onClick={() => props.changeForm()} />
           </form>
         </div>
 
