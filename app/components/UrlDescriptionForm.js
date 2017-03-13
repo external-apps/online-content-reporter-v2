@@ -23,7 +23,7 @@ class UrlDescriptionForm extends React.Component {
     return (
       <div>
         <PageTitle heading='REPORT CONTENT WEB ADDRESS' backgroundColor='dark-cobalt' />
-        <ProgressBar percentage='66' />
+        <ProgressBar percentage='100' />
         <div className='url-form-description'>
           <h3 className='section-title'>WEBSITE DETAILS</h3>
           <p>
