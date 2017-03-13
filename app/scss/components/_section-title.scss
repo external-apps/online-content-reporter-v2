@@ -1,0 +1,14 @@
+@import "./helpers/mixins";
+@import "./helpers/variables";
+
+.section-title-container{
+  @include content-container(white, #000);
+  .section-title-heading{
+    color:$blue;
+    font-family: Rosie;
+    font-size: 2rem;
+  }
+  p .bold{
+    font-weight: bolder;
+  }
+}
