@@ -20,10 +20,6 @@ describe('<UrlDescriptionForm />', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('ProgressBar')).to.have.length(1)
   })
-  it('renders a compoent with className url-form-description', () => {
-    const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('.url-form-description')).to.have.length(1)
-  })
   it('renders a compoent wth className form-container', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('.form-container')).to.have.length(1)
