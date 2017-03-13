@@ -57,7 +57,7 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
   })
   it('ProgreessBar component should have a percentage prop', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('ProgressBar').props().percentage).to.equal('66')
+    expect(wrapper.find('ProgressBar').props().percentage).to.equal('100')
   })
   it(' <TextField> has a hintText property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
