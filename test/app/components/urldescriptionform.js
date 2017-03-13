@@ -57,7 +57,7 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
   })
   it(' <TextField> has a hintText property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('TextField').first().props().hintText).to.equal('http://')
+    expect(wrapper.find('TextField').first().props().hintText).to.equal('Please enter the website in concern here. If you have multiple webpages (URLs) to report. Please let us know in the description.')
   })
   it(' <TextField> has a floatingLabelText property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
