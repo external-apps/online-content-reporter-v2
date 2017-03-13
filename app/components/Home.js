@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
 import Footer from './Footer'
-import ActionAndroid from 'material-ui/svg-icons/action/launch'
+import Launch from 'material-ui/svg-icons/action/launch'
 
 const Home = () => (
   <div className='home-body'>
@@ -23,7 +23,7 @@ const Home = () => (
           style={{padding:'0.8rem'}}
           label='Report Content'
           labelPosition='before'
-          icon={<ActionAndroid />}
+          icon={<Launch />}
           primary={true} />
       </Link>
     </div>

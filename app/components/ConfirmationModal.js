@@ -15,6 +15,7 @@ const modalOverlay = {
     fontFamily: 'childline',
     overflow: 'hidden',
     WebkitOverflowScrolling: 'touch',
+    transform: 'translate (-50%, -50%)',
     borderRadius: '0.25rem',
     outline: 'none',
     padding: '1rem',
