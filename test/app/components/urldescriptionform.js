@@ -6,6 +6,7 @@ import PageTitle from '../../../app/components/PageTitle'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import ProgressBar from '../../../app/components/ProgressBar'
+import ConfirmationModal from '../../../app/components/ConfirmationModal'
 const props = {
     modalIsOpen: false,
     firstForm: true,
@@ -30,5 +31,13 @@ describe('<UrlDescriptionForm />', () => {
   it('renders a compoent wth className form-container', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('.form-container')).to.have.length(1)
+  })
+  it('renders a compoent wth className <ConfirmationModal>', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('ConfirmationModal')).to.have.length(1)
+  })
+  it('renders a compoent wth className <RaisedButton>', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('RaisedButton')).to.have.length(2)
   })
 })
