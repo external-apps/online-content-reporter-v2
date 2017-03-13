@@ -67,6 +67,7 @@ class UrlDescriptionForm extends React.Component {
           </form>
         </div>
         <ConfirmationModal {...this.props} />
+        <RaisedButton label='Previous' primary={true} onClick={() => this.props.changeForm()} />
       </div>
     )
   }

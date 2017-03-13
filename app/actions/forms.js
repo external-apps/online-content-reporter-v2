@@ -5,9 +5,9 @@ export const changeModal = () => {
     type: types.CHANGE_MODAL
   }
 }
-export const nextForm = () => {
+export const changeForm = () => {
   return {
-    type: types.NEXT_FORM
+    type: types.CHANGE_FORM
   }
 }
 

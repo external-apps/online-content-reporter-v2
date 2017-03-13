@@ -1,6 +1,6 @@
 import {
   CHANGE_MODAL,
-  NEXT_FORM,
+  CHANGE_FORM,
   TOGGLE_CRITERIA,
   SAVE_URL,
   SAVE_DESCRIPTION
@@ -21,10 +21,10 @@ const forms = (state = initialState, action) => {
         ...state,
         modalIsOpen: !state.modalIsOpen
       }
-    case NEXT_FORM:
+    case CHANGE_FORM:
       return {
         ...state,
-        firstForm: false
+        firstForm: !state.firstForm
       }
     case TOGGLE_CRITERIA:
       return {

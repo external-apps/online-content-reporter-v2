@@ -61,7 +61,7 @@ const ImgCriteriaForm = (props) => {
                 leftCheckbox={<Checkbox />}
               />
             </List>
-            <RaisedButton label='Confirm' primary={true} onClick={() => props.nextForm()} />
+            <RaisedButton label='Confirm' primary={true} onClick={() => props.changeForm()} />
           </form>
         </div>
 
