@@ -4,6 +4,7 @@ import PageTitle from './PageTitle'
 import TextField from 'material-ui/TextField'
 import ProgressBar from './ProgressBar'
 import ConfirmationModal from './ConfirmationModal'
+import Footer from './Footer'
 import '../scss/style.scss'
 import axios from 'axios'
 
@@ -68,6 +69,7 @@ class UrlDescriptionForm extends React.Component {
         </div>
         <ConfirmationModal {...this.props} />
         <RaisedButton label='Previous' primary={true} onClick={() => this.props.changeForm()} />
+        <Footer />
       </div>
     )
   }
