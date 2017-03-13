@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
-import Footer from './footer'
+import Footer from './Footer'
 import ActionAndroid from 'material-ui/svg-icons/action/android'
 
 const Home = () => (
