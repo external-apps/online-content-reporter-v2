@@ -35,7 +35,7 @@ class UrlDescriptionForm extends React.Component {
           <form>
             <div className='input-field col s6'>
               <TextField
-                hintText='http://...'
+                hintText='[If there is more than one website, add these in the box below'
                 floatingLabelText='url'
                 value={this.props.url}
                 onChange={e => this.props.saveUrl(e.target.value)}
@@ -43,7 +43,7 @@ class UrlDescriptionForm extends React.Component {
             </div>
             <div className='input-field-2 input-field col s6 '>
               <TextField
-                hintText='Message Field'
+                hintText='Tell us about where you found the image'
                 floatingLabelText='Description'
                 multiLine={true}
                 rows={4}
