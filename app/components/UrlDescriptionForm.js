@@ -14,6 +14,8 @@ class UrlDescriptionForm extends React.Component {
     super(props)
     this.handleSubmit.bind(this)
   }
+  
+
 
   handleSubmit () {
     const { imageCriteria, url, description } = this.props
