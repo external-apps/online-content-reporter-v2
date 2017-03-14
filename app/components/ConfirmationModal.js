@@ -55,9 +55,6 @@ const ConfirmationModal = (props) => {
         <h2>We have sent your report to the Internet Watch Foundation (IWF) who will review your request.</h2>
         <p>Your report may take a little while to complete. If you would like to know when the IWF have looked at your report, enter your email address below.
         </p>
-        <p>
-          If you would like IWF to update you by email, please enter your email address below.
-        </p>
         <TextField
           hintText='jane.doe@gmail.com'
           floatingLabelText='Email address'
