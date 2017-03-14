@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router'
 import '../scss/style.scss'
-import PageTitle from '../components/PageTitle'
+import Header from '../components/Header'
+import SectionTitle from '../components/SectionTitle'
 
 const OverAge = () => (
   <div>
-    <PageTitle heading="SORRY, YOU'RE TOO OLD FOR THIS SERVICE" backgroundColor='turquoise' />
+    <Header />
+    <SectionTitle heading="SORRY, YOU'RE TOO OLD FOR THIS SERVICE"/>
     <div className='what-now'>
       <h3>What can I do now?</h3>
       <i className='identity small material-icons'>perm_identity</i>
