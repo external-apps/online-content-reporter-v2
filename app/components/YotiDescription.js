@@ -9,7 +9,7 @@ const YotiDescription = (props) => {
         <h3 className='yoti-description-title'>CONFIDENTIALLY VERIFY YOUR AGE</h3>
         <span className='yoti-description'>
           <img src='./imgs/yoti-logo.svg' alt='yoti logo' />
-          <p>We use YOTI to verify your age. Yoti empowers you to take back control over your identity.</p>
+          <p>We use YOTI to verify your age. YOYI empowers you to take back control over your identity.</p>
         </span>
         <p className='yoti-instructions'>
           In a one step process we are going to identify your age. If you don't already have a YOTI digital identity, please create one on <a className='link' href='www.yoti.com/'>YOTI's website</a>. Once you are ready, click the button below.
