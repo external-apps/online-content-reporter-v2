@@ -12,10 +12,6 @@ const props = {
 }
 
 describe('<ImageCriteriaForm />', () => {
-  /*it('renders a PageTitle compoent', () => {
-    const wrapper = shallow(<ImageCriteriaForm />)
-    expect(wrapper.find('PageTitle')).to.have.length(1)
-  })*/
   it('renders a ProgreessBar component', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
     expect(wrapper.find('ProgressBar')).to.have.length(1)
@@ -43,14 +39,6 @@ describe('<ImageCriteriaForm />', () => {
 })
 
 describe('<ImageCriteriaForm /> teest props of several elements', () => {
-  /*it('PageTile component should have a heading prop', () => {
-    const wrapper = shallow(<ImageCriteriaForm />)
-    expect(wrapper.find('PageTitle').props().heading).to.equal('DESCRIBE THE ONLINE CONTENT')
-  })
-  it('PageTile component should have a backgroundColor prop', () => {
-    const wrapper = shallow(<ImageCriteriaForm />)
-    expect(wrapper.find('PageTitle').props().backgroundColor).to.equal('purple')
-  })*/
   it('ProgreessBar component should have a percentage prop', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
     expect(wrapper.find('ProgressBar').props().form).to.equal('1')
@@ -81,6 +69,6 @@ describe('<ImageCriteriaForm /> teest props of several elements', () => {
   })
   it('a tag should point to the childline website', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
-    expect(wrapper.find('a').props().href).to.equal('https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/')
+    expect(wrapper.find('a').get(1).props.href).to.equal('https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/')
   })
 })
