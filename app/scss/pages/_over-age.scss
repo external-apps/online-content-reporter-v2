@@ -3,7 +3,7 @@
 @import "./helpers/mixins";
 
 .what-now {
-  @include content-container($light-turquoise, $purple);
+  @include content-container($light-turquoise, $dark-cobalt);
   h3 {
     font-family: 'childline-bold';
     font-size: 1.6rem;
@@ -24,7 +24,7 @@
 }
 
 .other-ops {
-  @include content-container(#ffffff, $purple);
+  @include content-container(white, $dark-cobalt);
   padding: 0;
   display: flex;
   justify-content: center;
@@ -35,14 +35,15 @@
   float: left;
   text-align: left !important;
   display: block;
-  color: $purple;
+  color: $dark-cobalt;
   padding: 0.5rem;
   margin-left: 1rem;
   transition: all 0.5s ease;
   font-family: 'childline-bold';
 }
 .option {
-  border: 0.2rem solid $turquoise;
+  border: 0.2rem solid $dark-cobalt;
+  background-color: $footer-color;
   padding: 0.45rem;
   margin: 0;
   margin-bottom: 1rem;
@@ -53,7 +54,7 @@
   i {
     width: 10%;
     text-align: right;
-    color: $purple;
+    color: $blue;
     padding-left: 0.2rem;
     padding-top: 0.2rem;
   }
@@ -61,7 +62,7 @@
     float: left;
     text-align: left !important;
     display: block;
-    color: $purple;
+    color: $blue;
     padding: 0.5rem;
     margin-left: 1rem;
     transition: all 0.5s ease;
