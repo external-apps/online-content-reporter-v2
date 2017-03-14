@@ -2,10 +2,6 @@
 @import "./helpers/mixins";
 @import "./helpers/extends";
 
-.agecheck-body {
-  // background-color: $light-orange;
-}
-
 .age-info {
   display: flex;
   flex-direction: row;
@@ -21,30 +17,21 @@
 }
 
 .age-info-subcontainer {
-  background-color: $light-blue;
+  background-color: $light-turquoise;
   color: $dark-cobalt;
-  padding: 1rem;
-  h2 {
-    margin: 0;
-  }
-  a {
-    color:inherit;
-  }
-  font-family: $bold-text;
-}
-
-.age-overage {
-  @include content-container($orange, $cobalt);
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  a {
-    margin: auto 0;
-    color: inherit;
-    font-size: 1.4rem;
+  flex-direction: column;
+  justify-content: flex-start;;
+  padding: 1rem;
+  h3 {
+    margin: 0;
+    font-family: $bold-text;
   }
-  i {
-    font-size: 4rem;
-    padding-right: 1rem;
+  a {
+    font-family: $text-font;
+    text-decoration: underline;
+  }
+  p {
+    margin: 0.5rem auto;
   }
 }
