@@ -6,13 +6,13 @@ const YotiDescription = (props) => {
   if (!props.yoti.haveQr) {
     return (
       <div className='yoti-description-container'>
-        <h3 className='yoti-description-title'>CONFIDENTIALLY VERIFY YOUR AGE</h3>
+        <h3 className='yoti-description-title'>VERIFY YOUR ARE USING YOTI</h3>
         <span className='yoti-description'>
           <img src='./imgs/yoti-logo.svg' alt='yoti logo' />
-          <p>We use YOTI to verify your age. YOYI empowers you to take back control over your identity.</p>
+          <p>If you've already got a YOTI account, click the button below and scan our QR code using your YOTI.</p>
         </span>
         <p className='yoti-instructions'>
-          In a one step process we are going to identify your age. If you don't already have a YOTI digital identity, please create one on <a className='link' href='www.yoti.com/'>YOTI's website</a>. Once you are ready, click the button below.
+          If not, it's easy to <a className='link' href='www.yoti.com/'>sign up</a> using the YOTI app or website. YOTI lets you safely share your details online - Just click below to create your account.
         </p>
       </div>
     )
