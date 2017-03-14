@@ -6,7 +6,7 @@ const SectionTitle = (props) => (
     <h1 className='section-title-heading'>{props.heading}</h1>
     <p className='section-title-subheading'>
       {props.subheading}
-      <span className='bold'> {props.span}</span>
+      <span> {props.span}</span>
     </p>
   </div>
 )
