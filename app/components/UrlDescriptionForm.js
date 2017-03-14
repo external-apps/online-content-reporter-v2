@@ -1,6 +1,5 @@
 import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
-import PageTitle from './PageTitle'
 import TextField from 'material-ui/TextField'
 import ProgressBar from './ProgressBar'
 import ConfirmationModal from './ConfirmationModal'
@@ -9,15 +8,6 @@ import Footer from './Footer'
 import SectionTitle from '../components/SectionTitle'
 import '../scss/style.scss'
 import axios from 'axios'
-
-/*
-<div className='url-form-description'>
-  <h3 className='section-title'>WEBSITE DETAILS</h3>
-  <p>
-
-  </p>
-</div>
-*/
 
 class UrlDescriptionForm extends React.Component {
   constructor (props) {
@@ -34,10 +24,12 @@ class UrlDescriptionForm extends React.Component {
   render () {
     return (
       <div>
-        <Header/>
-        <PageTitle heading='REPORT CONTENT WEB ADDRESS' backgroundColor='dark-cobalt' />
+        <Header />
         <ProgressBar form='2' />
-        <SectionTitle heading='REPORT CONTENT WEB ADDRESS' subheading='If you have any information you think may help us as a description of where the content you are reporting is located on a large website or username and password needed to gain access, please include it in the description box. If you have multiple webpages (URLs) to report, please include these in the description box.' />
+        <SectionTitle
+          heading='REPORT CONTENT WEB ADDRESS'
+          subheading='If you have any information you think may help us as a description of where the content you are reporting is located on a large website or username and password needed to gain access, please include it in the description box. If you have multiple webpages (URLs) to report, please include these in the description box.'
+        />
         <div className='form-container'>
           <h3 className='section-title'>WEB ADDRESS</h3>
           <form>
@@ -60,20 +52,21 @@ class UrlDescriptionForm extends React.Component {
               /><br />
             </div>
             <div className="buttons">
-            <RaisedButton label='Previous' primary={true} onClick={() => this.props.changeForm()} />
-            <RaisedButton
-              label='Submit'
-              primary={true}
-              onClick={(e) => {
-                this.props.changeModal()
-                this.handleSubmit().then(() => {
-                  console.log('Success submitting form')
-                }).catch((error) => {
-                  console.log(error)
-                })
-              }}
-              id='submit-url' />
-          </div>
+              <RaisedButton label='Previous' primary={true} onClick={() => this.props.changeForm()} />
+              <RaisedButton
+                label='Submit'
+                primary={true}
+                onClick={(e) => {
+                  this.props.changeModal()
+                  this.handleSubmit().then(() => {
+                    console.log('Success submitting form')
+                  }).catch((error) => {
+                    console.log(error)
+                  })
+                }}
+                id='submit-url'
+              />
+            </div>
           </form>
         </div>
         <ConfirmationModal {...this.props} />
