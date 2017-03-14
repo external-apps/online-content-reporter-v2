@@ -8,14 +8,18 @@ import Launch from 'material-ui/svg-icons/action/launch'
 const Home = () => (
   <div className='home-body'>
     <div className='home-header'>
-      <h1 className='home-title'>REPORT CONCERN WITH ONLINE CONTENT</h1>
-      <h3>It's anonymous and confidential.</h3>
+      <h1 className='home-title'>REPORT AN IMAGE OR VIDEO</h1>
+      <h3>It's quick and easy to report - we can help</h3>
     </div>
 
     <div className='home-info'>
       <h4 className='section-title'>YOU HAVE ALREADY SHARED PHOTOS – WHAT NOW?</h4>
       <p>
-        If you’re under 18 and an indecent or nude pic of you is posted online, that is illegal. But we can <a className='link' href='https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/sexting/'>help</a>. Reporting is quick, easy and completely anonymous.
+        You can use this app if you're under 18. We'll need to confirm your age and where you've seen the image or video.
+      </p>
+      <p>
+        If you're 
+        <a className='link' href='https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/sexting/'>help</a>.
       </p>
       <Link className='home-main-button' to='/age-check'>
         <RaisedButton
