@@ -28,7 +28,8 @@ class UrlDescriptionForm extends React.Component {
         <ProgressBar form='2' />
         <SectionTitle
           heading='REPORT CONTENT WEB ADDRESS'
-          subheading='If you have any information you think may help us as a description of where the content you are reporting is located on a large website or username and password needed to gain access, please include it in the description box. If you have multiple webpages (URLs) to report, please include these in the description box.'
+          subheading='Please include any info that you think may help us, such as:'
+          list = {['where you found the image or video', "if there's more than one website", 'whether you need a username and password to gain access.']}
         />
         <div className='form-container'>
           <h3 className='section-title'>WEB ADDRESS</h3>
