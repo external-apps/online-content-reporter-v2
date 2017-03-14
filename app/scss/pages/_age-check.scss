@@ -3,10 +3,15 @@
 @import "./helpers/extends";
 
 .age-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  @include content-container($light-turquoise, $dark-cobalt);
   margin: 1rem;
+  h3 {
+    margin: 0;
+    font-family: $bold-text;
+  }
+  p {
+    margin: 0.5rem auto;
+  }
 }
 
 @media (min-width: 840px) {
@@ -16,22 +21,13 @@
   }
 }
 
-.age-info-subcontainer {
-  background-color: $light-turquoise;
-  color: $dark-cobalt;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;;
-  padding: 1rem;
-  h3 {
-    margin: 0;
-    font-family: $bold-text;
-  }
-  a {
-    font-family: $text-font;
-    text-decoration: underline;
-  }
-  p {
-    margin: 0.5rem auto;
+.scan-me {
+  @extend .section-title;
+  text-align: center;
+  padding: 0;
+  color: white;
+  img {
+    width: 4rem;
+    margin-left: 1rem;
   }
 }
