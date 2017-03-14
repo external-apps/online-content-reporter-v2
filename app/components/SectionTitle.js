@@ -6,7 +6,7 @@ import ActionGrade from 'material-ui/svg-icons/action/grade'
 const SectionTitle = (props) => {
   let list
   if (props.list) {
-    list = props.list.map( (item,i) => <ListItem leftIcon={<ActionGrade />} key={i} primaryText={item} style={{backgroundColor: 'white', margin: '0.25rem 0'}} />)
+    list = props.list.map( (item,i) => <ListItem  key={i} leftIcon={<ActionGrade />} primaryText={item} style={{backgroundColor: 'white', margin: '0.25rem 0'}} />)
   }
   return (
   <div className='section-title-container'>
@@ -23,5 +23,3 @@ const SectionTitle = (props) => {
 }
 
 export default SectionTitle
-
-//        {props.list.map( item => "<ListItem  primaryText={item} style={{backgroundColor: 'white', margin: '0.25rem 0'}} />")}

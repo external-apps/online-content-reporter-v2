@@ -19,9 +19,10 @@ const modalOverlay = {
     borderRadius: '0.25rem',
     outline: 'none',
     padding: '1rem',
-    maxWidth: '80%',
+    minWidth: '250px',
     height: '80%',
-    width: '375px',
+    maxHeight: '525px',
+    maxWidth: '450px',
     transform: 'translate(-50%, -50%)',
     zIndex: '100'
   },
