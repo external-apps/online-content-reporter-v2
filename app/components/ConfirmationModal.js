@@ -21,7 +21,7 @@ const modalOverlay = {
     padding: '1rem',
     minWidth: '250px',
     height: '80%',
-    maxHeight: '525px',
+    maxHeight: '450px',
     maxWidth: '450px',
     transform: 'translate(-50%, -50%)',
     zIndex: '100'
@@ -61,8 +61,8 @@ const ConfirmationModal = (props) => {
           floatingLabelText='Email address'
         />
         <br />
-        <p>If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
-</p>
+        <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
+        </p>
         <Link className='modal-link' to='/'>
           <RaisedButton primary={true} label='Home' onClick={() => props.changeModal()} />
         </Link>
