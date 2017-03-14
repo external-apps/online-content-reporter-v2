@@ -2,17 +2,22 @@
 @import "./helpers/variables";
 
 .section-title-container{
-  @include content-container(white, #000);
+  @include content-container(white, $dark-cobalt);
   margin-top: 0;
   padding-top: 0;
   margin-bottom: 0;
   padding-bottom: 0;
-  .section-title-heading{
-    color:$blue;
-    font-family: Rosie;
-    font-size: 2rem;
-  }
-  p .bold{
-    font-weight: bolder;
+}
+
+.section-title-heading {
+  color:$blue;
+  font-family: Rosie;
+  margin-bottom: 0.5rem;
+}
+
+.section-title-subheading {
+  margin-top: 0;
+  span {
+    font-family: $bold-text;
   }
 }
