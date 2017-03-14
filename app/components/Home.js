@@ -13,19 +13,17 @@ const Home = () => (
     </div>
 
     <div className='home-info'>
-      <h4 className='section-title'>YOU HAVE ALREADY SHARED PHOTOS – WHAT NOW?</h4>
       <p>
-        You can use this app if you're under 18. We'll need to confirm your age and where you've seen the image or video.
+        If you are under 18 and an explicit or nude picture or video of you has been sahred online, we can help you to get it removed. We'll need to confirm your age and where you've seen the image or video.
       </p>
       <p>
-        If you're 
-        <a className='link' href='https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/sexting/'>help</a>.
+        If you're 18 or older, contact the website(s) where you've seen the image or video, or report it to the police.
       </p>
       <Link className='home-main-button' to='/age-check'>
         <RaisedButton
           labelStyle={{fontSize: '1.4rem', textTransform:'none', fontFamily: 'childline'}}
           style={{padding:'0.8rem'}}
-          label='Report Content'
+          label='Report an image or video'
           labelPosition='before'
           icon={<Launch />}
           primary={true} />
