@@ -47,7 +47,7 @@ const ConfirmationModal = (props) => {
       <div className='mod'>
         <RaisedButton className='close_btn' primary={true} label='X' onClick={() => props.changeModal()} />
         <h2 className="red">Thank you. </h2>
-        <h2 className="bolder">The online content has been reported for removal.</h2>
+        <h2>The online content has been reported for removal.</h2>
         <p>
           If you would like IWF to update you by email, please enter your email address below.
         </p>
