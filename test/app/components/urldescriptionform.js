@@ -12,10 +12,6 @@ const props = {
 }
 
 describe('<UrlDescriptionForm />', () => {
-  it('renders a PageTitle compoent', () => {
-    const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('PageTitle')).to.have.length(1)
-  })
   it('renders a ProgreessBar compoent', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('ProgressBar')).to.have.length(1)
@@ -39,21 +35,21 @@ describe('<UrlDescriptionForm />', () => {
 })
 
 describe('<UrlDescriptionForm /> teest props of several elements', () => {
-  it('PageTile component should have a heading prop', () => {
+  /*it('PageTile component should have a heading prop', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('PageTitle').props().heading).to.equal('REPORT CONTENT WEB ADDRESS')
   })
   it('PageTile component should have a backgroundColor prop', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('PageTitle').props().backgroundColor).to.equal('dark-cobalt')
-  })
+  })*/
   it('ProgreessBar component should have a percentage prop', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('ProgressBar').props().form).to.equal('2')
   })
   it(' <TextField> has a hintText property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('TextField').first().props().hintText).to.equal('http://...')
+    expect(wrapper.find('TextField').first().props().hintText).to.equal('If there is more than one website, add these in the box below')
   })
   it(' <TextField> has a floatingLabelText property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
@@ -61,7 +57,7 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
   })
   it(' <TextField> has a hintText property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('TextField').get(1).props.hintText).to.equal('Message Field')
+    expect(wrapper.find('TextField').get(1).props.hintText).to.equal('Tell us about where you found the image')
   })
   it(' <TextField> has a floatingLabelText property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
