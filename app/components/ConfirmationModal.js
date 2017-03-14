@@ -15,13 +15,14 @@ const modalOverlay = {
     fontFamily: 'childline',
     overflow: 'hidden',
     WebkitOverflowScrolling: 'touch',
-    transform: 'translate (-50%, -50%)',
+    transform: 'translate(-50%, -50%)',
     borderRadius: '0.25rem',
     outline: 'none',
     padding: '1rem',
     maxWidth: '80%',
-    height: '60%',
+    height: '80%',
     width: '375px',
+    transform: 'translate(-50%, -50%)',
     zIndex: '100'
   },
   overlay: {
@@ -35,6 +36,11 @@ const modalOverlay = {
   }
 }
 
+
+
+
+
+
 const ConfirmationModal = (props) => {
   return (
     <Modal
@@ -45,7 +51,10 @@ const ConfirmationModal = (props) => {
     >
       <div className='mod'>
         <RaisedButton className='close_btn' primary={true} label='X' onClick={() => props.changeModal()} />
-        <h1>Thank you. The online content has been reported for removal</h1>
+        <h2 className="red">Thank you. </h2>
+        <h2>We have sent your report to the Internet Watch Foundation (IWF) who will review your request.</h2>
+        <p>Your report may take a little while to complete. If you would like to know when the IWF have looked at your report, enter your email address below.
+        </p>
         <p>
           If you would like IWF to update you by email, please enter your email address below.
         </p>
@@ -54,6 +63,8 @@ const ConfirmationModal = (props) => {
           floatingLabelText='Email address'
         />
         <br />
+        <p>If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
+</p>
         <Link className='modal-link' to='/'>
           <RaisedButton primary={true} label='Home' onClick={() => props.changeModal()} />
         </Link>

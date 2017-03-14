@@ -3,14 +3,20 @@
 .mod {
   color: $dark-cobalt;
   font-family: 'childline-regular';
-  h1 {
-    font-size: 2rem;
+  padding-top: 1rem;
+  .red{
+    color: $red;
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.1rem;
     font-family: 'childline-bold';
-    margin-top: 2rem;
   }
  p {
    font-family: 'childline';
-  }
+   padding-bottom: 0;
+   margin-bottom: 0;
+ }
 }
 
 .close_btn{
