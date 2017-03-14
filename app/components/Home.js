@@ -8,20 +8,22 @@ import Launch from 'material-ui/svg-icons/action/launch'
 const Home = () => (
   <div className='home-body'>
     <div className='home-header'>
-      <h1 className='home-title'>REPORT CONCERN WITH ONLINE CONTENT</h1>
-      <h3>It's anonymous and confidential.</h3>
+      <h1 className='home-title'>REPORT AN IMAGE OR VIDEO</h1>
+      <h3>It's quick and easy to report - we can help</h3>
     </div>
 
     <div className='home-info'>
-      <h4 className='section-title'>YOU HAVE ALREADY SHARED PHOTOS – WHAT NOW?</h4>
       <p>
-        If you’re under 18 and an indecent or nude pic of you is posted online, that is illegal. But we can <a className='link' href='https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/sexting/'>help</a>. Reporting is quick, easy and completely anonymous.
+        If you are under 18 and an explicit or nude picture or video of you has been sahred online, we can help you to get it removed. We'll need to confirm your age and where you've seen the image or video.
+      </p>
+      <p>
+        If you're 18 or older, contact the website(s) where you've seen the image or video, or report it to the police.
       </p>
       <Link className='home-main-button' to='/age-check'>
         <RaisedButton
           labelStyle={{fontSize: '1.4rem', textTransform:'none', fontFamily: 'childline'}}
           style={{padding:'0.8rem'}}
-          label='Report Content'
+          label='Report an image or video'
           labelPosition='before'
           icon={<Launch />}
           primary={true} />
