@@ -12,10 +12,6 @@ const props = {
 }
 
 describe('<UrlDescriptionForm />', () => {
-/*  it('renders a PageTitle compoent', () => {
-    const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('PageTitle')).to.have.length(1)
-  })*/
   it('renders a ProgreessBar compoent', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('ProgressBar')).to.have.length(1)

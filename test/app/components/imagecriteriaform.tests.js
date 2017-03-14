@@ -12,10 +12,6 @@ const props = {
 }
 
 describe('<ImageCriteriaForm />', () => {
-  /*it('renders a PageTitle compoent', () => {
-    const wrapper = shallow(<ImageCriteriaForm />)
-    expect(wrapper.find('PageTitle')).to.have.length(1)
-  })*/
   it('renders a ProgreessBar component', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
     expect(wrapper.find('ProgressBar')).to.have.length(1)
@@ -43,14 +39,6 @@ describe('<ImageCriteriaForm />', () => {
 })
 
 describe('<ImageCriteriaForm /> teest props of several elements', () => {
-  /*it('PageTile component should have a heading prop', () => {
-    const wrapper = shallow(<ImageCriteriaForm />)
-    expect(wrapper.find('PageTitle').props().heading).to.equal('DESCRIBE THE ONLINE CONTENT')
-  })
-  it('PageTile component should have a backgroundColor prop', () => {
-    const wrapper = shallow(<ImageCriteriaForm />)
-    expect(wrapper.find('PageTitle').props().backgroundColor).to.equal('purple')
-  })*/
   it('ProgreessBar component should have a percentage prop', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
     expect(wrapper.find('ProgressBar').props().form).to.equal('1')
