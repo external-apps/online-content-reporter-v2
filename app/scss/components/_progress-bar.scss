@@ -2,13 +2,12 @@
 @import "./helpers/variables";
 
 .progress-bar {
-    position: relative;
-    display: block;
-    width: 100%;
-    h2{
-      @include content-container(white, $red);
+  box-sizing: border-box;
+  margin: 0 1rem;
+  color: $red;
+  padding: 1rem 1rem 0 1rem;
+    h2 {
       margin:0;
-      padding-top: 0.5rem;
-      padding-bottom: 0;
     }
+  @extend .width-limit;
 }

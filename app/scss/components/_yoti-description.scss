@@ -1,7 +1,7 @@
 @import "./helpers/mixins";
 
 .yoti-info {
-  @include content-container($cobalt, #ffffff);
+  @include content-container($light-blue, $dark-cobalt);
 }
 
 @media (min-width: 840px) {
@@ -35,12 +35,16 @@
   p {
     width: 85%;
     margin: 0;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
   }
+
 }
 
 .yoti-instructions {
   font-family: $bold-text;
+  a {
+    text-decoration: underline;
+  }
 }
 
 .yoti-qr {
