@@ -1,8 +1,7 @@
 module.exports = {
   // YOTI
   ADD_QR_CODE: 'ADD_QR_CODE',
-  SHOW_QR: 'SHOW_QR',
-  HIDE_QR: 'HIDE_QR',
+  CHANGE_QR: 'CHANGE_QR',
   SET_UP_FOR_MOBILE: 'SET_UP_FOR_MOBILE',
   // forms
   CHANGE_MODAL: 'CHANGE_MODAL',

@@ -19,15 +19,8 @@ export const setUpForMobile = (href) => {
   }
 }
 
-export const showQr = () => {
+export const changeQr = () => {
   return {
-    type: types.SHOW_QR,
-    showQr: true
-  }
-}
-
-export const hideQr = () => {
-  return {
-    type: types.HIDE_QR,
+    type: types.CHANGE_QR
   }
 }

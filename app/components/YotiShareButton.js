@@ -86,7 +86,7 @@ class YotiShareButton extends React.Component {
     console.log('I am called!!')
     console.log(this.props.yoti.showQr)
     console.log(this.props)
-    this.props.hideQr()
+    this.props.changeQr()
     console.log(this.props.yoti.showQr)
   }
 
@@ -107,7 +107,7 @@ class YotiShareButton extends React.Component {
   }
 
   render () {
-    const clickHandler = this.props.yoti.isMobile ? (this.navigateToYoti) : (this.props.showQr)
+    const clickHandler = this.props.yoti.isMobile ? (this.navigateToYoti) : (this.props.changeQr)
     return (
       <div>
         {!this.props.yoti.showQr &&
