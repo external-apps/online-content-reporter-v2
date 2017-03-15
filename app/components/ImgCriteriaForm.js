@@ -10,6 +10,7 @@ import '../scss/style.scss'
 
 // <PageTitle heading='DESCRIBE THE ONLINE CONTENT' backgroundColor='purple' />
 const ImgCriteriaForm = (props) => {
+  console.log(props)
   return (
     <div>
       <Header />
@@ -59,7 +60,8 @@ const ImgCriteriaForm = (props) => {
               leftCheckbox={<Checkbox />}
             />
           </List>
-          <RaisedButton label='Next' primary={true} onClick={() => props.changeForm()} />
+          {props.required && <h2 className="required">Check one of the options!!</h2>}
+          <RaisedButton label='Next' primary={true} onClick={() => {console.log(props);if(props.imageCriteria.length !==0 ){props.changeForm()}else{props.requiredMessage()}}} />
         </form>
       </div>
 
