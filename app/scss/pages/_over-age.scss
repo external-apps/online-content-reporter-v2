@@ -23,6 +23,9 @@
   }
 }
 
+.section-title-subheading{
+  font-size: 1.2rem;
+}
 .other-ops {
   @include content-container(white, $dark-cobalt);
   padding: 0;
