@@ -3,7 +3,8 @@ import QrCode from './QrCode'
 import '../scss/style.scss'
 
 const YotiDescription = (props) => {
-  if (!props.yoti.haveQr) {
+  console.log('PROPS TO LOOK ATL', props)
+  if (!props.yoti.showQr) {
     return (
       <div className='yoti-description-container'>
         <h3 className='yoti-description-title'>VERIFY YOUR ARE USING YOTI</h3>
