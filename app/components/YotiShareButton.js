@@ -40,13 +40,13 @@ class YotiShareButton extends React.Component {
   }
 
   yotiRedirect (token) {
-    var xhr = new XMLHttpRequest()
-    xhr.addEventListener('load', (e) => {
-      var responseObj = JSON.parse(e.target.responseText)
-      responseObj.isUnder18 ? browserHistory.push('/form') : browserHistory.push('/over-age')
+    axios.get(`/thankyou?token=${token}`)
+    .then(res => {
+      res.data.isUnder18 ? browserHistory.push('/form') : browserHistory.push('/over-age')
     })
-    xhr.open('GET', `/thankyou?token=${token}`)
-    xhr.send()
+    .catch((error) => {
+      console.log(error)
+    })
   }
 
   mobileSetup () {
@@ -68,18 +68,18 @@ class YotiShareButton extends React.Component {
   }
 
   componentWillMount () {
-    var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
-    var isMobile = isMobileRE.test(navigator.userAgent) &&
-      /Mobile/i.test(navigator.userAgent)
-    if (isMobile) this.mobileSetup()
-    else this.getQr()
+    // var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
+    // var isMobile = isMobileRE.test(navigator.userAgent) &&
+    //   /Mobile/i.test(navigator.userAgent)
+    // if (isMobile) this.mobileSetup()
+    // else this.getQr()
+    if (!this.props.yoti.isMobile) this.getQr()
   }
 
   getQr () {
     axios.get('/get-qr')
     .then(res => {
       this.props.addQr(res.data.svg)
-      console.log("PROPS after code:", this.props)
       this.listenForToken(res.data.proto, res.data.url)
     })
     .catch((error) => {
@@ -94,42 +94,27 @@ class YotiShareButton extends React.Component {
 
   render () {
     const clickHandler = this.props.yoti.isMobile ? (this.navigateToYoti) : (this.props.showQr)
-    const buttonLabelStyle = (this.props.yoti.isMobile)
-      ? { fontSize: '0.8rem', textTransform: 'none', fontFamily: 'childline' }
-        : { fontSize: '1.1rem', textTransform: 'none', fontFamily: 'childline' }
-    const buttonStyle = (this.props.yoti.isMobile)
-    ? { whiteSpace: 'nowrap', minWidth: '5rem' }
-      : { padding: '0.8rem 0', whiteSpace: 'nowrap', minWidth: '8rem' }
-
     return (
-      <div className='yoti-btns'>
+      <div>
         {!this.props.yoti.showQr &&
-          <div>
+          <div className='yoti-btns'>
             <RaisedButton
-              labelStyle={buttonLabelStyle}
-              style={buttonStyle}
+              labelStyle={this.props.yoti.buttonLabelStyle}
+              style={this.props.yoti.buttonStyle}
+              className='margin-right'
               primary={true}
               onClick={clickHandler}
               target={this.props.yoti.target}
               label='I have YOTI'
             />
-            <Link to='www.yoti.com/'>
+          <a href='http://www.yoti.com'>
               <RaisedButton
-                labelStyle={{
-                  fontSize: '1.1rem',
-                  textTransform: 'none',
-                  fontFamily: 'childline',
-                  whiteSpace: 'nowrap'
-                }}
-                style={{
-                  padding: '0.8rem 0',
-                  marginLeft: '1rem',
-                  minWidth: '8rem'
-                }}
+                labelStyle={this.props.yoti.buttonLabelStyle}
+                style={this.props.yoti.buttonStyle}
                 primary={true}
                 label="I don't have YOTI"
               />
-            </Link>
+            </a>
           </div>
         }
       </div>
