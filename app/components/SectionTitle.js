@@ -1,12 +1,10 @@
 import React from 'react'
 import '../scss/style.scss'
-import { List, ListItem } from 'material-ui/List'
-import ActionGrade from 'material-ui/svg-icons/action/grade'
 
 const SectionTitle = (props) => {
   let list
   if (props.list) {
-    list = props.list.map( (item,i) => <ListItem leftIcon={<ActionGrade />} key={i} primaryText={item} style={{backgroundColor: 'white', margin: '0.25rem 0'}} />)
+    list = props.list.map( (item,i) => <li key={i} style={{backgroundColor: 'white', margin: '0.25rem 0'}} >{item}</li>)
   }
   return (
   <div className='section-title-container'>
@@ -14,14 +12,12 @@ const SectionTitle = (props) => {
     <div className='section-title-subheading'>
       {props.subheading}
       <span className='bold'> {props.span}</span>
-      <List>
+      <ul>
         {props.list &&  list}
-      </List>
+      </ul>
     </div>
   </div>
 )
 }
 
 export default SectionTitle
-
-//        {props.list.map( item => "<ListItem  primaryText={item} style={{backgroundColor: 'white', margin: '0.25rem 0'}} />")}
