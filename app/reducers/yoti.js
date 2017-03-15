@@ -1,6 +1,7 @@
 import {
   ADD_QR_CODE,
   SHOW_QR,
+  HIDE_QR,
   SET_UP_FOR_MOBILE
 } from '../../constants/action-types'
 
@@ -34,6 +35,11 @@ const yoti = (state = initialState, action) => {
       return {
         ...state,
         showQr: action.showQr
+      }
+    case HIDE_QR:
+      return {
+        ...state,
+        showQr: false
       }
     default:
       return state

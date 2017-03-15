@@ -9,12 +9,18 @@ import SectionTitle from '../components/SectionTitle'
 import '../scss/style.scss'
 import axios from 'axios'
 
+const styles = {
+  errorStyle: {
+    color: '#EB5857'
+  }
+}
+
 class UrlDescriptionForm extends React.Component {
   constructor (props) {
     super(props)
     this.handleSubmit.bind(this)
   }
-  
+
 
 
   handleSubmit () {
@@ -41,7 +47,9 @@ class UrlDescriptionForm extends React.Component {
                 hintText='If there is more than one website, add these in the box below'
                 floatingLabelText='url'
                 value={this.props.url}
+                errorText='This field is required'
                 onChange={e => this.props.saveUrl(e.target.value)}
+                errorStyle={styles.errorStyle}
               /><br />
             </div>
             <div className='input-field-2 input-field col s6 '>
