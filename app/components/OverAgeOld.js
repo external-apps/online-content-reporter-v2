@@ -1,15 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
 import '../scss/style.scss'
-import Header from '../components/Header'
-import SectionTitle from '../components/SectionTitle'
+import PageTitle from '../components/PageTitle'
 
 const OverAge = () => (
   <div>
-    <Header />
-    <SectionTitle heading="SORRY, YOU'RE TOO OLD FOR THIS SERVICE"
-    subheading="There are still lots of things you can do. Try contacting:"
-    list={["the website to report the image or video","the Police to help get it removed","The Mix for help and advice","Samaritans for confidential support"]}/>
+    <PageTitle heading="SORRY, YOU'RE TOO OLD FOR THIS SERVICE" backgroundColor='turquoise' />
     <div className='what-now'>
       <h3>What can I do now?</h3>
       <i className='identity small material-icons'>perm_identity</i>
@@ -31,6 +27,12 @@ const OverAge = () => (
         <a className='contact' href='http://www.themix.org.uk/'>
           Contact The Mix
        </a>
+      </div>
+      <div className='option'>
+        <i className='identity small material-icons'>contacts</i>
+        <a className='contact' href='http://www.samaritans.org/'>
+          Contact Samaritans
+        </a>
       </div>
     </div>
     <Link to='/'>
