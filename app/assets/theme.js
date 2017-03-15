@@ -7,7 +7,7 @@ const muiTheme = getMuiTheme({
     spacing: Spacing,
     zIndex: zIndex,
     fontSize: '1.8rem',
-    textTransform: 'normal',
+    textTransform: 'none',
     fontFamily: 'childline-bold, sans-serif',
     primary1Color: '#0c3d52',   /* backgroundColor */
     primary2Color: '#0c3d52',
