@@ -51,7 +51,7 @@ class UrlDescriptionForm extends React.Component {
                 onChange={e => this.props.saveUrl(e.target.value)}
                 errorStyle={styles.errorStyle}
               /><br />
-                {this.props.required && <h2 className="required">You can nott proceed without sharing at least one url.</h2>}
+                {this.props.required && <h2 className="required">You can't proceed without sharing at least one url.</h2>}
             </div>
             <div className='input-field-2 input-field col s6 '>
               <TextField
