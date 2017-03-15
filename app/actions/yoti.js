@@ -12,10 +12,16 @@ export const setUpForMobile = (href) => {
   return {
     type: types.SET_UP_FOR_MOBILE,
     href,
-    target: '_self'
+    target: '_self',
+    isMobile: false,
+    buttonLabelStyle: { fontSize: '0.8rem', textTransform: 'none', fontFamily: 'childline' },
+    buttonStyle: { whiteSpace: 'nowrap', minWidth: '5rem' }
   }
 }
 
-export const getQr = () => {
-  console.log('here we will do the yoti desktop flow?')
+export const showQr = () => {
+  return {
+    type: types.SHOW_QR,
+    showQr: true
+  }
 }
