@@ -76,18 +76,10 @@ class YotiShareButton extends React.Component {
 
     if (!this.props.yoti.isMobile) {
       this.getQr()
-      //console.log(this.props.yoti.showQr)
-    //  console.log(this.props)
-    //  this.props.hideQr()
-  //    console.log(this.props.yoti.showQr)
     }
   }
   componentWillUnmount () {
-    console.log('I am called!!')
-    console.log(this.props.yoti.showQr)
-    console.log(this.props)
     this.props.changeQr()
-    console.log(this.props.yoti.showQr)
   }
 
   getQr () {
