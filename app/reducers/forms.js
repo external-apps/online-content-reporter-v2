@@ -26,7 +26,8 @@ const forms = (state = initialState, action) => {
     case CHANGE_FORM:
       return {
         ...state,
-        firstForm: !state.firstForm
+        firstForm: !state.firstForm,
+        required: false
       }
     case TOGGLE_CRITERIA:
       return {
