@@ -24,8 +24,9 @@
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: nowrap;
+  align-items: center;
   padding: 1.2rem;
-  min-width: 360px;
+  min-width: 300px;
   img {
     height:5rem;
     min-width: 5rem;
@@ -55,9 +56,8 @@
     padding: 1rem 0.5rem;
   }
   .footer-info {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    padding: 0;
     p {
       margin: 0;
       font-size: 1rem;
@@ -65,7 +65,14 @@
   }
   .footer-logos {
     margin: 0 auto;
+    padding-top: 0;
+    padding-left: 0.5rem;
     width: 90%;
+    img {
+      height:4rem;
+      min-width: 4rem;
+      margin-right: 1.5rem;
+    }
   }
 }
 
