@@ -51,7 +51,7 @@ class UrlDescriptionForm extends React.Component {
                 onChange={e => this.props.saveUrl(e.target.value)}
                 errorStyle={styles.errorStyle}
               /><br />
-                {this.props.required && <h2 className="required">Check one of the options!!</h2>}
+                {this.props.required && <h2 className="required">You can nott proceed without sharing at least one url.</h2>}
             </div>
             <div className='input-field-2 input-field col s6 '>
               <TextField
@@ -69,10 +69,10 @@ class UrlDescriptionForm extends React.Component {
                 label='Submit'
                 primary={true}
                 onClick={(e) => {
-                  console.log(this.props)
                   if(!this.props.url){
                     this.props.requiredMessage()
                   }else{
+                  this.props.requiredMessage()
                   this.props.changeModal()
                   this.handleSubmit().then(() => {
                     console.log('Success submitting form')
