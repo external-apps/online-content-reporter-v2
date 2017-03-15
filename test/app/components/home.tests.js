@@ -32,8 +32,8 @@ describe('<Home /> children node tests', () => {
     const wrapper = shallow(<Home />)
     expect(wrapper.find('.home-info')).to.have.length(1)
   })
-  it('<Home /> should render an element with className section-title', () => {
+  /*it('<Home /> should render an element with className section-title', () => {
     const wrapper = shallow(<Home />)
     expect(wrapper.find('.section-title')).to.have.length(1)
-  })
+  })*/
 })

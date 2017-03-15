@@ -67,8 +67,8 @@ describe('<ImageCriteriaForm /> teest props of several elements', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
     expect(wrapper.find('RaisedButton').props().primary).to.equal(true)
   })
-  it('a tag should point to the childline website', () => {
+  /*it('a tag should point to the childline website', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
     expect(wrapper.find('a').get(1).props.href).to.equal('https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/')
-  })
+  })*/
 })
