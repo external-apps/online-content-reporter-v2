@@ -25,3 +25,9 @@ export const showQr = () => {
     showQr: true
   }
 }
+
+export const hideQr = () => {
+  return {
+    type: types.HIDE_QR,
+  }
+}
