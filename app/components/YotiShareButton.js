@@ -88,58 +88,51 @@ class YotiShareButton extends React.Component {
   }
 
   navigateToYoti () {
-    //when yoti api fixes navigate here
-    // window.location = this.props.yoti.href
-    // else
+    //when yoti api fixes navigate here goes: window.location = this.props.yoti.href
     window.location = t.config.service + t.appId
   }
 
   render () {
     const clickHandler = this.props.yoti.isMobile ? (this.navigateToYoti) : (this.props.showQr)
-    // const buttonStyle = (this.props.yoti.isMobile) ?
-    // const labelStyle = (this.props.yoti.isMobile)
+    const buttonLabelStyle = (this.props.yoti.isMobile)
+      ? { fontSize: '0.8rem', textTransform: 'none', fontFamily: 'childline' }
+        : { fontSize: '1.1rem', textTransform: 'none', fontFamily: 'childline' }
+    const buttonStyle = (this.props.yoti.isMobile)
+    ? { whiteSpace: 'nowrap', minWidth: '5rem' }
+      : { padding: '0.8rem 0', whiteSpace: 'nowrap', minWidth: '8rem' }
 
-    if (!this.props.yoti.showQr) {
-      return (
-        <div className='yoti-btns'>
-          <RaisedButton
-            labelStyle={{
-              fontSize: '1.1rem',
-              textTransform: 'none',
-              fontFamily: 'childline'
-            }}
-            style={{
-              padding: '0.8rem 0',
-              whiteSpace: 'nowrap',
-              minWidth: '8rem'
-            }}
-            primary={true}
-            onClick={clickHandler}
-            target={this.props.yoti.target}
-            label='I have YOTI'
-          />
-          <Link to='www.yoti.com/'>
-            <RaisedButton
-              labelStyle={{
-                fontSize: '1.1rem',
-                textTransform: 'none',
-                fontFamily: 'childline',
-                whiteSpace: 'nowrap'
-              }}
-              style={{
-                padding: '0.8rem 0',
-                marginLeft: '1rem',
-                minWidth: '8rem'
-              }}
-              primary={true}
-              label="I don't have YOTI"
-            />
-          </Link>
-        </div>
-      )
-    }
     return (
-      <p></p>
+      <div className='yoti-btns'>
+        {!this.props.yoti.showQr &&
+          <div>
+            <RaisedButton
+              labelStyle={buttonLabelStyle}
+              style={buttonStyle}
+              primary={true}
+              onClick={clickHandler}
+              target={this.props.yoti.target}
+              label='I have YOTI'
+            />
+            <Link to='www.yoti.com/'>
+              <RaisedButton
+                labelStyle={{
+                  fontSize: '1.1rem',
+                  textTransform: 'none',
+                  fontFamily: 'childline',
+                  whiteSpace: 'nowrap'
+                }}
+                style={{
+                  padding: '0.8rem 0',
+                  marginLeft: '1rem',
+                  minWidth: '8rem'
+                }}
+                primary={true}
+                label="I don't have YOTI"
+              />
+            </Link>
+          </div>
+        }
+      </div>
     )
   }
 }
