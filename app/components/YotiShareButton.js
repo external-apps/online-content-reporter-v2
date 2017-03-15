@@ -1,7 +1,8 @@
 import React from 'react'
 import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
-import { browserHistory } from 'react-router'
+import { browserHistory, Link } from 'react-router'
+import axios from 'axios'
 
 var t = {
   config: {
@@ -15,12 +16,11 @@ var t = {
 class YotiShareButton extends React.Component {
   constructor (props) {
     super(props)
-
     this.getQr = this.getQr.bind(this)
     this.listenForToken = this.listenForToken.bind(this)
     this.yotiRedirect = this.yotiRedirect.bind(this)
-    // this.mobileSetup = this.mobileSetup.bind(this)
-    // this.navigateToYoti = this.navigateToYoti.bind(this)
+    this.mobileSetup = this.mobileSetup.bind(this)
+    this.navigateToYoti = this.navigateToYoti.bind(this)
   }
 
   listenForToken (proto, url) {
@@ -31,7 +31,6 @@ class YotiShareButton extends React.Component {
     }
     socket.onmessage = (msg) => {
       var data = JSON.parse(msg.data)
-      console.log('token',msg.data)
       switch (data.status) {
         case 'COMPLETED' : {
           this.yotiRedirect(data.token)
@@ -49,84 +48,94 @@ class YotiShareButton extends React.Component {
     xhr.open('GET', `/thankyou?token=${token}`)
     xhr.send()
   }
-  //
-  // mobileSetup () {
-  //   var url = 'https://www.yoti.com/qr/' + t.scenId
-  //   var xhr = new XMLHttpRequest()
-  //   xhr.onreadystatechange = () => {
-  //     if (xhr.readyState === 4 && xhr.status === 200) {
-  //       var responseObj = JSON.parse(xhr.responseText)
-  //       const href = `${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=true`
-  //       // normally href is passed in here.
-  //       this.props.setUpForMobile(t.config.service + t.appId)
-  //     }
-  //   }
-  //   xhr.open('GET', url, true)
-  //   xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
-  //   xhr.setRequestHeader('content-type', 'application/json')
-  //   xhr.send(null)
-  // }
 
-  // componentDidMount () {
-  //   var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
-  //   var isMobile = isMobileRE.test(navigator.userAgent) &&
-  //     /Mobile/i.test(navigator.userAgent)
-  //   if (isMobile) this.mobileSetup()
-  //   else console.log('on desktop')
-  // }
-
-  getQr () {
+  mobileSetup () {
+    var url = 'https://www.yoti.com/qr/' + t.scenId
     var xhr = new XMLHttpRequest()
-    xhr.addEventListener('load', (e) => {
-      var responseObj = JSON.parse(e.target.responseText)
-      console.log(responseObj)
-      this.props.addQr(responseObj.svg)
-      this.listenForToken(responseObj.proto, responseObj.url)
-    })
-    xhr.open('GET', '/get-qr')
-    xhr.send()
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var responseObj = JSON.parse(xhr.responseText)
+        const href = `${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=true`
+        // normally href is passed here below...
+        // to fix use href=t.config.service + t.appId
+        this.props.setUpForMobile(href)
+      }
+    }
+    xhr.open('GET', url, true)
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+    xhr.setRequestHeader('content-type', 'application/json')
+    xhr.send(null)
   }
 
-  // navigateToYoti () {
-  //   t.serviceRedirectTimeout && clearTimeout(t.serviceRedirectTimeout)
-  //   var current = Date.now()
-  //   var hangTime = 5e3
-  //   t.serviceRedirectTimeout = setTimeout(() => {
-  //     var timeAfter = Date.now()
-  //     hangTime + 1e3 > timeAfter - (current + hangTime) && (window.location = t.config.service + t.appId)
-  //   }, hangTime)
-  // }
+  componentWillMount () {
+    var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
+    var isMobile = isMobileRE.test(navigator.userAgent) &&
+      /Mobile/i.test(navigator.userAgent)
+    if (isMobile) this.mobileSetup()
+    else this.getQr()
+  }
+
+  getQr () {
+    axios.get('/get-qr')
+    .then(res => {
+      this.props.addQr(res.data.svg)
+      console.log("PROPS after code:", this.props)
+      this.listenForToken(res.data.proto, res.data.url)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
+
+  navigateToYoti () {
+    //when yoti api fixes navigate here
+    // window.location = this.props.yoti.href
+    // else
+    window.location = t.config.service + t.appId
+  }
 
   render () {
-    const clickHandler = this.props.yoti.isMobile ? (window.location = this.props.yoti.href) : (this.getQr)
+    const clickHandler = this.props.yoti.isMobile ? (this.navigateToYoti) : (this.props.showQr)
+    // const buttonStyle = (this.props.yoti.isMobile) ?
+    // const labelStyle = (this.props.yoti.isMobile)
 
-    // this is for when mobilesetup works! Keep this comment
-    // const clickHandler = this.props.yoti.isMobile ? (this.navigateToYoti) : (this.getQr)
-      // <a
-      //   href={this.props.yoti.href}
-      //   className='btn yoti-connect'
-      //   target={this.props.yoti.target}
-      //   >
-      //   Share your age using Yoti
-      // </a>
-    if (!this.props.yoti.haveQr) {
+    if (!this.props.yoti.showQr) {
       return (
-        <RaisedButton
-          labelStyle={{
-            fontSize: '1.1rem',
-            textTransform: 'none',
-            fontFamily: 'childline'
-          }}
-          style={{
-            padding: '0.8rem 0',
-            whiteSpace: 'nowrap',
-            minWidth: '8rem'
-          }}
-          primary={true}
-          onClick={clickHandler}
-          target={this.props.yoti.target}
-          label='I have YOTI'
-        />
+        <div className='yoti-btns'>
+          <RaisedButton
+            labelStyle={{
+              fontSize: '1.1rem',
+              textTransform: 'none',
+              fontFamily: 'childline'
+            }}
+            style={{
+              padding: '0.8rem 0',
+              whiteSpace: 'nowrap',
+              minWidth: '8rem'
+            }}
+            primary={true}
+            onClick={clickHandler}
+            target={this.props.yoti.target}
+            label='I have YOTI'
+          />
+          <Link to='www.yoti.com/'>
+            <RaisedButton
+              labelStyle={{
+                fontSize: '1.1rem',
+                textTransform: 'none',
+                fontFamily: 'childline',
+                whiteSpace: 'nowrap'
+              }}
+              style={{
+                padding: '0.8rem 0',
+                marginLeft: '1rem',
+                minWidth: '8rem'
+              }}
+              primary={true}
+              label="I don't have YOTI"
+            />
+          </Link>
+        </div>
       )
     }
     return (
