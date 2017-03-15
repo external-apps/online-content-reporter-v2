@@ -60,8 +60,8 @@ const ImgCriteriaForm = (props) => {
               leftCheckbox={<Checkbox />}
             />
           </List>
-          {props.required && <h2 className="required">Check one of the options!!</h2>}
-          <RaisedButton label='Next' primary={true} onClick={() => {console.log(props);if(props.imageCriteria.length !==0 ){props.changeForm()}else{props.requiredMessage()}}} />
+          {props.required && <h2 className="required">You can't proceed without selection at least one criteria.</h2>}
+          <RaisedButton label='Next' primary={true} onClick={() => {if(props.imageCriteria.length !==0 ){props.changeForm()}else{props.requiredMessage()}}} />
         </form>
       </div>
 
