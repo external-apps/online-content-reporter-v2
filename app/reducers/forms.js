@@ -3,7 +3,8 @@ import {
   CHANGE_FORM,
   TOGGLE_CRITERIA,
   SAVE_URL,
-  SAVE_DESCRIPTION
+  SAVE_DESCRIPTION,
+  REQUIRED_MESSAGE
 } from '../../constants/action-types'
 
 const initialState = {
@@ -11,7 +12,8 @@ const initialState = {
   firstForm: true,
   imageCriteria: [],
   url: '',
-  description: ''
+  description: '',
+  required: false
 }
 
 const forms = (state = initialState, action) => {
@@ -45,6 +47,11 @@ const forms = (state = initialState, action) => {
       return {
         ...state,
         description: action.description
+      }
+    case REQUIRED_MESSAGE:
+      return {
+        ...state,
+        required: !state.required
       }
     default:
       return state
