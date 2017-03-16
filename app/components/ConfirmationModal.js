@@ -4,6 +4,7 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import Modal from 'react-modal'
 import axios from 'axios'
+import { browserHistory } from 'react-router';
 
 const modalOverlay = {
   content: {
@@ -85,7 +86,7 @@ class ConfirmationModal extends React.Component {
           <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
           </p>
 
-            <RaisedButton primary={true} label='Submit' onClick={() => {if(this.validateEmail()){this.props.hideValidEmailRequiredMessage();this.handleEmailSubmit()}else{this.renderValidEmailRequired()} }} />
+            <RaisedButton primary={true} label='Submit' onClick={() => {if(this.validateEmail()){this.props.hideValidEmailRequiredMessage();browserHistory.push('/');this.handleEmailSubmit()}else{this.renderValidEmailRequired()} }} />
 
         </div>
       </Modal>
