@@ -32,8 +32,21 @@ export const saveDescription = (description) => {
   }
 }
 
-export const requiredMessage = () => {
+export const saveEmail = (email) => {
   return {
-    type: types.REQUIRED_MESSAGE
+    type: types.SAVE_EMAIL,
+    email
+  }
+}
+
+export const showUrlRequiredMessage = () => {
+  return {
+    type: types.SHOW_URL_REQUIRED_MESSAGE
+  }
+}
+
+export const showCriteriaRequiredMessage = () => {
+  return {
+    type: types.SHOW_CRITERIA_REQUIRED_MESSAGE
   }
 }
