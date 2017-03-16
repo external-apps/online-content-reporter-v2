@@ -6,6 +6,8 @@ import {
   SAVE_DESCRIPTION,
   SAVE_EMAIL,
   SHOW_URL_REQUIRED_MESSAGE,
+  VALID_EMAIL_REQUIRED_MESSAGE,
+  HIDE_VALID_EMAIL_REQUIRED_MESSAGE,
   SHOW_CRITERIA_REQUIRED_MESSAGE
 } from '../../constants/action-types'
 
@@ -16,7 +18,8 @@ const initialState = {
   url: '',
   description: '',
   criteriaRequiredMessage: false,
-  urlRequiredMessage: false
+  urlRequiredMessage: false,
+  validEmail: true
 }
 
 const forms = (state = initialState, action) => {
@@ -69,6 +72,16 @@ const forms = (state = initialState, action) => {
       return {
         ...state,
         urlRequiredMessage: !state.urlRequiredMessage
+      }
+    case VALID_EMAIL_REQUIRED_MESSAGE:
+      return {
+        ...state,
+        validEmail: false
+      }
+    case HIDE_VALID_EMAIL_REQUIRED_MESSAGE:
+        return {
+          ...state,
+          validEmail: true
       }
     default:
       return state
