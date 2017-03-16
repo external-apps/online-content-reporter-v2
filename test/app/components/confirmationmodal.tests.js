@@ -70,7 +70,7 @@ describe('<ConfirmationModal />', () => {
   })
   it('RaisedButton', () => {
     const wrapper = shallow(<ConfirmationModal />)
-    expect(wrapper.find('RaisedButton').get(1).props.label).to.equal('Home')
+    expect(wrapper.find('RaisedButton').get(1).props.label).to.equal('Submit')
   })
   it('TextField', () => {
     const wrapper = shallow(<ConfirmationModal />)
