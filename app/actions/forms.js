@@ -31,3 +31,9 @@ export const saveDescription = (description) => {
     description
   }
 }
+
+export const requiredMessage = () => {
+  return {
+    type: types.REQUIRED_MESSAGE
+  }
+}
