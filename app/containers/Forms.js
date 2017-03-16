@@ -16,7 +16,7 @@ class UrlForm extends React.Component {
           <ImageCriteriaForm {...this.props} />
         }
         {!this.props.firstForm &&
-        <UrlDescriptionForm {...this.props} />
+          <UrlDescriptionForm {...this.props} />
         }
       </div>
     )
