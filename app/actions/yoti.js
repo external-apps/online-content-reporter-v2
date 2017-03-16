@@ -24,3 +24,15 @@ export const changeQr = () => {
     type: types.CHANGE_QR
   }
 }
+
+export const closeQr = () => {
+  return {
+    type: types.CLOSE_QR
+  }
+}
+
+export const openQr = () => {
+  return {
+    type: types.OPEN_QR
+  }
+}
