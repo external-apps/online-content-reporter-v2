@@ -49,6 +49,11 @@ class ConfirmationModal extends React.Component {
     var payload = { imageCriteria, url, description, email }
     return axios.post('/email', payload)
   }
+  validateEmail () {
+    const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
+    console.log(pattern.test(this.props.email))
+    return pattern.test(this.props.email)
+  }
 
   render () {
     return (
@@ -74,12 +79,13 @@ class ConfirmationModal extends React.Component {
           <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
           </p>
           <Link className='modal-link' to='/'>
-            <RaisedButton primary={true} label='Submit' onClick={() => this.handleEmailSubmit()} />
+            <RaisedButton primary={true} label='Submit' onClick={() => {this.validateEmail();this.handleEmailSubmit(); }} />
           </Link>
         </div>
       </Modal>
     )
   }
 }
+//
 
 module.exports = ConfirmationModal
