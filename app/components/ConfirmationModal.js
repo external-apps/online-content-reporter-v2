@@ -83,14 +83,14 @@ class ConfirmationModal extends React.Component {
           {this.props.criteriaRequiredMessage&& <h2 className='required'>Please enter a valid email address</h2>}
           <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
           </p>
-          <Link className='modal-link' to='/'>
+
             <RaisedButton primary={true} label='Submit' onClick={() => {if(this.validateEmail()){this.handleEmailSubmit()}else{this.renderValidEmailRequired()} }} />
-          </Link>
+
         </div>
       </Modal>
     )
   }
 }
-//
+//<Link className='modal-link' to='/'></Link>;
 
 module.exports = ConfirmationModal
