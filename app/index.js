@@ -11,6 +11,7 @@ import { createStore, combineReducers } from 'redux'
 import yoti from './reducers/yoti'
 import forms from './reducers/forms'
 import muiTheme from './assets/theme'
+import NotFound from './components/NotFound'
 
 const reducers = combineReducers({
   yoti,
@@ -18,7 +19,7 @@ const reducers = combineReducers({
 })
 
 const store = createStore(reducers)
-
+/*  <Route path='*' component={Home} />*/
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
     <Provider store={store}>
@@ -27,7 +28,7 @@ ReactDOM.render(
         <Route path='/age-check' component={AgeCheck} />
         <Route path='/form' component={Forms} />
         <Route path='/over-age' component={OverAge} />
-        <Route path='*' component={Home} />
+        <Route path='*' component={NotFound} />
       </Router>
     </Provider>
   </MuiThemeProvider>,
