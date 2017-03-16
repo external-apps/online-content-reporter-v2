@@ -1,10 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import Modal from 'react-modal'
 import axios from 'axios'
-import { browserHistory } from 'react-router';
 
 const modalOverlay = {
   content: {
@@ -61,7 +60,6 @@ class ConfirmationModal extends React.Component {
   }
 
   render () {
-    let editLink = <Link className='modal-link' to='/' />
     return (
       <Modal
         isOpen={this.props.modalIsOpen}
@@ -82,17 +80,14 @@ class ConfirmationModal extends React.Component {
             onChange={e => this.props.saveEmail(e.target.value)}
           />
           <br />
-          {!this.props.validEmail&& <h2 className='required'>Please enter a valid email address</h2>}
-          <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
+          {!this.props.validEmail && <h2 className='required'>Please enter a valid email address</h2>}
+          <p className='last_p'>If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
           </p>
-
-            <RaisedButton primary={true} label='Submit' onClick={() => {if(this.validateEmail()){this.props.hideValidEmailRequiredMessage();browserHistory.push('/');this.handleEmailSubmit()}else{this.renderValidEmailRequired()} }} />
-
+            <RaisedButton primary={true} label='Submit' onClick={ () => { if (this.validateEmail()) { this.props.hideValidEmailRequiredMessage(); browserHistory.push('/'); this.handleEmailSubmit() } else { this.renderValidEmailRequired() } } } />
         </div>
       </Modal>
     )
   }
 }
-//<Link className='modal-link' to='/'></Link>;
 
 module.exports = ConfirmationModal
