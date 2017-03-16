@@ -11,18 +11,20 @@
   h2 {
     font-size: 1.1rem;
     font-family: 'childline-bold';
+    margin-bottom: 0.2rem;
+    margin-bottom: 0.2rem;
   }
  p {
    font-family: 'childline';
    padding-bottom: 0;
    margin-bottom: 0;
  }
- .last_p{
-   padding-bottom: 1rem;
+ .last_p {
+   margin-bottom: 1rem;
  }
 }
 
-.close_btn{
+.close_btn {
   position: absolute;
   z-index: 1;
   top: 0;
