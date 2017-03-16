@@ -44,7 +44,7 @@ class ConfirmationModal extends React.Component {
     this.handleEmailSubmit.bind(this)
   }
   renderValidEmailRequired () {
-    this.props.showCriteriaRequiredMessage()
+    this.props.validEmailRequiredMessage()
   }
 
   handleEmailSubmit () {
@@ -80,11 +80,11 @@ class ConfirmationModal extends React.Component {
             onChange={e => this.props.saveEmail(e.target.value)}
           />
           <br />
-          {this.props.criteriaRequiredMessage&& <h2 className='required'>Please enter a valid email address</h2>}
+          {!this.props.validEmail&& <h2 className='required'>Please enter a valid email address</h2>}
           <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
           </p>
 
-            <RaisedButton primary={true} label='Submit' onClick={() => {if(this.validateEmail()){this.handleEmailSubmit()}else{this.renderValidEmailRequired()} }} />
+            <RaisedButton primary={true} label='Submit' onClick={() => {if(this.validateEmail()){this.props.hideValidEmailRequiredMessage();this.handleEmailSubmit()}else{this.renderValidEmailRequired()} }} />
 
         </div>
       </Modal>
