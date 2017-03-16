@@ -18,15 +18,24 @@ const styles = {
 class UrlDescriptionForm extends React.Component {
   constructor (props) {
     super(props)
-    this.handleSubmit.bind(this)
+    this.handleUrlSubmit.bind(this)
   }
 
-
-
-  handleSubmit () {
+  handleUrlSubmit () {
     const { imageCriteria, url, description } = this.props
     var payload = { imageCriteria, url, description }
     return axios.post('/email', payload)
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
+  renderRequiredMessage () {
+    if (this.props.urlRequiredMessage) {
+      return (
+        <h2 className='required'>You can't proceed without sharing at least one url.</h2>
+      )
+    }
   }
 
   render () {
@@ -37,8 +46,14 @@ class UrlDescriptionForm extends React.Component {
         <SectionTitle
           heading='REPORT CONTENT WEB ADDRESS'
           subheading='Please include any info that you think may help us, such as:'
-          list = {['where you found the image or video', "if there's more than one website", 'whether you need a username and password to gain access.']}
         />
+        <div className='instruction-list'>
+          <ul>
+            <li>where you found the image or video</li>
+            <li>if there's more than one website</li>
+            <li>whether you need a username and password to gain access</li>
+          </ul>
+        </div>
         <div className='form-container'>
           <h3 className='section-title'>WEB ADDRESS</h3>
           <form>
@@ -51,39 +66,38 @@ class UrlDescriptionForm extends React.Component {
                 onChange={e => this.props.saveUrl(e.target.value)}
                 errorStyle={styles.errorStyle}
               /><br />
-                {this.props.required && <h2 className="required">You can't proceed without sharing at least one url.</h2>}
-            </div>
-            <div className='input-field-2 input-field col s6 '>
-              <TextField
-                hintText='Tell us about where you found the image'
-                floatingLabelText='Description'
-                multiLine={true}
-                rows={4}
-                value={this.props.description}
-                onChange={e => this.props.saveDescription(e.target.value)}
-              /><br />
-            </div>
-            <div className="buttons">
-              <RaisedButton label='Previous' primary={true} onClick={() => this.props.changeForm()} />
-              <RaisedButton
-                label='Submit'
-                primary={true}
-                onClick={(e) => {
-                  if(!this.props.url){
-                    this.props.requiredMessage()
-                  }else{
-                  this.props.requiredMessage()
-                  this.props.changeModal()
-                  this.handleSubmit().then(() => {
-                    console.log('Success submitting form')
-                  }).catch((error) => {
-                    console.log(error)
-                  })
-                }
-                }}
-                id='submit-url'
-              />
-            </div>
+              {this.renderRequiredMessage()}
+              </div>
+              <div className='input-field-2 input-field col s6 '>
+                <TextField
+                  hintText='Tell us about where you found the image'
+                  floatingLabelText='Description'
+                  multiLine={true}
+                  rows={4}
+                  value={this.props.description}
+                  onChange={e => this.props.saveDescription(e.target.value)}
+                /><br />
+              </div>
+              <div className='buttons'>
+                <RaisedButton
+                  label='Previous'
+                  primary={true}
+                  onClick={() => this.props.changeForm()}
+                />
+                <RaisedButton
+                  label='Submit'
+                  primary={true}
+                  onClick={(e) => {
+                    if (!this.props.url) {
+                      this.props.showUrlRequiredMessage()
+                    } else {
+                      this.props.changeModal()
+                      this.handleUrlSubmit()
+                    }
+                  }}
+                  id='submit-url'
+                />
+              </div>
           </form>
         </div>
         <ConfirmationModal {...this.props} />

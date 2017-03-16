@@ -4,7 +4,9 @@ import {
   TOGGLE_CRITERIA,
   SAVE_URL,
   SAVE_DESCRIPTION,
-  REQUIRED_MESSAGE
+  SAVE_EMAIL,
+  SHOW_URL_REQUIRED_MESSAGE,
+  SHOW_CRITERIA_REQUIRED_MESSAGE
 } from '../../constants/action-types'
 
 const initialState = {
@@ -13,7 +15,8 @@ const initialState = {
   imageCriteria: [],
   url: '',
   description: '',
-  required: false
+  criteriaRequiredMessage: false,
+  urlRequiredMessage: false
 }
 
 const forms = (state = initialState, action) => {
@@ -27,7 +30,8 @@ const forms = (state = initialState, action) => {
       return {
         ...state,
         firstForm: !state.firstForm,
-        required: false
+        urlRequiredMessage: false,
+        criteriaRequiredMessage: false
       }
     case TOGGLE_CRITERIA:
       return {
@@ -39,20 +43,32 @@ const forms = (state = initialState, action) => {
           })()
             : state.imageCriteria.concat(action.criteria)
       }
-    case SAVE_URL:
-      return {
-        ...state,
-        url: action.url
-      }
     case SAVE_DESCRIPTION:
       return {
         ...state,
-        description: action.description
+        description: action.description,
+        criteriaRequiredMessage: false
       }
-    case REQUIRED_MESSAGE:
+    case SAVE_URL:
       return {
         ...state,
-        required: !state.required
+        url: action.url,
+        urlRequiredMessage: false
+      }
+    case SAVE_EMAIL:
+      return {
+        ...state,
+        email: action.email
+      }
+    case SHOW_CRITERIA_REQUIRED_MESSAGE:
+      return {
+        ...state,
+        criteriaRequiredMessage: !state.criteriaRequiredMessage
+      }
+    case SHOW_URL_REQUIRED_MESSAGE:
+      return {
+        ...state,
+        urlRequiredMessage: !state.urlRequiredMessage
       }
     default:
       return state

@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import Modal from 'react-modal'
+import axios from 'axios'
 
 const modalOverlay = {
   content: {
@@ -10,18 +11,17 @@ const modalOverlay = {
     top: '50%',
     left: '50%',
     transform: 'translate (-50%, -50%)',
-    border: '1px solid #ccc',
     background: '#CCECF5',
     fontFamily: 'childline',
     overflow: 'hidden',
     WebkitOverflowScrolling: 'touch',
     transform: 'translate(-50%, -50%)',
-    borderRadius: '0.25rem',
+    borderRadius: '0.1rem',
     outline: 'none',
     padding: '1rem',
     minWidth: '260px',
     height: '90%',
-    maxHeight: '450px',
+    maxHeight: '480px',
     maxWidth: '450px',
     overflow: 'auto',
     transform: 'translate(-50%, -50%)',
@@ -38,38 +38,48 @@ const modalOverlay = {
   }
 }
 
+class ConfirmationModal extends React.Component {
+  constructor (props) {
+    super(props)
+    this.handleEmailSubmit.bind(this)
+  }
 
+  handleEmailSubmit () {
+    const { imageCriteria, url, description, email } = this.props
+    var payload = { imageCriteria, url, description, email }
+    return axios.post('/email', payload)
+  }
 
-
-
-
-const ConfirmationModal = (props) => {
-  return (
-    <Modal
-      isOpen={props.modalIsOpen}
-      onRequestClose={() => props.changeModal()}
-      style={modalOverlay}
-      contentLabel='Reassuring message'
-    >
-      <div className='mod'>
-        <RaisedButton className='close_btn' primary={true} label='X' onClick={() => props.changeModal()} />
-        <h2 className="red">Thank you. </h2>
-        <h2>We have sent your report to the Internet Watch Foundation (IWF) who will review your request.</h2>
-        <p>Your report may take a little while to complete. If you would like to know when the IWF have looked at your report, enter your email address below.
-        </p>
-        <TextField
-          hintText='jane.doe@gmail.com'
-          floatingLabelText='Email address'
-        />
-        <br />
-        <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
-        </p>
-        <Link className='modal-link' to='/'>
-          <RaisedButton primary={true} label='Home' onClick={() => props.changeModal()} />
-        </Link>
-      </div>
-    </Modal>
-  )
+  render () {
+    return (
+      <Modal
+        isOpen={this.props.modalIsOpen}
+        onRequestClose={() => this.props.changeModal()}
+        style={modalOverlay}
+        contentLabel='Reassuring message'
+      >
+        <div className='mod'>
+          <RaisedButton className='close_btn' primary={true} label='X' onClick={() => props.changeModal()} />
+          <h2 className='red'>Thank you.</h2>
+          <h2>We have sent your report to the Internet Watch Foundation (IWF) who will review your request.</h2>
+          <p>
+            Your report may take a little while to complete. If you would like to know when the IWF have looked at your report, enter your email address below.
+          </p>
+          <TextField
+            hintText='jane.doe@gmail.com'
+            floatingLabelText='Email address'
+            onChange={e => this.props.saveEmail(e.target.value)}
+          />
+          <br />
+          <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
+          </p>
+          <Link className='modal-link' to='/'>
+            <RaisedButton primary={true} label='Submit' onClick={() => this.handleEmailSubmit()} />
+          </Link>
+        </div>
+      </Modal>
+    )
+  }
 }
 
 module.exports = ConfirmationModal
