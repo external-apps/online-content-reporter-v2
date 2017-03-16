@@ -44,9 +44,7 @@ class ConfirmationModal extends React.Component {
     this.handleEmailSubmit.bind(this)
   }
   renderValidEmailRequired () {
-    if (!this.validateEmail()) {
-      return true
-    }
+    this.props.showCriteriaRequiredMessage()
   }
 
   handleEmailSubmit () {
@@ -57,6 +55,7 @@ class ConfirmationModal extends React.Component {
   validateEmail () {
     const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
     console.log(pattern.test(this.props.email))
+    console.log(this.props.criteriaRequiredMessage)
     return pattern.test(this.props.email)
   }
 
@@ -69,7 +68,7 @@ class ConfirmationModal extends React.Component {
         contentLabel='Reassuring message'
       >
         <div className='mod'>
-          <RaisedButton className='close_btn' primary={true} label='X' onClick={() => props.changeModal()} />
+          <RaisedButton className='close_btn' primary={true} label='X' onClick={() => this.props.changeModal()} />
           <h2 className='red'>Thank you.</h2>
           <h2>We have sent your report to the Internet Watch Foundation (IWF) who will review your request.</h2>
           <p>
@@ -81,7 +80,7 @@ class ConfirmationModal extends React.Component {
             onChange={e => this.props.saveEmail(e.target.value)}
           />
           <br />
-          {!this.validateEmail()&& <h2 className='required'>Please enter a valid email address</h2>}
+          {this.props.criteriaRequiredMessage&& <h2 className='required'>Please enter a valid email address</h2>}
           <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
           </p>
           <Link className='modal-link' to='/'>
