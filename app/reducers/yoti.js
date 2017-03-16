@@ -1,6 +1,5 @@
 import {
   ADD_QR_CODE,
-  CHANGE_QR,
   CLOSE_QR,
   OPEN_QR,
   SET_UP_FOR_MOBILE
@@ -31,11 +30,6 @@ const yoti = (state = initialState, action) => {
         target: action.target,
         buttonStyle: action.buttonStyle,
         buttonLabelStyle: action.buttonLabelStyle
-      }
-    case CHANGE_QR:
-      return {
-        ...state,
-        showQr: !state.showQr
       }
     case CLOSE_QR:
       return {
