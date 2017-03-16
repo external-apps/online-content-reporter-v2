@@ -8,11 +8,12 @@ import Footer from './Footer'
 import Header from './Header'
 import '../scss/style.scss'
 
+// old span Please select from boxes below that tell us what you are concerned about the content.
 class ImgCriteriaForm extends React.Component {
   renderRequiredMessage () {
     if (this.props.criteriaRequiredMessage) {
       return (
-        <h2 className='required'>You can't proceed without selecting at least one criteria.</h2>
+        <h2 className='required'>You can't proceed without ticking at least one option</h2>
       )
     }
   }
@@ -23,7 +24,7 @@ class ImgCriteriaForm extends React.Component {
       <div>
         <Header />
         <ProgressBar form='1' />
-        <SectionTitle heading='WHY ARE YOUR REPORTING?' subheading='The content must fit a certain criteria for us to legally remove it.' span='Please select from boxes below that tell us what you are concerned about the content.' />
+        <SectionTitle heading='PLEASE TELL US MORE ABOUT THE IMAGE OR VIDEO' subheading='The content must fit a certain criteria for us to legally remove it.' span='Does the image contain one or more of the following:' />
         <div className='form-container'>
           <form action='#'>
             <List>
