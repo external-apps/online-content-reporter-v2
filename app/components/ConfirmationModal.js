@@ -74,7 +74,7 @@ class ConfirmationModal extends React.Component {
           <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
           </p>
           <Link className='modal-link' to='/'>
-            <RaisedButton primary={true} label='Submit' onClick={() => this.props.changeModal()} />
+            <RaisedButton primary={true} label='Submit' onClick={() => this.handleEmailSubmit()} />
           </Link>
         </div>
       </Modal>
