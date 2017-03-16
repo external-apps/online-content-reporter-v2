@@ -50,3 +50,15 @@ export const showCriteriaRequiredMessage = () => {
     type: types.SHOW_CRITERIA_REQUIRED_MESSAGE
   }
 }
+
+export const validEmailRequiredMessage = () => {
+  return {
+    type: types.VALID_EMAIL_REQUIRED_MESSAGE
+  }
+}
+
+export const hideValidEmailRequiredMessage = () => {
+  return {
+    type: types.HIDE_VALID_EMAIL_REQUIRED_MESSAGE
+  }
+}

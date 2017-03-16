@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import Modal from 'react-modal'
@@ -43,11 +43,20 @@ class ConfirmationModal extends React.Component {
     super(props)
     this.handleEmailSubmit.bind(this)
   }
+  renderValidEmailRequired () {
+    this.props.validEmailRequiredMessage()
+  }
 
   handleEmailSubmit () {
     const { imageCriteria, url, description, email } = this.props
     var payload = { imageCriteria, url, description, email }
     return axios.post('/email', payload)
+  }
+  validateEmail () {
+    const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
+    console.log(pattern.test(this.props.email))
+    console.log(this.props.criteriaRequiredMessage)
+    return pattern.test(this.props.email)
   }
 
   render () {
@@ -59,7 +68,7 @@ class ConfirmationModal extends React.Component {
         contentLabel='Reassuring message'
       >
         <div className='mod'>
-          <RaisedButton className='close_btn' primary={true} label='X' onClick={() => props.changeModal()} />
+          <RaisedButton className='close_btn' primary={true} label='X' onClick={() => this.props.changeModal()} />
           <h2 className='red'>Thank you.</h2>
           <h2>We have sent your report to the Internet Watch Foundation (IWF) who will review your request.</h2>
           <p>
@@ -71,11 +80,10 @@ class ConfirmationModal extends React.Component {
             onChange={e => this.props.saveEmail(e.target.value)}
           />
           <br />
-          <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
+          {!this.props.validEmail && <h2 className='required'>Please enter a valid email address</h2>}
+          <p className='last_p'>If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
           </p>
-          <Link className='modal-link' to='/'>
-            <RaisedButton primary={true} label='Submit' onClick={() => this.handleEmailSubmit()} />
-          </Link>
+            <RaisedButton primary={true} label='Submit' onClick={ () => { if (this.validateEmail()) { this.props.hideValidEmailRequiredMessage(); browserHistory.push('/'); this.handleEmailSubmit() } else { this.renderValidEmailRequired() } } } />
         </div>
       </Modal>
     )
