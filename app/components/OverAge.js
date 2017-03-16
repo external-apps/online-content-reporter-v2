@@ -8,12 +8,20 @@ import SectionTitle from '../components/SectionTitle'
 const OverAge = () => (
   <div>
     <Header />
-    <SectionTitle heading="SORRY, YOU'RE TOO OLD FOR THIS SERVICE"
-    subheading="There are still lots of things you can do. Try contacting:"
-    list={["the website to report the image or video","the Police to help get it removed","The Mix for help and advice","Samaritans for confidential support"]}/>
+    <SectionTitle
+      heading="SORRY, YOU'RE TOO OLD FOR THIS SERVICE"
+      subheading='There are still lots of things you can do. Try contacting:'
+    />
+    <div className='instruction-list'>
+      <ul>
+        <li>The website to report the image or video</li>
+        <li>The Police to help get it removed</li>
+        <li>The Mix for help and advice</li>
+        <li>Samaritans for confidential support</li>
+      </ul>
+    </div>
     <div className='what-now'>
       <h3>What can I do now?</h3>
-      <i className='identity small material-icons'>perm_identity</i>
       <p>
         Unfortunately we are not legally able to remove the online content if you are over 18. There are other options though:
       </p>
