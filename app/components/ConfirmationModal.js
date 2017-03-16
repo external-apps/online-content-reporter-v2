@@ -60,6 +60,7 @@ class ConfirmationModal extends React.Component {
   }
 
   render () {
+    let editLink = <Link className='modal-link' to='/' />
     return (
       <Modal
         isOpen={this.props.modalIsOpen}
