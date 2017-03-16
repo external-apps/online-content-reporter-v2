@@ -29,10 +29,6 @@ describe('<ConfirmationModal />', () => {
     const wrapper = shallow(<ConfirmationModal />)
     expect(wrapper.find('.mod')).to.have.length(1)
   })
-  it('Link', () => {
-    const wrapper = shallow(<ConfirmationModal />)
-    expect(wrapper.find('Link')).to.have.length(1)
-  })
   it('RaisedButton', () => {
     const wrapper = shallow(<ConfirmationModal />)
     expect(wrapper.find('RaisedButton')).to.have.length(2)
@@ -44,14 +40,6 @@ describe('<ConfirmationModal />', () => {
 })
 
 describe('<ConfirmationModal />', () => {
-  it('Link', () => {
-    const wrapper = shallow(<ConfirmationModal />)
-    expect(wrapper.find('Link').props().className).to.equal('modal-link')
-  })
-  it('Link', () => {
-    const wrapper = shallow(<ConfirmationModal />)
-    expect(wrapper.find('Link').props().to).to.equal('/')
-  })
   it('RaisedButton', () => {
     const wrapper = shallow(<ConfirmationModal />)
     expect(wrapper.find('RaisedButton').get(0).props.primary).to.equal(true)
