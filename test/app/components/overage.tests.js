@@ -2,10 +2,6 @@ import { expect } from 'chai'
 import React from 'react'
 import { shallow, render } from 'enzyme'
 import OverAge from '../../../app/components/OverAge'
-import PageTitle from '../../../app/components/PageTitle'
-import sinon from 'sinon'
-import { Link } from 'react-router'
-
 
 describe('<OverAge />', () => {
   it('<OverAge /> should render a Header', () => {
