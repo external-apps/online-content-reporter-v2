@@ -5,8 +5,10 @@ import * as formActions from '../../../app/actions/forms'
 import * as yotiActions from '../../../app/actions/yoti'
 
 import {
-  // yoti actions
-  ADD_QR_CODE,
+  // yoti actions,
+  CLOSE_QR,
+  OPEN_QR,
+  ADD_QR_CODE, //todo
   SET_UP_FOR_MOBILE,
   //form actions
   CHANGE_MODAL,
@@ -23,7 +25,7 @@ import {
   CHANGE_OPTION5,
   VALID_EMAIL_REQUIRED_MESSAGE,
   HIDE_VALID_EMAIL_REQUIRED_MESSAGE,
-  SHOW_CRITERIA_REQUIRED_MESSAGE, //todo
+  SHOW_CRITERIA_REQUIRED_MESSAGE,
 } from '../../../constants/action-types'
 
 describe('Test actions', () => {
@@ -149,5 +151,29 @@ describe('FeatureFirstContainer actions', () => {//
     expect(
       yotiActions.setUpForMobile()
     ).to.have.property('type','SET_UP_FOR_MOBILE')
+  })
+  it('should dispatch an action to close Qr code', () => {
+    const expectedAction = {
+      type: CLOSE_QR
+    }
+    expect(
+      yotiActions.closeQr()
+    ).to.have.property('type','CLOSE_QR')
+  })
+  it('should dispatch an action to open Qr code', () => {
+    const expectedAction = {
+      type: OPEN_QR
+    }
+    expect(
+      yotiActions.openQr()
+    ).to.have.property('type','OPEN_QR')
+  })
+  it('should dispatch an action to add Qr code', () => {
+    const expectedAction = {
+      type: ADD_QR_CODE
+    }
+    expect(
+      yotiActions.addQr()
+    ).to.have.property('type','ADD_QR_CODE')
   })
 })
