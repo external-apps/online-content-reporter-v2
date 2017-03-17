@@ -40,9 +40,17 @@ describe('<UrlDescriptionForm />', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('.form-container')).to.have.length(1)
   })
+  it('renders a compoent with className section-title', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('.section-title').text()).to.equal('WEB ADDRESS')
+  })
   it('renders a compoent with className <ConfirmationModal>', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('ConfirmationModal')).to.have.length(1)
+  })
+  it('renders a div with className buttons', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('.buttons')).to.have.length(1)
   })
   it('renders a compoent with className <RaisedButton>', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
