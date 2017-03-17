@@ -15,7 +15,7 @@ import {
   SAVE_URL,
   SAVE_DESCRIPTION,
   SAVE_EMAIL,
-  SHOW_URL_REQUIRED_MESSAGE, 
+  SHOW_URL_REQUIRED_MESSAGE,
   CHANGE_OPTION1, //todo
   CHANGE_OPTION2, //todo
   CHANGE_OPTION3, //todo
@@ -74,6 +74,46 @@ describe('Test actions', () => {
     expect(
       formActions.saveDescription()
     ).to.have.property('type','SAVE_DESCRIPTION')
+  })
+  it('should dispatch an action to toggle option1', () => { //
+    const expectedAction = {
+      type: CHANGE_OPTION1
+    }
+    expect(
+      formActions.checkOption1()
+    ).to.have.property('type','CHANGE_OPTION1')
+  })
+  it('should dispatch an action to toggle option1', () => { //
+    const expectedAction = {
+      type: CHANGE_OPTION2
+    }
+    expect(
+      formActions.checkOption2()
+    ).to.have.property('type','CHANGE_OPTION2')
+  })
+  it('should dispatch an action to toggle option1', () => { //
+    const expectedAction = {
+      type: CHANGE_OPTION3
+    }
+    expect(
+      formActions.checkOption3()
+    ).to.have.property('type','CHANGE_OPTION3')
+  })
+  it('should dispatch an action to toggle option1', () => { //
+    const expectedAction = {
+      type: CHANGE_OPTION4
+    }
+    expect(
+      formActions.checkOption4()
+    ).to.have.property('type','CHANGE_OPTION4')
+  })
+  it('should dispatch an action to toggle option1', () => { //
+    const expectedAction = {
+      type: CHANGE_OPTION5
+    }
+    expect(
+      formActions.checkOption5()
+    ).to.have.property('type','CHANGE_OPTION5')
   })
 })
 
