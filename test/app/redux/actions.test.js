@@ -1,14 +1,12 @@
 import { expect } from 'chai'
-import { shallow, mount, render } from 'enzyme'
-import sinon from 'sinon'
 import * as formActions from '../../../app/actions/forms'
 import * as yotiActions from '../../../app/actions/yoti'
 
 import {
-  // yoti actions,
+  // yoti actions
   CLOSE_QR,
   OPEN_QR,
-  ADD_QR_CODE, //todo
+  ADD_QR_CODE,
   SET_UP_FOR_MOBILE,
   //form actions
   CHANGE_MODAL,
@@ -35,7 +33,7 @@ describe('Test actions', () => {
     }
     expect(
       formActions.changeModal()
-    ).to.deep.equal(expectedAction);
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to nextForm()', () => {
     const expectedAction = {
@@ -43,7 +41,7 @@ describe('Test actions', () => {
     }
     expect(
       formActions.changeForm()
-    ).to.deep.equal(expectedAction);
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to save url', () => { //
     const expectedAction = {
@@ -85,7 +83,7 @@ describe('Test actions', () => {
       formActions.checkOption1()
     ).to.have.property('type','CHANGE_OPTION1')
   })
-  it('should dispatch an action to toggle option2', () => { //
+  it('should dispatch an action to toggle option2', () => { 
     const expectedAction = {
       type: CHANGE_OPTION2
     }
@@ -93,7 +91,7 @@ describe('Test actions', () => {
       formActions.checkOption2()
     ).to.have.property('type','CHANGE_OPTION2')
   })
-  it('should dispatch an action to toggle option3', () => { //
+  it('should dispatch an action to toggle option3', () => {
     const expectedAction = {
       type: CHANGE_OPTION3
     }
