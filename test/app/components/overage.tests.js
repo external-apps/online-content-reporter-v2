@@ -8,17 +8,29 @@ import { Link } from 'react-router'
 
 
 describe('<OverAge />', () => {
+  it('<OverAge /> should render a Header', () => {
+    const wrapper = shallow(<OverAge />)
+    expect(wrapper.find('Header')).to.have.length(1)
+  })
+  it('<OverAge /> should render a SectionTitle', () => {
+    const wrapper = shallow(<OverAge />)
+    expect(wrapper.find('SectionTitle')).to.have.length(1)
+  })
+  it('<OverAge /> should render an element with className instruction-list', () => {
+    const wrapper = shallow(<OverAge />)
+    expect(wrapper.find('.instruction-list')).to.have.length(1)
+  })
   it('<OverAge /> should render an element with className what-now', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('.what-now')).to.have.length(1)
   })
-  it('<OverAge /> should render an <h3>', () => {
-    const wrapper = shallow(<OverAge />)
-    expect(wrapper.find('h3')).to.have.length(1)
-  })
   it('<OverAge /> should render an element with className other-ops', () => {
     const wrapper = shallow(<OverAge />)
     expect(wrapper.find('.other-ops')).to.have.length(1)
+  })
+  it('<OverAge /> should render a Footer', () => {
+    const wrapper = shallow(<OverAge />)
+    expect(wrapper.find('Footer')).to.have.length(1)
   })
 })
 

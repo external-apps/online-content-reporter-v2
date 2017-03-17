@@ -4,14 +4,7 @@ import '../scss/style.scss'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SectionTitle from '../components/SectionTitle'
-/*
-<div className='option'>
-  <i className='identity small material-icons'>contacts</i>
-  <a className='contact' href='https://www.ceop.police.uk/CEOP-Reporting/'>
-    Contact CEOP
-  </a>
-</div>
-*/
+
 const OverAge = () => (
   <div>
     <Header />
