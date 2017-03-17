@@ -19,7 +19,6 @@ class ImgCriteriaForm extends React.Component {
   }
 
   render () {
-    console.log('PROPS for criteria', this.props)
     return (
       <div>
         <Header />
