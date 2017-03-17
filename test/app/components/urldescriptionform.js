@@ -35,14 +35,6 @@ describe('<UrlDescriptionForm />', () => {
 })
 
 describe('<UrlDescriptionForm /> teest props of several elements', () => {
-  /*it('PageTile component should have a heading prop', () => {
-    const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('PageTitle').props().heading).to.equal('REPORT CONTENT WEB ADDRESS')
-  })
-  it('PageTile component should have a backgroundColor prop', () => {
-    const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('PageTitle').props().backgroundColor).to.equal('dark-cobalt')
-  })*/
   it('ProgreessBar component should have a percentage prop', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('ProgressBar').props().form).to.equal('2')
