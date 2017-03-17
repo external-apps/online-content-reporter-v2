@@ -83,7 +83,7 @@ describe('Test actions', () => {
       formActions.checkOption1()
     ).to.have.property('type','CHANGE_OPTION1')
   })
-  it('should dispatch an action to toggle option1', () => { //
+  it('should dispatch an action to toggle option2', () => { //
     const expectedAction = {
       type: CHANGE_OPTION2
     }
@@ -91,7 +91,7 @@ describe('Test actions', () => {
       formActions.checkOption2()
     ).to.have.property('type','CHANGE_OPTION2')
   })
-  it('should dispatch an action to toggle option1', () => { //
+  it('should dispatch an action to toggle option3', () => { //
     const expectedAction = {
       type: CHANGE_OPTION3
     }
@@ -99,7 +99,7 @@ describe('Test actions', () => {
       formActions.checkOption3()
     ).to.have.property('type','CHANGE_OPTION3')
   })
-  it('should dispatch an action to toggle option1', () => { //
+  it('should dispatch an action to toggle option4', () => { //
     const expectedAction = {
       type: CHANGE_OPTION4
     }
@@ -107,7 +107,7 @@ describe('Test actions', () => {
       formActions.checkOption4()
     ).to.have.property('type','CHANGE_OPTION4')
   })
-  it('should dispatch an action to toggle option1', () => { //
+  it('should dispatch an action to toggle option5', () => { //
     const expectedAction = {
       type: CHANGE_OPTION5
     }
@@ -115,7 +115,7 @@ describe('Test actions', () => {
       formActions.checkOption5()
     ).to.have.property('type','CHANGE_OPTION5')
   })
-  it('should dispatch an action to toggle option1', () => { //
+  it('should dispatch an action to show the valid email required message', () => { //
     const expectedAction = {
       type: VALID_EMAIL_REQUIRED_MESSAGE
     }
@@ -123,7 +123,7 @@ describe('Test actions', () => {
       formActions.validEmailRequiredMessage()
     ).to.have.property('type','VALID_EMAIL_REQUIRED_MESSAGE')
   })
-  it('should dispatch an action to toggle option1', () => { //
+  it('should dispatch an action to hide the valid email required message', () => { //
     const expectedAction = {
       type: HIDE_VALID_EMAIL_REQUIRED_MESSAGE
     }
@@ -131,7 +131,7 @@ describe('Test actions', () => {
       formActions.hideValidEmailRequiredMessage()
     ).to.have.property('type','HIDE_VALID_EMAIL_REQUIRED_MESSAGE')
   })
-  it('should dispatch an action to toggle option1', () => { //
+  it('should dispatch an action show the criteria required message', () => { //
     const expectedAction = {
       type: SHOW_CRITERIA_REQUIRED_MESSAGE
     }
