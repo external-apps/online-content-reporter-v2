@@ -7,10 +7,7 @@ import * as yotiActions from '../../../app/actions/yoti'
 import {
   ADD_QR_CODE,
   SET_UP_FOR_MOBILE,
-/*  OPEN_MODAL,
-  CLOSE_MODAL,*/
   CHANGE_MODAL,
-//  NEXT_FORM,
   CHANGE_FORM,
   SAVE_URL,
   SAVE_DESCRIPTION,
@@ -26,30 +23,6 @@ describe('Test actions', () => {
       formActions.changeModal()
     ).to.deep.equal(expectedAction);
   })
-  /*it('should dispatch an action to openModal()', () => {
-    const expectedAction = {
-      type: OPEN_MODAL,
-    }
-    expect(
-      formActions.openModal()
-    ).to.deep.equal(expectedAction);
-  })
-  it('should dispatch an action to closeModal()', () => {
-    const expectedAction = {
-      type: CLOSE_MODAL,
-    }
-    expect(
-      formActions.closeModal()
-    ).to.deep.equal(expectedAction);
-  })
-  it('should dispatch an action to nextForm()', () => {
-    const expectedAction = {
-      type: NEXT_FORM,
-    }
-    expect(
-      formActions.nextForm()
-    ).to.deep.equal(expectedAction);
-  })*/
   it('should dispatch an action to nextForm()', () => {
     const expectedAction = {
       type: CHANGE_FORM
