@@ -16,13 +16,13 @@ import {
   SAVE_DESCRIPTION,
   SAVE_EMAIL,
   SHOW_URL_REQUIRED_MESSAGE,
-  CHANGE_OPTION1, //todo
-  CHANGE_OPTION2, //todo
-  CHANGE_OPTION3, //todo
-  CHANGE_OPTION4, //todo
-  CHANGE_OPTION5, //todo
-  VALID_EMAIL_REQUIRED_MESSAGE, //todo
-  HIDE_VALID_EMAIL_REQUIRED_MESSAGE, //todo
+  CHANGE_OPTION1,
+  CHANGE_OPTION2,
+  CHANGE_OPTION3,
+  CHANGE_OPTION4,
+  CHANGE_OPTION5,
+  VALID_EMAIL_REQUIRED_MESSAGE,
+  HIDE_VALID_EMAIL_REQUIRED_MESSAGE,
   SHOW_CRITERIA_REQUIRED_MESSAGE, //todo
 } from '../../../constants/action-types'
 
@@ -114,6 +114,30 @@ describe('Test actions', () => {
     expect(
       formActions.checkOption5()
     ).to.have.property('type','CHANGE_OPTION5')
+  })
+  it('should dispatch an action to toggle option1', () => { //
+    const expectedAction = {
+      type: VALID_EMAIL_REQUIRED_MESSAGE
+    }
+    expect(
+      formActions.validEmailRequiredMessage()
+    ).to.have.property('type','VALID_EMAIL_REQUIRED_MESSAGE')
+  })
+  it('should dispatch an action to toggle option1', () => { //
+    const expectedAction = {
+      type: HIDE_VALID_EMAIL_REQUIRED_MESSAGE
+    }
+    expect(
+      formActions.hideValidEmailRequiredMessage()
+    ).to.have.property('type','HIDE_VALID_EMAIL_REQUIRED_MESSAGE')
+  })
+  it('should dispatch an action to toggle option1', () => { //
+    const expectedAction = {
+      type: SHOW_CRITERIA_REQUIRED_MESSAGE
+    }
+    expect(
+      formActions.showCriteriaRequiredMessage()
+    ).to.have.property('type','SHOW_CRITERIA_REQUIRED_MESSAGE')
   })
 })
 
