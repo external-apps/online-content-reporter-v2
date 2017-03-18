@@ -27,6 +27,9 @@ const AgeCheckPage = () => (
     <Link className='action-button' to='/over-age'>
       <p>Take me to over-age</p>
     </Link>
+    <Link className='action-button' to='/somewhere'>
+      <p>test not found page</p>
+    </Link>
   </div>
 )
 

@@ -58,6 +58,9 @@ class ConfirmationModal extends React.Component {
     console.log(this.props.criteriaRequiredMessage)
     return pattern.test(this.props.email)
   }
+  componentWillUnmount () {
+    this.props.changeModal()
+  }
 
   render () {
     return (

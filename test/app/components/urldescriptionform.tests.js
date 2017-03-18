@@ -3,46 +3,66 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import UrlDescriptionForm from '../../../app/components/UrlDescriptionForm'
 
-const props = {
-    modalIsOpen: false,
-    firstForm: true,
-    imageCriteria: [],
-    url: '',
-    description: ''
-}
-
 describe('<UrlDescriptionForm />', () => {
+  it('renders a Header compoent', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('Header')).to.have.length(1)
+  })
   it('renders a ProgreessBar compoent', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('ProgressBar')).to.have.length(1)
   })
-  it('renders a compoent wth className form-container', () => {
+  it('renders a SectionTitle compoent', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('SectionTitle')).to.have.length(1)
+  })
+  it('renders a SectionTitle compoent should have a heading prop', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('SectionTitle').props().heading).to.equal('REPORT CONTENT WEB ADDRESS')
+  })
+  it('renders a SectionTitle compoent should have a subheading prop', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('SectionTitle').props().subheading).to.equal('Please include any info that you think may help us, such as:')
+  })
+  it('renders a compoent wth className instruction-list', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('.instruction-list')).to.have.length(1)
+  })
+  it('renders a list item with text "if there is more than one website"', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('.instruction-list').childAt(0).childAt(1).text()).to.equal("if there's more than one website")
+  })
+  it('renders 3 list items', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('li')).to.have.length(3)
+  })
+  it('renders a compoent with className form-container', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('.form-container')).to.have.length(1)
   })
-  it('renders a compoent wth className <ConfirmationModal>', () => {
+  it('renders a compoent with className section-title', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('.section-title').text()).to.equal('WEB ADDRESS')
+  })
+  it('renders a compoent with className <ConfirmationModal>', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('ConfirmationModal')).to.have.length(1)
   })
-  it('renders a compoent wth className <RaisedButton>', () => {
+  it('renders a div with className buttons', () => {
+    const wrapper = shallow(<UrlDescriptionForm />)
+    expect(wrapper.find('.buttons')).to.have.length(1)
+  })
+  it('renders a compoent with className <RaisedButton>', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('RaisedButton')).to.have.length(2)
   })
-  it('renders a compoent wth className <TextField>', () => {
+  it('renders a compoent with className <TextField>', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('TextField')).to.have.length(2)
   })
 })
 
 describe('<UrlDescriptionForm /> teest props of several elements', () => {
-  /*it('PageTile component should have a heading prop', () => {
-    const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('PageTitle').props().heading).to.equal('REPORT CONTENT WEB ADDRESS')
-  })
-  it('PageTile component should have a backgroundColor prop', () => {
-    const wrapper = shallow(<UrlDescriptionForm />)
-    expect(wrapper.find('PageTitle').props().backgroundColor).to.equal('dark-cobalt')
-  })*/
   it('ProgreessBar component should have a percentage prop', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('ProgressBar').props().form).to.equal('2')
