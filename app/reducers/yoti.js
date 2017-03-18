@@ -1,6 +1,7 @@
 import {
   ADD_QR_CODE,
-  CHANGE_QR,
+  CLOSE_QR,
+  OPEN_QR,
   SET_UP_FOR_MOBILE
 } from '../../constants/action-types'
 
@@ -30,10 +31,15 @@ const yoti = (state = initialState, action) => {
         buttonStyle: action.buttonStyle,
         buttonLabelStyle: action.buttonLabelStyle
       }
-    case CHANGE_QR:
+    case CLOSE_QR:
       return {
         ...state,
-        showQr: !state.showQr
+        showQr: false
+      }
+    case OPEN_QR:
+      return {
+        ...state,
+        showQr: true
       }
     default:
       return state

@@ -11,6 +11,32 @@ export const changeForm = () => {
   }
 }
 
+export const checkOption1 = () => {
+  return {
+    type: types.CHANGE_OPTION1
+  }
+}
+
+export const checkOption2 = () => {
+  return {
+    type: types.CHANGE_OPTION2
+  }
+}
+export const checkOption3 = () => {
+  return {
+    type: types.CHANGE_OPTION3
+  }
+}
+export const checkOption4 = () => {
+  return {
+    type: types.CHANGE_OPTION4
+  }
+}
+export const checkOption5 = () => {
+  return {
+    type: types.CHANGE_OPTION5
+  }
+}
 export const toggleCriteria = (criteria) => {
   return {
     type: types.TOGGLE_CRITERIA,

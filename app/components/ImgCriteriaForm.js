@@ -19,7 +19,6 @@ class ImgCriteriaForm extends React.Component {
   }
 
   render () {
-    console.log('PROPS for criteria', this.props)
     return (
       <div>
         <Header />
@@ -33,40 +32,45 @@ class ImgCriteriaForm extends React.Component {
                 primaryText='Someone posing in a sexual way'
                 onChange={() => {
                   this.props.toggleCriteria('Someone posing in a sexual way')
+                  this.props.checkOption1()
                 }}
-                leftCheckbox={<Checkbox />}
+                leftCheckbox={<Checkbox checked={this.props.option1}/>}
               />
               <ListItem
                 style={{backgroundColor: 'white', margin: '0.25rem 0'}}
                 primaryText='Someone touching themselves in a sexual way'
                 onChange={() => {
                   this.props.toggleCriteria('Someone touching themselves in a sexual way')
+                  this.props.checkOption2()
                 }}
-                leftCheckbox={<Checkbox />}
+                leftCheckbox={<Checkbox checked={this.props.option2} />}
               />
               <ListItem
                 style={{backgroundColor: 'white', margin: '0.25rem 0'}}
                 primaryText='Any sexual activity involving a child, adult or both'
                 onChange={() => {
                   this.props.toggleCriteria('Any sexual activity involving a child, adult or both')
+                  this.props.checkOption3()
                 }}
-                leftCheckbox={<Checkbox />}
+                leftCheckbox={<Checkbox checked={this.props.option3} />}
               />
               <ListItem
                 style={{backgroundColor: 'white', margin: '0.25rem 0'}}
                 primaryText='Someone hurting someone else'
                 onChange={() => {
                   this.props.toggleCriteria('Someone hurting someone else')
+                  this.props.checkOption4()
                 }}
-                leftCheckbox={<Checkbox />}
+                leftCheckbox={<Checkbox checked={this.props.option4} />}
               />
               <ListItem
                 style={{backgroundColor: 'white', margin: '0.25rem 0'}}
                 primaryText='Sexual activity that includes animals'
                 onChange={() => {
                   this.props.toggleCriteria('Sexual activity that includes animals')
+                  this.props.checkOption5()
                 }}
-                leftCheckbox={<Checkbox />}
+                leftCheckbox={<Checkbox checked={this.props.option5} />}
               />
             </List>
             {this.renderRequiredMessage()}
