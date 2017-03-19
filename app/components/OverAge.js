@@ -9,7 +9,7 @@ const OverAge = () => (
   <div>
     <Header />
     <SectionTitle
-      heading="SORRY, YOU'RE TOO OLD FOR THIS SERVICE"
+      heading="SORRY, WE CAN ONLY HELP IF YOU'RE UNDER 18"
       subheading='There are still lots of things you can do. Try contacting:'
     />
     <div className='instruction-list'>
@@ -30,16 +30,15 @@ const OverAge = () => (
     <div className='other-ops'>
       <div className='option'>
         <i className='identity small material-icons'>contacts</i>
-        <a className='contact' href='https://www.ceop.police.uk/CEOP-Reporting/'>
-          Contact CEOP
-        </a>
-      </div>
-
-      <div className='option'>
-        <i className='identity small material-icons'>contacts</i>
         <a className='contact' href='http://www.themix.org.uk/'>
           Contact The Mix
        </a>
+      </div>
+      <div className='option'>
+        <i className='identity small material-icons'>contacts</i>
+        <a className='contact' href='http://www.samaritans.org/'>
+          Contact Samaritans
+        </a>
       </div>
     </div>
     <Footer />

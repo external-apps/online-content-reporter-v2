@@ -26,6 +26,13 @@ class YotiShareButton extends React.Component {
   listenForToken (proto, url) {
     var host = 'wss://api.yoti.com/api/v1/connect-sessions/' + proto
     var socket = new WebSocket(host)
+    socket.set('transports', [
+         'websocket'
+       , 'flashsocket'
+       , 'htmlfile'
+       , 'xhr-polling'
+       , 'jsonp-polling'
+     ])
     socket.onopen = () => {
       socket.send(JSON.stringify({subscription: proto}))
     }
@@ -73,13 +80,12 @@ class YotiShareButton extends React.Component {
     //   /Mobile/i.test(navigator.userAgent)
     // if (isMobile) this.mobileSetup()
     // else this.getQr()
-
     if (!this.props.yoti.isMobile) {
       this.getQr()
     }
   }
   componentWillUnmount () {
-    this.props.changeQr()
+    this.props.closeQr()
   }
 
   getQr () {
@@ -99,7 +105,7 @@ class YotiShareButton extends React.Component {
   }
 
   render () {
-    const clickHandler = this.props.yoti.isMobile ? (this.navigateToYoti) : (this.props.changeQr)
+    const clickHandler = this.props.yoti.isMobile ? (this.navigateToYoti) : (this.props.openQr)
     return (
       <div>
         {!this.props.yoti.showQr &&

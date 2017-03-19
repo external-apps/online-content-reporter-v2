@@ -14,7 +14,7 @@ const AgeCheckPage = () => (
       subheading="To remove an image or video, we just need to know your age. We can only remove this content if you're under 18."
     />
     <div className='age-info'>
-      <h3>What can I do if I am over 17?</h3>
+      <h3>What can I do if I am over 18?</h3>
       <p>
         If you're 18 or older, contact the website(s) where you've seen the image or video, or report it to the police.
       </p>
@@ -26,6 +26,9 @@ const AgeCheckPage = () => (
     </Link>
     <Link className='action-button' to='/over-age'>
       <p>Take me to over-age</p>
+    </Link>
+    <Link className='action-button' to='/somewhere'>
+      <p>test not found page</p>
     </Link>
   </div>
 )

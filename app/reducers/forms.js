@@ -6,6 +6,13 @@ import {
   SAVE_DESCRIPTION,
   SAVE_EMAIL,
   SHOW_URL_REQUIRED_MESSAGE,
+  CHANGE_OPTION1,
+  CHANGE_OPTION2,
+  CHANGE_OPTION3,
+  CHANGE_OPTION4,
+  CHANGE_OPTION5,
+  VALID_EMAIL_REQUIRED_MESSAGE,
+  HIDE_VALID_EMAIL_REQUIRED_MESSAGE,
   SHOW_CRITERIA_REQUIRED_MESSAGE
 } from '../../constants/action-types'
 
@@ -16,7 +23,13 @@ const initialState = {
   url: '',
   description: '',
   criteriaRequiredMessage: false,
-  urlRequiredMessage: false
+  urlRequiredMessage: false,
+  validEmail: true,
+  option1:false,
+  option2:false,
+  option3:false,
+  option4:false,
+  option5:false
 }
 
 const forms = (state = initialState, action) => {
@@ -43,6 +56,31 @@ const forms = (state = initialState, action) => {
           })()
             : state.imageCriteria.concat(action.criteria)
       }
+    case CHANGE_OPTION1:
+      return {
+        ...state,
+        option1: !state.option1
+      }
+      case CHANGE_OPTION2:
+        return {
+          ...state,
+          option2: !state.option2
+        }
+      case CHANGE_OPTION3:
+        return {
+          ...state,
+          option3: !state.option3
+        }
+      case CHANGE_OPTION4:
+        return {
+          ...state,
+          option4: !state.option4
+        }
+      case CHANGE_OPTION5:
+        return {
+          ...state,
+          option5: !state.option5
+        }
     case SAVE_DESCRIPTION:
       return {
         ...state,
@@ -69,6 +107,16 @@ const forms = (state = initialState, action) => {
       return {
         ...state,
         urlRequiredMessage: !state.urlRequiredMessage
+      }
+    case VALID_EMAIL_REQUIRED_MESSAGE:
+      return {
+        ...state,
+        validEmail: false
+      }
+    case HIDE_VALID_EMAIL_REQUIRED_MESSAGE:
+        return {
+          ...state,
+          validEmail: true
       }
     default:
       return state
