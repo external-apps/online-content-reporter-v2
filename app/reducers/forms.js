@@ -101,7 +101,7 @@ const forms = (state = initialState, action) => {
     case SHOW_CRITERIA_REQUIRED_MESSAGE:
       return {
         ...state,
-        criteriaRequiredMessage: !state.criteriaRequiredMessage
+        criteriaRequiredMessage: action.criteriaRequiredMessage
       }
     case SHOW_URL_REQUIRED_MESSAGE:
       return {
