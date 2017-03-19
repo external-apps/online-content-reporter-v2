@@ -8,6 +8,7 @@ import Footer from './Footer'
 import SectionTitle from '../components/SectionTitle'
 import '../scss/style.scss'
 import axios from 'axios'
+import { browserHistory } from 'react-router'
 
 const styles = {
   errorStyle: {
@@ -21,8 +22,14 @@ class UrlDescriptionForm extends React.Component {
     this.handleUrlSubmit.bind(this)
   }
 
+  componentDidMount () {
+    if (!this.props.yoti.isAgeVerified && !this.props.yoti.isMobile) {
+      browserHistory.push('/')
+    }
+  }
+
   handleUrlSubmit () {
-    const { imageCriteria, url, description } = this.props
+    const { imageCriteria, url, description } = this.props.forms
     var payload = { imageCriteria, url, description }
     return axios.post('/email', payload)
       .catch((error) => {
@@ -61,7 +68,7 @@ class UrlDescriptionForm extends React.Component {
               <TextField
                 hintText='If there is more than one website, add these in the box below'
                 floatingLabelText='url'
-                value={this.props.url}
+                value={this.props.forms.url}
                 errorText='This field is required'
                 onChange={e => this.props.saveUrl(e.target.value)}
                 errorStyle={styles.errorStyle}
@@ -74,7 +81,7 @@ class UrlDescriptionForm extends React.Component {
                   floatingLabelText='Description'
                   multiLine={true}
                   rows={4}
-                  value={this.props.description}
+                  value={this.props.forms.description}
                   onChange={e => this.props.saveDescription(e.target.value)}
                 /><br />
               </div>
@@ -88,7 +95,7 @@ class UrlDescriptionForm extends React.Component {
                   label='Submit'
                   primary={true}
                   onClick={(e) => {
-                    if (!this.props.url) {
+                    if (!this.props.forms.url) {
                       this.props.showUrlRequiredMessage()
                     } else {
                       this.props.changeModal()

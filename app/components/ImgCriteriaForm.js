@@ -1,5 +1,6 @@
 import React from 'react'
 import { List, ListItem } from 'material-ui/List'
+import { browserHistory } from 'react-router'
 import Checkbox from 'material-ui/Checkbox'
 import RaisedButton from 'material-ui/RaisedButton'
 import SectionTitle from '../components/SectionTitle'
@@ -10,10 +11,16 @@ import '../scss/style.scss'
 
 class ImgCriteriaForm extends React.Component {
   renderRequiredMessage () {
-    if (this.props.criteriaRequiredMessage) {
+    if (this.props.forms.criteriaRequiredMessage) {
       return (
         <h2 className='required'>You can't proceed without ticking at least one option</h2>
       )
+    }
+  }
+
+  componentDidMount () {
+    if (!this.props.yoti.isAgeVerified && !this.props.yoti.isMobile) {
+      browserHistory.push('/')
     }
   }
 
@@ -33,7 +40,7 @@ class ImgCriteriaForm extends React.Component {
                   this.props.toggleCriteria('Someone posing in a sexual way')
                   this.props.checkOption1()
                 }}
-                leftCheckbox={<Checkbox checked={this.props.option1} />}
+                leftCheckbox={<Checkbox checked={this.props.forms.option1} />}
               />
               <ListItem
                 style={{backgroundColor: 'white', margin: '0.25rem 0'}}
@@ -42,7 +49,7 @@ class ImgCriteriaForm extends React.Component {
                   this.props.toggleCriteria('Someone touching themselves in a sexual way')
                   this.props.checkOption2()
                 }}
-                leftCheckbox={<Checkbox checked={this.props.option2} />}
+                leftCheckbox={<Checkbox checked={this.props.forms.option2} />}
               />
               <ListItem
                 style={{backgroundColor: 'white', margin: '0.25rem 0'}}
@@ -51,7 +58,7 @@ class ImgCriteriaForm extends React.Component {
                   this.props.toggleCriteria('Any sexual activity involving a child, adult or both')
                   this.props.checkOption3()
                 }}
-                leftCheckbox={<Checkbox checked={this.props.option3} />}
+                leftCheckbox={<Checkbox checked={this.props.forms.option3} />}
               />
               <ListItem
                 style={{backgroundColor: 'white', margin: '0.25rem 0'}}
@@ -60,7 +67,7 @@ class ImgCriteriaForm extends React.Component {
                   this.props.toggleCriteria('Someone hurting someone else')
                   this.props.checkOption4()
                 }}
-                leftCheckbox={<Checkbox checked={this.props.option4} />}
+                leftCheckbox={<Checkbox checked={this.props.forms.option4} />}
               />
               <ListItem
                 style={{backgroundColor: 'white', margin: '0.25rem 0'}}
@@ -69,7 +76,7 @@ class ImgCriteriaForm extends React.Component {
                   this.props.toggleCriteria('Sexual activity that includes animals')
                   this.props.checkOption5()
                 }}
-                leftCheckbox={<Checkbox checked={this.props.option5} />}
+                leftCheckbox={<Checkbox checked={this.props.forms.option5} />}
               />
             </List>
             {this.renderRequiredMessage()}
@@ -77,7 +84,7 @@ class ImgCriteriaForm extends React.Component {
               label='Next'
               primary={true}
               onClick={() => {
-                (this.props.imageCriteria.length !== 0)
+                (this.props.forms.imageCriteria.length !== 0)
                   ? this.props.changeForm()
                     : this.props.showCriteriaRequiredMessage()
               }}
