@@ -26,7 +26,6 @@ class YotiShareButton extends React.Component {
   getQr () {
     axios.get('/get-qr')
     .then(res => {
-      console.log('GOT QR')
       this.props.addQr(res.data.svg)
       this.listenForToken(res.data.proto, res.data.url)
     })
@@ -42,6 +41,7 @@ class YotiShareButton extends React.Component {
       socket.send(JSON.stringify({subscription: proto}))
     }
     socket.onmessage = (msg) => {
+      this.props.ageIsVerified()
       var data = JSON.parse(msg.data)
       switch (data.status) {
         case 'COMPLETED' : {
@@ -54,7 +54,9 @@ class YotiShareButton extends React.Component {
   yotiRedirect (token) {
     axios.get(`/thankyou?token=${token}`)
     .then(res => {
-      res.data.isUnder18 ? browserHistory.push('/form') : browserHistory.push('/over-age')
+      if (res.data.isUnder18) {
+        browserHistory.push('/form')
+      } else browserHistory.push('/over-age')
     })
     .catch((error) => {
       console.log(error)
@@ -72,8 +74,7 @@ class YotiShareButton extends React.Component {
   // }
 
   render () {
-    console.log('PROPS', this.props)
-    const clickHandler = this.props.yoti.isMobile ? null/* (this.verifyAgeMobile) */ : (this.props.openQr)
+    const clickHandler = this.props.yoti.isMobile ? null : (this.props.openQr)
     return (
       <div>
         {!this.props.yoti.showQr &&
@@ -88,7 +89,7 @@ class YotiShareButton extends React.Component {
               target={this.props.yoti.target}
               label='I have YOTI'
             />
-            <a href='http://www.yoti.com'>
+            <a href='http://www.yoti.com' target='_blank'>
               <RaisedButton
                 labelStyle={this.props.yoti.buttonLabelStyle}
                 style={this.props.yoti.buttonStyle}
