@@ -23,12 +23,13 @@ const reducers = combineReducers({
 })
 
 const store = createStore(reducers)
-const history = syncHistoryWithStore(browserHistory, store)
+// // try this for refresh..
+// const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
     <Provider store={store}>
-      <Router history={history}>
+      <Router history={browserHistory}>
         <Route path='/' component={Home} />
         <Route path='/age-check' component={AgeCheck} />
         <Route path='/form' component={Forms} />
