@@ -8,7 +8,6 @@ import Footer from './Footer'
 import Header from './Header'
 import '../scss/style.scss'
 
-// old span Please select from boxes below that tell us what you are concerned about the content.
 class ImgCriteriaForm extends React.Component {
   renderRequiredMessage () {
     if (this.props.criteriaRequiredMessage) {
@@ -34,7 +33,7 @@ class ImgCriteriaForm extends React.Component {
                   this.props.toggleCriteria('Someone posing in a sexual way')
                   this.props.checkOption1()
                 }}
-                leftCheckbox={<Checkbox checked={this.props.option1}/>}
+                leftCheckbox={<Checkbox checked={this.props.option1} />}
               />
               <ListItem
                 style={{backgroundColor: 'white', margin: '0.25rem 0'}}
