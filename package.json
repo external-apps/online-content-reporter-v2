@@ -24,8 +24,12 @@
   },
   "rnpm": {
     "assets": [
-      "public/fonts/Rosie/"
+      "public/fonts/"
     ]
+  },
+  "engines": {
+      "node": "7.5.0",
+      "npm": "4.1.2"
   },
   "homepage": "https://github.com/childline-yoti/online-content-reporter#readme",
   "dependencies": {
