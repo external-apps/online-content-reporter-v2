@@ -1,42 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import Modal from 'react-modal'
 import axios from 'axios'
-
-const modalOverlay = {
-  content: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate (-50%, -50%)',
-    background: '#CCECF5',
-    fontFamily: 'childline',
-    overflow: 'hidden',
-    WebkitOverflowScrolling: 'touch',
-    transform: 'translate(-50%, -50%)',
-    borderRadius: '0.1rem',
-    outline: 'none',
-    padding: '1rem',
-    minWidth: '260px',
-    height: '90%',
-    maxHeight: '480px',
-    maxWidth: '450px',
-    overflow: 'auto',
-    transform: 'translate(-50%, -50%)',
-    zIndex: '100'
-  },
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    zIndex: 50,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)'
-  }
-}
+import { modalMobileOverlay, modalDesktopOverlay } from '../assets/modalStyle'
 
 class ConfirmationModal extends React.Component {
   constructor (props) {
@@ -44,10 +12,21 @@ class ConfirmationModal extends React.Component {
     this.handleEmailSubmit.bind(this)
   }
 
+  renderValidEmailRequired () {
+    this.props.validEmailRequiredMessage()
+  }
+
   handleEmailSubmit () {
     const { imageCriteria, url, description, email } = this.props
     var payload = { imageCriteria, url, description, email }
     return axios.post('/email', payload)
+  }
+  validateEmail () {
+    const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
+    return pattern.test(this.props.email)
+  }
+  componentWillUnmount () {
+    this.props.changeModal()
   }
 
   render () {
@@ -55,11 +34,11 @@ class ConfirmationModal extends React.Component {
       <Modal
         isOpen={this.props.modalIsOpen}
         onRequestClose={() => this.props.changeModal()}
-        style={modalOverlay}
+        style={this.props.isMobile ? modalMobileOverlay : modalDesktopOverlay}
         contentLabel='Reassuring message'
       >
         <div className='mod'>
-          <RaisedButton className='close_btn' primary={true} label='X' onClick={() => props.changeModal()} />
+          <RaisedButton className='close_btn' primary={true} label='X' onClick={() => this.props.changeModal()} />
           <h2 className='red'>Thank you.</h2>
           <h2>We have sent your report to the Internet Watch Foundation (IWF) who will review your request.</h2>
           <p>
@@ -71,11 +50,10 @@ class ConfirmationModal extends React.Component {
             onChange={e => this.props.saveEmail(e.target.value)}
           />
           <br />
-          <p className="last_p">If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
+          {!this.props.validEmail && <h2 className='required'>Please enter a valid email address</h2>}
+          <p className='last_p'>If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
           </p>
-          <Link className='modal-link' to='/'>
-            <RaisedButton primary={true} label='Submit' onClick={() => this.handleEmailSubmit()} />
-          </Link>
+            <RaisedButton primary={true} label='Submit' onClick={() => { if (this.validateEmail()) { this.props.hideValidEmailRequiredMessage(); browserHistory.push('/'); this.handleEmailSubmit() } else { this.renderValidEmailRequired() } }} />
         </div>
       </Modal>
     )

@@ -12,4 +12,5 @@ const NotFound = () =>
     </div>
     <Footer />
   </div>
+
 export default NotFound
