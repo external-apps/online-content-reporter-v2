@@ -1,0 +1,12 @@
+@import "./helpers/mixins";
+@import "./helpers/variables";
+
+.notfound {
+  background-color: $red;
+}
+.notfound-info {
+  @include content-container($light-red, $dark-cobalt);
+  h3 {
+    font-family: $bold-text;
+  }
+}
