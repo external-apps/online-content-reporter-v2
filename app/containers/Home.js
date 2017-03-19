@@ -56,7 +56,7 @@ class Home extends React.Component {
           </p>
           <Link className='home-main-button' to='/age-check'>
             <RaisedButton
-              labelStyle={{fontSize: '1.4rem', textTransform:'none', fontFamily: 'childline'}}
+              labelStyle={{fontSize: '1.4rem', textTransform: 'none', fontFamily: 'childline'}}
               style={{padding: '0.8rem 0', whiteSpace: 'nowrap', minWidth: '8rem'}}
               label='Report something'
               labelPosition='before'
