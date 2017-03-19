@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import Launch from 'material-ui/svg-icons/action/launch'
 import { connect } from 'react-redux'
 import * as yotiActions from '../actions/yoti'
-import axios from 'axios'
+// import axios from 'axios'
 
 class Home extends React.Component {
   constructor (props) {
