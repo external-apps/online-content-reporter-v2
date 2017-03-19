@@ -83,5 +83,9 @@
     "supertest": "^3.0.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
-  }
+  },
+  "engines": {
+       "node": "7.5.0",
+       "npm": "4.1.2"
+   }
 }
