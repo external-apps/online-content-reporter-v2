@@ -1,6 +1,6 @@
-@font-face { font-family: childline; src: url('../../public/fonts/ChildlineWeb-Regular.otf'); }
-@font-face { font-family: childline-bold; src: url('../../public/fonts/ChildlineWeb-Bold.otf'); }
-@font-face { font-family: Rosie; src: url('../../public/fonts/rosie-regular-webfont.woff2'); }
+@font-face { font-family: childline; src: font-url('../../public/fonts/ChildlineWeb-Regular.otf'); }
+@font-face { font-family: childline-bold; src: font-url('../../public/fonts/ChildlineWeb-Bold.otf'); }
+@font-face { font-family: Rosie; src: font-url('../../public/fonts/rosie-regular-webfont.woff2'); }
 
 
 @import './pages/home';
