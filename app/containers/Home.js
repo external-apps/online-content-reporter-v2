@@ -6,13 +6,36 @@ import Footer from '../components/Footer'
 import Launch from 'material-ui/svg-icons/action/launch'
 import { connect } from 'react-redux'
 import * as yotiActions from '../actions/yoti'
+import axios from 'axios'
 
 class Home extends React.Component {
+  constructor (props) {
+    super(props)
+    this.mobileSetup = this.mobileSetup.bind(this)
+  }
+
   componentWillMount () {
     var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
     var isMobile = isMobileRE.test(navigator.userAgent) &&
       /Mobile/i.test(navigator.userAgent)
-    if (isMobile) this.props.setUpForMobile('#')
+    if (isMobile) this.mobileSetup()
+  }
+
+  // Need Yoti api to fix before implementing this.
+  mobileSetup () {
+    var config = {
+      headers: {'X-Requested-With': 'XMLHttpRequest', 'content-type': 'application/json'}
+    }
+    axios.get('https://www.yoti.com/qr/5be10ae7-af29-40b0-8d33-a0fb90cb0e88', config)
+      .then(() => {
+        // normally here we would get data from response and set href...
+        // const href = `${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=true`
+        const href = 'https://www.yoti.com/connect/3392788e-e529-4309-8ed7-54d7ac554055'
+        this.props.setUpForMobile(href)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   render () {
