@@ -38,7 +38,7 @@ class UrlDescriptionForm extends React.Component {
   }
 
   renderRequiredMessage () {
-    if (this.props.urlRequiredMessage) {
+    if (this.props.forms.urlRequiredMessage) {
       return (
         <h2 className='required'>You can't proceed without sharing at least one url.</h2>
       )
