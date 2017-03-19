@@ -1,5 +1,7 @@
 # online-content-reporter
 
+![circle badge](https://circleci.com/gh/childline-yoti/online-content-reporter.png?circle-token=key-8f574d3ae5bfff8a00adc63d005cc1ab)
+
 A web app for reporting explicit online images to the [IWF](https://www.iwf.org.uk/) (Internet Watch Foundation).  
 History of the partnership between the [IWF and Childline](https://www.iwf.org.uk/news/childline-and-internet-watch-foundation-form-new-partnership-to-help-young-people-remove)  
 The current  [IWF "hash list"](https://www.iwf.org.uk/become-a-member/services-for-members/image-hash-list)
