@@ -1,7 +1,7 @@
 import React from 'react'
 import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
-import { browserHistory, Link } from 'react-router'
+import { browserHistory } from 'react-router'
 import axios from 'axios'
 
 var t = {
@@ -19,7 +19,7 @@ class YotiShareButton extends React.Component {
     this.getQr = this.getQr.bind(this)
     this.listenForToken = this.listenForToken.bind(this)
     this.yotiRedirect = this.yotiRedirect.bind(this)
-    this.mobileSetup = this.mobileSetup.bind(this)
+    // this.mobileSetup = this.mobileSetup.bind(this)
     this.navigateToYoti = this.navigateToYoti.bind(this)
   }
 
@@ -56,30 +56,26 @@ class YotiShareButton extends React.Component {
     })
   }
 
-  mobileSetup () {
-    var url = 'https://www.yoti.com/qr/' + t.scenId
-    var xhr = new XMLHttpRequest()
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        var responseObj = JSON.parse(xhr.responseText)
-        const href = `${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=true`
-        // normally href is passed here below...
-        // to fix use href=t.config.service + t.appId
-        this.props.setUpForMobile(href)
-      }
-    }
-    xhr.open('GET', url, true)
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
-    xhr.setRequestHeader('content-type', 'application/json')
-    xhr.send(null)
-  }
+  // Need Yoti api to fix before implementing this.
+  // mobileSetup () {
+  //   var url = 'https://www.yoti.com/qr/' + t.scenId
+  //   var xhr = new XMLHttpRequest()
+  //   xhr.onreadystatechange = () => {
+  //     if (xhr.readyState === 4 && xhr.status === 200) {
+  //       var responseObj = JSON.parse(xhr.responseText)
+  //       const href = `${responseObj.qrCodeUrl}?callback=${responseObj.callbackUrl}&id=${responseObj.application.id}&mobile=true`
+  //       // normally href is passed here below...
+  //       // to fix use href=t.config.service + t.appId
+  //       this.props.setUpForMobile(href)
+  //     }
+  //   }
+  //   xhr.open('GET', url, true)
+  //   xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+  //   xhr.setRequestHeader('content-type', 'application/json')
+  //   xhr.send(null)
+  // }
 
   componentWillMount () {
-    // var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
-    // var isMobile = isMobileRE.test(navigator.userAgent) &&
-    //   /Mobile/i.test(navigator.userAgent)
-    // if (isMobile) this.mobileSetup()
-    // else this.getQr()
     if (!this.props.yoti.isMobile) {
       this.getQr()
     }
@@ -100,7 +96,7 @@ class YotiShareButton extends React.Component {
   }
 
   navigateToYoti () {
-    //when yoti api fixes navigate here goes: window.location = this.props.yoti.href
+    // When yoti api fixes navigate here goes: window.location = this.props.yoti.href
     window.location = t.config.service + t.appId
   }
 
@@ -119,7 +115,7 @@ class YotiShareButton extends React.Component {
               target={this.props.yoti.target}
               label='I have YOTI'
             />
-          <a href='http://www.yoti.com'>
+            <a href='http://www.yoti.com'>
               <RaisedButton
                 labelStyle={this.props.yoti.buttonLabelStyle}
                 style={this.props.yoti.buttonStyle}
