@@ -1,9 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Route, Router, browserHistory } from 'react-router'
-
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AgeCheck from './components/AgeCheckPage'
 import Home from './containers/Home'
@@ -18,8 +15,7 @@ import muiTheme from './assets/theme'
 
 const reducers = combineReducers({
   yoti,
-  forms,
-  routing: routerReducer
+  forms
 })
 
 const store = createStore(reducers)
