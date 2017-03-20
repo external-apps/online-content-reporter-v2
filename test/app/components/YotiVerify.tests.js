@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import React from 'react'
 import { shallow} from 'enzyme'
-import YotiVerify from '../../../app/components/YotiVerify'
+/*import YotiVerify from '../../../app/components/YotiVerify'
 
 describe('<YotiVerify />', () => {
   it('renders an element with class yoti-description-container', () => {
@@ -34,3 +34,4 @@ describe('<YotiVerify />', () => {
   })
 
 })
+*/
