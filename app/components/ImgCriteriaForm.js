@@ -10,6 +10,12 @@ import Header from './Header'
 import '../scss/style.scss'
 
 class ImgCriteriaForm extends React.Component {
+  componentDidMount () {
+    if (!this.props.yoti.isAgeVerified && !this.props.yoti.isMobile) {
+      browserHistory.push('/')
+    }
+  }
+
   renderRequiredMessage () {
     if (this.props.forms.criteriaRequiredMessage) {
       return (
@@ -18,78 +24,74 @@ class ImgCriteriaForm extends React.Component {
     }
   }
 
-  componentDidMount () {
-    if (!this.props.yoti.isAgeVerified && !this.props.yoti.isMobile) {
-      browserHistory.push('/')
-    }
-  }
-
   render () {
     return (
       <div>
         <Header />
         <ProgressBar form='1' />
-        <SectionTitle heading='PLEASE TELL US MORE ABOUT THE IMAGE OR VIDEO' subheading='The content must fit a certain criteria for us to legally remove it.' span='Does the image contain one or more of the following:' />
+        <SectionTitle
+          heading='PLEASE TELL US MORE ABOUT THE IMAGE OR VIDEO'
+          subheading='The content must fit a certain criteria for us to legally remove it.'
+          span='Does the image contain one or more of the following:'
+        />
         <div className='form-container'>
-          <form action='#'>
-            <List>
-              <ListItem
-                style={{backgroundColor: 'white', margin: '0.25rem 0'}}
-                primaryText='Someone posing in a sexual way'
-                onChange={() => {
-                  this.props.toggleCriteria('Someone posing in a sexual way')
-                  this.props.checkOption1()
-                }}
-                leftCheckbox={<Checkbox checked={this.props.forms.option1} />}
-              />
-              <ListItem
-                style={{backgroundColor: 'white', margin: '0.25rem 0'}}
-                primaryText='Someone touching themselves in a sexual way'
-                onChange={() => {
-                  this.props.toggleCriteria('Someone touching themselves in a sexual way')
-                  this.props.checkOption2()
-                }}
-                leftCheckbox={<Checkbox checked={this.props.forms.option2} />}
-              />
-              <ListItem
-                style={{backgroundColor: 'white', margin: '0.25rem 0'}}
-                primaryText='Any sexual activity involving a child, adult or both'
-                onChange={() => {
-                  this.props.toggleCriteria('Any sexual activity involving a child, adult or both')
-                  this.props.checkOption3()
-                }}
-                leftCheckbox={<Checkbox checked={this.props.forms.option3} />}
-              />
-              <ListItem
-                style={{backgroundColor: 'white', margin: '0.25rem 0'}}
-                primaryText='Someone hurting someone else'
-                onChange={() => {
-                  this.props.toggleCriteria('Someone hurting someone else')
-                  this.props.checkOption4()
-                }}
-                leftCheckbox={<Checkbox checked={this.props.forms.option4} />}
-              />
-              <ListItem
-                style={{backgroundColor: 'white', margin: '0.25rem 0'}}
-                primaryText='Sexual activity that includes animals'
-                onChange={() => {
-                  this.props.toggleCriteria('Sexual activity that includes animals')
-                  this.props.checkOption5()
-                }}
-                leftCheckbox={<Checkbox checked={this.props.forms.option5} />}
-              />
-            </List>
-            {this.renderRequiredMessage()}
-            <RaisedButton
-              label='Next'
-              primary={true}
-              onClick={() => {
-                (this.props.forms.imageCriteria.length !== 0)
-                  ? this.props.changeForm()
-                    : this.props.showCriteriaRequiredMessage()
+          <List>
+            <ListItem
+              style={{backgroundColor: 'white', margin: '0.25rem 0'}}
+              primaryText='Someone posing in a sexual way'
+              onChange={() => {
+                this.props.toggleCriteria('Someone posing in a sexual way')
+                this.props.checkOption1()
               }}
+              leftCheckbox={<Checkbox checked={this.props.forms.option1} />}
             />
-          </form>
+            <ListItem
+              style={{backgroundColor: 'white', margin: '0.25rem 0'}}
+              primaryText='Someone touching themselves in a sexual way'
+              onChange={() => {
+                this.props.toggleCriteria('Someone touching themselves in a sexual way')
+                this.props.checkOption2()
+              }}
+              leftCheckbox={<Checkbox checked={this.props.forms.option2} />}
+            />
+            <ListItem
+              style={{backgroundColor: 'white', margin: '0.25rem 0'}}
+              primaryText='Any sexual activity involving a child, adult or both'
+              onChange={() => {
+                this.props.toggleCriteria('Any sexual activity involving a child, adult or both')
+                this.props.checkOption3()
+              }}
+              leftCheckbox={<Checkbox checked={this.props.forms.option3} />}
+            />
+            <ListItem
+              style={{backgroundColor: 'white', margin: '0.25rem 0'}}
+              primaryText='Someone hurting someone else'
+              onChange={() => {
+                this.props.toggleCriteria('Someone hurting someone else')
+                this.props.checkOption4()
+              }}
+              leftCheckbox={<Checkbox checked={this.props.forms.option4} />}
+            />
+            <ListItem
+              style={{backgroundColor: 'white', margin: '0.25rem 0'}}
+              primaryText='Sexual activity that includes animals'
+              onChange={() => {
+                this.props.toggleCriteria('Sexual activity that includes animals')
+                this.props.checkOption5()
+              }}
+              leftCheckbox={<Checkbox checked={this.props.forms.option5} />}
+            />
+          </List>
+          {this.renderRequiredMessage()}
+          <RaisedButton
+            label='Next'
+            primary={true}
+            onClick={() => {
+              (this.props.forms.imageCriteria.length !== 0)
+                ? this.props.changeForm()
+                  : this.props.showCriteriaRequiredMessage()
+            }}
+          />
         </div>
 
         <div className='other-options'>
