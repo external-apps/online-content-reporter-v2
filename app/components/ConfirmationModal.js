@@ -13,7 +13,7 @@ class ConfirmationModal extends React.Component {
   }
 
   renderValidEmailRequired () {
-    if (!this.props.validEmail) {
+    if (!this.props.forms.validEmail) {
       return (
         <h2 className='required'>
           Please enter a valid email address
@@ -23,14 +23,14 @@ class ConfirmationModal extends React.Component {
   }
 
   handleEmailSubmit () {
-    const { imageCriteria, url, description, email } = this.props
+    const { imageCriteria, url, description, email } = this.props.forms
     var payload = { imageCriteria, url, description, email }
     return axios.post('/email', payload)
   }
 
   validateEmail () {
     const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
-    return pattern.test(this.props.email)
+    return pattern.test(this.props.forms.email)
   }
 
   componentWillUnmount () {
@@ -38,11 +38,12 @@ class ConfirmationModal extends React.Component {
   }
 
   render () {
+    console.log('email props', this.props);
     return (
       <Modal
-        isOpen={this.props.modalIsOpen}
+        isOpen={this.props.forms.modalIsOpen}
         onRequestClose={() => this.props.changeModal()}
-        style={this.props.isMobile ? modalMobileOverlay : modalDesktopOverlay}
+        style={this.props.yoti.isMobile ? modalMobileOverlay : modalDesktopOverlay}
         contentLabel='Reassuring message'
       >
         <div className='mod'>
