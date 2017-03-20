@@ -1,9 +1,33 @@
 import { expect } from 'chai'
 import React from 'react'
-import { shallow } from 'enzyme'
-import UrlDescriptionForm from '../../../app/components/UrlDescriptionForm'
+import { shallow, mount } from 'enzyme'
+import UrlDescriptionForm from '../../../app/containers/Home'
+import mockStore from 'redux-mock-store';
+const props = {
+  forms:{
+  modalIsOpen: false,
+  firstForm: false,
+  imageCriteria: [],
+  url: 'sg',
+  description: '',
+  criteriaRequiredMessage: false,
+  urlRequiredMessage: false,
+  validEmail: true,
+  option1: false,
+  option2: false,
+  option3: false,
+  option4: false,
+  option5: false
+}
+}
 
-describe('<UrlDescriptionForm />', () => {
+/*describe('<UrlDescriptionForm />', () => {
+    let store = mockStore(props);
+    component = mount(<UrlDescriptionForm props={store} />);
+  it.only('renders container', () => {
+    expect(component.find('Header')).to.have.length.of(1);
+  });
+*/
   /*it('renders a Header compoent', () => {
     const wrapper = shallow(<UrlDescriptionForm/>)
     console.log(wrapper)
@@ -113,4 +137,4 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('RaisedButton').get(1).props.primary).to.equal(true)
   })*/
-})
+//})
