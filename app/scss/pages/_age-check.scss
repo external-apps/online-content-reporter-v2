@@ -31,3 +31,28 @@
     margin-left: 1rem;
   }
 }
+
+@media (max-width: 500px) {
+  .margin-right{
+    margin-right: 0.25rem;
+  }
+.btns-small{
+  padding: 0 !important;
+  box-shadow: none !important;
+  background-color: inherit !important;
+  min-width: initial!important;//
+  max-width: 8rem!important;//
+   button{
+    line-height: normal !important;
+    height:auto !important;
+  }
+    div  div{
+      height: auto !important;
+      padding: 0.8rem 0 !important;
+      border-radius: 2px;
+      span{
+        font-size: 1.1rem; //
+      }
+    }
+}
+}
