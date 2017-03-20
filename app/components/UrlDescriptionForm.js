@@ -93,7 +93,8 @@ class UrlDescriptionForm extends React.Component {
             <RaisedButton
               label='Submit'
               primary={true}
-              onClick={(e) => {
+              onClick={() => {
+                console.log(this.props.forms, 'PROPS FOR SUBMIT')
                 if (!this.props.forms.url) {
                   this.props.showUrlRequiredMessage()
                 } else {
