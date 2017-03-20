@@ -2,6 +2,7 @@ import {
   ADD_QR_CODE,
   CLOSE_QR,
   OPEN_QR,
+  AGE_IS_VERIFIED,
   SET_UP_FOR_MOBILE
 } from '../../constants/action-types'
 
@@ -10,6 +11,7 @@ const initialState = {
   target: '_blank',
   haveQr: false,
   showQr: false,
+  isAgeVerified: false,
   buttonLabelStyle: { fontSize: '1.1rem', textTransform: 'none', fontFamily: 'childline' },
   buttonStyle: { padding: '0.8rem 0', whiteSpace: 'nowrap', minWidth: '8rem' }
 }
@@ -30,6 +32,11 @@ const yoti = (state = initialState, action) => {
         target: action.target,
         buttonStyle: action.buttonStyle,
         buttonLabelStyle: action.buttonLabelStyle
+      }
+    case AGE_IS_VERIFIED:
+      return {
+        ...state,
+        isAgeVerified: true
       }
     case CLOSE_QR:
       return {

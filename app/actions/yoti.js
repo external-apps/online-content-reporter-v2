@@ -19,6 +19,12 @@ export const setUpForMobile = (href) => {
   }
 }
 
+export const ageIsVerified = () => {
+  return {
+    type: types.AGE_IS_VERIFIED
+  }
+}
+
 export const closeQr = () => {
   return {
     type: types.CLOSE_QR

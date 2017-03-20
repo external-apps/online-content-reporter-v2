@@ -12,10 +12,10 @@ class UrlForm extends React.Component {
   render () {
     return (
       <div>
-        {this.props.firstForm &&
+        {this.props.forms.firstForm &&
           <ImageCriteriaForm {...this.props} />
         }
-        {!this.props.firstForm &&
+        {!this.props.forms.firstForm &&
           <UrlDescriptionForm {...this.props} />
         }
       </div>
@@ -23,7 +23,7 @@ class UrlForm extends React.Component {
   }
 }
 
-const mapStateToProps = state => state.forms
+const mapStateToProps = state => state
 
 const actionCreators = {
   ...formActions

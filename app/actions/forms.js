@@ -73,7 +73,8 @@ export const showUrlRequiredMessage = () => {
 
 export const showCriteriaRequiredMessage = () => {
   return {
-    type: types.SHOW_CRITERIA_REQUIRED_MESSAGE
+    type: types.SHOW_CRITERIA_REQUIRED_MESSAGE,
+    criteriaRequiredMessage: true
   }
 }
 
