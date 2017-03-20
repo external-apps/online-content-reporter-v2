@@ -3,12 +3,14 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import UrlDescriptionForm from '../../../app/components/UrlDescriptionForm'
 
-/*describe('<UrlDescriptionForm />', () => {
-  it('renders a Header compoent', () => {
-    const wrapper = shallow(<UrlDescriptionForm />)
+describe('<UrlDescriptionForm />', () => {
+  /*it('renders a Header compoent', () => {
+    const wrapper = shallow(<UrlDescriptionForm/>)
+    console.log(wrapper)
+    console.log(wrapper.debug())
     expect(wrapper.find('Header')).to.have.length(1)
-  })
-  it('renders a ProgreessBar compoent', () => {
+  })*/
+/*  it('renders a ProgreessBar compoent', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('ProgressBar')).to.have.length(1)
   })
@@ -110,6 +112,5 @@ describe('<UrlDescriptionForm /> teest props of several elements', () => {
   it(' <RaisedButton> 2  should have a primary property', () => {
     const wrapper = shallow(<UrlDescriptionForm />)
     expect(wrapper.find('RaisedButton').get(1).props.primary).to.equal(true)
-  })
+  })*/
 })
-*/
