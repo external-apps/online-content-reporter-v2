@@ -34,18 +34,6 @@ export const ageIsVerified = () => {
   }
 }
 
-export const isUnderAge = () => {
-  return {
-    type: types.IS_UNDER_AGE
-  }
-}
-
-export const isOverAge = () => {
-  return {
-    type: types.IS_OVER_AGE
-  }
-}
-
 export const closeQr = () => {
   return {
     type: types.CLOSE_QR

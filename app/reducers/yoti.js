@@ -12,6 +12,8 @@ const initialState = {
   haveQr: false,
   showQr: false,
   isAgeVerified: false,
+  isUnder18: false,
+  isOver18: false,
   href: null,
   buttonLabelStyle: { fontSize: '1.1rem', textTransform: 'none', fontFamily: 'childline' },
   buttonStyle: { padding: '0.8rem 0', whiteSpace: 'nowrap', minWidth: '8rem' }
