@@ -77,10 +77,10 @@ class YotiShareButtons extends React.Component {
         {!this.props.yoti.showQr &&
           <div className='yoti-btns'>
             <a href={this.props.yoti.href} target={this.props.yoti.target}>
-              <RaisedButton
+              <RaisedButton 
                 labelStyle={this.props.yoti.buttonLabelStyle}
                 style={this.props.yoti.buttonStyle}
-                className='margin-right'
+                className='margin-right btns-customized'
                 primary={true}
                 onClick={clickHandler}
                 label='I have YOTI'
@@ -88,6 +88,7 @@ class YotiShareButtons extends React.Component {
             </a>
             <a href='http://www.yoti.com' target='_blank'>
               <RaisedButton
+                className="btns-customized"
                 labelStyle={this.props.yoti.buttonLabelStyle}
                 style={this.props.yoti.buttonStyle}
                 primary={true}

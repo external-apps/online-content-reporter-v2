@@ -55,7 +55,7 @@ class Home extends React.Component {
             If you're 18 or older, contact the website(s) where you've seen the image or video, or report it to the police.
           </p>
           <Link className='home-main-button' to='/age-check'>
-            <RaisedButton
+            <RaisedButton className="btns-customized"
               labelStyle={{fontSize: '1.4rem', textTransform: 'none', fontFamily: 'childline'}}
               style={{padding: '0.8rem 0', whiteSpace: 'nowrap', minWidth: '8rem'}}
               label='Report something'
