@@ -33,7 +33,7 @@ describe('<YotiDescription />', () => {
   })
   it('renders an img element with src pointing to the yoti logo', () => {
     const wrapper = shallow(<YotiDescription yoti={{showQr:false}}/>)
-    expect(wrapper.find('img').props().src).to.equal('./imgs/yoti-logo.svg')
+    expect(wrapper.find('img').props().src).to.equal('/assets/imgs/yoti-logo.svg')
   })
   it('renders an anvhor tag with href pointing to the yoti website', () => {
     const wrapper = shallow(<YotiDescription yoti={{showQr:false}}/>)
