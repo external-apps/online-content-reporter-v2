@@ -16,5 +16,6 @@ const Footer = () => (
     </div>
   </div>
 )
+/*  <img src='/assets/imgs/footer.jpg' alt='childline logo' />*/
 
 export default Footer
