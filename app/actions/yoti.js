@@ -34,6 +34,18 @@ export const ageIsVerified = () => {
   }
 }
 
+export const isUnderAge = () => {
+  return {
+    type: types.IS_UNDER_AGE
+  }
+}
+
+export const isOverAge = () => {
+  return {
+    type: types.IS_OVER_AGE
+  }
+}
+
 export const closeQr = () => {
   return {
     type: types.CLOSE_QR
@@ -46,12 +58,9 @@ export const openQr = () => {
   }
 }
 
-
 function getQr () {
   return axios.get('/get-qr').then(res => {
     return res.data
-  // this.props.addQr(res.data.svg)
-  // this.listenForToken(res.data.proto, res.data.url)
   })
 }
 
@@ -63,11 +72,9 @@ function listenForToken (proto, url) {
       socket.send(JSON.stringify({subscription: proto}))
     }
     socket.onmessage = (msg) => {
-      console.log('socket response:', JSON.parse(msg.data))
       var data = JSON.parse(msg.data)
       if (data.status === 'COMPLETED') {
         return resolve(data.token)
-        //  this.yotiRedirect(data.token)
       }
     }
   })
@@ -82,15 +89,15 @@ function yotiRedirect (token) {
     console.log(error)
   })
 }
+
 // worker Saga: will be fired on QR_FETCH_REQUESTED actions
-function * fetchQr (action) {
+function * fetchQrEffect (fetchQrAction) {
   try {
     const res = yield call(getQr)
     yield put(addQr(res.svg))
     const token = yield call(listenForToken, res.proto, res.url)
-
-    yield put(ageIsVerified())
     const isUnder18 = yield call(yotiRedirect, token)
+    yield put(ageIsVerified())
     if (isUnder18) {
       yield put(push('/form'))
     } else {
@@ -105,8 +112,8 @@ function * fetchQr (action) {
   Starts fetchUser on each dispatched `USER_FETCH_REQUESTED` action.
   Allows concurrent fetches of user.
 */
-function * mySaga () {
-  yield takeEvery('QR_FETCH_REQUESTED', fetchQr)
+function * yotiSaga () {
+  yield takeEvery(types.QR_FETCH_REQUESTED, fetchQrEffect)
 }
 
-export default mySaga
+export default yotiSaga
