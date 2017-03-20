@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router'
 import '../scss/style.scss'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -42,9 +41,6 @@ const OverAge = () => (
       </div>
     </div>
     <Footer />
-    <Link to='/'>
-      <p>Go Home</p>
-    </Link>
   </div>
 )
 
