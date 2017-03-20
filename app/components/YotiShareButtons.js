@@ -8,7 +8,7 @@ class YotiShareButtons extends React.Component {
   constructor (props) {
     super(props)
     this.getQr = this.getQr.bind(this)
-    this.listenForToken = this.listenForToken.bind(this)
+    // this.listenForToken = this.listenForToken.bind(this)
     this.yotiRedirect = this.yotiRedirect.bind(this)
     // this.verifyAgeMobile = this.verifyAgeMobile.bind(this)
   }
@@ -21,32 +21,33 @@ class YotiShareButtons extends React.Component {
   }
 
   getQr () {
-    axios.get('/get-qr')
-    .then(res => {
-      this.props.addQr(res.data.svg)
-      this.listenForToken(res.data.proto, res.data.url)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+    this.props.qrFetchRequested()
+    // axios.get('/get-qr')
+    // .then(res => {
+    //   this.props.addQr(res.data.svg)
+    //   this.listenForToken(res.data.proto, res.data.url)
+    // })
+    // .catch((error) => {
+    //   console.log(error)
+    // })
   }
-
-  listenForToken (proto, url) {
-    var host = 'wss://api.yoti.com/api/v1/connect-sessions/' + proto
-    var socket = new WebSocket(host)
-    socket.onopen = () => {
-      socket.send(JSON.stringify({subscription: proto}))
-    }
-    socket.onmessage = (msg) => {
-      this.props.ageIsVerified()
-      var data = JSON.parse(msg.data)
-      switch (data.status) {
-        case 'COMPLETED' : {
-          this.yotiRedirect(data.token)
-        }
-      }
-    }
-  }
+  //
+  // listenForToken (proto, url) {
+  //   var host = 'wss://api.yoti.com/api/v1/connect-sessions/' + proto
+  //   var socket = new WebSocket(host)
+  //   socket.onopen = () => {
+  //     socket.send(JSON.stringify({subscription: proto}))
+  //   }
+  //   socket.onmessage = (msg) => {
+  //     this.props.ageIsVerified()
+  //     var data = JSON.parse(msg.data)
+  //     switch (data.status) {
+  //       case 'COMPLETED' : {
+  //         this.yotiRedirect(data.token)
+  //       }
+  //     }
+  //   }
+  // }
 
   yotiRedirect (token) {
     axios.get(`/thankyou?token=${token}`)
@@ -71,6 +72,7 @@ class YotiShareButtons extends React.Component {
   // }
 
   render () {
+    console.log('YOTI COMPONENT PROPS: ', this.props);
     const clickHandler = this.props.yoti.isMobile ? null : (this.props.openQr)
     return (
       <div>
