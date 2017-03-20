@@ -5,11 +5,10 @@ import Home from '../../../app/containers/Home'
 import { Link } from 'react-router'
 import RaisedButton from 'material-ui/RaisedButton'
 //
-// describe('<Home /> ', () => {
-//   it('<Home /> should render an element with className home-header', () => {
-//     const wrapper = shallow(<Home />)
-//     expect(wrapper.find('.home-header')).to.have.length(1)
-//   })
+ describe('<Home /> ', () => {
+/*     const wrapper = shallow(<Home />)
+     expect(wrapper.find('.home-header')).to.have.length(1)
+   })*/
 //    it('<Home /> should render a <RaisedButton/> element', () => {
 //     const wrapper = shallow(<Home />)
 //     expect(wrapper.find(RaisedButton)).to.have.length(1)
@@ -33,4 +32,4 @@ import RaisedButton from 'material-ui/RaisedButton'
 //     const wrapper = shallow(<Home />)
 //     expect(wrapper.find('.section-title')).to.have.length(1)
 //   })
-// })
+ })

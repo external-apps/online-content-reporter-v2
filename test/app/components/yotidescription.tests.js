@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import React from 'react'
-import { shallow, mount, render } from 'enzyme'
+import { shallow } from 'enzyme'
 import YotiDescription from '../../../app/components/YotiDescription'
 
 describe('<YotiDescription /> showQr prop false tests', () => {

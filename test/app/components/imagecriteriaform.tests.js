@@ -1,22 +1,36 @@
 import { expect } from 'chai'
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow,mount } from 'enzyme'
 import ImageCriteriaForm from '../../../app/components/ImgCriteriaForm'
 
 const props = {
-    modalIsOpen: false,
-    firstForm: true,
-    imageCriteria: [],
-    url: '',
-    description: ''
+  forms:{
+  modalIsOpen: false,
+  firstForm: true,
+  imageCriteria: [],
+  url: '',
+  description: '',
+  criteriaRequiredMessage: false,
+  urlRequiredMessage: false,
+  validEmail: true,
+  option1: false,
+  option2: false,
+  option3: false,
+  option4: false,
+  option5: false
+}
 }
 
-/*describe('<ImageCriteriaForm />', () => {
-  it('renders a ProgreessBar component', () => {
-    const wrapper = shallow(<ImageCriteriaForm />)
+describe('<ImageCriteriaForm />', () => {
+/*  it.only('renders a ProgressBar component', () => {
+    const wrapper = mount(<ImageCriteriaForm {...props} />)
+    console.log(wrapper.debug())
     expect(wrapper.find('ProgressBar')).to.have.length(1)
   })
-  it('renders a component with className form-container', () => {
+  const wrapper = mount(<ImageCriteriaForm {...props} />)
+  console.log(wrapper.debug())
+  console.log(wrapper.props())*/
+/*  it('renders a component with className form-container', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
     expect(wrapper.find('.form-container')).to.have.length(1)
   })
@@ -74,6 +88,5 @@ describe('<ImageCriteriaForm /> teest props of several elements', () => {
   it('a tag should point to the childline website', () => {
     const wrapper = shallow(<ImageCriteriaForm />)
     expect(wrapper.find('a').get(0).props.href).to.equal('https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/')
-  })
+  })*/
 })
-*/
