@@ -15,6 +15,15 @@ class Home extends React.Component {
   }
 
   componentWillMount () {
+    /*
+      1. slice the query from url
+      2. if under18 true--> send to forms and initialize state
+      browserHistory.push('/forms')
+
+      3. if under18 false ---> send to over-age
+      browserHistory.push('over-age')
+      4. if there are no query parameters do nothing
+    */
     var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
     var isMobile = isMobileRE.test(navigator.userAgent) &&
       /Mobile/i.test(navigator.userAgent)
