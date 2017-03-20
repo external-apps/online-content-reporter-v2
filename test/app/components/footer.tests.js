@@ -26,7 +26,7 @@ describe('<Footer /> ', () => {
   })
   it('<Footer /> should render an element with src prop', () => {
     const wrapper = shallow(<Footer />)
-    expect(wrapper.find('img').props().src).to.equal('imgs/iwf-logo.png')
+    expect(wrapper.find('img').props().src).to.equal('/assets/imgs/iwf-logo.png')
   })
   it('<Footer /> should render an element with an alt prop', () => {
     const wrapper = shallow(<Footer />)
