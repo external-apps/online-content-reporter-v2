@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const nock = require('nock');
 
-const yotiQr = require('../../app/components/YotiShareButton');
+//const yotiQr = require('../../app/components/YotiShareButton');
 
 // https://www.yoti.com/qr/5be10ae7-af29-40b0-8d33-a0fb90cb0e88
 
