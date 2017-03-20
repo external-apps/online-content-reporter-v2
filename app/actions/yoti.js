@@ -1,4 +1,13 @@
 import * as types from '../../constants/action-types.js'
+import { push } from 'react-router-redux'
+import { call, put, takeEvery } from 'redux-saga/effects'
+import axios from 'axios'
+
+export const qrFetchRequested = () => {
+  return {
+    type: types.QR_FETCH_REQUESTED
+  }
+}
 
 export const addQr = (qrSvg) => {
   return {
@@ -36,3 +45,68 @@ export const openQr = () => {
     type: types.OPEN_QR
   }
 }
+
+
+function getQr () {
+  return axios.get('/get-qr').then(res => {
+    return res.data
+  // this.props.addQr(res.data.svg)
+  // this.listenForToken(res.data.proto, res.data.url)
+  })
+}
+
+function listenForToken (proto, url) {
+  return new Promise((resolve) => {
+    var host = 'wss://api.yoti.com/api/v1/connect-sessions/' + proto
+    var socket = new WebSocket(host)
+    socket.onopen = () => {
+      socket.send(JSON.stringify({subscription: proto}))
+    }
+    socket.onmessage = (msg) => {
+      console.log('socket response:', JSON.parse(msg.data))
+      var data = JSON.parse(msg.data)
+      if (data.status === 'COMPLETED') {
+        return resolve(data.token)
+        //  this.yotiRedirect(data.token)
+      }
+    }
+  })
+}
+
+function yotiRedirect (token) {
+  return axios.get(`/thankyou?token=${token}`)
+  .then(res => {
+    return (res.data.isUnder18)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+}
+// worker Saga: will be fired on QR_FETCH_REQUESTED actions
+function * fetchQr (action) {
+  try {
+    const res = yield call(getQr)
+    yield put(addQr(res.svg))
+    const token = yield call(listenForToken, res.proto, res.url)
+
+    yield put(ageIsVerified())
+    const isUnder18 = yield call(yotiRedirect, token)
+    if (isUnder18) {
+      yield put(push('/form'))
+    } else {
+      yield put(push('/over-age'))
+    }
+  } catch (e) {
+    yield put({type: 'QR_FETCH_FAILED', message: e.message})
+  }
+}
+
+/*
+  Starts fetchUser on each dispatched `USER_FETCH_REQUESTED` action.
+  Allows concurrent fetches of user.
+*/
+function * mySaga () {
+  yield takeEvery('QR_FETCH_REQUESTED', fetchQr)
+}
+
+export default mySaga
