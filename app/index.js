@@ -8,19 +8,30 @@ import Forms from './containers/Forms'
 import OverAge from './components/OverAge'
 import NotFound from './components/NotFound'
 import { Provider } from 'react-redux'
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import yoti from './reducers/yoti'
 import forms from './reducers/forms'
 import muiTheme from './assets/theme'
+
+import createSagaMiddleware from 'redux-saga'
+import mySaga from './actions/yoti'
+
+// create the saga middleware
+const sagaMiddleware = createSagaMiddleware()
 
 const reducers = combineReducers({
   yoti,
   forms
 })
 
-const store = createStore(reducers)
-// // try this for refresh..
-// const history = syncHistoryWithStore(browserHistory, store)
+// mount saga on the Store
+const store = createStore(
+  reducers,
+  applyMiddleware(sagaMiddleware)
+)
+
+// then run the saga
+sagaMiddleware.run(mySaga)
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
