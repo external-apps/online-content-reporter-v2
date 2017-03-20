@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import { browserHistory } from 'react-router'
 import axios from 'axios'
 
-class YotiShareButton extends React.Component {
+class YotiShareButtons extends React.Component {
   constructor (props) {
     super(props)
     this.getQr = this.getQr.bind(this)
@@ -76,16 +76,16 @@ class YotiShareButton extends React.Component {
       <div>
         {!this.props.yoti.showQr &&
           <div className='yoti-btns'>
-            <RaisedButton
-              labelStyle={this.props.yoti.buttonLabelStyle}
-              style={this.props.yoti.buttonStyle}
-              className='margin-right'
-              primary={true}
-              href={this.props.yoti.href}
-              onClick={clickHandler}
-              target={this.props.yoti.target}
-              label='I have YOTI'
-            />
+            <a href={this.props.yoti.href} target={this.props.yoti.target}>
+              <RaisedButton
+                labelStyle={this.props.yoti.buttonLabelStyle}
+                style={this.props.yoti.buttonStyle}
+                className='margin-right'
+                primary={true}
+                onClick={clickHandler}
+                label='I have YOTI'
+              />
+            </a>
             <a href='http://www.yoti.com' target='_blank'>
               <RaisedButton
                 labelStyle={this.props.yoti.buttonLabelStyle}
@@ -101,4 +101,4 @@ class YotiShareButton extends React.Component {
   }
 }
 
-export default YotiShareButton
+export default YotiShareButtons

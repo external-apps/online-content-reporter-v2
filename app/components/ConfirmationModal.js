@@ -13,7 +13,13 @@ class ConfirmationModal extends React.Component {
   }
 
   renderValidEmailRequired () {
-    this.props.validEmailRequiredMessage()
+    if (!this.props.validEmail) {
+      return (
+        <h2 className='required'>
+          Please enter a valid email address
+        </h2>
+      )
+    }
   }
 
   handleEmailSubmit () {
@@ -21,10 +27,12 @@ class ConfirmationModal extends React.Component {
     var payload = { imageCriteria, url, description, email }
     return axios.post('/email', payload)
   }
+
   validateEmail () {
     const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
     return pattern.test(this.props.email)
   }
+
   componentWillUnmount () {
     this.props.changeModal()
   }
@@ -50,10 +58,23 @@ class ConfirmationModal extends React.Component {
             onChange={e => this.props.saveEmail(e.target.value)}
           />
           <br />
-          {!this.props.validEmail && <h2 className='required'>Please enter a valid email address</h2>}
-          <p className='last_p'>If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
+          {this.renderValidEmailRequired()}
+          <p className='last_p'>
+            If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
           </p>
-            <RaisedButton primary={true} label='Submit' onClick={() => { if (this.validateEmail()) { this.props.hideValidEmailRequiredMessage(); browserHistory.push('/'); this.handleEmailSubmit() } else { this.renderValidEmailRequired() } }} />
+          <RaisedButton
+            primary={true}
+            label='Submit'
+            onClick={() => {
+              if (this.validateEmail()) {
+                this.props.hideValidEmailRequiredMessage()
+                browserHistory.push('/')
+                this.handleEmailSubmit()
+              } else {
+                this.props.validEmailRequiredMessage()
+              }
+            }}
+          />
         </div>
       </Modal>
     )

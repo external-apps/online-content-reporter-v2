@@ -63,49 +63,46 @@ class UrlDescriptionForm extends React.Component {
         </div>
         <div className='form-container'>
           <h3 className='section-title'>WEB ADDRESS</h3>
-          <form>
-            <div className='input-field col s6'>
-              <TextField
-                hintText='If there is more than one website, add these in the box below'
-                floatingLabelText='url'
-                value={this.props.forms.url}
-                errorText='This field is required'
-                onChange={e => this.props.saveUrl(e.target.value)}
-                errorStyle={styles.errorStyle}
-              /><br />
-              {this.renderRequiredMessage()}
-              </div>
-              <div className='input-field-2 input-field col s6 '>
-                <TextField
-                  hintText='Tell us about where you found the image'
-                  floatingLabelText='Description'
-                  multiLine={true}
-                  rows={4}
-                  value={this.props.forms.description}
-                  onChange={e => this.props.saveDescription(e.target.value)}
-                /><br />
-              </div>
-              <div className='buttons'>
-                <RaisedButton
-                  label='Previous'
-                  primary={true}
-                  onClick={() => this.props.changeForm()}
-                />
-                <RaisedButton
-                  label='Submit'
-                  primary={true}
-                  onClick={(e) => {
-                    if (!this.props.forms.url) {
-                      this.props.showUrlRequiredMessage()
-                    } else {
-                      this.props.changeModal()
-                      this.handleUrlSubmit()
-                    }
-                  }}
-                  id='submit-url'
-                />
-              </div>
-          </form>
+          <div className='input-field col s6'>
+            <TextField
+              hintText='If there is more than one website, add these in the box below'
+              floatingLabelText='url'
+              value={this.props.forms.url}
+              errorText='This field is required'
+              onChange={e => this.props.saveUrl(e.target.value)}
+              errorStyle={styles.errorStyle}
+            /><br />
+            {this.renderRequiredMessage()}
+          </div>
+          <div className='input-field-2 input-field col s6 '>
+            <TextField
+              hintText='Tell us about where you found the image'
+              floatingLabelText='Description'
+              multiLine={true}
+              rows={4}
+              value={this.props.forms.description}
+              onChange={e => this.props.saveDescription(e.target.value)}
+            /><br />
+          </div>
+          <div className='buttons'>
+            <RaisedButton
+              label='Previous'
+              primary={true}
+              onClick={() => this.props.changeForm()}
+            />
+            <RaisedButton
+              label='Submit'
+              primary={true}
+              onClick={(e) => {
+                if (!this.props.forms.url) {
+                  this.props.showUrlRequiredMessage()
+                } else {
+                  this.props.changeModal()
+                  this.handleUrlSubmit()
+                }
+              }}
+            />
+          </div>
         </div>
         <ConfirmationModal {...this.props} />
         <Footer />
