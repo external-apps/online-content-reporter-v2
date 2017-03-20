@@ -40,24 +40,12 @@
     margin-right: 0.5rem;
   }
 .btns-small{
-  padding: 0 !important;
-  box-shadow: none !important;
-  background-color: inherit !important;
-  min-width: initial!important;//
-  max-width: 9rem!important;//
-   button{
-    line-height: normal !important;
-    height:auto !important;
-  }
-    div  div{
-      height: auto !important;
-      padding: 0.8rem 0 !important;
-      border-radius: 2px;
-      span{
-        font-size: 0.9rem!important; //
+  min-width: initial!important;
+  max-width: 9rem!important;
+   button div  div span{
+        font-size: 0.9rem!important;
         padding-left: 0.75rem !important;
         padding-right: 0.75rem !important;
       }
     }
-}
 }
