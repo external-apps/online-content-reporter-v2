@@ -25,8 +25,8 @@ class Home extends React.Component {
       browserHistory.push('over-age')
       4. if there are no query parameters do nothing
     */
-    if (window.cookie) {
-      if (window.cookie.isUnder18) {
+    if (document.cookie) {
+      if (document.cookie.isUnder18) {
         browserHistory.push('/form')
       } else {
         browserHistory.push('/over-age')
