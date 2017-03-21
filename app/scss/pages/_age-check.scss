@@ -31,3 +31,21 @@
     margin-left: 1rem;
   }
 }
+
+@media (max-width: 500px) {
+  .yoti-btns {
+    justify-content: space-between;
+}
+  .margin-right{
+    margin-right: 0.5rem;
+  }
+.btns-small{
+  min-width: initial!important;
+  max-width: 9rem!important;
+   button div  div span{
+        font-size: 0.9rem!important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+    }
+}
