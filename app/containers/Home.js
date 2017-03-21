@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import Launch from 'material-ui/svg-icons/action/launch'
 import { connect } from 'react-redux'
 import * as yotiActions from '../actions/yoti'
+import { browserHistory } from 'react-router'
 // import axios from 'axios'
 
 class Home extends React.Component {
@@ -24,6 +25,13 @@ class Home extends React.Component {
       browserHistory.push('over-age')
       4. if there are no query parameters do nothing
     */
+    if (window.cookie) {
+      if (window.cookie.isUnder18) {
+        browserHistory.push('/form')
+      } else {
+        browserHistory.push('/over-age')
+      }
+    }
     var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
     var isMobile = isMobileRE.test(navigator.userAgent) &&
       /Mobile/i.test(navigator.userAgent)
