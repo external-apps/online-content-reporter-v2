@@ -74,7 +74,7 @@ class UrlDescriptionForm extends React.Component {
             /><br />
             {this.renderRequiredMessage()}
           </div>
-          <h3 className="url-report">If there is more than one website, add these in the box below.</h3>
+          <h3 className='url-report'>If there is more than one website, add these in the box below.</h3>
           <div className='input-field-2 input-field col s6 '>
             <TextField
               hintText='Tell us about where you found the image'
@@ -95,7 +95,6 @@ class UrlDescriptionForm extends React.Component {
               label='Submit'
               primary={true}
               onClick={() => {
-                console.log(this.props.forms, 'PROPS FOR SUBMIT')
                 if (!this.props.forms.url) {
                   this.props.showUrlRequiredMessage()
                 } else {
