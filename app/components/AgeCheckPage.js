@@ -21,9 +21,6 @@ const AgeCheckPage = () => (
     </div>
     <Yoti />
     <Footer />
-    <Link className='action-button' to='/over-age'>
-      <p>Take me to over-age (will be removed)</p>
-    </Link>
   </div>
 )
 
