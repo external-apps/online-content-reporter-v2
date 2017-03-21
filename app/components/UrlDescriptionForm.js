@@ -65,7 +65,7 @@ class UrlDescriptionForm extends React.Component {
           <h3 className='section-title'>WEB ADDRESS</h3>
           <div className='input-field col s6'>
             <TextField
-              hintText='If there is more than one website, add these in the box below'
+              hintText='http://www.example.com'
               floatingLabelText='url'
               value={this.props.forms.url}
               errorText='This field is required'
@@ -74,6 +74,7 @@ class UrlDescriptionForm extends React.Component {
             /><br />
             {this.renderRequiredMessage()}
           </div>
+          <h3 className="url-report">If there is more than one website, add these in the box below.</h3>
           <div className='input-field-2 input-field col s6 '>
             <TextField
               hintText='Tell us about where you found the image'
