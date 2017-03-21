@@ -26,9 +26,12 @@ class Home extends React.Component {
       4. if there are no query parameters do nothing
     */
     if (document.cookie) {
+      console.log('I have a cookie')
       if (document.cookie.isUnder18) {
+        console.log('I am here')
         browserHistory.push('/form')
       } else {
+        console.log('I am here')
         browserHistory.push('/over-age')
       }
     }
