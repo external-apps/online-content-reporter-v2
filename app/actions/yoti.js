@@ -69,7 +69,7 @@ function listenForToken (proto, url) {
 }
 
 function yotiRedirect (token) {
-  return axios.get(`/thankyou?token=${token}`)
+  return axios.get(`/thankyou?token=${token}?desktop=true`)
   .then(res => {
     return (res.data.isUnder18)
   })
