@@ -16,7 +16,8 @@ class Home extends React.Component {
 
   componentWillMount () {
     if (document.cookie) {
-      if (document.cookie.split('=')[1]=='true') {
+      console.log(document.cookie, 'my cookie');
+      if (document.cookie.split('=')[1] === 'true') {
         browserHistory.push('/form')
       } else {
         browserHistory.push('/over-age')
@@ -29,7 +30,7 @@ class Home extends React.Component {
   }
 
   mobileSetup () {
-    //const href = 'https://www.yoti.com/connect/3392788e-e529-4309-8ed7-54d7ac554055' //will
+    // const href = 'https://www.yoti.com/connect/3392788e-e529-4309-8ed7-54d7ac554055' //will
     const href = 'https://www.yoti.com/connect/f6999919-d114-43c0-bdf0-ae2e1a89ff73'
     this.props.setUpForMobile(href)
 
