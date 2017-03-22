@@ -42,7 +42,7 @@ class ConfirmationModal extends React.Component {
     return (
       <Modal
         isOpen={this.props.forms.modalIsOpen}
-      //  onRequestClose={() => this.props.closeModal()}
+        onRequestClose={() => this.props.closeModal()}
         style={this.props.yoti.isMobile ? modalMobileOverlay : modalDesktopOverlay}
         contentLabel='Reassuring message'
       >
