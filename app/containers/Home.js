@@ -15,12 +15,8 @@ class Home extends React.Component {
   }
 
   componentWillMount () {
-    console.log('HAHO')
-    console.log(document.cookie)
     if (document.cookie) {
-      console.log('I am here')
       if (document.cookie.split('=')[1]=='true') {
-        console.log('TRUEEE')
         browserHistory.push('/form')
       } else {
         browserHistory.push('/over-age')
