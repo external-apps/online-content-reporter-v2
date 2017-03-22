@@ -5,7 +5,7 @@ describe('Age check test', () => {
   it('17 should return true', () => {
     expect(ageCheck('03.12.2003')).to.be.true
   })
-  it('35 should return false', () => {
-    expect(ageCheck('01.01.1980')).to.be.false
+  it('55 should return false', () => {
+    expect(ageCheck('01.01.1960')).to.be.false
   })
 })
