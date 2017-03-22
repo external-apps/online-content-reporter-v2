@@ -10,4 +10,16 @@ describe('End-to-end', () => {
       .expect(200)
       .expect('Content-Type', /html/)
   })
+  it('get requests to unknown endpoints should render the \'/\' route', () => {
+    return request(end2end)
+      .get('/randomendpoint')
+      .expect(200)
+      .expect('Content-Type', /html/)
+  })
+  it('get requests to unknown endpoints should render the \'/\' route', () => {
+    return request(end2end)
+      .get('/get-qr')
+      .expect(200)
+      .expect('Content-Type', 'application/json; charset=utf-8')
+  })
 })
