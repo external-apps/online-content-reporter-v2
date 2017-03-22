@@ -10,17 +10,17 @@ const muiTheme = getMuiTheme({
     textTransform: 'none',
     fontFamily: 'childline-bold, sans-serif',
     primary1Color: '#0c3d52',   /* backgroundColor */
-    primary2Color: '#0c3d52', /*no effect*/
-    primary3Color: '#0c3d52', /*no effect*/
+    primary2Color: '#0c3d52', /* no effect */
+    primary3Color: '#0c3d52', /* no effect */
     accent1Color: '#0c3d52',
     accent2Color: '#0c3d52',
     accent3Color: '#0c3d52',
     textColor: '#0c3d52',       /* general text color e.g.: in list items */
     alternateTextColor: '#fff', /* button text color */
     canvasColor: '#0c3d52',
-    borderColor: '#00A0CF', /*TextField initial  bottom border*/
-    disabledColor: '#9ea89e', /*TextField initial label and placeholder */
-    pickerHeaderColor: '#00A0CF' /*no effect */
+    borderColor: '#00A0CF', /* TextField initial  bottom border */
+    disabledColor: '#9ea89e', /* TextField initial label and placeholder */
+    pickerHeaderColor: '#00A0CF' /* no effect */
   }
 })
 
