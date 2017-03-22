@@ -44,17 +44,11 @@ describe('Test actions', () => {
     ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to save url', () => { //
-    const expectedAction = {
-      type: SAVE_URL
-    }
     expect(
       formActions.saveUrl()
     ).to.have.property('type','SAVE_URL')
   })
   it('should dispatch an action to save email', () => { //
-    const expectedAction = {
-      type: SAVE_EMAIL
-    }
     expect(
       formActions.saveEmail()
     ).to.have.property('type','SAVE_EMAIL')
@@ -65,12 +59,9 @@ describe('Test actions', () => {
     }
     expect(
       formActions.showUrlRequiredMessage()
-    ).to.have.property('type','SHOW_URL_REQUIRED_MESSAGE')
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to save description', () => { //
-    const expectedAction = {
-      type: SAVE_DESCRIPTION
-    }
     expect(
       formActions.saveDescription()
     ).to.have.property('type','SAVE_DESCRIPTION')
@@ -81,15 +72,15 @@ describe('Test actions', () => {
     }
     expect(
       formActions.checkOption1()
-    ).to.have.property('type','CHANGE_OPTION1')
+    ).to.deep.equal(expectedAction)
   })
-  it('should dispatch an action to toggle option2', () => { 
+  it('should dispatch an action to toggle option2', () => {
     const expectedAction = {
       type: CHANGE_OPTION2
     }
     expect(
       formActions.checkOption2()
-    ).to.have.property('type','CHANGE_OPTION2')
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to toggle option3', () => {
     const expectedAction = {
@@ -97,7 +88,7 @@ describe('Test actions', () => {
     }
     expect(
       formActions.checkOption3()
-    ).to.have.property('type','CHANGE_OPTION3')
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to toggle option4', () => { //
     const expectedAction = {
@@ -105,7 +96,7 @@ describe('Test actions', () => {
     }
     expect(
       formActions.checkOption4()
-    ).to.have.property('type','CHANGE_OPTION4')
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to toggle option5', () => { //
     const expectedAction = {
@@ -113,7 +104,7 @@ describe('Test actions', () => {
     }
     expect(
       formActions.checkOption5()
-    ).to.have.property('type','CHANGE_OPTION5')
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to show the valid email required message', () => { //
     const expectedAction = {
@@ -121,7 +112,7 @@ describe('Test actions', () => {
     }
     expect(
       formActions.validEmailRequiredMessage()
-    ).to.have.property('type','VALID_EMAIL_REQUIRED_MESSAGE')
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to hide the valid email required message', () => { //
     const expectedAction = {
@@ -129,23 +120,17 @@ describe('Test actions', () => {
     }
     expect(
       formActions.hideValidEmailRequiredMessage()
-    ).to.have.property('type','HIDE_VALID_EMAIL_REQUIRED_MESSAGE')
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action show the criteria required message', () => { //
-    const expectedAction = {
-      type: SHOW_CRITERIA_REQUIRED_MESSAGE
-    }
     expect(
       formActions.showCriteriaRequiredMessage()
     ).to.have.property('type','SHOW_CRITERIA_REQUIRED_MESSAGE')
   })
 })
 
-describe('FeatureFirstContainer actions', () => {//
-  it('should dispatch an action to openModal()', () => {
-    const expectedAction = {
-      type: SET_UP_FOR_MOBILE
-    }
+describe('Yoti actions', () => {//
+  it('should dispatch an action to setUpForMobile()', () => {
     expect(
       yotiActions.setUpForMobile()
     ).to.have.property('type','SET_UP_FOR_MOBILE')
@@ -156,7 +141,7 @@ describe('FeatureFirstContainer actions', () => {//
     }
     expect(
       yotiActions.closeQr()
-    ).to.have.property('type','CLOSE_QR')
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to open Qr code', () => {
     const expectedAction = {
@@ -164,12 +149,9 @@ describe('FeatureFirstContainer actions', () => {//
     }
     expect(
       yotiActions.openQr()
-    ).to.have.property('type','OPEN_QR')
+    ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to add Qr code', () => {
-    const expectedAction = {
-      type: ADD_QR_CODE
-    }
     expect(
       yotiActions.addQr()
     ).to.have.property('type','ADD_QR_CODE')

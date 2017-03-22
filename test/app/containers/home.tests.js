@@ -37,7 +37,7 @@ let state= {
 describe('example shallowWithStore', () => {
   describe('state', () => {
 
-    it.only('works', () => {
+    it('works', () => {
       const mapStateToProps = (state) => ({
         yoti :state.yoti
       });
