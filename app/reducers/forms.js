@@ -1,5 +1,6 @@
 import {
-  CHANGE_MODAL,
+  OPEN_MODAL,
+  CLOSE_MODAL,
   CHANGE_FORM,
   TOGGLE_CRITERIA,
   SAVE_URL,
@@ -34,10 +35,15 @@ const initialState = {
 
 const forms = (state = initialState, action) => {
   switch (action.type) {
-    case CHANGE_MODAL:
+    case OPEN_MODAL:
       return {
         ...state,
-        modalIsOpen: !state.modalIsOpen
+        modalIsOpen: true
+      }
+    case CLOSE_MODAL:
+      return {
+        ...state,
+        modalIsOpen: false
       }
     case CHANGE_FORM:
       return {

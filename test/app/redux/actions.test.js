@@ -9,7 +9,8 @@ import {
   ADD_QR_CODE,
   SET_UP_FOR_MOBILE,
   //form actions
-  CHANGE_MODAL,
+  OPEN_MODAL,
+  CLOSE_MODAL,
   CHANGE_FORM,
   TOGGLE_CRITERIA,
   SAVE_URL,
@@ -29,10 +30,18 @@ import {
 describe('Test actions', () => {
   it('should dispatch an action to openModal()', () => {
     const expectedAction = {
-      type: CHANGE_MODAL
+      type: OPEN_MODAL
     }
     expect(
-      formActions.changeModal()
+      formActions.openModal()
+    ).to.deep.equal(expectedAction)
+  })
+  it('should dispatch an action to closeModal()', () => {
+    const expectedAction = {
+      type: CLOSE_MODAL
+    }
+    expect(
+      formActions.closeModal()
     ).to.deep.equal(expectedAction)
   })
   it('should dispatch an action to nextForm()', () => {
