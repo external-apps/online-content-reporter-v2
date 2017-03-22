@@ -1,10 +1,11 @@
 import { expect } from 'chai'
-import React from 'react';
-import { connect } from 'react-redux';
-import { shallowWithStore } from 'enzyme-redux';
-import { createMockStore } from 'redux-test-utils';
+import React from 'react'
+import { connect } from 'react-redux'
+import { shallowWithStore } from 'enzyme-redux'
+import { createMockStore } from 'redux-test-utils'
 import Home from '../../../app/containers/Home'
-
+import {mount, shallow} from 'enzyme'
+import sinon from 'sinon'
 let state= {
   yoti: {
     isMobile: false,
@@ -35,13 +36,13 @@ let state= {
   }
 }
 
+const mapStateToProps = (state) => ({
+  yoti :state.yoti
+});
+const ConnectedComponent = connect(mapStateToProps)(Home)
+const component = shallowWithStore(<ConnectedComponent />, createMockStore(state))
 describe('test Home props with shallowWithStore', () => {
   describe('state', () => {
-    const mapStateToProps = (state) => ({
-      yoti :state.yoti
-    });
-    const ConnectedComponent = connect(mapStateToProps)(Home)
-    const component = shallowWithStore(<ConnectedComponent />, createMockStore(state))
     it('initialize prop.yoti.haveQr to be false', () => {
       expect(component.props().yoti.haveQr).to.equal(false)
     })

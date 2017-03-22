@@ -28,8 +28,8 @@ const props = {
     expect(component.find('Header')).to.have.length.of(1);
   });
 */
-  /*it('renders a Header compoent', () => {
-    const wrapper = shallow(<UrlDescriptionForm/>)
+/*  it.only('renders a Header compoent', () => {
+    const wrapper = shallow(<UrlDescriptionForm {...props}/>)
     console.log(wrapper)
     console.log(wrapper.debug())
     expect(wrapper.find('Header')).to.have.length(1)
