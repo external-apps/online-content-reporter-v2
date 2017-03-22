@@ -71,7 +71,6 @@ function listenForToken (proto, url) {
 function yotiRedirect (token) {
   return axios.get(`/thankyou?token=${token}&desktop=true`)
   .then(res => {
-    console.log('yotiRedirect resoponse', res.data)
     return (res.data.isUnder18)
   })
   .catch((error) => {
@@ -87,7 +86,6 @@ function * fetchQrEffect (fetchQrAction) {
     const token = yield call(listenForToken, res.proto, res.url)
     const isUnder18 = yield call(yotiRedirect, token)
     yield put(ageIsVerified())
-    console.log(isUnder18)
     if (isUnder18) {
       yield put(push('/form'))
     } else {
