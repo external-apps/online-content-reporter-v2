@@ -35,38 +35,38 @@ let state= {
   }
 }
 
-describe('example shallowWithStore', () => {
+describe('test Home props with shallowWithStore', () => {
   describe('state', () => {
     const mapStateToProps = (state) => ({
       yoti :state.yoti
     });
     const ConnectedComponent = connect(mapStateToProps)(Home)
     const component = shallowWithStore(<ConnectedComponent />, createMockStore(state))
-    it('initialize pop.yoti.haveQr to be false', () => {
+    it('initialize prop.yoti.haveQr to be false', () => {
       expect(component.props().yoti.haveQr).to.equal(false)
     })
-    it('initialize pop.yoti.isMobile to be false', () => {
+    it('initialize prop.yoti.isMobile to be false', () => {
       expect(component.props().yoti.isMobile).to.equal(false)
     })
-    it('initialize pop.yoti.showQr to be false', () => {
+    it('initialize prop.yoti.showQr to be false', () => {
       expect(component.props().yoti.showQr).to.equal(false)
     })
-    it('initialize pop.yoti.isAgeVerified to be false', () => {
+    it('initialize prop.yoti.isAgeVerified to be false', () => {
       expect(component.props().yoti.isAgeVerified).to.equal(false)
     })
-    it('initialize pop.yoti.isUnder18 to be false', () => {
+    it('initialize prop.yoti.isUnder18 to be false', () => {
       expect(component.props().yoti.isUnder18).to.equal(false)
     })
-    it('initialize pop.yoti.isOver18 to be false', () => {
+    it('initialize prop.yoti.isOver18 to be false', () => {
       expect(component.props().yoti.isOver18).to.equal(false)
     })
-    it('initialize pop.yoti.href to be null', () => {
+    it('initialize prop.yoti.href to be null', () => {
       expect(component.props().yoti.href).to.equal(null)
     })
-    it('initialize pop.yoti.buttonLabelStyle', () => {
+    it('initialize prop.yoti.buttonLabelStyle', () => {
       expect(component.props().yoti.buttonLabelStyle).to.deep.equal({ fontSize: '1.1rem', textTransform: 'none', fontFamily: 'childline' })
     })
-    it('initialize pop.yoti.buttonStyle', () => {
+    it('initialize prop.yoti.buttonStyle', () => {
       expect(component.props().yoti.buttonStyle).to.deep.equal({ padding: '0.8rem 0', whiteSpace: 'nowrap', minWidth: '8rem' })
     })
   })
