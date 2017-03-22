@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
 import Footer from '../components/Footer'
 import Launch from 'material-ui/svg-icons/action/launch'
 import { connect } from 'react-redux'
 import * as yotiActions from '../actions/yoti'
-import { browserHistory } from 'react-router'
 
 class Home extends React.Component {
   constructor (props) {
@@ -15,14 +14,13 @@ class Home extends React.Component {
   }
 
   componentWillMount () {
-    if (document.cookie) {
-      console.log(document.cookie, 'my cookie');
-      if (document.cookie.split('=')[1] === 'true') {
-        browserHistory.push('/form')
-      } else {
-        browserHistory.push('/over-age')
-      }
-    }
+    // if (document.cookie) {
+    //   if (document.cookie.split('=')[1] === 'true') {
+    //     browserHistory.push('/form')
+    //   } else {
+    //     browserHistory.push('/over-age')
+    //   }
+    // }
     var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
     var isMobile = isMobileRE.test(navigator.userAgent) &&
       /Mobile/i.test(navigator.userAgent)
@@ -30,8 +28,8 @@ class Home extends React.Component {
   }
 
   mobileSetup () {
-    // const href = 'https://www.yoti.com/connect/3392788e-e529-4309-8ed7-54d7ac554055' //will
-    const href = 'https://www.yoti.com/connect/f6999919-d114-43c0-bdf0-ae2e1a89ff73'
+    const href = 'https://www.yoti.com/connect/3392788e-e529-4309-8ed7-54d7ac554055' //will
+    // const href = 'https://www.yoti.com/connect/f6999919-d114-43c0-bdf0-ae2e1a89ff73'
     this.props.setUpForMobile(href)
 
     // Need Yoti api to fix before implementing this.
