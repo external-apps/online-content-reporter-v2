@@ -98,7 +98,7 @@ class UrlDescriptionForm extends React.Component {
                 if (!this.props.forms.url) {
                   this.props.showUrlRequiredMessage()
                 } else {
-                  this.props.changeModal()
+                  this.props.openModal()
                   this.handleUrlSubmit()
                 }
               }}
