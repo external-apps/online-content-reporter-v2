@@ -34,15 +34,15 @@ class ConfirmationModal extends React.Component {
   }
 
   componentWillUnmount () {
-    this.props.changeModal()
+    this.props.closeModal()
   }
 
   render () {
-    console.log('email props', this.props);
+  //  console.log('email props', this.props);
     return (
       <Modal
         isOpen={this.props.forms.modalIsOpen}
-        onRequestClose={() => this.props.changeModal()}
+        onRequestClose={() => this.props.closeModal()}
         style={this.props.yoti.isMobile ? modalMobileOverlay : modalDesktopOverlay}
         contentLabel='Reassuring message'
       >
@@ -50,7 +50,7 @@ class ConfirmationModal extends React.Component {
           <RaisedButton
             className='close_btn'
             primary={true} label='X'
-            onClick={() => this.props.changeModal()} />
+            onClick={() => {console.log('I am being called!!');console.log(this.props);this.props.closeModal()}} />
           <h2 className='red'>Thank you.</h2>
           <h2>We have sent your report to the Internet Watch Foundation (IWF) who will review your request.</h2>
           <p>
