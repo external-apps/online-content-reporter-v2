@@ -43,7 +43,7 @@ const forms = (state = initialState, action) => {
     case CLOSE_MODAL:
       return {
         ...state,
-        modalIsOpen: true
+        modalIsOpen: false
       }
     case CHANGE_FORM:
       return {
