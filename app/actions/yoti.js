@@ -78,7 +78,6 @@ function yotiRedirect (token) {
   })
 }
 
-// worker Saga: will be fired on QR_FETCH_REQUESTED actions
 function * fetchQrEffect (fetchQrAction) {
   try {
     const res = yield call(getQr)
@@ -96,10 +95,6 @@ function * fetchQrEffect (fetchQrAction) {
   }
 }
 
-/*
-  Starts fetchUser on each dispatched `USER_FETCH_REQUESTED` action.
-  Allows concurrent fetches of user.
-*/
 function * yotiSaga () {
   yield takeEvery(types.QR_FETCH_REQUESTED, fetchQrEffect)
 }
