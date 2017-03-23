@@ -38,7 +38,6 @@ class ConfirmationModal extends React.Component {
   }
 
   render () {
-  //  console.log('email props', this.props);
     return (
       <Modal
         isOpen={this.props.forms.modalIsOpen}
