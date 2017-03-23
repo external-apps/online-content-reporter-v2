@@ -32,7 +32,7 @@ class ConfirmationModal extends React.Component {
   }
 
   validateEmail () {
-    const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
+    const pattern = /^\w+@[a-zA-Z_]+?(\.[a-zA-Z]{2,3}){1,2}$/ 
     return pattern.test(this.props.forms.email)
   }
 
