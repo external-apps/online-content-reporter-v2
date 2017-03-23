@@ -1,37 +1,36 @@
-# online-content-reporter
+# Online Content Reporter
 
 ![circle badge](https://circleci.com/gh/childline-yoti/online-content-reporter.png?circle-token=key-8f574d3ae5bfff8a00adc63d005cc1ab)
 
 A web app for reporting explicit online images to the [IWF](https://www.iwf.org.uk/) (Internet Watch Foundation).  
-History of the partnership between the [IWF and Childline](https://www.iwf.org.uk/news/childline-and-internet-watch-foundation-form-new-partnership-to-help-young-people-remove)  
-The current  [IWF "hash list"](https://www.iwf.org.uk/become-a-member/services-for-members/image-hash-list)
+History of the partnership between the [IWF and Childline](https://www.iwf.org.uk/news/childline-and-internet-watch-foundation-form-new-partnership-to-help-young-people-remove) .
+The current  [IWF "hash list"](https://www.iwf.org.uk/become-a-member/services-for-members/image-hash-list).
 
-## Our app
+## Application Links
 
-Running on Heroku twice for testing purposes so that more people can test both the under18 and over18 route.
-- Version 2: where the age limit is 25: [childline-report](https://childline-report.herokuapp.com/)
-- Version 1: where the age limit is 35: [childline-yoti](https://childline-yoti.herokuapp.com/)
+*Under development*
 
-**Under development**
+Two versions for testing purposes so test of both the under18 and over18 user journeys can be tested.
+- Age limit is 25: [content-reporter](https://content-reporter.herokuapp.com/)
+- Age limit is 40: [childline-yoti2](http://childline-yoti2.herokuapp.com/)
+
+- 3 day Prototype version: [childline-report](https://childline-report-image.herokuapp.com)
+
 
 
 ## Current Approach
 
-Under 18s can report explicit online content to a Childline counsellor. However, they can olny help on condition
+Under 18s can report explicit online content to a Childline counsellor. However, they can only help on the condition
 that the young person emails them their passport to prove their age. This is an outdated and cumbersome process.
 This process can deter young people from reporting explicit images. Either they can feel uncomfortable to reveal their identity, or they think the process is too complicated.
 
 For further reading visit the [Childline website](https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/sexting/)
 
-## How our app can help
+## Yoti's role in the app.
 
-Our app uses YOTI for identifications and login.
-
-**Why it beneficial to use YOTI**
 The app uses YOTI to:
-- prove that the young person is under 18
-- prove the young persons identity while protecting their anonimity. The app would only store their
-remember me id, which is a unique identifier. So we only check that they have an accepted personal identification document on their YOTI account, but the app doesn't require access to any of their personal details.
+- Securely prove that the young person is under 18, without requiring any further information, thus removing the current barriers.
+
 
 ## Development Resources & Notes
 
@@ -41,22 +40,17 @@ remember me id, which is a unique identifier. So we only check that they have an
 - Back-end: Node.js, Hapi.js
 - Authentication: Yoti
 
-### Tech Stack
+### MVP Tech Stack
 
-- Authentication: Yoti
-- Node.js - Express (instead of hapi), [boilerplate](https://github.com/SavageWilliam/express-server-boilerplate)
-- Tape backend testing
-- PostgreSQL database
-- [Jest](https://facebook.github.io/jest/docs/tutorial-react.html) testing.
-- [enzyme](http://airbnb.io/enzyme/) - react components
-- CSS libraries: animate.css, Materialize.css, tachyons?
-- Promises (ES6)
-
-### Libraries
-
-- [animate css](https://daneden.github.io/animate.css/) - include *simple* animations for smooth page transitions, however keeping it basic to ensure the user feels taken seriously.
-- [materialize css](http://materializecss.com/buttons.html) - css library for key components.
-
+- React.js front-end
+- React libraries: material.ui
+- Redux with redux-saga for async actions
+- SASS styling
+- Age verification: Yoti
+- Node.js - Express Framwork [boilerplate](https://github.com/SavageWilliam/express-server-boilerplate)
+- Tape, chai, sinon, enzyme and supertest framworks
+- circle.ci continuous integration
+- yoti-node-sdk
 
 ### User journey
 
@@ -94,24 +88,8 @@ As a CYP
 I want an an option to submit more than one address  
 So that I can submit multiple location (if applicable) to IWF.  
 
-**Stretch goals (next sprint)**
-
-As a CYP
-I would like to track my case's progress
-So that I know when its finished/if it has been removed.
-
-As a CYP  
-I want to see other options if the image can't be removed  
-So that I can take other actions to get the image taken down.
-
-As a CYP  
-I want to be see a confirmation message  
-So that I know my request has been sent AND what to expect next.  
-
-### Websites
+### Resources
 
 - [Childline website](https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/sexting/) - Use for colour schemes as it is already 'proven for use case'.
-  * Colours:
- ![image](https://cloud.githubusercontent.com/assets/15717822/22715594/8a5298ee-ed89-11e6-8bd7-9a85c8c0f578.png)
 
 - [IWF online form](https://www.iwf.org.uk/) - This form takes a minimum of 5 interactions with Childline website. It is very difficult to find...
