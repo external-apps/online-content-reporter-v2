@@ -21,7 +21,7 @@ class Home extends React.Component {
     if (isMobile) this.mobileSetup()
 
     const ageIsVerified = cookie.load('yotiVerifiedAge')
-    if (ageIsVerified && isMobile) {
+    if (ageIsVerified !== undefined && isMobile) {
       this.props.ageIsVerified()
       if (ageIsVerified === 'true') {
         cookie.remove('yotiVerifiedAge')
