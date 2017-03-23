@@ -19,6 +19,7 @@ class Home extends React.Component {
     var isMobile = isMobileRE.test(navigator.userAgent) &&
       /Mobile/i.test(navigator.userAgent)
     if (isMobile) this.mobileSetup()
+    else this.props.qrFetchRequested()
 
     const ageIsVerified = cookie.load('yotiVerifiedAge')
     if (ageIsVerified !== undefined && isMobile) {
