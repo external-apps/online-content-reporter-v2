@@ -23,9 +23,12 @@ class ConfirmationModal extends React.Component {
   }
 
   handleEmailSubmit () {
+    this.props.hideValidEmailRequiredMessage()
     const { imageCriteria, url, description, email } = this.props.forms
     var payload = { imageCriteria, url, description, email }
-    return axios.post('/email', payload)
+    axios.post('/email', payload).then(res => {
+      browserHistory.push('/')
+    })
   }
 
   validateEmail () {
@@ -71,8 +74,6 @@ class ConfirmationModal extends React.Component {
             label='Submit'
             onClick={() => {
               if (this.validateEmail()) {
-                this.props.hideValidEmailRequiredMessage()
-                browserHistory.push('/')
                 this.handleEmailSubmit()
               } else {
                 this.props.validEmailRequiredMessage()
