@@ -12,10 +12,6 @@ describe('<AgeCheck />', () => {
     const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('SectionTitle')).to.have.length(1)
   })
-  /*it('renders a Yoti component', () => {
-    const wrapper = shallow(<AgeCheck />)
-    expect(wrapper.find('Yoti')).to.have.length(1)
-  })*/
   it('renders a Footer component', () => {
     const wrapper = shallow(<AgeCheck />)
     expect(wrapper.find('Footer')).to.have.length(1)
