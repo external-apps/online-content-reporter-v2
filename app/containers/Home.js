@@ -19,6 +19,7 @@ class Home extends React.Component {
     var isMobile = isMobileRE.test(navigator.userAgent) &&
       /Mobile/i.test(navigator.userAgent)
     if (isMobile) this.mobileSetup()
+    else this.props.qrFetchRequested()
 
     const ageIsVerified = cookie.load('yotiVerifiedAge')
     if (ageIsVerified) {
@@ -68,9 +69,9 @@ class Home extends React.Component {
             If you're 18 or older, contact the website(s) where you've seen the image or video, or report it to the police.
           </p>
           <Link className='home-main-button' to='/age-check'>
-            <RaisedButton className="btns-customized"
+            <RaisedButton className='btns-customized'
               labelStyle={{fontSize: '1.4rem', textTransform: 'none', fontFamily: 'childline'}}
-              style={{ whiteSpace: 'nowrap', minWidth: '8rem'}}
+              style={{whiteSpace: 'nowrap', minWidth: '8rem'}}
               label='Report something'
               labelPosition='before'
               icon={<Launch />}
