@@ -22,7 +22,7 @@ export const setUpForMobile = (href) => {
     type: types.SET_UP_FOR_MOBILE,
     href,
     target: '_self',
-    isMobile: false,
+    isMobile: true,
     buttonLabelStyle: { fontSize: '0.8rem', textTransform: 'none', fontFamily: 'childline' },
     buttonStyle: { whiteSpace: 'nowrap', minWidth: '5rem' }
   }

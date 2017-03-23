@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router'
 import '../scss/style.scss'
 import Header from '../components/Header'
 import Yoti from '../containers/Yoti'
