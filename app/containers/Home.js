@@ -35,22 +35,9 @@ class Home extends React.Component {
   }
 
   mobileSetup () {
-    const href = 'https://www.yoti.com/connect/3392788e-e529-4309-8ed7-54d7ac554055' // will
-    // const href = 'https://www.yoti.com/connect/f6999919-d114-43c0-bdf0-ae2e1a89ff73' //nori
+    //const href = 'https://www.yoti.com/connect/3392788e-e529-4309-8ed7-54d7ac554055' // will
+  //  const href = 'https://www.yoti.com/connect/f6999919-d114-43c0-bdf0-ae2e1a89ff73' //nori
     this.props.setUpForMobile(href)
-
-    // Need Yoti api to fix before implementing this.
-    // var config = {
-    //   headers: {'X-Requested-With': 'XMLHttpRequest', 'content-type': 'application/json'}
-    // }
-    // axios.get('https://www.yoti.com/qr/5be10ae7-af29-40b0-8d33-a0fb90cb0e88', config)
-    //   .then((res) => {
-    //     const href = `${res.data.qrCodeUrl}?callback=${res.data.callbackUrl}&id=${res.data.application.id}&mobile=true`
-    //     this.props.setUpForMobile(href)
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   })
   }
 
   render () {
