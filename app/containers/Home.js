@@ -36,7 +36,7 @@ class Home extends React.Component {
 
   mobileSetup () {
     const href = 'https://www.yoti.com/connect/3392788e-e529-4309-8ed7-54d7ac554055' // will
-    // const href = 'https://www.yoti.com/connect/f6999919-d114-43c0-bdf0-ae2e1a89ff73'
+    // const href = 'https://www.yoti.com/connect/f6999919-d114-43c0-bdf0-ae2e1a89ff73' //nori
     this.props.setUpForMobile(href)
 
     // Need Yoti api to fix before implementing this.
