@@ -5,7 +5,6 @@ import RaisedButton from 'material-ui/RaisedButton'
 class YotiShareButtons extends React.Component {
   componentWillMount () {
     if (!this.props.yoti.isMobile) {
-      this.props.qrFetchRequested()
       this.props.closeQr()
     }
   }
