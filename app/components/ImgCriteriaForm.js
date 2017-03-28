@@ -97,10 +97,7 @@ class ImgCriteriaForm extends React.Component {
         <div className='other-options'>
           <i className='large material-icons'>info_outline</i>
           <span>
-            If the picture or video doesnt include any of the activities above,
-            we may not be able to remove it. Talk to a
-            <a href='https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/'> Childline counsellor </a>
-            for more advice.
+          If the picture or video doesn't include any of the above, we may not be able to remove it. But there are other ways to get support - get advice on the <a href='https://www.childline.org.uk'> Childline website</a> or talk to a <a href='https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/'> Childline counsellor</a>.
           </span>
         </div>
         <Footer />
