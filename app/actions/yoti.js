@@ -1,7 +1,9 @@
-import * as types from '../../constants/action-types.js'
 import { push } from 'react-router-redux'
 import { call, put, takeEvery } from 'redux-saga/effects'
 import axios from 'axios'
+import jwtDecode from 'jwt-decode'
+
+import * as types from '../../constants/action-types.js'
 
 export const qrFetchRequested = () => {
   return {
@@ -69,9 +71,11 @@ function listenForToken (proto, url) {
 }
 
 function yotiRedirect (token) {
-  return axios.get(`/thankyou?token=${token}&desktop=true`)
+  return axios.get(`/verify-age?token=${token}`)
   .then(res => {
-    return (res.data.isUnder18)
+    const { ageToken } = res.data
+    localStorage.setItem('ageToken', ageToken)
+    return jwtDecode(ageToken).age <= 40
   })
   .catch((error) => {
     console.log(error)
