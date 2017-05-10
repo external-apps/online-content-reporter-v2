@@ -2,6 +2,19 @@
 
 ![circle badge](https://circleci.com/gh/childline-yoti/online-content-reporter.png?circle-token=key-8f574d3ae5bfff8a00adc63d005cc1ab)
 
+# Setup
+
+ * run `npm i` on initial pull
+ * `npm run build` will build the client
+ * `npm start` will start the server
+
+# environment
+The following environment variables need to be available:
+ * YOTI_RSA_PRIVATE_KEY
+ * YOTI_APP_ID
+ * EMAIL_REPORT_SENDER_EMAIL
+ * EMAIL_REPORT_RECEPIENT_EMAIL
+
 A web app for reporting explicit online images to the [IWF](https://www.iwf.org.uk/) (Internet Watch Foundation).  
 History of the partnership between the [IWF and Childline](https://www.iwf.org.uk/news/childline-and-internet-watch-foundation-form-new-partnership-to-help-young-people-remove) .
 The current  [IWF "hash list"](https://www.iwf.org.uk/become-a-member/services-for-members/image-hash-list).
