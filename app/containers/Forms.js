@@ -12,11 +12,9 @@ class UrlForm extends React.Component {
   render () {
     return (
       <div>
-        {this.props.forms.firstForm &&
-          <ImageCriteriaForm {...this.props} />
-        }
-        {!this.props.forms.firstForm &&
-          <UrlDescriptionForm {...this.props} />
+        { this.props.forms.firstForm
+          ? <ImageCriteriaForm {...this.props} />
+          : <UrlDescriptionForm {...this.props} />
         }
       </div>
     )
