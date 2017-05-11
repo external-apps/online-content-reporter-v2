@@ -1,5 +1,4 @@
 import React from 'react'
-import '../scss/style.scss'
 
 const SectionTitle = (props) => {
   return (
