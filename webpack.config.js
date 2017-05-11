@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   entry: ['babel-polyfill', './app/index.js'],
@@ -35,6 +36,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html'
+    }),
+    new webpack.DefinePlugin({
+      YOTI_APP_ID: JSON.stringify(process.env.YOTI_APP_ID)
     })
   ]
 }
