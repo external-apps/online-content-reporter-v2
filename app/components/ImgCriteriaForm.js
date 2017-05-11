@@ -11,7 +11,7 @@ import '../scss/style.scss'
 
 class ImgCriteriaForm extends React.Component {
   componentDidMount () {
-    if (!this.props.yoti.isAgeVerified && !this.props.yoti.isMobile) {
+    if (!this.props.yoti.isAgeVerified) {
       browserHistory.push('/')
     }
   }
