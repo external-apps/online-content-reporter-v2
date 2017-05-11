@@ -6,3 +6,7 @@ npm-debug.log
 /test/lib/fixtures/token1.json
 
 config.env
+
+/dist
+
+env.sh
