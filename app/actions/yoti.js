@@ -3,6 +3,7 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 import axios from 'axios'
 import jwtDecode from 'jwt-decode'
 
+import { MAXIMUM_REPORTER_AGE } from '../../constants/age.js'
 import * as types from '../../constants/action-types.js'
 
 export const qrFetchRequested = () => {
@@ -71,11 +72,12 @@ function listenForToken (proto, url) {
 }
 
 function yotiRedirect (token) {
-  return axios.get(`/verify-age?token=${token}`)
+  return axios.get(`/thankyou?token=${token}`)
   .then(res => {
     const { ageToken } = res.data
     localStorage.setItem('ageToken', ageToken)
-    return jwtDecode(ageToken).age <= 40
+    alert(jwtDecode(ageToken))
+    return jwtDecode(ageToken).age <= MAXIMUM_REPORTER_AGE
   })
   .catch((error) => {
     console.log(error)

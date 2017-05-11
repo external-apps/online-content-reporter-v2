@@ -1,0 +1,1 @@
+export const MAXIMUM_REPORTER_AGE = 40
