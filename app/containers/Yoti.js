@@ -12,13 +12,7 @@ class Yoti extends React.Component {
     return (
       <div className='yoti-info'> {
         this.props.yoti.showQr ? (
-          <div>
-            <QrCode {...this.props} />
-            <p className='scan-me'>
-              SCAN ME WITH YOTI
-              <img src='assets/imgs/yoti-logo.svg' className='popup-yoti' alt='yoti logo' />
-            </p>
-          </div>
+          <QrCode {...this.props} />
         ) : (
           <div>
             <YotiDescription />
