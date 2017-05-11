@@ -10,28 +10,45 @@ import AgeInfo from '../components/AgeInfo'
 import Footer from '../components/Footer'
 import SectionTitle from '../components/SectionTitle'
 
-const AgeCheck = (props) => {
-  return (
-    <div className='agecheck-body'>
-      <Header />
-      <SectionTitle
-        heading='CONFIRM YOUR AGE'
-        subheading="To remove an image or video, we just need to know your age. We can only remove this content if you're under 18."
-      />
-      <AgeInfo />
-      <div className='yoti-info'> {
-        props.yoti.showQr ? (
-          <QrCode {...props} />
-        ) : (
-          <div>
-            <YotiDescription />
-            <YotiShareButtons {...props} />
-          </div>
-        )
-      } </div>
-      <Footer />
-    </div>
-  )
+class AgeCheck extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.selectVerify = this.selectVerify.bind(this)
+  }
+
+  selectVerify(e) {
+    if (!this.props.isMobile) {
+      e.stopPropagation()
+      this.props.openQr()
+    }
+  }
+
+  render () {
+    return (
+      <div className='agecheck-body'>
+        <Header />
+        <SectionTitle
+          heading='CONFIRM YOUR AGE'
+          subheading="To remove an image or video, we just need to know your age. We can only remove this content if you're under 18."
+          />
+        <AgeInfo />
+        <div className='yoti-info'> {
+            this.props.yoti.showQr ? (
+              <QrCode {...this.props} />
+            ) : (
+              <div>
+                <YotiDescription />
+                <YotiShareButtons
+                  {...{...this.props, selectVerify: this.selectVerify}}
+                />
+              </div>
+            )
+          } </div>
+          <Footer />
+        </div>
+      )
+  }
 }
 
 const mapStateToProps = (state) => {
