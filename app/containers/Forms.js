@@ -1,7 +1,7 @@
 import React from 'react'
-import '../scss/style.scss'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import { connect } from 'react-redux'
+
 import UrlDescriptionForm from '../components/UrlDescriptionForm'
 import ImageCriteriaForm from '../components/ImgCriteriaForm'
 import * as formActions from '../actions/forms'

@@ -11,6 +11,7 @@ import forms from './reducers/forms'
 // Styling & Themes
 import muiTheme from './assets/theme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import './scss/style.scss'
 // Components
 import AgeCheck from './containers/AgeCheck'
 import Home from './containers/Home'

@@ -9,7 +9,6 @@ import Header from '../components/Header'
 import AgeInfo from '../components/AgeInfo'
 import Footer from '../components/Footer'
 import SectionTitle from '../components/SectionTitle'
-import '../scss/style.scss'
 
 const AgeCheck = (props) => {
   return (

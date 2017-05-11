@@ -1,5 +1,4 @@
 import React from 'react'
-import '../scss/style.scss'
 
 const YotiDescription = (props) => {
   return (
