@@ -14,7 +14,6 @@ class Yoti extends React.Component {
         this.props.yoti.showQr ? (
           <div>
             <QrCode {...this.props} />
-            <YotiShareButtons {...this.props} />
             <p className='scan-me'>
               SCAN ME WITH YOTI
               <img src='assets/imgs/yoti-logo.svg' className='popup-yoti' alt='yoti logo' />
