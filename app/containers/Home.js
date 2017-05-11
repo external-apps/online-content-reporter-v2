@@ -42,7 +42,7 @@ class Home extends React.Component {
   }
 
   mobileSetup () {
-    const href = 'https://www.yoti.com/connect/3392788e-e529-4309-8ed7-54d7ac554055' // will
+    const href = `https://www.yoti.com/connect/${YOTI_APP_ID}`
     this.props.setUpForMobile(href)
   }
 
