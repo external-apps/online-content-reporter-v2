@@ -78,7 +78,7 @@ function listenForToken (proto, url) {
   })
 }
 
-function getAgeVerificationToken (token) {
+export function getAgeVerificationToken (token) {
   return axios.get(`/thankyou?token=${token}`)
     .then(res => res.data.ageToken)
     .catch((error) => { console.log(error) })

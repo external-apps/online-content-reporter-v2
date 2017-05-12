@@ -12,35 +12,6 @@ import * as yotiActions from '../actions/yoti'
 import Footer from '../components/Footer'
 
 class Home extends React.Component {
-  constructor (props) {
-    super(props)
-    this.mobileSetup = this.mobileSetup.bind(this)
-  }
-
-  componentWillMount () {
-    const { isMobile } = this.props.yoti
-
-    const ageToken = localStorage.getItem('ageToken')
-    const notOverAge = ageToken
-      ? jwtDecode(ageToken).age <= MAXIMUM_REPORTER_AGE
-      : false
-
-    if (ageToken !== null && isMobile) {
-      localStorage.removeItem('ageToken')
-
-      if (notOverAge) {
-        browserHistory.push('/form')
-      } else {
-        browserHistory.push('/over-age')
-      }
-    }
-  }
-
-  mobileSetup () {
-    const href = `https://www.yoti.com/connect/${YOTI_APP_ID}`
-    this.props.setUpForMobile(href)
-  }
-
   render () {
     return (
       <div className='home-body'>
