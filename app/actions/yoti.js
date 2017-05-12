@@ -20,6 +20,13 @@ export const addQr = (qrSvg) => {
   }
 }
 
+export const addJWT = ageVerifactionToken => {
+  return {
+    type: types.ADD_JWT,
+    ageVerifactionToken
+  }
+}
+
 export const setUpForMobile = (href) => {
   return {
     type: types.SET_UP_FOR_MOBILE,
@@ -71,17 +78,10 @@ function listenForToken (proto, url) {
   })
 }
 
-function yotiRedirect (token) {
+function getAgeVerificationToken (token) {
   return axios.get(`/thankyou?token=${token}`)
-  .then(res => {
-    const { ageToken } = res.data
-    localStorage.setItem('ageToken', ageToken)
-    alert(jwtDecode(ageToken))
-    return jwtDecode(ageToken).age <= MAXIMUM_REPORTER_AGE
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+    .then(res => res.data.ageToken)
+    .catch((error) => { console.log(error) })
 }
 
 function * fetchQrEffect (fetchQrAction) {
@@ -89,8 +89,9 @@ function * fetchQrEffect (fetchQrAction) {
     const res = yield call(getQr)
     yield put(addQr(res.svg))
     const token = yield call(listenForToken, res.proto, res.url)
-    const isUnder18 = yield call(yotiRedirect, token)
-    yield put(ageIsVerified())
+    const ageVerifactionToken = yield call(getAgeVerificationToken, token)
+    yield put(addJWT(ageVerifactionToken))
+    const isUnder18 = jwtDecode(ageVerifactionToken).age <= MAXIMUM_REPORTER_AGE
     if (isUnder18) {
       yield put(push('/form'))
     } else {

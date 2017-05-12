@@ -3,7 +3,8 @@ import {
   CLOSE_QR,
   OPEN_QR,
   AGE_IS_VERIFIED,
-  SET_UP_FOR_MOBILE
+  SET_UP_FOR_MOBILE,
+  ADD_JWT
 } from '../../constants/action-types'
 
 const desktopInitialState = {
@@ -43,6 +44,11 @@ const yoti = (state = isMobile ? mobileInitialState : desktopInitialState, actio
         ...state,
         qrSvg: action.qrSvg,
         haveQr: action.haveQr
+      }
+    case ADD_JWT:
+      return {
+        ...state,
+        ageVerifactionToken: action.ageVerifactionToken
       }
     case AGE_IS_VERIFIED:
       return {
