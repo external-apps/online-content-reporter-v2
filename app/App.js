@@ -8,7 +8,7 @@ import { store, history } from './store'
 import muiTheme from './assets/theme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 // Components
-import AgeCheck from './components/AgeCheckPage'
+import AgeCheck from './containers/AgeCheck'
 import Home from './containers/Home'
 import Forms from './containers/Forms'
 import OverAge from './components/OverAge'
