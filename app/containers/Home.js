@@ -18,11 +18,7 @@ class Home extends React.Component {
   }
 
   componentWillMount () {
-    var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
-    var isMobile = isMobileRE.test(navigator.userAgent) &&
-      /Mobile/i.test(navigator.userAgent)
-    if (isMobile) this.mobileSetup()
-    else this.props.qrFetchRequested()
+    const { isMobile } = this.props.yoti
 
     const ageToken = localStorage.getItem('ageToken')
     const notOverAge = ageToken
@@ -30,7 +26,6 @@ class Home extends React.Component {
       : false
 
     if (ageToken !== null && isMobile) {
-      this.props.ageIsVerified()
       localStorage.removeItem('ageToken')
 
       if (notOverAge) {

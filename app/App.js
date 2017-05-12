@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { Route, Router } from 'react-router'
 
 import { store, history } from './store'
+import { qrFetchRequested } from './actions/yoti'
 // Styling & Themes
 import muiTheme from './assets/theme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -15,6 +16,19 @@ import OverAge from './components/OverAge'
 import NotFound from './components/NotFound'
 
 class App extends React.Component {
+  constructor (props) {
+    super(props)
+
+    // console.log({ history: history.getCurrentLocation() });
+    history.replace('/')
+
+    var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
+    var isMobile = isMobileRE.test(navigator.userAgent) &&
+      /Mobile/i.test(navigator.userAgent)
+    if (!isMobile) store.dispatch(qrFetchRequested())
+
+  }
+
   render () {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>

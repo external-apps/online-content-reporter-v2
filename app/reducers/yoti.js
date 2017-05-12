@@ -6,7 +6,7 @@ import {
   SET_UP_FOR_MOBILE
 } from '../../constants/action-types'
 
-const initialState = {
+const desktopInitialState = {
   isMobile: false,
   target: '_blank',
   haveQr: false,
@@ -19,22 +19,30 @@ const initialState = {
   buttonStyle: { padding: '0.8rem 0', whiteSpace: 'nowrap', minWidth: '8rem' }
 }
 
-const yoti = (state = initialState, action) => {
+const mobileInitialState = {
+  isMobile: true,
+  target: '_self',
+  haveQr: false,
+  showQr: false,
+  isAgeVerified: false,
+  isUnder18: false,
+  isOver18: false,
+  href: `https://www.yoti.com/connect/${YOTI_APP_ID}`,
+  buttonLabelStyle: { fontSize: '0.8rem', textTransform: 'none', fontFamily: 'childline' },
+  buttonStyle: { whiteSpace: 'nowrap', minWidth: '5rem' }
+}
+
+var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
+var isMobile = isMobileRE.test(navigator.userAgent) &&
+  /Mobile/i.test(navigator.userAgent)
+
+const yoti = (state = isMobile ? mobileInitialState : desktopInitialState, action) => {
   switch (action.type) {
     case ADD_QR_CODE:
       return {
         ...state,
         qrSvg: action.qrSvg,
         haveQr: action.haveQr
-      }
-    case SET_UP_FOR_MOBILE:
-      return {
-        ...state,
-        isMobile: !state.isMobile,
-        href: action.href,
-        target: action.target,
-        buttonStyle: action.buttonStyle,
-        buttonLabelStyle: action.buttonLabelStyle
       }
     case AGE_IS_VERIFIED:
       return {
