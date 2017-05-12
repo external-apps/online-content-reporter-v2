@@ -19,13 +19,11 @@ const reducers = combineReducers({
   routing: routerReducer
 })
 
-// mount saga on the Store
 export const store = createStore(
   reducers,
   applyMiddleware(...middleware)
 )
 
-// then run the saga
 sagaMiddleware.run(yotiSaga)
 
 export const history = syncHistoryWithStore(browserHistory, store)
