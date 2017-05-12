@@ -29,7 +29,7 @@ class ConfirmationModal extends React.Component {
 
     const config = {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('ageToken')}`
+        'Authorization': `Bearer ${this.props.yoti.ageVerifactionToken}`
       }
     }
 
