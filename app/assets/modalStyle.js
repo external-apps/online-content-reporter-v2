@@ -6,9 +6,7 @@ export const modalMobileOverlay = {
     transform: 'translate (-50%, -50%)',
     background: '#ffffff',
     fontFamily: 'childline',
-    overflow: 'hidden',
     WebkitOverflowScrolling: 'touch',
-    transform: 'translate(-50%, -50%)',
     borderRadius: '0.1rem',
     outline: 'none',
     padding: '1rem',
@@ -17,7 +15,6 @@ export const modalMobileOverlay = {
     maxHeight: '480px',
     maxWidth: '450px',
     overflow: 'auto',
-    transform: 'translate(-50%, -50%)',
     zIndex: '100'
   },
   overlay: {
@@ -31,7 +28,6 @@ export const modalMobileOverlay = {
   }
 }
 
-
 export const modalDesktopOverlay = {
   content: {
     position: 'absolute',
@@ -40,9 +36,7 @@ export const modalDesktopOverlay = {
     transform: 'translate (-50%, -50%)',
     background: '#fff',
     fontFamily: 'childline',
-    overflow: 'hidden',
     WebkitOverflowScrolling: 'touch',
-    transform: 'translate(-50%, -50%)',
     borderRadius: '0.1rem',
     outline: 'none',
     padding: '1rem',
@@ -51,7 +45,6 @@ export const modalDesktopOverlay = {
     maxHeight: '480px',
     maxWidth: '600px',
     overflow: 'auto',
-    transform: 'translate(-50%, -50%)',
     zIndex: '100'
   },
   overlay: {
