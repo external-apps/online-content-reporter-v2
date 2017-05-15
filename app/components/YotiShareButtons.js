@@ -11,7 +11,10 @@ const YotiShareButtons = (props) => {
         className='margin-right btns-customized btns-small'
         primary={true}
         label='I have YOTI'
-        onClick={() => document.getElementsByClassName('hidden-yoti-button')[0].click()}
+        onClick={() => {
+          console.log('clicked: ',document.getElementsByClassName('hidden-yoti-button')[0] );
+          document.getElementsByClassName('hidden-yoti-button')[0].click()
+        }}
       />
     <span
       className='hidden-yoti-button'
