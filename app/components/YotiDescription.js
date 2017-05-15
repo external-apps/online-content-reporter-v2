@@ -1,15 +1,6 @@
 import React from 'react'
-import QrCode from './QrCode'
-import '../scss/style.scss'
 
 const YotiDescription = (props) => {
-  if (props.yoti.showQr) {
-    return (
-      <div className='yoti-qr'>
-        <QrCode {...props} />
-      </div>
-    )
-  }
   return (
     <div className='yoti-description-container'>
       <h3 className='yoti-description-title'>VERIFY YOUR ARE USING YOTI</h3>

@@ -1,7 +1,7 @@
 import React from 'react'
-import '../scss/style.scss'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import { connect } from 'react-redux'
+
 import UrlDescriptionForm from '../components/UrlDescriptionForm'
 import ImageCriteriaForm from '../components/ImgCriteriaForm'
 import * as formActions from '../actions/forms'
@@ -12,11 +12,9 @@ class UrlForm extends React.Component {
   render () {
     return (
       <div>
-        {this.props.forms.firstForm &&
-          <ImageCriteriaForm {...this.props} />
-        }
-        {!this.props.forms.firstForm &&
-          <UrlDescriptionForm {...this.props} />
+        { this.props.forms.firstForm
+          ? <ImageCriteriaForm {...this.props} />
+          : <UrlDescriptionForm {...this.props} />
         }
       </div>
     )
