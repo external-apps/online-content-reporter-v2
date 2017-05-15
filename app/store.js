@@ -12,7 +12,6 @@ const sagaMiddleware = createSagaMiddleware()
 
 const middleware = [ sagaMiddleware, routerMiddleware(browserHistory) ]
 
-
 const reducers = combineReducers({
   yoti,
   forms,
