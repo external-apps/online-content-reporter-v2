@@ -59,7 +59,7 @@ class ImgCriteriaForm extends React.Component {
             />
             <ListItem
               style={{backgroundColor: 'white', margin: '0.25rem 0'}}
-              primaryText='Someone hurting someone else'
+              primaryText='Someone hurting someone else sexually'
               onChange={() => {
                 this.props.toggleCriteria('Someone hurting someone else')
                 this.props.checkOption4()
