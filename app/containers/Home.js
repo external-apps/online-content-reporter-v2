@@ -1,44 +1,17 @@
 import React from 'react'
 import { Link, browserHistory } from 'react-router'
-import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
-import Footer from '../components/Footer'
 import Launch from 'material-ui/svg-icons/action/launch'
 import { connect } from 'react-redux'
-import * as yotiActions from '../actions/yoti'
 import cookie from 'react-cookie'
+import jwtDecode from 'jwt-decode'
+
+import { MAXIMUM_REPORTER_AGE } from '../../constants/age.js'
+import '../scss/style.scss'
+import * as yotiActions from '../actions/yoti'
+import Footer from '../components/Footer'
 
 class Home extends React.Component {
-  constructor (props) {
-    super(props)
-    this.mobileSetup = this.mobileSetup.bind(this)
-  }
-
-  componentWillMount () {
-    var isMobileRE = /webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Android/i
-    var isMobile = isMobileRE.test(navigator.userAgent) &&
-      /Mobile/i.test(navigator.userAgent)
-    if (isMobile) this.mobileSetup()
-    else this.props.qrFetchRequested()
-
-    const ageIsVerified = cookie.load('yotiVerifiedAge')
-    if (ageIsVerified !== undefined && isMobile) {
-      this.props.ageIsVerified()
-      if (ageIsVerified === 'true') {
-        cookie.remove('yotiVerifiedAge')
-        browserHistory.push('/form')
-      } else {
-        cookie.remove('yotiVerifiedAge')
-        browserHistory.push('/over-age')
-      }
-    }
-  }
-
-  mobileSetup () {
-    const href = 'https://www.yoti.com/connect/3392788e-e529-4309-8ed7-54d7ac554055' // will
-    this.props.setUpForMobile(href)
-  }
-
   render () {
     return (
       <div className='home-body'>

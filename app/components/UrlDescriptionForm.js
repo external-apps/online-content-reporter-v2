@@ -22,16 +22,17 @@ class UrlDescriptionForm extends React.Component {
     this.handleUrlSubmit.bind(this)
   }
 
-  componentDidMount () {
-    if (!this.props.yoti.isAgeVerified) {
-      browserHistory.push('/')
-    }
-  }
-
   handleUrlSubmit () {
     const { imageCriteria, url, description } = this.props.forms
     var payload = { imageCriteria, url, description }
-    return axios.post('/email', payload)
+
+    const config = {
+      headers: {
+        'Authorization': `Bearer ${this.props.yoti.ageVerifactionToken}`
+      }
+    }
+
+    return axios.post('/email', payload, config)
       .catch((error) => {
         console.log(error)
       })

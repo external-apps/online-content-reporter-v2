@@ -10,12 +10,6 @@ import Header from './Header'
 import '../scss/style.scss'
 
 class ImgCriteriaForm extends React.Component {
-  componentDidMount () {
-    if (!this.props.yoti.isAgeVerified) {
-      browserHistory.push('/')
-    }
-  }
-
   renderRequiredMessage () {
     if (this.props.forms.criteriaRequiredMessage) {
       return (

@@ -1,7 +1,10 @@
-import * as types from '../../constants/action-types.js'
 import { push } from 'react-router-redux'
 import { call, put, takeEvery } from 'redux-saga/effects'
 import axios from 'axios'
+import jwtDecode from 'jwt-decode'
+
+import { MAXIMUM_REPORTER_AGE } from '../../constants/age.js'
+import * as types from '../../constants/action-types.js'
 
 export const qrFetchRequested = () => {
   return {
@@ -14,6 +17,13 @@ export const addQr = (qrSvg) => {
     type: types.ADD_QR_CODE,
     qrSvg,
     haveQr: true
+  }
+}
+
+export const addJWT = ageVerifactionToken => {
+  return {
+    type: types.ADD_JWT,
+    ageVerifactionToken
   }
 }
 
@@ -68,14 +78,10 @@ function listenForToken (proto, url) {
   })
 }
 
-function yotiRedirect (token) {
-  return axios.get(`/thankyou?token=${token}&desktop=true`)
-  .then(res => {
-    return (res.data.isUnder18)
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+export function getAgeVerificationToken (token) {
+  return axios.get(`/thankyou?token=${token}`)
+    .then(res => res.data.ageToken)
+    .catch((error) => { console.log(error) })
 }
 
 function * fetchQrEffect (fetchQrAction) {
@@ -83,8 +89,9 @@ function * fetchQrEffect (fetchQrAction) {
     const res = yield call(getQr)
     yield put(addQr(res.svg))
     const token = yield call(listenForToken, res.proto, res.url)
-    const isUnder18 = yield call(yotiRedirect, token)
-    yield put(ageIsVerified())
+    const ageVerifactionToken = yield call(getAgeVerificationToken, token)
+    yield put(addJWT(ageVerifactionToken))
+    const isUnder18 = jwtDecode(ageVerifactionToken).age <= MAXIMUM_REPORTER_AGE
     if (isUnder18) {
       yield put(push('/form'))
     } else {

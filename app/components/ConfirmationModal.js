@@ -26,7 +26,14 @@ class ConfirmationModal extends React.Component {
     this.props.hideValidEmailRequiredMessage()
     const { imageCriteria, url, description, email } = this.props.forms
     var payload = { imageCriteria, url, description, email }
-    axios.post('/email', payload).then(res => {
+
+    const config = {
+      headers: {
+        'Authorization': `Bearer ${this.props.yoti.ageVerifactionToken}`
+      }
+    }
+
+    axios.post('/email', payload, config).then(res => {
       browserHistory.push('/')
     })
   }
