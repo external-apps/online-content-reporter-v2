@@ -37,8 +37,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      appId: JSON.stringify(process.env.YOTI_APP_ID),
-      scenId: JSON.stringify(process.env.YOTI_SCENARIO_ID)
+      appId: process.env.YOTI_APP_ID,
+      scenId: process.env.YOTI_SCENARIO_ID
     }),
     new webpack.DefinePlugin({
       YOTI_APP_ID: JSON.stringify(process.env.YOTI_APP_ID)

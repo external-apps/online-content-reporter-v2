@@ -12,23 +12,22 @@
   <body>
     <div id='root'></div>
 
-    <div style='display:hidden !important'>
+    <div style='display:none !important'>
 
+      </div>
+      <div className='yoti-hidden-button'
       <span
         data-yoti-application-id='<%=htmlWebpackPlugin.options.appId%>'
         data-yoti-type='inline'
         data-yoti-scenario-id='<%= htmlWebpackPlugin.options.scenId%>'>
         I have yoti
       </span>
-
-    <p>
-      this is rendering as an empy string:
-      <%= htmlWebpackPlugin.options.scenId%>
-    </p>
-    </p>
     </div>
+
     <script>
       _ybg.init()
+      // document.getElementsByClassName('qr-code')[0].click()
+      console.log(document.getElementsByClassName('yoti-hidden-button'));
     </script>
   </body>
 </html>
