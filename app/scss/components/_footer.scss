@@ -24,29 +24,17 @@
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: nowrap;
-  align-items: center;
-  padding: 1.2rem;
+  align-items: flex-end;
+  padding: 0.6rem 1.2rem 2rem 1.2rem;
   min-width: 300px;
-  img {
+  .footer-logo-iwf {
     height:5rem;
     min-width: 5rem;
-    margin-right: 2rem;
+    padding-right: 3rem;
   }
-}
-
-.childline-stamp {
-  color: $blue;
-  h1 {
-    font-family: $bold-text;
-    margin: 0;
-  }
-  h5 {
-    font-family: $title-font;
-    margin: 0;
-  }
-  p {
-    margin: 0;
-    font-size: 0.6rem;
+  .footer-logo-childline {
+    height:4rem;
+    min-width: 4rem;
   }
 }
 
@@ -65,13 +53,23 @@
   }
   .footer-logos {
     margin: 0 auto;
-    padding-top: 0;
-    padding-left: 0.5rem;
+    padding: 0 1rem;
     width: 90%;
-    img {
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-logos {
+    padding: 0;
+    .footer-logo-iwf {
       height:4rem;
       min-width: 4rem;
-      margin-right: 1.5rem;
+      padding-right: 1rem;
+    }
+    .footer-logo-childline {
+      height:3.5rem;
+      min-width: 3.5rem;
+      padding-right: 1rem;
     }
   }
 }
