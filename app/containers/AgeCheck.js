@@ -11,13 +11,13 @@ import Footer from '../components/Footer'
 import SectionTitle from '../components/SectionTitle'
 
 class AgeCheck extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.selectVerify = this.selectVerify.bind(this)
   }
 
-  selectVerify(e) {
+  selectVerify (e) {
     if (!this.props.isMobile) {
       e.stopPropagation()
       this.props.openQr()
@@ -45,9 +45,9 @@ class AgeCheck extends React.Component {
               </div>
             )
           } </div>
-          <Footer />
-        </div>
-      )
+        <Footer />
+      </div>
+    )
   }
 }
 
