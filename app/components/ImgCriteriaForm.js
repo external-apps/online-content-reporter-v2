@@ -1,6 +1,5 @@
 import React from 'react'
 import { List, ListItem } from 'material-ui/List'
-import { browserHistory } from 'react-router'
 import Checkbox from 'material-ui/Checkbox'
 import RaisedButton from 'material-ui/RaisedButton'
 import SectionTitle from '../components/SectionTitle'

@@ -1,12 +1,9 @@
 import React from 'react'
-import { Link, browserHistory } from 'react-router'
+import { Link } from 'react-router'
 import RaisedButton from 'material-ui/RaisedButton'
 import Launch from 'material-ui/svg-icons/action/launch'
 import { connect } from 'react-redux'
-import cookie from 'react-cookie'
-import jwtDecode from 'jwt-decode'
 
-import { MAXIMUM_REPORTER_AGE } from '../../constants/age.js'
 import '../scss/style.scss'
 import * as yotiActions from '../actions/yoti'
 import Footer from '../components/Footer'
