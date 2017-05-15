@@ -38,6 +38,22 @@
   }
 }
 
+.childline-stamp {
+  color: $blue;
+  h1 {
+    font-family: $bold-text;
+    margin: 0;
+  }
+  h5 {
+    font-family: $title-font;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    font-size: 0.6rem;
+  }
+}
+
 
 @media (max-width: 840px) {
   .footer {
