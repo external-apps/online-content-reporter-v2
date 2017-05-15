@@ -10,3 +10,4 @@ config.env
 /dist
 
 env.sh
+env.json
