@@ -9,10 +9,17 @@ const YotiShareButtons = (props) => {
         labelStyle={props.yoti.buttonLabelStyle}
         style={props.yoti.buttonStyle}
         className='margin-right btns-customized btns-small'
-        data-yoti-application-id='your-app-id'
-        label='I have YOTI'
         primary={true}
+        label='I have YOTI'
+        onClick={() => document.getElementsByClassName('hidden-yoti-button')[0].click()}
       />
+    <span
+      className='hidden-yoti-button'
+      data-yoti-application-id={YOTI_APP_ID}
+      data-yoti-type='inline'
+      data-yoti-scenario-id={YOTI_SCENARIO_ID}>
+      I have yoti
+    </span>
       {/* }<a href={props.yoti.href} target={props.yoti.target}>
         <RaisedButton
           labelStyle={props.yoti.buttonLabelStyle}
