@@ -12,8 +12,13 @@
 The following environment variables need to be available:
  * YOTI_RSA_PRIVATE_KEY
  * YOTI_APP_ID
+ * YOTI_SCENARIO_ID
+ * YOTI_SDK_ID
  * EMAIL_REPORT_SENDER_EMAIL
- * EMAIL_REPORT_RECEPIENT_EMAIL
+ * EMAIL_REPORT_RECIPIENT_EMAIL_1
+ * EMAIL_REPORT_RECEPIENT_EMAIL_2 (optional)
+ * MAILGUN_API_KEY
+ * MAILGUN_DOMAIN
 
 A web app for reporting explicit online images to the [IWF](https://www.iwf.org.uk/) (Internet Watch Foundation).  
 History of the partnership between the [IWF and Childline](https://www.iwf.org.uk/news/childline-and-internet-watch-foundation-form-new-partnership-to-help-young-people-remove) .
