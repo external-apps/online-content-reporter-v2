@@ -38,7 +38,8 @@ module.exports = {
       template: './public/index.html'
     }),
     new webpack.DefinePlugin({
-      YOTI_APP_ID: JSON.stringify(process.env.YOTI_APP_ID)
+      YOTI_APP_ID: JSON.stringify(process.env.YOTI_APP_ID),
+      YOTI_SCENARIO_ID: JSON.stringify(process.env.YOTI_SCENARIO_ID)
     })
   ]
 }
