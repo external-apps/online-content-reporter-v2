@@ -5,19 +5,26 @@ import RaisedButton from 'material-ui/RaisedButton'
 const YotiShareButtons = (props) => {
   return (
     <div className='yoti-btns'>
-      <a href={props.yoti.href} target={props.yoti.target}>
+      <RaisedButton
+        labelStyle={props.yoti.buttonLabelStyle}
+        style={props.yoti.buttonStyle}
+        className='margin-right btns-customized btns-small'
+        data-yoti-application-id='your-app-id'
+        label='I have YOTI'
+        primary={true}
+      />
+      {/* }<a href={props.yoti.href} target={props.yoti.target}>
         <RaisedButton
           labelStyle={props.yoti.buttonLabelStyle}
           style={props.yoti.buttonStyle}
           className='margin-right btns-customized btns-small'
           primary={true}
           onClick={props.selectVerify}
-          label='I have YOTI'
         />
-      </a>
+      </a> */}
       <a href='http://www.yoti.com' target='_blank'>
         <RaisedButton
-          className="btns-customized btns-small"
+          className='btns-customized btns-small'
           labelStyle={props.yoti.buttonLabelStyle}
           style={props.yoti.buttonStyle}
           primary={true}
