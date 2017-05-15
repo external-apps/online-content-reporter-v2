@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Route, Router } from 'react-router'
 import jwtDecode from 'jwt-decode'
@@ -32,7 +31,7 @@ class App extends React.Component {
 
     if (pathname !== '/accept-yoti-token') {
       history.replace('/')
-      return ;
+      return
     }
 
     getAgeVerificationToken(token).then(ageVerifactionToken => {

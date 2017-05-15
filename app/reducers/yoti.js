@@ -3,7 +3,6 @@ import {
   CLOSE_QR,
   OPEN_QR,
   AGE_IS_VERIFIED,
-  SET_UP_FOR_MOBILE,
   ADD_JWT
 } from '../../constants/action-types'
 
