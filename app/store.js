@@ -20,9 +20,8 @@ const logger = createLogger({
   }
 })
 
-const isDev = window.location.href.includes('localhost') && process.env.NODE_ENV !== 'production'
 const middleware = [ sagaMiddleware, routerMiddleware(browserHistory) ]
-const finalMiddleware = isDev
+const finalMiddleware = process.env.NODE_ENV !== 'production'
   ? middleware.concat(logger)
   : middleware
 
