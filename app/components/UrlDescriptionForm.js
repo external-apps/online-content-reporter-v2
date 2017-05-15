@@ -8,7 +8,6 @@ import Footer from './Footer'
 import SectionTitle from '../components/SectionTitle'
 import '../scss/style.scss'
 import axios from 'axios'
-import { browserHistory } from 'react-router'
 
 const styles = {
   errorStyle: {
