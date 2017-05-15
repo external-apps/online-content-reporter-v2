@@ -26,7 +26,7 @@ class ImgCriteriaForm extends React.Component {
         <SectionTitle
           heading='PLEASE TELL US MORE ABOUT THE IMAGE OR VIDEO'
           subheading='The content must fit a certain criteria for us to legally remove it.'
-          span='Does the image contain one or more of the following:'
+          span='Does the image or video of you contain one or more of the following:'
         />
         <div className='form-container'>
           <List>
