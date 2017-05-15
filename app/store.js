@@ -20,7 +20,6 @@ const logger = createLogger({
   }
 })
 
-const isDev = process.env.NODE_ENV !== 'production'
 const middleware = [ sagaMiddleware, routerMiddleware(browserHistory) ]
 const finalMiddleware = process.env.NODE_ENV !== 'production'
   ? middleware.concat(logger)

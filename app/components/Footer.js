@@ -7,7 +7,11 @@ const Footer = () => (
     </div>
     <div className='footer-logos'>
       <img className='footer-logo-iwf' src='/assets/imgs/iwf-logo.png' alt='IWF logo' />
-      <img className='footer-logo-childline' src='/assets/imgs/footer-2.png' alt='Childline logo' />
+      <div className='childline-stamp'>
+        <img className='footer-logo-childline' src='/assets/imgs/footer-2.png' alt='Childline logo' />
+        <p>childline.org.uk | 0800 1111</p>
+      </div>
+
     </div>
   </div>
 )
