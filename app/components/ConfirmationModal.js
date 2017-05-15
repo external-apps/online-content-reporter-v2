@@ -73,7 +73,7 @@ class ConfirmationModal extends React.Component {
           <br />
           {this.renderValidEmailRequired()}
           <p className='last_p'>
-            If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or speak to us online.
+            If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or <a target='_blank' href='https://www.childline.org.uk/get-support/'>speak to us online</a>.
           </p>
           <RaisedButton
             primary={true}
