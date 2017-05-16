@@ -11,13 +11,15 @@ const YotiShareButtons = (props) => {
           style={props.yoti.buttonStyle}
           className='margin-right btns-customized btns-small'
           primary={true}
-          onClick={props.selectVerify}
+          onClick={() => {
+            document.getElementsByClassName('_yoti-verify-button')[0].click()
+          }}
           label='I have YOTI'
         />
       </a>
       <a href='http://www.yoti.com' target='_blank'>
         <RaisedButton
-          className="btns-customized btns-small"
+          className='btns-customized btns-small'
           labelStyle={props.yoti.buttonLabelStyle}
           style={props.yoti.buttonStyle}
           primary={true}

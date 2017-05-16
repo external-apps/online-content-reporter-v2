@@ -1,1 +1,3 @@
-export const MAXIMUM_REPORTER_AGE = 40
+module.exports = {
+  MAXIMUM_REPORTER_AGE: 40
+}
