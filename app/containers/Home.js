@@ -35,6 +35,9 @@ class Home extends React.Component {
               labelPosition='before'
               icon={<Launch />}
               primary={true}
+              // onClick={() => {
+              //   document.getElementsByClassName('_yoti-verify-button')[0].click()
+              // }}
               />
           </Link>
         </div>

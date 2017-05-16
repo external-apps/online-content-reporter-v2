@@ -13,7 +13,6 @@ const YotiShareButtons = (props) => {
           primary={true}
           onClick={() => {
             document.getElementsByClassName('_yoti-verify-button')[0].click()
-            console.log(document.getElementById('canvas'))
           }}
           // onClick={props.selectVerify}
           label='I have YOTI'

@@ -11,13 +11,21 @@ import Footer from '../components/Footer'
 import SectionTitle from '../components/SectionTitle'
 
 class AgeCheck extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.selectVerify = this.selectVerify.bind(this)
+    const observer = new MutationObserver((mutation) => {
+      if (mutation[0].type === 'childList') {
+        const qrSvg = mutation[0].addedNodes[0].querySelector('#canvas').getAttribute('src')
+        this.props.addQr(qrSvg)
+        // console.log(mutation[0].addedNodes[0].querySelector('#canvas').getAttribute('src'), 'mutation')
+      }
+    })
+    observer.observe(document.getElementById('yoti-hidden-button'), { childList: true })
   }
 
-  selectVerify(e) {
+  selectVerify (e) {
     if (!this.props.isMobile) {
       e.stopPropagation()
       this.props.openQr()
