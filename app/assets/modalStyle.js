@@ -31,7 +31,6 @@ export const modalMobileOverlay = {
   }
 }
 
-
 export const modalDesktopOverlay = {
   content: {
     position: 'absolute',
