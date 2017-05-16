@@ -43,7 +43,9 @@ class App extends React.Component {
       <MuiThemeProvider muiTheme={muiTheme}>
         <Provider store={store}>
           <Router
-            onUpdate={() => logPageView()}
+            onUpdate={() => {
+              logPageView()
+            }}
             history={history}
             >
             <Route path='/' component={Home} />
