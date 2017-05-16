@@ -34,7 +34,7 @@ class Home extends React.Component {
               icon={<Launch />}
               primary={true}
               onClick={(e) => {
-                trackClick('Navigation', 'report something')
+                trackClick('Navigation', 'Report Something')
               }} />
           </Link>
         </div>
