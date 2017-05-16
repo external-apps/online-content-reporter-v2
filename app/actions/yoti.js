@@ -89,6 +89,7 @@ function * fetchQrEffect (fetchQrAction) {
     const res = yield call(getQr)
     yield put(addQr(res.svg))
     const token = yield call(listenForToken, res.proto, res.url)
+    console.log(token, 'token here');
     const ageVerifactionToken = yield call(getAgeVerificationToken, token)
     yield put(addJWT(ageVerifactionToken))
     const isUnder18 = jwtDecode(ageVerifactionToken).age <= MAXIMUM_REPORTER_AGE

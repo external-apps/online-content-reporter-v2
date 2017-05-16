@@ -1,6 +1,6 @@
 import ReactGA from 'react-ga'
 
-const gaTrackingCode = 'UA-XXXXXXXX'
+const gaTrackingCode = 'UA-99231754-1'
 
 ReactGA.initialize(gaTrackingCode)
 

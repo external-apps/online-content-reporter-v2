@@ -35,7 +35,6 @@ class Home extends React.Component {
               primary={true}
               onClick={(e) => {
                 trackClick('Navigation', 'report something')
-                props.selectVerify(e)
               }} />
           </Link>
         </div>

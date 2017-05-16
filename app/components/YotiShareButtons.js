@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import { trackClick } from '../tracking.js'
 
 const YotiShareButtons = (props) => {
+  console.log(props, 'props here');
   return (
     <div className='yoti-btns'>
       <a href={props.yoti.href} target={props.yoti.target}>
