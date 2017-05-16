@@ -1,6 +1,5 @@
 import React from 'react'
 import { List, ListItem } from 'material-ui/List'
-import { browserHistory } from 'react-router'
 import Checkbox from 'material-ui/Checkbox'
 import RaisedButton from 'material-ui/RaisedButton'
 import SectionTitle from '../components/SectionTitle'
@@ -26,7 +25,7 @@ class ImgCriteriaForm extends React.Component {
         <SectionTitle
           heading='PLEASE TELL US MORE ABOUT THE IMAGE OR VIDEO'
           subheading='The content must fit a certain criteria for us to legally remove it.'
-          span='Does the image contain one or more of the following:'
+          span='Does the image or video of you contain one or more of the following:'
         />
         <div className='form-container'>
           <List>
@@ -59,7 +58,7 @@ class ImgCriteriaForm extends React.Component {
             />
             <ListItem
               style={{backgroundColor: 'white', margin: '0.25rem 0'}}
-              primaryText='Someone hurting someone else'
+              primaryText='Someone hurting someone else sexually'
               onChange={() => {
                 this.props.toggleCriteria('Someone hurting someone else')
                 this.props.checkOption4()

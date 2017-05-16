@@ -1,5 +1,6 @@
 import createSagaMiddleware from 'redux-saga'
 import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-router-redux'
+import { createLogger } from 'redux-logger'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { browserHistory } from 'react-router'
 
@@ -10,8 +11,19 @@ import yotiSaga from './actions/yoti'
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware()
 
-const middleware = [ sagaMiddleware, routerMiddleware(browserHistory) ]
+const logger = createLogger({
+  collapsed: true,
+  predicate: (getState, action) => {
+    return action.type.indexOf('LOCATION_CHANGE') === -1 &&
+    action.type.indexOf('SET_TYPING_TEXT') === -1 &&
+    action.type.indexOf('CHANGE_ROUTER_UPDATING_STATUS')
+  }
+})
 
+const middleware = [ sagaMiddleware, routerMiddleware(browserHistory) ]
+const finalMiddleware = process.env.NODE_ENV !== 'production'
+  ? middleware.concat(logger)
+  : middleware
 
 const reducers = combineReducers({
   yoti,
@@ -21,7 +33,7 @@ const reducers = combineReducers({
 
 export const store = createStore(
   reducers,
-  applyMiddleware(...middleware)
+  applyMiddleware(...finalMiddleware)
 )
 
 sagaMiddleware.run(yotiSaga)

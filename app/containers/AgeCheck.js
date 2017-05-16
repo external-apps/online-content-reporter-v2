@@ -13,13 +13,11 @@ import SectionTitle from '../components/SectionTitle'
 class AgeCheck extends React.Component {
   constructor (props) {
     super(props)
-
-    this.selectVerify = this.selectVerify.bind(this)
     const observer = new MutationObserver((mutation) => {
       if (mutation[0].type === 'childList') {
         const qrSvg = mutation[0].addedNodes[0].querySelector('#canvas').getAttribute('src')
         this.props.addQr(qrSvg)
-        // console.log(mutation[0].addedNodes[0].querySelector('#canvas').getAttribute('src'), 'mutation')
+        this.props.openQr()
       }
     })
     observer.observe(document.getElementById('yoti-hidden-button'), { childList: true })
@@ -53,9 +51,15 @@ class AgeCheck extends React.Component {
               </div>
             )
           } </div>
-          <Footer />
+        <div className='other-options'>
+          <i className='large material-icons'>info_outline</i>
+          <span>
+            If you are unable to create a YOTI account, talk to a <a href='https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/'>Childline counsellor</a> for further options of how to report your image or video.
+          </span>
         </div>
-      )
+        <Footer />
+      </div>
+    )
   }
 }
 

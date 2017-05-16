@@ -14,7 +14,6 @@ const YotiShareButtons = (props) => {
           onClick={() => {
             document.getElementsByClassName('_yoti-verify-button')[0].click()
           }}
-          // onClick={props.selectVerify}
           label='I have YOTI'
         />
       </a>
