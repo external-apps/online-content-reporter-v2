@@ -13,15 +13,14 @@ import SectionTitle from '../components/SectionTitle'
 class AgeCheck extends React.Component {
   constructor (props) {
     super(props)
-
-    this.selectVerify = this.selectVerify.bind(this)
-  }
-
-  selectVerify (e) {
-    if (!this.props.isMobile) {
-      e.stopPropagation()
-      this.props.openQr()
-    }
+    const observer = new MutationObserver((mutation) => {
+      if (mutation[0].type === 'childList') {
+        const qrSvg = mutation[0].addedNodes[0].querySelector('#canvas').getAttribute('src')
+        this.props.addQr(qrSvg)
+        this.props.openQr()
+      }
+    })
+    observer.observe(document.getElementById('yoti-hidden-button'), { childList: true })
   }
 
   render () {
@@ -40,7 +39,7 @@ class AgeCheck extends React.Component {
               <div>
                 <YotiDescription />
                 <YotiShareButtons
-                  {...{...this.props, selectVerify: this.selectVerify}}
+                  {...this.props}
                 />
               </div>
             )

@@ -28,6 +28,10 @@ div {
   display: block;
 }
 
+#inline-qr-div, #canvas {
+  display: none !important;
+}
+
 .margin-right {
   margin-right: 1rem;
 }

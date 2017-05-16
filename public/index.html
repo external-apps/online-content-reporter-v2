@@ -7,9 +7,22 @@
     <link rel="shortcut icon" href="/assets/imgs/childline-logo.jpg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Childline</title>
+    <script src="https://sdk.yoti.com/clients/browser.js"></script>
   </head>
   <body>
     <div id='root'></div>
 
+    <div style='display: none' id='yoti-hidden-button'>
+      <span
+        data-yoti-application-id='<%=htmlWebpackPlugin.options.appId%>'
+        data-yoti-type='inline'
+        data-yoti-scenario-id='<%= htmlWebpackPlugin.options.scenId%>'>
+        I have yoti
+      </span>
+    </div>
+
+    <script>
+      _ybg.init()
+    </script>
   </body>
 </html>
