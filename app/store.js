@@ -6,10 +6,6 @@ import { browserHistory } from 'react-router'
 
 import yoti from './reducers/yoti'
 import forms from './reducers/forms'
-import yotiSaga from './actions/yoti'
-
-// create the saga middleware
-const sagaMiddleware = createSagaMiddleware()
 
 const logger = createLogger({
   collapsed: true,
@@ -20,10 +16,9 @@ const logger = createLogger({
   }
 })
 
-const middleware = [ sagaMiddleware, routerMiddleware(browserHistory) ]
-const finalMiddleware = process.env.NODE_ENV !== 'production'
-  ? middleware.concat(logger)
-  : middleware
+const middleware = process.env.NODE_ENV !== 'production'
+  ? [ routerMiddleware(browserHistory) ]
+  : [ routerMiddleware(browserHistory), logger ]
 
 const reducers = combineReducers({
   yoti,
@@ -33,9 +28,7 @@ const reducers = combineReducers({
 
 export const store = createStore(
   reducers,
-  applyMiddleware(...finalMiddleware)
+  applyMiddleware(...middleware)
 )
-
-sagaMiddleware.run(yotiSaga)
 
 export const history = syncHistoryWithStore(browserHistory, store)

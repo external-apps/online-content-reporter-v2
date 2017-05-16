@@ -1,16 +1,4 @@
-import { push } from 'react-router-redux'
-import { call, put, takeEvery } from 'redux-saga/effects'
-import axios from 'axios'
-import jwtDecode from 'jwt-decode'
-
-import { MAXIMUM_REPORTER_AGE } from '../../constants/age.js'
 import * as types from '../../constants/action-types.js'
-
-export const qrFetchRequested = () => {
-  return {
-    type: types.QR_FETCH_REQUESTED
-  }
-}
 
 export const addQr = (qrSvg) => {
   return {
@@ -55,55 +43,3 @@ export const openQr = () => {
     type: types.OPEN_QR
   }
 }
-
-function getQr () {
-  return axios.get('/get-qr').then(res => {
-    return res.data
-  })
-}
-
-function listenForToken (proto, url) {
-  return new Promise((resolve) => {
-    var host = 'wss://api.yoti.com/api/v1/connect-sessions/' + proto
-    var socket = new WebSocket(host)
-    socket.onopen = () => {
-      socket.send(JSON.stringify({subscription: proto}))
-    }
-    socket.onmessage = (msg) => {
-      var data = JSON.parse(msg.data)
-      if (data.status === 'COMPLETED') {
-        return resolve(data.token)
-      }
-    }
-  })
-}
-
-export function getAgeVerificationToken (token) {
-  return axios.get(`/thankyou?token=${token}`)
-    .then(res => res.data.ageToken)
-    .catch((error) => { console.log(error) })
-}
-
-function * fetchQrEffect (fetchQrAction) {
-  try {
-    const res = yield call(getQr)
-    yield put(addQr(res.svg))
-    const token = yield call(listenForToken, res.proto, res.url)
-    const ageVerifactionToken = yield call(getAgeVerificationToken, token)
-    yield put(addJWT(ageVerifactionToken))
-    const isUnder18 = jwtDecode(ageVerifactionToken).age <= MAXIMUM_REPORTER_AGE
-    if (isUnder18) {
-      yield put(push('/form'))
-    } else {
-      yield put(push('/over-age'))
-    }
-  } catch (e) {
-    yield put({type: 'QR_FETCH_FAILED', message: e.message})
-  }
-}
-
-function * yotiSaga () {
-  yield takeEvery(types.QR_FETCH_REQUESTED, fetchQrEffect)
-}
-
-export default yotiSaga

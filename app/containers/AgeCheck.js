@@ -23,13 +23,6 @@ class AgeCheck extends React.Component {
     observer.observe(document.getElementById('yoti-hidden-button'), { childList: true })
   }
 
-  selectVerify (e) {
-    if (!this.props.isMobile) {
-      e.stopPropagation()
-      this.props.openQr()
-    }
-  }
-
   render () {
     return (
       <div className='agecheck-body'>
@@ -46,7 +39,7 @@ class AgeCheck extends React.Component {
               <div>
                 <YotiDescription />
                 <YotiShareButtons
-                  {...{...this.props, selectVerify: this.selectVerify}}
+                  {...this.props}
                 />
               </div>
             )
