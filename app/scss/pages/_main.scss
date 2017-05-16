@@ -28,6 +28,15 @@ div {
   display: block;
 }
 
+// QR code
+.yoti-hidden-button {
+  // display: none !important;
+}
+
+#inline-qr-div, #canvas {
+  display: none !important;
+}
+
 .margin-right {
   margin-right: 1rem;
 }
