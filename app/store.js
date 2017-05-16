@@ -17,8 +17,8 @@ const logger = createLogger({
 })
 
 const middleware = process.env.NODE_ENV !== 'production'
-  ? [ routerMiddleware(browserHistory) ]
-  : [ routerMiddleware(browserHistory), logger ]
+  ? [ routerMiddleware(browserHistory), logger ]
+  : [ routerMiddleware(browserHistory) ]
 
 const reducers = combineReducers({
   yoti,
