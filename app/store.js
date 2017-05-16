@@ -1,4 +1,3 @@
-import createSagaMiddleware from 'redux-saga'
 import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-router-redux'
 import { createLogger } from 'redux-logger'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
