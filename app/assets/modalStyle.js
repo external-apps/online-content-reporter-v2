@@ -1,9 +1,6 @@
 export const modalMobileOverlay = {
   content: {
     position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate (-50%, -50%)',
     background: '#ffffff',
     fontFamily: 'childline',
     WebkitOverflowScrolling: 'touch',
@@ -11,11 +8,9 @@ export const modalMobileOverlay = {
     outline: 'none',
     padding: '1rem',
     minWidth: '260px',
-    height: '90%',
     maxHeight: '480px',
     maxWidth: '450px',
-    overflow: 'auto',
-    zIndex: '100'
+    overflow: 'auto'
   },
   overlay: {
     position: 'fixed',
@@ -45,7 +40,8 @@ export const modalDesktopOverlay = {
     maxHeight: '480px',
     maxWidth: '600px',
     overflow: 'auto',
-    zIndex: '100'
+    zIndex: '100',
+    bottom: '0'
   },
   overlay: {
     position: 'fixed',
