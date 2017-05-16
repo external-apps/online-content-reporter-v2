@@ -4,7 +4,7 @@ import '../scss/style.scss'
 const QrCode = (props) => (
   <div>
     <div className='yoti-qr'>
-      <span dangerouslySetInnerHTML={{__html: props.yoti.qrSvg}} />
+      <img src={props.yoti.qrSvg} />
     </div>
     <p className='scan-me'>
       SCAN ME WITH YOTI

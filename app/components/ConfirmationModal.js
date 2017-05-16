@@ -48,11 +48,15 @@ class ConfirmationModal extends React.Component {
   }
 
   render () {
+    const modalStyle = this.props.yoti.isMobile
+      ? modalMobileOverlay
+      : modalDesktopOverlay
+    console.log(modalStyle);
     return (
       <Modal
         isOpen={this.props.forms.modalIsOpen}
         onRequestClose={() => this.props.closeModal()}
-        style={this.props.yoti.isMobile ? modalMobileOverlay : modalDesktopOverlay}
+        style={modalStyle}
         contentLabel='Reassuring message'
       >
         <div className='mod'>
@@ -62,30 +66,9 @@ class ConfirmationModal extends React.Component {
             onClick={() => { this.props.closeModal() }} />
           <h2 className='red'>Thank you.</h2>
           <h2>We have sent your report to the Internet Watch Foundation (IWF) who will review your request.</h2>
-          <p>
-            Your report may take a little while to complete. If you would like to know when the IWF have looked at your report, enter your email address below.
-          </p>
-          <TextField
-            hintText='jane.doe@gmail.com'
-            floatingLabelText='Email address'
-            onChange={e => this.props.saveEmail(e.target.value)}
-          />
-          <br />
-          {this.renderValidEmailRequired()}
           <p className='last_p'>
             If you are worried about anything, Childline is always here for you. Call us for free on 0800 1111 or <a target='_blank' href='https://www.childline.org.uk/get-support/'>speak to us online</a>.
           </p>
-          <RaisedButton
-            primary={true}
-            label='Submit'
-            onClick={() => {
-              if (this.validateEmail()) {
-                this.handleEmailSubmit()
-              } else {
-                this.props.validEmailRequiredMessage()
-              }
-            }}
-          />
         </div>
       </Modal>
     )
