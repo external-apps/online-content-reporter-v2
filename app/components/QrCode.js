@@ -4,10 +4,10 @@ import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back'
 
 const QrCode = (props) => (
   <div>
-    <span className='scan-back-button' onClick={() => props.closeQr()}>
+    <div className='scan-back-button' onClick={() => props.closeQr()}>
       <ArrowBack />
-      Back
-    </span>
+      <span>Back</span>
+    </div>
     <div className='yoti-qr'>
       <img src={props.yoti.qrSvg} />
     </div>
