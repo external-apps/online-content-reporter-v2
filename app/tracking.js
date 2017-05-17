@@ -1,7 +1,7 @@
 import ReactGA from 'react-ga'
 
 const isDev = process.env.NODE_ENV !== 'production'
-const gaTrackingCode = isDev ? 'UA-99231754-2' : process.env.GA_TRACKING_ID
+const gaTrackingCode = isDev ? '' : process.env.GA_TRACKING_ID
 
 ReactGA.initialize(gaTrackingCode)
 
