@@ -18,7 +18,9 @@ const styles = {
 class UrlDescriptionForm extends React.Component {
   constructor (props) {
     super(props)
-    this.handleUrlSubmit.bind(this)
+    this.handleUrlSubmit = this.handleUrlSubmit.bind(this)
+    this.isEmailValid = this.isEmailValid.bind(this)
+    this.renderValidEmailRequired = this.renderValidEmailRequired.bind(this)
   }
 
   handleUrlSubmit () {
@@ -37,10 +39,25 @@ class UrlDescriptionForm extends React.Component {
       })
   }
 
+  isEmailValid () {
+    const pattern = /^[A-Za-z0-9_.]+@[a-zA-Z_]+?(\.[a-zA-Z]{2,3}){1,2}$/
+    return !this.props.forms.email || pattern.test(this.props.forms.email)
+  }
+
   renderRequiredMessage () {
     if (this.props.forms.urlRequiredMessage) {
       return (
         <h2 className='required'>You can't proceed without sharing at least one url.</h2>
+      )
+    }
+  }
+
+  renderValidEmailRequired () {
+    if (!this.props.forms.validEmail) {
+      return (
+        <h2 className='required'>
+          Please enter a valid email address
+        </h2>
       )
     }
   }
@@ -85,6 +102,17 @@ class UrlDescriptionForm extends React.Component {
               onChange={e => this.props.saveDescription(e.target.value)}
             /><br />
           </div>
+          <div className='input-field col s6'>
+            <p>
+              Your report may take a little while to complete. If you would like to know when the IWF have looked at your report, enter your email address below.
+            </p>
+            <TextField
+              hintText='jane.doe@gmail.com'
+              floatingLabelText='Email address (Optional)'
+              onChange={e => this.props.saveEmail(e.target.value)}
+            />
+            {this.renderValidEmailRequired()}
+          </div>
           <div className='buttons'>
             <RaisedButton
               label='Previous'
@@ -97,9 +125,11 @@ class UrlDescriptionForm extends React.Component {
               onClick={() => {
                 if (!this.props.forms.url) {
                   this.props.showUrlRequiredMessage()
-                } else {
+                } else if (this.isEmailValid()) {
                   this.props.openModal()
                   this.handleUrlSubmit()
+                } else {
+                  this.props.validEmailRequiredMessage()
                 }
               }}
             />
