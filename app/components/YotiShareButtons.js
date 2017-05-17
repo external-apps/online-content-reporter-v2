@@ -11,8 +11,8 @@ const YotiShareButtons = (props) => {
           labelStyle={props.yoti.buttonLabelStyle}
           style={props.yoti.buttonStyle}
           className='margin-right btns-customized btns-small'
-          primary={true}
-          onClick={(e) => {
+          primary
+          onClick={() => {
             trackClick('Navigation', 'have yoti')
             document.getElementsByClassName('_yoti-verify-button')[0].click()
           }}
@@ -24,7 +24,7 @@ const YotiShareButtons = (props) => {
           className='btns-customized btns-small'
           labelStyle={props.yoti.buttonLabelStyle}
           style={props.yoti.buttonStyle}
-          primary={true}
+          primary
           label="I don't have YOTI"
           onClick={() => {
             trackClick('Navigation', 'don\'t have Yoti')

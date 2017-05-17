@@ -18,10 +18,12 @@
 
 .input-field {
   width:100%;
-  div{
-    width:100% !important;
-    font-size: 1.2rem !important;
-    line-height: 1.2em !important;
+}
+
+.input-field-3 {
+  width: 100%;
+  div {
+    width: 250px;
   }
 }
 
@@ -40,8 +42,10 @@
     color:$dark-cobalt;
   }
 }
+
 .url-report{
   font-family: $text-font;
   font-size: 1.1rem;
   color: $dark-cobalt;
+  margin-bottom: 0;
 }

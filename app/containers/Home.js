@@ -32,7 +32,7 @@ class Home extends React.Component {
               label='Report something'
               labelPosition='before'
               icon={<Launch />}
-              primary={true}
+              primary
               onClick={(e) => {
                 trackClick('Navigation', 'Report Something')
               }} />
