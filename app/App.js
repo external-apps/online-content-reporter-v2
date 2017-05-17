@@ -45,7 +45,7 @@ class App extends React.Component {
     const ageVerifactionToken = query.session
     const { isUnder18 } = jwtDecode(ageVerifactionToken)
     store.dispatch(addJWT(ageVerifactionToken))
-    // cookie.remove('yotiVerifiedAge')
+
     if (isUnder18) {
       store.dispatch(push('/form'))
     } else {
