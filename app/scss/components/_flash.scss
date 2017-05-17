@@ -1,0 +1,40 @@
+@import "./helpers/variables";
+@import "./helpers/extends";
+@import "./helpers/mixins";
+
+.flash-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flash {
+  position: fixed;
+  border-radius: 0 0 .4em .4em;
+  width: 90%;
+  height: 90px;
+  text-align: center;
+  background-color: $red;
+  animation: MoveDownUp 5s linear;
+  top:-100px;
+}
+
+.flash-message {
+  font-size: 1.2rem;
+  color: $dark-cobalt;
+}
+
+
+@keyframes MoveDownUp {
+  0% {
+    top: -100px;
+  }
+  15% {
+    top: 0;
+  }
+  90% {
+    top: 0;
+  }
+  100% {
+    top: -100px;
+  }
+}

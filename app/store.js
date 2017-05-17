@@ -3,8 +3,9 @@ import { createLogger } from 'redux-logger'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { browserHistory } from 'react-router'
 
-import yoti from './reducers/yoti'
-import forms from './reducers/forms'
+import yoti from './reducers/yoti.js'
+import forms from './reducers/forms.js'
+import flash from './reducers/flash.js'
 
 const logger = createLogger({
   collapsed: true,
@@ -22,6 +23,7 @@ const middleware = process.env.NODE_ENV !== 'production'
 const reducers = combineReducers({
   yoti,
   forms,
+  flash,
   routing: routerReducer
 })
 

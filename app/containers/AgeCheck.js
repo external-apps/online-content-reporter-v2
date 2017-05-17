@@ -1,10 +1,8 @@
 /* global MutationObserver */
-
 import React from 'react'
 import { connect } from 'react-redux'
-
 import QrCode from '../components/QrCode'
-import * as yotiActions from '../actions/yoti'
+import * as yotiActions from '../actions/yoti.js'
 import YotiShareButtons from '../components/YotiShareButtons'
 import YotiDescription from '../components/YotiDescription'
 import Header from '../components/Header'
