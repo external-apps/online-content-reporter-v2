@@ -79,18 +79,20 @@ class UrlDescriptionForm extends React.Component {
             <TextField
               hintText='http://www.example.com'
               floatingLabelText='URL'
+              fullWidth
               value={this.props.forms.url}
               onChange={e => this.props.saveUrl(e.target.value)}
             /><br />
             {this.renderRequiredMessage()}
           </div>
-          <p className='url-report'>2) If there’s more than one website, add these in the box below.</p>
+          <p className='url-report'>2) Please give us any extra details about the image or video, or provide any additional URLs in the box below.</p>
           <div className='input-field-2 input-field col s6 '>
             <TextField
-              hintText='Tell us about where you found the image'
+              hintText='Details of the exact location or any passwords required to access it.'
               floatingLabelText='Description'
               multiLine={true}
               rows={4}
+              fullWidth
               value={this.props.forms.description}
               onChange={e => this.props.saveDescription(e.target.value)}
             /><br />
