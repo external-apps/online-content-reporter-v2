@@ -19,7 +19,7 @@ const YotiShareButtons = (props) => {
           label='I have YOTI'
         />
       </a>
-      <a href='http://www.yoti.com' target='_blank'>
+      <a href='http://www.yoti.com' rel='external' target='_blank'>
         <RaisedButton
           className='btns-customized btns-small'
           labelStyle={props.yoti.buttonLabelStyle}
