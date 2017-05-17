@@ -9,13 +9,6 @@ import SectionTitle from '../components/SectionTitle'
 import '../scss/style.scss'
 import axios from 'axios'
 
-const styles = {
-  errorStyle: {
-    color: '#EB5857',
-    fontSize: '0.8rem !important'
-  }
-}
-
 class UrlDescriptionForm extends React.Component {
   constructor (props) {
     super(props)
@@ -87,9 +80,7 @@ class UrlDescriptionForm extends React.Component {
               hintText='http://www.example.com'
               floatingLabelText='URL'
               value={this.props.forms.url}
-              // errorText='Please enter the URL where you found the image or video.'
               onChange={e => this.props.saveUrl(e.target.value)}
-              // errorStyle={styles.errorStyle}
             /><br />
             {this.renderRequiredMessage()}
           </div>
