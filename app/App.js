@@ -5,7 +5,8 @@ import jwtDecode from 'jwt-decode'
 import { push } from 'react-router-redux'
 import cookie from 'react-cookie'
 import { store, history } from './store'
-import { qrFetchRequested, getAgeVerificationToken, addJWT } from './actions/yoti'
+import { logPageView } from './tracking.js'
+import { addJWT } from './actions/yoti'
 // Styling & Themes
 import muiTheme from './assets/theme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -41,7 +42,12 @@ class App extends React.Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <Provider store={store}>
-          <Router history={history}>
+          <Router
+            onUpdate={() => {
+              logPageView()
+            }}
+            history={history}
+            >
             <Route path='/' component={Home} />
             <Route path='/age-check' component={AgeCheck} />
             <Route path='/form' component={Forms} />

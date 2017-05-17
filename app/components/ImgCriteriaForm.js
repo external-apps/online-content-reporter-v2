@@ -7,8 +7,14 @@ import ProgressBar from '../components/ProgressBar'
 import Footer from './Footer'
 import Header from './Header'
 import '../scss/style.scss'
+import { trackEvent, trackClick, logPageView } from '../tracking.js'
 
 class ImgCriteriaForm extends React.Component {
+  constructor (props) {
+    super(props)
+    logPageView('/form (Image criteria)')
+  }
+
   renderRequiredMessage () {
     if (this.props.forms.criteriaRequiredMessage) {
       return (
@@ -35,6 +41,7 @@ class ImgCriteriaForm extends React.Component {
               onChange={() => {
                 this.props.toggleCriteria('Someone posing in a sexual way')
                 this.props.checkOption1()
+                trackEvent('image criteria', 'click', 'Someone posing in a sexual way')
               }}
               leftCheckbox={<Checkbox checked={this.props.forms.option1} />}
             />
@@ -44,6 +51,7 @@ class ImgCriteriaForm extends React.Component {
               onChange={() => {
                 this.props.toggleCriteria('Someone touching themselves in a sexual way')
                 this.props.checkOption2()
+                trackEvent('image criteria', 'click', 'Someone touching themselves in a sexual way')
               }}
               leftCheckbox={<Checkbox checked={this.props.forms.option2} />}
             />
@@ -53,6 +61,7 @@ class ImgCriteriaForm extends React.Component {
               onChange={() => {
                 this.props.toggleCriteria('Any sexual activity involving a child, adult or both')
                 this.props.checkOption3()
+                trackEvent('image criteria', 'click', 'Any sexual activity involving a child, adult or both')
               }}
               leftCheckbox={<Checkbox checked={this.props.forms.option3} />}
             />
@@ -62,6 +71,7 @@ class ImgCriteriaForm extends React.Component {
               onChange={() => {
                 this.props.toggleCriteria('Someone hurting someone else')
                 this.props.checkOption4()
+                trackEvent('image criteria', 'click', 'Someone hurting someone else')
               }}
               leftCheckbox={<Checkbox checked={this.props.forms.option4} />}
             />
@@ -71,6 +81,7 @@ class ImgCriteriaForm extends React.Component {
               onChange={() => {
                 this.props.toggleCriteria('Sexual activity that includes animals')
                 this.props.checkOption5()
+                trackEvent('image criteria', 'click', 'Sexual activity that includes animals')
               }}
               leftCheckbox={<Checkbox checked={this.props.forms.option5} />}
             />
@@ -83,10 +94,10 @@ class ImgCriteriaForm extends React.Component {
               (this.props.forms.imageCriteria.length !== 0)
                 ? this.props.changeForm()
                   : this.props.showCriteriaRequiredMessage()
+              trackClick('Navigation', 'to url & decription form')
             }}
           />
         </div>
-
         <div className='other-options'>
           <i className='large material-icons'>info_outline</i>
           <span>

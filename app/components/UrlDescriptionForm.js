@@ -8,6 +8,7 @@ import Footer from './Footer'
 import SectionTitle from '../components/SectionTitle'
 import '../scss/style.scss'
 import axios from 'axios'
+import { logPageView } from '../tracking.js'
 
 const styles = {
   errorStyle: {
@@ -21,6 +22,7 @@ class UrlDescriptionForm extends React.Component {
     this.handleUrlSubmit = this.handleUrlSubmit.bind(this)
     this.isEmailValid = this.isEmailValid.bind(this)
     this.renderValidEmailRequired = this.renderValidEmailRequired.bind(this)
+    logPageView('/form (Url & description)')
   }
 
   handleUrlSubmit () {

@@ -1,6 +1,7 @@
 import React from 'react'
 import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
+import { trackClick } from '../tracking.js'
 
 const YotiShareButtons = (props) => {
   return (
@@ -11,7 +12,8 @@ const YotiShareButtons = (props) => {
           style={props.yoti.buttonStyle}
           className='margin-right btns-customized btns-small'
           primary={true}
-          onClick={() => {
+          onClick={(e) => {
+            trackClick('Navigation', 'have yoti')
             document.getElementsByClassName('_yoti-verify-button')[0].click()
           }}
           label='I have YOTI'
@@ -24,6 +26,9 @@ const YotiShareButtons = (props) => {
           style={props.yoti.buttonStyle}
           primary={true}
           label="I don't have YOTI"
+          onClick={() => {
+            trackClick('Navigation', 'don\'t have Yoti')
+          }}
         />
       </a>
     </div>
