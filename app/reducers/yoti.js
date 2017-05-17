@@ -1,3 +1,5 @@
+/* global YOTI_APP_ID */
+
 import {
   ADD_QR_CODE,
   CLOSE_QR,

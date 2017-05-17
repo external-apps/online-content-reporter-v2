@@ -89,7 +89,7 @@ class ImgCriteriaForm extends React.Component {
           {this.renderRequiredMessage()}
           <RaisedButton
             label='Next'
-            primary={true}
+            primary
             onClick={() => {
               (this.props.forms.imageCriteria.length !== 0)
                 ? this.props.changeForm()

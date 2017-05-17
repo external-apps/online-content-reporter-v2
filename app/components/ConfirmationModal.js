@@ -62,7 +62,7 @@ class ConfirmationModal extends React.Component {
         <div className='mod'>
           <RaisedButton
             className='close_btn'
-            primary={true} label='X'
+            primary label='X'
             onClick={() => { this.props.closeModal() }} />
           <h2 className='red'>Thank you.</h2>
           <h2>We have sent your report to the Internet Watch Foundation (IWF) who will review your request.</h2>
