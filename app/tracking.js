@@ -1,13 +1,13 @@
 import ReactGA from 'react-ga'
 
 const isDev = process.env.NODE_ENV !== 'production'
-const gaTrackingCode = isDev ? '' : 'UA-99231754-2'
+const gaTrackingCode = isDev ? 'UA-99231754-2' : process.env.GA_TRACKING_ID
 
 ReactGA.initialize(gaTrackingCode)
 
-export const logPageView = () => {
-  ReactGA.set({ page: window.location.pathname })
-  ReactGA.pageview(window.location.pathname)
+export const logPageView = (page = window.location.pathname) => {
+  ReactGA.set({ page })
+  ReactGA.pageview(page)
 }
 
 export const trackClick = (category, action) => {

@@ -1,15 +1,16 @@
 import React from 'react'
 import { browserHistory } from 'react-router'
-import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import Modal from 'react-modal'
 import axios from 'axios'
+import { logPageView } from '../tracking.js'
 import { modalMobileOverlay, modalDesktopOverlay } from '../assets/modalStyle'
 
 class ConfirmationModal extends React.Component {
   constructor (props) {
     super(props)
     this.handleEmailSubmit.bind(this)
+    logPageView('/form (confirmation modal)')
   }
 
   renderValidEmailRequired () {
@@ -51,7 +52,6 @@ class ConfirmationModal extends React.Component {
     const modalStyle = this.props.yoti.isMobile
       ? modalMobileOverlay
       : modalDesktopOverlay
-    console.log(modalStyle);
     return (
       <Modal
         isOpen={this.props.forms.modalIsOpen}

@@ -7,9 +7,14 @@ import ProgressBar from '../components/ProgressBar'
 import Footer from './Footer'
 import Header from './Header'
 import '../scss/style.scss'
-import { trackEvent, trackClick } from '../tracking.js'
+import { trackEvent, trackClick, logPageView } from '../tracking.js'
 
 class ImgCriteriaForm extends React.Component {
+  constructor (props) {
+    super(props)
+    logPageView('/form (Image criteria)')
+  }
+
   renderRequiredMessage () {
     if (this.props.forms.criteriaRequiredMessage) {
       return (
