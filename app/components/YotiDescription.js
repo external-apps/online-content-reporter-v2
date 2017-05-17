@@ -9,7 +9,7 @@ const YotiDescription = (props) => {
         <p>If you've already got a YOTI account, click the button below and scan our QR code using your YOTI app.</p>
       </span>
       <p className='yoti-instructions'>
-        If not, it's easy to <a className='link' target='_blank' href='www.yoti.com/'>sign up</a> using the YOTI app or website. YOTI lets you safely share your details online - Just click below to create your account.
+        If not, it's easy to <a className='link' rel='external' target='_blank' href='https://www.yoti.com'>sign up</a> using the YOTI app or website. YOTI lets you safely share your details online - Just click below to create your account.
       </p>
     </div>
   )

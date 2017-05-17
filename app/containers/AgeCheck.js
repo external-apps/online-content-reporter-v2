@@ -49,7 +49,7 @@ class AgeCheck extends React.Component {
         <div className='other-options'>
           <i className='large material-icons'>info_outline</i>
           <span>
-            If you are unable to create a YOTI account, talk to a <a href='https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/'>Childline counsellor</a> for further options of how to report your image or video.
+            If you are unable to create a YOTI account, talk to a <a rel='external' target='_blank' href='https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/'>Childline counsellor</a> for further options of how to report your image or video.
           </span>
         </div>
         <Footer />
