@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import RaisedButton from 'material-ui/RaisedButton'
 import Launch from 'material-ui/svg-icons/action/launch'
 import { connect } from 'react-redux'
+import { trackClick } from '../tracking.js'
 
 import '../scss/style.scss'
 import * as yotiActions from '../actions/yoti'
@@ -32,7 +33,9 @@ class Home extends React.Component {
               labelPosition='before'
               icon={<Launch />}
               primary
-              />
+              onClick={(e) => {
+                trackClick('Navigation', 'Report Something')
+              }} />
           </Link>
         </div>
         <Footer />
