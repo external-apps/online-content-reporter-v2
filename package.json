@@ -20,6 +20,11 @@
   "pre-commit": [
     "lint"
   ],
+  "standard": {
+    "ignore": [
+      "test/**"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/childline-yoti/online-content-reporter.git"

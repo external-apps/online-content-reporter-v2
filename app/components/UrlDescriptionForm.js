@@ -79,7 +79,7 @@ class UrlDescriptionForm extends React.Component {
             <TextField
               hintText='Tell us about where you found the image'
               floatingLabelText='Description'
-              multiLine={true}
+              multiLine
               rows={4}
               value={this.props.forms.description}
               onChange={e => this.props.saveDescription(e.target.value)}
@@ -88,12 +88,12 @@ class UrlDescriptionForm extends React.Component {
           <div className='buttons'>
             <RaisedButton
               label='Previous'
-              primary={true}
+              primary
               onClick={() => this.props.changeForm()}
             />
             <RaisedButton
               label='Submit'
-              primary={true}
+              primary
               onClick={() => {
                 if (!this.props.forms.url) {
                   this.props.showUrlRequiredMessage()

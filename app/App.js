@@ -5,7 +5,7 @@ import jwtDecode from 'jwt-decode'
 import { push } from 'react-router-redux'
 import cookie from 'react-cookie'
 import { store, history } from './store'
-import { qrFetchRequested, getAgeVerificationToken, addJWT } from './actions/yoti'
+import { addJWT } from './actions/yoti'
 // Styling & Themes
 import muiTheme from './assets/theme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
