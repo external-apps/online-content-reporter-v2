@@ -89,6 +89,7 @@ class UrlDescriptionForm extends React.Component {
           <div className='input-field-2 input-field col s6 '>
             <TextField
               hintText='Details of the exact location or any passwords required to access it.'
+              // hintStyle={{fontSize: '1.1rem'}}
               floatingLabelText='Description'
               multiLine={true}
               rows={4}
