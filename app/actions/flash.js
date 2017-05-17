@@ -9,7 +9,12 @@ export const setFlash = (errorMessage) => {
 
 export const showFlash = () => {
   return {
-    type: types.SHOW_FLASH,
-    showFlash: true
+    type: types.SHOW_FLASH
+  }
+}
+
+export const hideFlash = () => {
+  return {
+    type: types.HIDE_FLASH
   }
 }

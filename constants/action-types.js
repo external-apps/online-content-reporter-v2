@@ -26,5 +26,6 @@ module.exports = {
   SAVE_EMAIL: 'SAVE_EMAIL',
   // flash error
   SET_FLASH: 'SET_FLASH',
-  SHOW_FLASH: 'SHOW_FLASH'
+  SHOW_FLASH: 'SHOW_FLASH',
+  HIDE_FLASH: 'HIDE_FLASH'
 }

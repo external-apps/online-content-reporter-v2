@@ -12,6 +12,12 @@ const errorMessage = (message) => {
 }
 
 class FlashError extends React.Component {
+  constructor (props) {
+    super(props)
+    setTimeout(() => {
+      this.props.hideFlash()
+    }, 5500)
+  }
   render () {
     return (
       <div className='flash-container'>

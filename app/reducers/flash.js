@@ -1,6 +1,7 @@
 import {
   SET_FLASH,
-  SHOW_FLASH
+  SHOW_FLASH,
+  HIDE_FLASH
 } from '../../constants/action-types'
 
 const initialState = {
@@ -19,6 +20,11 @@ const flash = (state = initialState, action) => {
       return {
         ...state,
         showFlash: true
+      }
+    case HIDE_FLASH:
+      return {
+        ...state,
+        showFlash: false
       }
     default:
       return state

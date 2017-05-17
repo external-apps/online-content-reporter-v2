@@ -10,7 +10,10 @@ config.env
 /dist
 
 env.sh
+env_live.sh
 
 env.json
 
 keys
+
+**.pem
