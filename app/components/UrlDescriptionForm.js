@@ -10,12 +10,6 @@ import '../scss/style.scss'
 import axios from 'axios'
 import { logPageView } from '../tracking.js'
 
-const styles = {
-  errorStyle: {
-    color: '#EB5857'
-  }
-}
-
 class UrlDescriptionForm extends React.Component {
   constructor (props) {
     super(props)
@@ -82,30 +76,32 @@ class UrlDescriptionForm extends React.Component {
         </div>
         <div className='form-container'>
           <h3 className='section-title'>WEB ADDRESS</h3>
+          <p className='url-report'>1) Please enter the URL where you found the image or video.</p>
           <div className='input-field col s6'>
             <TextField
               hintText='http://www.example.com'
               floatingLabelText='URL'
+              fullWidth
               value={this.props.forms.url}
-              errorText='Please enter the URL where you found the image or video.'
               onChange={e => this.props.saveUrl(e.target.value)}
-              errorStyle={styles.errorStyle}
             /><br />
             {this.renderRequiredMessage()}
           </div>
-          <h3 className='url-report'>If there’s more than one website, add these in the box below.</h3>
+          <p className='url-report'>2) Please give us any extra details about the image or video, or provide any additional URLs in the box below.</p>
           <div className='input-field-2 input-field col s6 '>
             <TextField
-              hintText='Tell us about where you found the image'
+              hintText='Details of the exact location or any passwords required to access it.'
+              // hintStyle={{fontSize: '1.1rem'}}
               floatingLabelText='Description'
               multiLine
               rows={4}
+              fullWidth
               value={this.props.forms.description}
               onChange={e => this.props.saveDescription(e.target.value)}
             /><br />
           </div>
-          <div className='input-field col s6'>
-            <p>
+          <div className='input-field-3 col s6'>
+            <p className='url-report'>
               Your report may take a little while to complete. If you would like to know when the IWF have looked at your report, enter your email address below.
             </p>
             <TextField
