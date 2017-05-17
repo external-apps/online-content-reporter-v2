@@ -11,7 +11,8 @@ import axios from 'axios'
 
 const styles = {
   errorStyle: {
-    color: '#EB5857'
+    color: '#EB5857',
+    fontSize: '0.8rem !important'
   }
 }
 
@@ -80,18 +81,19 @@ class UrlDescriptionForm extends React.Component {
         </div>
         <div className='form-container'>
           <h3 className='section-title'>WEB ADDRESS</h3>
+          <p className='url-report'>1) Please enter the URL where you found the image or video.</p>
           <div className='input-field col s6'>
             <TextField
               hintText='http://www.example.com'
               floatingLabelText='URL'
               value={this.props.forms.url}
-              errorText='Please enter the URL where you found the image or video.'
+              // errorText='Please enter the URL where you found the image or video.'
               onChange={e => this.props.saveUrl(e.target.value)}
-              errorStyle={styles.errorStyle}
+              // errorStyle={styles.errorStyle}
             /><br />
             {this.renderRequiredMessage()}
           </div>
-          <h3 className='url-report'>If there’s more than one website, add these in the box below.</h3>
+          <p className='url-report'>2) If there’s more than one website, add these in the box below.</p>
           <div className='input-field-2 input-field col s6 '>
             <TextField
               hintText='Tell us about where you found the image'
@@ -102,8 +104,8 @@ class UrlDescriptionForm extends React.Component {
               onChange={e => this.props.saveDescription(e.target.value)}
             /><br />
           </div>
-          <div className='input-field col s6'>
-            <p>
+          <div className='input-field-3 col s6'>
+            <p className='url-report'>
               Your report may take a little while to complete. If you would like to know when the IWF have looked at your report, enter your email address below.
             </p>
             <TextField
