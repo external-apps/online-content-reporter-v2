@@ -5,9 +5,8 @@ import Launch from 'material-ui/svg-icons/action/launch'
 import { connect } from 'react-redux'
 
 import { trackClick } from '../tracking.js'
-import '../scss/style.scss'
-import * as yotiActions from '../actions/yoti'
-import Footer from '../components/Footer'
+import * as yotiActions from '../actions/yoti.js'
+import Footer from '../components/Footer.js'
 
 class Home extends React.Component {
   render () {

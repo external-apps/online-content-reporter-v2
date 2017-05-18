@@ -3,22 +3,22 @@ import { Provider } from 'react-redux'
 import { Route, Router } from 'react-router'
 import jwtDecode from 'jwt-decode'
 import { push } from 'react-router-redux'
-import { store, history } from './store'
-import { logPageView } from './tracking.js'
-import { addJWT } from './actions/yoti.js'
-import { startShowFlash } from './actions/flash.js'
-import { AGE_ERROR } from '../constants/error.js'
 // Styling & Themes
 import muiTheme from './assets/theme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 // Components
-import AgeCheck from './containers/AgeCheck'
-import Home from './containers/Home'
-import Forms from './containers/Forms'
-import OverAge from './components/OverAge'
-import NotFound from './components/NotFound'
-
+import AgeCheck from './containers/AgeCheck.js'
+import Home from './containers/Home.js'
+import Forms from './containers/Forms.js'
+import OverAge from './components/OverAge.js'
+import NotFound from './components/NotFound.js'
 import FlashError from './containers/FlashError.js'
+// Actions, effects and variables
+import { store, history } from './store.js'
+import { logPageView } from './tracking.js'
+import { addJWT } from './actions/yoti.js'
+import { startShowFlash } from './actions/flash.js'
+import { AGE_ERROR } from '../constants/error.js'
 
 class App extends React.Component {
   constructor (props) {

@@ -1,7 +1,8 @@
-import * as types from '../../constants/action-types.js'
 import { call, put, takeEvery, select } from 'redux-saga/effects'
 import { push } from 'react-router-redux'
 import axios from 'axios'
+
+import * as types from '../../constants/action-types.js'
 import { startShowFlash } from './flash.js'
 import { UNVERIFIED_ERROR } from '../../constants/error.js'
 

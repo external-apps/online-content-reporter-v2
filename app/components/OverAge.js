@@ -1,8 +1,8 @@
 import React from 'react'
-import '../scss/style.scss'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import SectionTitle from '../components/SectionTitle'
+
+import Header from '../components/Header.js'
+import Footer from '../components/Footer.js'
+import SectionTitle from '../components/SectionTitle.js'
 
 const OverAge = () => (
   <div>

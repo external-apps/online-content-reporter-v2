@@ -1,6 +1,6 @@
 import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-router-redux'
-import { createLogger } from 'redux-logger'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createLogger } from 'redux-logger'
 import { browserHistory } from 'react-router'
 import createSagaMiddleware from 'redux-saga'
 

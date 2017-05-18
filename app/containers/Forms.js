@@ -2,9 +2,9 @@ import React from 'react'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import { connect } from 'react-redux'
 
-import UrlDescriptionForm from '../components/UrlDescriptionForm'
-import ImageCriteriaForm from '../components/ImgCriteriaForm'
-import * as formActions from '../actions/forms'
+import UrlDescriptionForm from '../components/UrlDescriptionForm.js'
+import ImageCriteriaForm from '../components/ImgCriteriaForm.js'
+import * as formActions from '../actions/forms.js'
 
 injectTapEventPlugin()
 

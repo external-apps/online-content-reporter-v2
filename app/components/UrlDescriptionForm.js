@@ -1,12 +1,12 @@
 import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
-import ProgressBar from './ProgressBar'
-import ConfirmationModal from './ConfirmationModal'
-import Header from './Header'
-import Footer from './Footer'
-import SectionTitle from '../components/SectionTitle'
-import '../scss/style.scss'
+
+import ProgressBar from './ProgressBar.js'
+import ConfirmationModal from './ConfirmationModal.js'
+import Header from './Header.js'
+import Footer from './Footer.js'
+import SectionTitle from '../components/SectionTitle.js'
 import { logPageView } from '../tracking.js'
 
 class UrlDescriptionForm extends React.Component {

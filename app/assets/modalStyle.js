@@ -44,6 +44,7 @@ export const modalDesktopOverlay = {
     maxHeight: '280px',
     maxWidth: '600px',
     overflow: 'auto',
+    transform: 'translate(-50%, -50%)',
     zIndex: '100'
   },
   overlay: {
