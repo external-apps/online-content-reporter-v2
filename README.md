@@ -58,13 +58,7 @@ Some of the key tracking data includes:
 
 ## Development Resources & Notes
 
-### Prototype Tech Stack
-
-- Front-end: HTML5, CSS3, Materialize.css, animate.css, JavaScript
-- Back-end: Node.js, Hapi.js
-- Authentication: Yoti
-
-### MVP Tech Stack
+### Tech Stack
 
 - React.js front-end
 - React libraries: material.ui
@@ -75,6 +69,11 @@ Some of the key tracking data includes:
 - Tape, chai, sinon, enzyme and supertest
 - circle.ci continuous integration
 - yoti-node-sdk
+
+### Deployment
+
+- Azure
+- Heroku test versions
 
 ### User journey
 
