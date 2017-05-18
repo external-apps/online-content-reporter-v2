@@ -6,6 +6,7 @@ import ProgressBar from './ProgressBar.js'
 import ConfirmationModal from './ConfirmationModal.js'
 import Header from './Header.js'
 import Footer from './Footer.js'
+import Spinner from '../containers/Spinner.js'
 import SectionTitle from '../components/SectionTitle.js'
 import { logPageView } from '../tracking.js'
 
@@ -99,6 +100,7 @@ class UrlDescriptionForm extends React.Component {
               primary
               onClick={() => this.props.changeForm()}
             />
+            <Spinner />
             <RaisedButton
               label='Submit'
               primary

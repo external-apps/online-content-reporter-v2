@@ -64,6 +64,7 @@
     "express-jwt": "^5.3.0",
     "file-loader": "^0.10.1",
     "fs": "0.0.1-security",
+    "halogen": "^0.2.0",
     "html-webpack-plugin": "^2.28.0",
     "https": "^1.0.0",
     "identity-obj-proxy": "^3.0.0",

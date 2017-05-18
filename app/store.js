@@ -7,6 +7,7 @@ import createSagaMiddleware from 'redux-saga'
 import yoti from './reducers/yoti.js'
 import forms from './reducers/forms.js'
 import flash from './reducers/flash.js'
+import spinner from './reducers/spinner.js'
 import formSaga from './actions/forms.js'
 import flashSaga from './actions/flash.js'
 
@@ -29,6 +30,7 @@ const reducers = combineReducers({
   yoti,
   forms,
   flash,
+  spinner,
   routing: routerReducer
 })
 
