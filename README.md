@@ -17,6 +17,7 @@ The following environment variables need to be available:
  * REPORT_SENDER_EMAIL
  * REPORT_EMAIL_RECIPIENT_1
  * REPORT_EMAIL_RECIPIENT_2 (optional)
+ * REPORT_EMAIL_RECIPIENT_TEST (must verify with scs)
  * AWS_ACCESS_KEY_ID
  * AWS_SECRET_ACCESS_KEY
  * GA_TRACKING_ID
