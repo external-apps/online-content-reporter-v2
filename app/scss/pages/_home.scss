@@ -3,7 +3,8 @@
 @import "./helpers/mixins";
 
 .home-body {
-  background-color: $light-turquoise;
+  height: 100vh;
+  background-color: $footer-color;
 }
 
 .home-header {
@@ -22,8 +23,14 @@
   margin-bottom: 1rem;
 }
 
+.home-info-container {
+  background-color: $light-turquoise;
+  padding: 1rem;
+}
+
 .home-info {
   @include content-container($lightest-turquoise, $dark-cobalt);
+  margin: 0 auto !important;
 }
 
 .home-main-button {

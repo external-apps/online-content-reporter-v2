@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router'
 import RaisedButton from 'material-ui/RaisedButton'
 import Modal from 'react-modal'
 import axios from 'axios'
+
 import { logPageView } from '../tracking.js'
 import { modalMobileOverlay, modalDesktopOverlay } from '../assets/modalStyle'
 

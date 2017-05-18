@@ -1,6 +1,6 @@
 import React from 'react'
-import '../scss/style.scss'
 import RaisedButton from 'material-ui/RaisedButton'
+
 import { trackClick } from '../tracking.js'
 
 const YotiShareButtons = (props) => {

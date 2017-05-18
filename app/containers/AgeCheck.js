@@ -1,16 +1,15 @@
 /* global MutationObserver */
-
 import React from 'react'
 import { connect } from 'react-redux'
 
-import QrCode from '../components/QrCode'
-import * as yotiActions from '../actions/yoti'
-import YotiShareButtons from '../components/YotiShareButtons'
-import YotiDescription from '../components/YotiDescription'
-import Header from '../components/Header'
-import AgeInfo from '../components/AgeInfo'
-import Footer from '../components/Footer'
-import SectionTitle from '../components/SectionTitle'
+import QrCode from '../components/QrCode.js'
+import * as yotiActions from '../actions/yoti.js'
+import YotiShareButtons from '../components/YotiShareButtons.js'
+import YotiDescription from '../components/YotiDescription.js'
+import Header from '../components/Header.js'
+import AgeInfo from '../components/AgeInfo.js'
+import Footer from '../components/Footer.js'
+import SectionTitle from '../components/SectionTitle.js'
 
 class AgeCheck extends React.Component {
   constructor (props) {

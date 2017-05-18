@@ -1,4 +1,10 @@
+import { call, put, takeEvery, select } from 'redux-saga/effects'
+import { push } from 'react-router-redux'
+import axios from 'axios'
+
 import * as types from '../../constants/action-types.js'
+import { startShowFlash } from './flash.js'
+import { UNVERIFIED_ERROR } from '../../constants/error.js'
 
 export const openModal = () => {
   return {
@@ -94,3 +100,56 @@ export const hideValidEmailRequiredMessage = () => {
     type: types.HIDE_VALID_EMAIL_REQUIRED_MESSAGE
   }
 }
+
+export const startSubmitForm = () => {
+  return {
+    type: types.START_SUBMIT_FORM
+  }
+}
+
+function * submitFormEffect () {
+  const currentState = yield (select())
+  // here we need a spinner
+  const { imageCriteria, url, description, email } = currentState.forms
+  const payload = { imageCriteria, url, description, email }
+  const config = {
+    headers: {
+      'Authorization': `Bearer ${currentState.yoti.ageVerifactionToken}`
+    },
+    validateStatus: (status) =>
+      status >= 200 && status < 600
+  }
+  const response = yield (call(submitForm, payload, config))
+
+  const statusCode = response.status
+
+  if (statusCode === 200) {
+    yield (put(openModal()))
+  } else if (statusCode === 401) {
+    const errorMessage = UNVERIFIED_ERROR
+    yield (put(push('/age-check')))
+    yield (put(startShowFlash(errorMessage)))
+  } else if (statusCode === 403 && response.data.error === 'over-age-error') {
+    yield (put(push('/over-age')))
+  } else if (statusCode === 500) {
+    yield (put(startShowFlash(response.data.error)))
+  }
+}
+
+const submitForm = (payload, config) => {
+  return axios.post('/email', payload, config)
+  .then(res => {
+    return res
+  })
+  .catch((error) => {
+    return error
+  })
+}
+
+export function formSaga () {
+  return [
+    takeEvery(types.START_SUBMIT_FORM, submitFormEffect)
+  ]
+}
+
+export default formSaga

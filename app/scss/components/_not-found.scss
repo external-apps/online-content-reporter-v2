@@ -2,10 +2,18 @@
 @import "./helpers/variables";
 
 .notfound {
-  background-color: $red;
+  background-color: $footer-color;
+  height: 100vh;
 }
+
+.notfound-container {
+  background-color: $red;
+  padding: 1rem;
+}
+
 .notfound-info {
   @include content-container($light-red, $dark-cobalt);
+  margin: 0 auto !important;
   h3 {
     font-family: $bold-text;
   }

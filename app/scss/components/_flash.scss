@@ -1,0 +1,32 @@
+@import "./helpers/variables";
+@import "./helpers/extends";
+@import "./helpers/mixins";
+
+.flash-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flash {
+  position: fixed;
+  border-radius: 0 0 .4em .4em;
+  width: 90%;
+  text-align: center;
+  background-color: $red;
+  transition: top 1s;
+  z-index: 10;
+  padding: 0 0.5rem;
+}
+
+.flash-show {
+  top: 0;
+}
+
+.flash-hide {
+  top:-100px;
+}
+
+.flash-message {
+  font-size: 1.2rem;
+  color: $dark-cobalt;
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import '../scss/style.scss'
 import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back'
 
 const QrCode = (props) => (

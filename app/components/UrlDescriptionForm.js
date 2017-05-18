@@ -1,38 +1,20 @@
 import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
-import ProgressBar from './ProgressBar'
-import ConfirmationModal from './ConfirmationModal'
-import Header from './Header'
-import Footer from './Footer'
-import SectionTitle from '../components/SectionTitle'
-import '../scss/style.scss'
-import axios from 'axios'
+
+import ProgressBar from './ProgressBar.js'
+import ConfirmationModal from './ConfirmationModal.js'
+import Header from './Header.js'
+import Footer from './Footer.js'
+import SectionTitle from '../components/SectionTitle.js'
 import { logPageView } from '../tracking.js'
 
 class UrlDescriptionForm extends React.Component {
   constructor (props) {
     super(props)
-    this.handleUrlSubmit = this.handleUrlSubmit.bind(this)
     this.isEmailValid = this.isEmailValid.bind(this)
     this.renderValidEmailRequired = this.renderValidEmailRequired.bind(this)
     logPageView('/form (Url & description)')
-  }
-
-  handleUrlSubmit () {
-    const { imageCriteria, url, description } = this.props.forms
-    var payload = { imageCriteria, url, description }
-
-    const config = {
-      headers: {
-        'Authorization': `Bearer ${this.props.yoti.ageVerifactionToken}`
-      }
-    }
-
-    return axios.post('/email', payload, config)
-      .catch((error) => {
-        console.log(error)
-      })
   }
 
   isEmailValid () {
@@ -124,8 +106,7 @@ class UrlDescriptionForm extends React.Component {
                 if (!this.props.forms.url) {
                   this.props.showUrlRequiredMessage()
                 } else if (this.isEmailValid()) {
-                  this.props.openModal()
-                  this.handleUrlSubmit()
+                  this.props.startSubmitForm()
                 } else {
                   this.props.validEmailRequiredMessage()
                 }

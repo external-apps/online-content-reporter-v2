@@ -2,11 +2,11 @@ import React from 'react'
 import { List, ListItem } from 'material-ui/List'
 import Checkbox from 'material-ui/Checkbox'
 import RaisedButton from 'material-ui/RaisedButton'
-import SectionTitle from '../components/SectionTitle'
-import ProgressBar from '../components/ProgressBar'
-import Footer from './Footer'
-import Header from './Header'
-import '../scss/style.scss'
+
+import SectionTitle from '../components/SectionTitle.js'
+import ProgressBar from '../components/ProgressBar.js'
+import Footer from './Footer.js'
+import Header from './Header.js'
 import { trackEvent, trackClick, logPageView } from '../tracking.js'
 
 class ImgCriteriaForm extends React.Component {
