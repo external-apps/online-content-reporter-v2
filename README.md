@@ -1,7 +1,5 @@
 # Online Content Reporter
 
-![circle badge](https://circleci.com/gh/childline-yoti/online-content-reporter.png?circle-token=key-8f574d3ae5bfff8a00adc63d005cc1ab)
-
 # Setup
 
  * run `npm i` on initial pull
@@ -27,14 +25,11 @@ The current  [IWF "hash list"](https://www.iwf.org.uk/become-a-member/services-f
 
 ## Application Links
 
-*Under development*
-
 Two versions for testing purposes so test of both the under18 and over18 user journeys can be tested.
-- Age limit is 25: [content-reporter](https://content-reporter.herokuapp.com/)
-- Age limit is 40: [childline-yoti2](http://childline-yoti2.herokuapp.com/)
+- Age limit is 18: [content-reporter](https://content-reporter.herokuapp.com/)
+- Age limit is 60: [childline-yoti2](http://childline-yoti2.herokuapp.com/)
 
 - 3 day Prototype version: [childline-report](https://childline-report-image.herokuapp.com)
-
 
 
 ## Current Approach
@@ -48,28 +43,37 @@ For further reading visit the [Childline website](https://www.childline.org.uk/i
 ## Yoti's role in the app.
 
 The app uses YOTI to:
-- Securely prove that the young person is under 18, without requiring any further information, thus removing the current barriers.
+- Securely prove that the young person is under 18, without requiring any further information, thus removing the current barriers to reporting content to IWF.
+
+## GA tracking
+Some of the key tracking data includes:
+- Page views
+![image](https://cloud.githubusercontent.com/assets/15717822/26207840/8ec3ac88-3be0-11e7-932a-a33a1967021b.png)
+- Image criteria clicks
+![image](https://cloud.githubusercontent.com/assets/15717822/26207810/787ac768-3be0-11e7-9495-2c188d7ef6d1.png)
+- Navigation clicks
+![image](https://cloud.githubusercontent.com/assets/15717822/26207891/aa4a0510-3be0-11e7-8984-70cad313e1e7.png)
+- Real time data is also available
 
 
 ## Development Resources & Notes
 
-### Prototype Tech Stack
-
-- Front-end: HTML5, CSS3, Materialize.css, animate.css, JavaScript
-- Back-end: Node.js, Hapi.js
-- Authentication: Yoti
-
-### MVP Tech Stack
+### Tech Stack
 
 - React.js front-end
 - React libraries: material.ui
 - Redux with redux-saga for async actions
 - SASS styling
 - Age verification: Yoti
-- Node.js - Express Framwork [boilerplate](https://github.com/SavageWilliam/express-server-boilerplate)
-- Tape, chai, sinon, enzyme and supertest framworks
+- Node.js - Express Framework
+- Tape, chai, sinon, enzyme and supertest
 - circle.ci continuous integration
 - yoti-node-sdk
+
+### Deployment
+
+- Azure
+- Heroku test versions
 
 ### User journey
 
