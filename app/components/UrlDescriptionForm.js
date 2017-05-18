@@ -7,22 +7,14 @@ import Header from './Header'
 import Footer from './Footer'
 import SectionTitle from '../components/SectionTitle'
 import '../scss/style.scss'
-import axios from 'axios'
 import { logPageView } from '../tracking.js'
 
 class UrlDescriptionForm extends React.Component {
   constructor (props) {
     super(props)
-    this.handleUrlSubmit = this.handleUrlSubmit.bind(this)
     this.isEmailValid = this.isEmailValid.bind(this)
     this.renderValidEmailRequired = this.renderValidEmailRequired.bind(this)
     logPageView('/form (Url & description)')
-  }
-
-  handleUrlSubmit () {
-
-    this.props.startSubmitForm()
-
   }
 
   isEmailValid () {
@@ -114,7 +106,7 @@ class UrlDescriptionForm extends React.Component {
                 if (!this.props.forms.url) {
                   this.props.showUrlRequiredMessage()
                 } else if (this.isEmailValid()) {
-                  this.handleUrlSubmit()
+                  this.props.startSubmitForm()
                 } else {
                   this.props.validEmailRequiredMessage()
                 }
