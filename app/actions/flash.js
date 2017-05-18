@@ -28,7 +28,7 @@ export const startShowFlash = (errorMessage) => {
 }
 
 function delay (ms) {
-  return new Promise(resolve => setTimeout(() => resolve(true), ms))
+  return new Promise(resolve => setTimeout(() => resolve(), ms))
 }
 
 function * showFlashEffect (showFlashAction) {

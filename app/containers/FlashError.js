@@ -8,8 +8,12 @@ const errorMessage = (message) => {
       return 'There was an error verifying your age. Please try again or contact childline.'
     case 'email-error':
       return 'There was an error submitting your form, please try again or contact childline.'
+    case 'over-age-error':
+      return 'Sorry. You appear to be over 18.'
+    case 'unverified-error':
+      return 'You need to verify your age before submitting a report.'
     default:
-      return 'Error'
+      return 'Oops, something went wrong. Sorry.'
   }
 }
 
