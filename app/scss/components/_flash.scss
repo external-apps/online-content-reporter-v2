@@ -11,11 +11,11 @@
   position: fixed;
   border-radius: 0 0 .4em .4em;
   width: 90%;
-  height: 90px;
   text-align: center;
   background-color: $red;
   transition: top 1s;
   z-index: 10;
+  padding: 0 0.5rem;
 }
 
 .flash-show {
