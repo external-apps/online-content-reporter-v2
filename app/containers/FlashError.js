@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import * as flashActions from '../actions/flash.js'
-
 const errorMessage = (message) => {
   switch (message) {
     case 'age-error':
@@ -34,8 +32,4 @@ const mapStateToProps = (state) => {
   return { flash: state.flash }
 }
 
-const actionCreators = {
-  ...flashActions
-}
-
-export default connect(mapStateToProps, actionCreators)(FlashError)
+export default connect(mapStateToProps)(FlashError)

@@ -23,6 +23,7 @@ const initialState = {
   imageCriteria: [],
   url: '',
   description: '',
+  email: '',
   criteriaRequiredMessage: false,
   urlRequiredMessage: false,
   validEmail: true,

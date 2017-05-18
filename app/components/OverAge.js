@@ -35,7 +35,7 @@ const OverAge = () => (
       </div>
       <div className='option'>
         <i className='identity small material-icons'>contacts</i>
-        <a className='contact' targte='_blank' rel='external' href='http://www.samaritans.org/'>
+        <a className='contact' target='_blank' rel='external' href='http://www.samaritans.org/'>
           Contact Samaritans
         </a>
       </div>

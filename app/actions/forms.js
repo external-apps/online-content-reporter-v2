@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import * as types from '../../constants/action-types.js'
 import { startShowFlash } from './flash.js'
+import { showSpinner, hideSpinner } from './spinner.js'
 import { UNVERIFIED_ERROR } from '../../constants/error.js'
 
 export const openModal = () => {
@@ -109,7 +110,7 @@ export const startSubmitForm = () => {
 
 function * submitFormEffect () {
   const currentState = yield (select())
-  // here we need a spinner
+  yield put(showSpinner())
   const { imageCriteria, url, description, email } = currentState.forms
   const payload = { imageCriteria, url, description, email }
   const config = {
@@ -120,6 +121,8 @@ function * submitFormEffect () {
       status >= 200 && status < 600
   }
   const response = yield (call(submitForm, payload, config))
+
+  yield put(hideSpinner())
 
   const statusCode = response.status
 
