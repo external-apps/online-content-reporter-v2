@@ -17,8 +17,8 @@ The following environment variables need to be available:
  * REPORT_SENDER_EMAIL
  * REPORT_EMAIL_RECIPIENT_1
  * REPORT_EMAIL_RECIPIENT_2 (optional)
- * MAILGUN_API_KEY
- * MAILGUN_DOMAIN
+ * AWS_ACCESS_KEY_ID
+ * AWS_SECRET_ACCESS_KEY
  * GA_TRACKING_ID
 
 A web app for reporting explicit online images to the [IWF](https://www.iwf.org.uk/) (Internet Watch Foundation).  
