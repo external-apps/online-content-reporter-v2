@@ -14,7 +14,15 @@
   height: 90px;
   text-align: center;
   background-color: $red;
-  animation: MoveDownUp 5s linear;
+  transition: top 2s;
+  z-index: 10;
+}
+
+.flash-show {
+  top: 0;
+}
+
+.flash-hide {
   top:-100px;
 }
 
@@ -22,19 +30,19 @@
   font-size: 1.2rem;
   color: $dark-cobalt;
 }
-
-
-@keyframes MoveDownUp {
-  0% {
-    top: -100px;
-  }
-  15% {
-    top: 0;
-  }
-  90% {
-    top: 0;
-  }
-  100% {
-    top: -100px;
-  }
-}
+//
+//
+// @keyframes MoveDownUp {
+//   0% {
+//     top: -100px;
+//   }
+//   15% {
+//     top: 0;
+//   }
+//   90% {
+//     top: 0;
+//   }
+//   100% {
+//     top: -100px;
+//   }
+// }

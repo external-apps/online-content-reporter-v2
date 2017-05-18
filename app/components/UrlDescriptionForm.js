@@ -20,19 +20,9 @@ class UrlDescriptionForm extends React.Component {
   }
 
   handleUrlSubmit () {
-    const { imageCriteria, url, description } = this.props.forms
-    var payload = { imageCriteria, url, description }
 
-    const config = {
-      headers: {
-        'Authorization': `Bearer ${this.props.yoti.ageVerifactionToken}`
-      }
-    }
+    this.props.startSubmitForm()
 
-    return axios.post('/email', payload, config)
-      .catch((error) => {
-        console.log(error)
-      })
   }
 
   isEmailValid () {
@@ -124,7 +114,6 @@ class UrlDescriptionForm extends React.Component {
                 if (!this.props.forms.url) {
                   this.props.showUrlRequiredMessage()
                 } else if (this.isEmailValid()) {
-                  this.props.openModal()
                   this.handleUrlSubmit()
                 } else {
                   this.props.validEmailRequiredMessage()

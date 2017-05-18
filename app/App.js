@@ -6,7 +6,7 @@ import { push } from 'react-router-redux'
 import { store, history } from './store'
 import { logPageView } from './tracking.js'
 import { addJWT } from './actions/yoti.js'
-import { setFlash, showFlash } from './actions/flash.js'
+import { startShowFlash } from './actions/flash.js'
 import { AGE_ERROR } from '../constants/error.js'
 // Styling & Themes
 import muiTheme from './assets/theme'
@@ -28,8 +28,7 @@ class App extends React.Component {
     const { error } = query
 
     if (error) {
-      store.dispatch(setFlash(error))
-      store.dispatch(showFlash())
+      store.dispatch(startShowFlash(error))
     }
 
     if (pathname !== '/accept-age-token') {

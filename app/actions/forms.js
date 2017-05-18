@@ -1,4 +1,7 @@
 import * as types from '../../constants/action-types.js'
+import { call, put, takeEvery, select } from 'redux-saga/effects'
+import axios from 'axios'
+import { startShowFlash } from './flash.js'
 
 export const openModal = () => {
   return {
@@ -94,3 +97,48 @@ export const hideValidEmailRequiredMessage = () => {
     type: types.HIDE_VALID_EMAIL_REQUIRED_MESSAGE
   }
 }
+
+export const startSubmitForm = () => {
+  return {
+    type: types.START_SUBMIT_FORM
+  }
+}
+
+function * submitFormEffect () {
+  const currentState = yield (select())
+  // here we need a spinner
+  const { imageCriteria, url, description, email } = currentState.forms
+  const payload = { imageCriteria, url, description, email }
+  const config = {
+    headers: {
+      'Authorization': `Bearer ${currentState.yoti.ageVerifactionToken}`
+    },
+    validateStatus: (status) =>
+      status >= 200 && status < 600
+  }
+  const response = yield (call(submitForm, payload, config))
+  if (response.status === 200) {
+    yield (put(openModal()))
+  } else {
+    const errorMessage = response.data.error
+    yield (put(startShowFlash(errorMessage)))
+  }
+}
+
+const submitForm = (payload, config) => {
+  return axios.post('/email', payload, config)
+  .then(res => {
+    return res
+  })
+  .catch((error) => {
+    return error
+  })
+}
+
+export function formSaga () {
+  return [
+    takeEvery(types.START_SUBMIT_FORM, submitFormEffect)
+  ]
+}
+
+export default formSaga

@@ -2,10 +2,13 @@ import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-rou
 import { createLogger } from 'redux-logger'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { browserHistory } from 'react-router'
+import createSagaMiddleware from 'redux-saga'
 
 import yoti from './reducers/yoti.js'
 import forms from './reducers/forms.js'
 import flash from './reducers/flash.js'
+import formSaga from './actions/forms.js'
+import flashSaga from './actions/flash.js'
 
 const logger = createLogger({
   collapsed: true,
@@ -16,9 +19,11 @@ const logger = createLogger({
   }
 })
 
+const sagaMiddleware = createSagaMiddleware()
+
 const middleware = process.env.NODE_ENV !== 'production'
-  ? [ routerMiddleware(browserHistory), logger ]
-  : [ routerMiddleware(browserHistory) ]
+  ? [ routerMiddleware(browserHistory), sagaMiddleware, logger ]
+  : [ routerMiddleware(browserHistory), sagaMiddleware ]
 
 const reducers = combineReducers({
   yoti,
@@ -31,5 +36,11 @@ export const store = createStore(
   reducers,
   applyMiddleware(...middleware)
 )
+
+function * rootSaga () {
+  yield [formSaga(), flashSaga()]
+}
+
+sagaMiddleware.run(rootSaga)
 
 export const history = syncHistoryWithStore(browserHistory, store)
