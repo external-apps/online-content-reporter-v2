@@ -41,7 +41,8 @@ module.exports = {
       scenId: process.env.YOTI_SCENARIO_ID
     }),
     new webpack.DefinePlugin({
-      YOTI_APP_ID: JSON.stringify(process.env.YOTI_APP_ID)
+      YOTI_APP_ID: JSON.stringify(process.env.YOTI_APP_ID),
+      GA_TRACKING_ID: JSON.stringify(process.env.GA_TRACKING_ID)
     })
   ]
 }
