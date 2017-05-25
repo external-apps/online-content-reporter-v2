@@ -3,7 +3,7 @@ import React from 'react'
 const YotiDescription = (props) => {
   return (
     <div className='yoti-description-container'>
-      <h3 className='yoti-description-title'>VERIFY YOUR ARE USING YOTI</h3>
+      <h3 className='yoti-description-title'>VERIFY YOUR AGE USING YOTI</h3>
       <span className='yoti-description'>
         <img src='/assets/imgs/yoti-logo.svg' alt='yoti logo' />
         <p>If you've already got a YOTI account, click the button below and scan our QR code using your YOTI app.</p>
