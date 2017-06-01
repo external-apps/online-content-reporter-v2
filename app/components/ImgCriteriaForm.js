@@ -37,31 +37,31 @@ class ImgCriteriaForm extends React.Component {
           <List>
             <ListItem
               style={{backgroundColor: 'white', margin: '0.25rem 0'}}
-              primaryText='Someone posing in a sexual way'
+              primaryText='Nude or semi-nude sexual poses'
               onChange={() => {
-                this.props.toggleCriteria('Someone posing in a sexual way')
+                this.props.toggleCriteria('Nude or semi-nude sexual poses')
                 this.props.checkOption1()
-                trackEvent('image criteria', 'click', 'Someone posing in a sexual way')
+                trackEvent('image criteria', 'click', 'Nude or semi-nude sexual poses')
               }}
               leftCheckbox={<Checkbox checked={this.props.forms.option1} />}
             />
             <ListItem
               style={{backgroundColor: 'white', margin: '0.25rem 0'}}
-              primaryText='Someone touching themselves in a sexual way'
+              primaryText='Someone nude or semi-nude touching themselves in a sexual way'
               onChange={() => {
-                this.props.toggleCriteria('Someone touching themselves in a sexual way')
+                this.props.toggleCriteria('Someone nude or semi-nude touching themselves in a sexual way')
                 this.props.checkOption2()
-                trackEvent('image criteria', 'click', 'Someone touching themselves in a sexual way')
+                trackEvent('image criteria', 'click', 'Someone nude or semi-nude touching themselves in a sexual way')
               }}
               leftCheckbox={<Checkbox checked={this.props.forms.option2} />}
             />
             <ListItem
               style={{backgroundColor: 'white', margin: '0.25rem 0'}}
-              primaryText='Any sexual activity involving a child, adult or both'
+              primaryText='Any sexual activity involving an adult, child or both'
               onChange={() => {
-                this.props.toggleCriteria('Any sexual activity involving a child, adult or both')
+                this.props.toggleCriteria('Any sexual activity involving an adult, child or both')
                 this.props.checkOption3()
-                trackEvent('image criteria', 'click', 'Any sexual activity involving a child, adult or both')
+                trackEvent('image criteria', 'click', 'Any sexual activity involving an adult, child or both')
               }}
               leftCheckbox={<Checkbox checked={this.props.forms.option3} />}
             />
@@ -69,9 +69,9 @@ class ImgCriteriaForm extends React.Component {
               style={{backgroundColor: 'white', margin: '0.25rem 0'}}
               primaryText='Someone hurting someone else sexually'
               onChange={() => {
-                this.props.toggleCriteria('Someone hurting someone else')
+                this.props.toggleCriteria('Someone hurting someone else sexually')
                 this.props.checkOption4()
-                trackEvent('image criteria', 'click', 'Someone hurting someone else')
+                trackEvent('image criteria', 'click', 'Someone hurting someone else sexually')
               }}
               leftCheckbox={<Checkbox checked={this.props.forms.option4} />}
             />

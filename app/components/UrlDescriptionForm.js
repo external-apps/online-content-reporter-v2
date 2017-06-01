@@ -85,7 +85,7 @@ class UrlDescriptionForm extends React.Component {
           </div>
           <div className='input-field-3 col s6'>
             <p className='url-report'>
-              Your report may take a little while to complete. If you would like to know when the IWF have looked at your report, enter your email address below.
+              It may take a day or so for the IWF to review your report or a little longer at the weekend. If you want to be able to find out what’s happening with your report you will need to share an email address below:
             </p>
             <TextField
               hintText='jane.doe@gmail.com'
