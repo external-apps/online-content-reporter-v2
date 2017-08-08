@@ -6,6 +6,7 @@ import * as types from '../../constants/action-types.js'
 import { startShowFlash } from './flash.js'
 import { showSpinner, hideSpinner } from './spinner.js'
 import { UNVERIFIED_ERROR } from '../../constants/error.js'
+import { logPageView } from '../tracking.js'
 
 export const openModal = () => {
   return {
@@ -127,6 +128,7 @@ function * submitFormEffect () {
   const statusCode = response.status
 
   if (statusCode === 200) {
+    logPageView('/form (confirmation modal)')
     yield (put(openModal()))
   } else if (statusCode === 401) {
     const errorMessage = UNVERIFIED_ERROR
