@@ -4,14 +4,12 @@ import RaisedButton from 'material-ui/RaisedButton'
 import Modal from 'react-modal'
 import axios from 'axios'
 
-import { logPageView } from '../tracking.js'
 import { modalMobileOverlay, modalDesktopOverlay } from '../assets/modalStyle'
 
 class ConfirmationModal extends React.Component {
   constructor (props) {
     super(props)
     this.handleEmailSubmit.bind(this)
-    logPageView('/form (confirmation modal)')
   }
 
   renderValidEmailRequired () {
