@@ -28,13 +28,23 @@ const OverAge = () => (
 
     <div className='other-ops'>
       <div className='option'>
-        <i className='identity small material-icons'>contacts</i>
+        <div style={{ width: '1.5em', height: '1.5em', margin: '.4em 0 0 .4em' }}>
+          <img src='assets/icons/contacts.svg' style={{
+            height: '1.5em',
+            width: '1.5em'
+          }} />
+        </div>
         <a className='contact' target='_blank' rel='external' href='http://www.themix.org.uk/'>
           Contact The Mix
        </a>
       </div>
       <div className='option'>
-        <i className='identity small material-icons'>contacts</i>
+        <div style={{ width: '1.5em', height: '1.5em', margin: '.4em 0 0 .4em' }}>
+          <img src='assets/icons/contacts.svg' style={{
+            height: '1.5em',
+            width: '1.5em'
+          }} />
+        </div>
         <a className='contact' target='_blank' rel='external' href='http://www.samaritans.org/'>
           Contact Samaritans
         </a>

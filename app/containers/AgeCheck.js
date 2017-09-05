@@ -46,7 +46,12 @@ class AgeCheck extends React.Component {
             )
           } </div>
         <div className='other-options'>
-          <i className='large material-icons'>info_outline</i>
+          <div style={{ width: '4em', height: '4em', marginRight: '1em' }}>
+            <img src='assets/icons/info_outline.svg' style={{
+              height: '4em',
+              width: '4em'
+            }} />
+          </div>
           <span>
             If you are unable to create a YOTI account, talk to a <a rel='external' target='_blank' href='https://www.childline.org.uk/get-support/1-2-1-counsellor-chat/'>Childline counsellor</a> for further options of how to report your image or video.
           </span>

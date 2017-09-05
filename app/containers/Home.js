@@ -36,6 +36,10 @@ class Home extends React.Component {
                   trackClick('Navigation', 'Report Something')
                 }} />
             </Link>
+            <p>
+              Not sure whether making a report is right for you? We want to hear your views so that we can make reporting easier and safer. Tell us what you think.
+              <a href="https://www.surveymonkey.co.uk/r/CLReportingSurvey">https://www.surveymonkey.co.uk/r/CLReportingSurvey</a>
+            </p>
           </div>
         </div>
         <Footer />
