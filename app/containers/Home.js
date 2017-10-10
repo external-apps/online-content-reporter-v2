@@ -19,7 +19,18 @@ class Home extends React.Component {
         <div className='home-info-container'>
           <div className='home-info'>
             <p>
-              If you are under 18 and an explicit or nude picture or video of you has been shared online, we can help you to get it removed. We'll need to confirm your age and where you've seen the image or video.
+            Nude image of you online? We can help you take it down. Report Remove is here to help young people, under 18, confidentially remove nude images of themselves from the internet. 
+            </p>
+            <p>
+              Follow these 3 simple steps:
+            </p>
+            <ol>
+              <li>Download Yoti – The easiest, most secure way to prove identity. Take a selfie and then a photo of your ID, like a passport, to verify it’s you.</li>
+              <li>Report: Give details of the nude image and where it could be online (don’t worry if you don’t know all the details)</li> 
+              <li>Remove: We’ll then review the details and the IWF will work to have it removed</li> 
+            </ol>
+            <p>
+              The IWF (Internet Watch Foundation) use image hashing technology. This means each photo has its very own ID and using this ID it can identify the image, and have it removed, wherever it is uploaded to the internet.
             </p>
             <p>
               If you're 18 or older, contact the website(s) where you've seen the image or video, or report it to the police.
@@ -37,7 +48,8 @@ class Home extends React.Component {
                 }} />
             </Link>
             <p>
-              Not sure whether making a report is right for you? We want to hear your views so that we can make reporting easier and safer. Tell us what you think.
+              Not sure if making a report is right for you? We want to hear your views so that we can make reporting 
+              easier and safer. Tell us what you think anonymously here.  
               <a href="https://www.surveymonkey.co.uk/r/CLReportingSurvey">https://www.surveymonkey.co.uk/r/CLReportingSurvey</a>
             </p>
           </div>
