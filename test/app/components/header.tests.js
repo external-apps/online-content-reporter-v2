@@ -12,8 +12,8 @@ describe('<Header /> ', () => {
     const wrapper = shallow(<Header />)
     expect(wrapper.find('.header')).to.have.length(1)
   })
-  it('<Header /> should render an h2 tag with class header and text REPORT AN IMAGE OR VIDEO', () => {
+  it('<Header /> should render an h2 tag with class header and text REPORT REMOVE', () => {
     const wrapper = shallow(<Header />)
-    expect(wrapper.find('.header').text()).to.equal('REPORT AN IMAGE OR VIDEO')
+    expect(wrapper.find('.header').text()).to.equal('REPORT REMOVE')
   })
 })

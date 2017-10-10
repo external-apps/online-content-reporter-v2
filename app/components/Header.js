@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Header = () => (
-  <h2 className='header'>REPORT AN IMAGE OR VIDEO</h2>
+  <h2 className='header'>REPORT REMOVE</h2>
 )
 
 export default Header
