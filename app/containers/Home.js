@@ -13,13 +13,13 @@ class Home extends React.Component {
     return (
       <div className='home-body'>
         <div className='home-header'>
-          <h1 className='home-title'>REPORT AN IMAGE OR VIDEO</h1>
-          <h3>It's quick and easy to report - we can help</h3>
+          <h1 className='home-title'>REPORT REMOVE</h1>
+          <h3>Nude image of you online? We can help you take it down.</h3>
         </div>
         <div className='home-info-container'>
           <div className='home-info'>
             <p>
-            Nude image of you online? We can help you take it down. Report Remove is here to help young people, under 18, confidentially remove nude images of themselves from the internet. 
+              Report Remove is here to help young people, under 18, confidentially remove nude images of themselves from the internet. 
             </p>
             <p>
               Follow these 3 simple steps:
