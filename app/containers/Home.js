@@ -13,7 +13,7 @@ class Home extends React.Component {
     return (
       <div className='home-body'>
         <div className='home-header'>
-          <h1 className='home-title'>Report an image or video</h1>
+          <h1 className='home-title'>REPORT AN IMAGE OR VIDEO</h1>
           <h3>Nude image of you online? We can help you take it down.</h3>
         </div>
         <div className='home-info-container'>
