@@ -11,7 +11,7 @@ const YotiDescription = (props) => {
       <p className='yoti-instructions'>
         If not, it's easy to <a className='link' rel='external' target='_blank' 
         href='https://get.yoti.com/reportremove/'>sign up</a>
-        &nbsp;using the YOTI app or website. YOTI lets you safely share your details online - Just click below to create your account.
+        &nbsp;using the Yoti app or website. Yoti lets you safely share your details online - Just click below to create your account.
       </p>
     </div>
   )
