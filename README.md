@@ -19,6 +19,7 @@ The following environment variables need to be available:
  * AWS_SECRET_ACCESS_KEY
  * GA_TRACKING_ID
  * MAXIMUM_REPORTER_AGE (default 18)
+ * JWT_SECRET
 
 A web app for reporting explicit online images to the [IWF](https://www.iwf.org.uk/) (Internet Watch Foundation).  
 History of the partnership between the [IWF and Childline](https://www.iwf.org.uk/news/childline-and-internet-watch-foundation-form-new-partnership-to-help-young-people-remove) .
